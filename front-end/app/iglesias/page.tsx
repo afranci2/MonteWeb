@@ -1,29 +1,31 @@
-"use on client"
-
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import IglesiasCard from "../../components/IglesiasCard/IglesiasCard";
 
-export default async function page() {
+export default function page() {
+  const [churchesInfo, setChurchesInfo] = useState([])
   // Fetch the list of churches from the server
-  const res = await fetch(`http://localhost:8000/iglesias/pawtucket`);
-  if (res.status >= 200 && res.status <= 299) {
-    const churchesInfo = await res.json();
-    return (
-      <div className="bg-red-800">
-        <p>Some</p>
-        {churchesInfo.map((church) => (
-          <IglesiasCard
-            name={church.name}
-            location={church.location}
-            description={church.description}
-          />
-        ))}
-      </div>
-    );
-  } else {
-    // Handle errors
-    console.log(res.status, res.statusText);
-  }
+  useEffect(() => {
+    async function fetchChurch() {
+      const res = await fetch("http://localhost:8000/iglesias/pawtucket");
+      const data = await res.json();
+      setChurchesInfo(data)
+    }
 
+    fetchChurch();
+  }, []);
+
+  return (
+    <div className="bg-red-800">
+      <p>Some</p>
+      {churchesInfo.map((church) => (
+        <IglesiasCard
+          name={church.name}
+          location={church.location}
+          description={church.description}
+        />
+      ))}
+    </div>
+  );
 }
