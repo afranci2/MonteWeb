@@ -1,0 +1,15 @@
+export { default as BodySectionImageLeft } from './body/bodyImageText/imageLeftTextRight/BodySectionImageLeft'
+export { default as BodySectionImageRight } from './body/bodyImageText/imageRightTextLeft/BodySectionImageRight'
+export { default as BodyImageText } from './body/bodyImageText/BodyImageText'
+
+export { default as DefaultBody } from './body/defaultBody/DefaultBody'
+export { default as IglesiasMapListLeft } from './body/iglesiasMap/iglesiasListLeft/IglesiasMapListLeft'
+export { default as IglesiasMapListRight } from './body/iglesiasMap/iglesiasMapRight/IglesiasMapRight'
+export { default as CreenciasFundamentales } from './body/creeniasFundamentales/CreenciasFundamentales'
+export { default as Lideres } from './body/lideres/Lideres'
+
+export { default as Footer } from './footer/Footer'
+export { default as Header } from './header/Header'
+export { default as Navbar } from './navbar/Navbar'
+export { default as Video } from './video/Video'
+export { default as HomeTab } from './body/homeTab/HomeTab'
