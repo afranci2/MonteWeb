@@ -2,7 +2,7 @@
 
 import React from "react";
 import Button from "../../components/mainButton/MainButton";
-import Video from "../video/Video";
+import Video from "../video/Video.jsx";
 
 function Header(props) {
   return (
