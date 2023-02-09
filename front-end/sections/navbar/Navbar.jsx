@@ -13,28 +13,28 @@ function Navbar() {
 
   return (
     <nav>
-      <div className="navbar absolute h-16 items-center w-full z-50 text-white">
+      <div className="navbar fixed top-0 h-16 items-center w-full z-50 text-white">
         <div className="DESKTOP px-8 m-auto content hidden desktop:flex h-full md:items-center">
-          <div className="desktop-logo w-52 absolute">
+          <div className="desktop-logo w-56 absolute">
             <Link href={"/"}>
               <img src={logo} />
             </Link>
           </div>
-          <ul className="desktop-links m-auto pt-1 text-sm font-medium hidden md:flex items-center gap-8">
+          <ul className="desktop-links m-auto pt-1 text-xs font-medium hidden md:flex items-center gap-8">
             <li key={1}>
-              <Link href={"/conocernos"}>Conocernos</Link>
+              <Link href={"/conocernos"}>CONOCERNOS</Link>
             </li>
             <li key={2}>
-              <Link href={"/iglesias"}>Iglesias</Link>
+              <Link href={"/iglesias"}>IGLESIAS</Link>
             </li>
             <li key={3}>
-              <Link href={"/unete"}>Unet</Link>
+              <Link href={"/unete"}>UNETE</Link>
             </li>
             <li key={4}>
-              <Link href={"/eventos"}>Eventos</Link>
+              <Link href={"/eventos"}>EVENTOS</Link>
             </li>
             <li key={5}>
-              <Link href={"/donar"}>Donar</Link>
+              <Link href={"/donar"}>DONAR</Link>
             </li>
           </ul>
           <div>

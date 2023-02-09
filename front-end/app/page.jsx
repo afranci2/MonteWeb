@@ -16,6 +16,12 @@ const page = () => {
           src={Logo}
         />
       </Header>
+      <Header video={HeroVideo}>
+        <img
+          className='h-2/6 w-auto flex place-content-center justify-center m-auto z-40 md:h-80 md:w-auto'
+          src={Logo}
+        />
+      </Header>
     </div>
   );
 };

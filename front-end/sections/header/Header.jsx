@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Button from "../../components/mainButton/MainButton";
@@ -27,8 +27,8 @@ function Header(props) {
         <div className={props.buttonText ? "z-40 button flex py-6" : "hidden"}>
           <Button
             buttonColor={
-              props.buttonColor
-             ? `${props.buttonColor}` : "bg-red-800" }
+              props.buttonColor ? `${props.buttonColor}` : "bg-red-800"
+            }
             link={props.buttonLink}
             text={props.buttonText}
             buttonPosition={props.contentPosition}
@@ -36,9 +36,9 @@ function Header(props) {
         </div>
       </div>
       {props.children}
-      
-<div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
-        <img className="min-h-screen object-cover " src={props.image} />
+
+      <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
+      <img className="min-h-screen object-cover " src={props.image} />
       <Video className={props.video ? "hidden" : ""} video={props.video} />
     </div>
   );
