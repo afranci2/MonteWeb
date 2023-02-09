@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react";
-import gradient2 from "../../assets/img/g.png";
 import "./video.css";
 
 const Video = (props) => {
