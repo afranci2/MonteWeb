@@ -17,10 +17,10 @@ function Navbar() {
         <div className="DESKTOP px-8 m-auto content hidden desktop:flex h-full md:items-center">
           <div className="desktop-logo w-56 absolute">
             <Link href={"/"}>
-              <img src={logo} />
+              <img src={logo} alt="logo"/>
             </Link>
           </div>
-          <ul className="desktop-links m-auto pt-1 text-xs font-medium hidden md:flex items-center gap-8">
+          <ul className="desktop-links m-auto pt-1 text-xs font-medium hidden md:flex items-center gap-6">
             <li key={1}>
               <Link href={"/conocernos"}>CONOCERNOS</Link>
             </li>
