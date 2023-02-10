@@ -19,7 +19,7 @@ function Header({
   subheadingText,
 }) {
   return (
-    <div className="wrapper relative flex justify-center items-center h-screen z-40 text-white">
+    <div className="overflow-hidden wrapper relative flex justify-center items-center h-screen z-40 text-white">
       <div
         className={`${
           classChangeText
