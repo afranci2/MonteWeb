@@ -4,6 +4,7 @@ import React from "react";
 import Button from "../../components/mainButton/MainButton";
 import Video from "../video/Video.jsx";
 import NewImage from "../../public/img/hero.png";
+import './header.css'
 
 function Header({
   children,
@@ -18,7 +19,7 @@ function Header({
   subheadingText,
 }) {
   return (
-    <div className="overflow-hidden wrapper relative flex justify-center items-center w-screen h-screen z-40">
+    <div className="wrapper relative flex justify-center items-center h-screen z-40 text-white">
       <div
         className={`${
           classChangeText
@@ -47,8 +48,8 @@ function Header({
       </div>
       {children}
       <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
-      <div className={image ? "relative object-cover h-full" : "hidden"}>
-        <Image src={image} alt="some" fill quality={100}/>
+      <div className={image ? "object-cover" : "hidden"}>
+        <Image className="min-h-screen object-cover" src={image} alt="some" width={10000} height={10000}/>
       </div>
       <div className={video ? "w-full h-full" : "hidden"}>
         <Video video={video} priority />
