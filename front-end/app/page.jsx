@@ -13,9 +13,9 @@ import TextLeftTab from "../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../components/tab/textRightTab/TextRightTab";
 
 import ConocernosCardImage from "../public/section2.jpg";
-import IglesiasCardImage from "../public/section2.jpg";
-import UneteCardImage from "../public/section2.jpg";
-import EventosCardImage from "../public/section2.jpg";
+import IglesiasCardImage from "../public/assets/img/CHURCH-BUILDING.jpg";
+import UneteCardImage from "../public/assets/img/izzy.jpg";
+import EventosCardImage from "../public/assets/img/nimsy.jpg";
 
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
