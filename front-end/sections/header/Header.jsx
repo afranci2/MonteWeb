@@ -4,7 +4,7 @@ import React from "react";
 import Button from "../../components/mainButton/MainButton";
 import Video from "../video/Video.jsx";
 import NewImage from "../../public/img/hero.png";
-import './header.css'
+import "./header.css";
 
 function Header({
   children,
@@ -28,7 +28,7 @@ function Header({
         } ${!headerText && "hidden"} `}
       >
         <div className="z-40 flex flex-col gap-2">
-          <p className="font-regular font-serif text-5xl">{headerText}</p>
+          <p className="font-semibold text-4xl">{headerText}</p>
           <div
             className={`${
               contentPosition === "center"
@@ -49,11 +49,20 @@ function Header({
       {children}
       <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
       <div className={image ? "object-cover" : "hidden"}>
-        <Image className="min-h-screen object-cover" src={image} alt="some" width={10000} height={10000}/>
+        <div className="contain">
+          {image ? (
+            <Image
+              className="min-h-screen object-cover"
+              src={image}
+              alt="some"
+              width={10000}
+              height={10000}
+            />
+          ) : null}
+        </div>
       </div>
       <div className={video ? "w-full h-full" : "hidden"}>
         <Video video={video} priority />
-        
       </div>
     </div>
   );
