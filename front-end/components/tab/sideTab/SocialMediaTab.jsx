@@ -1,7 +1,5 @@
 import React from "react";
-import { AiFillFacebook } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
 
 const SocialMediaTab = (props) => {
   return (

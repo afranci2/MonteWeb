@@ -1,13 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  Tab,
-  Card,
-  SecondaryButton,
-  MainButton,
-  TertiaryButton,
-} from "../../../components/index";
-import SocialMedia from "../../../components/tab/sideTab/SocialMedia";
+import Tab from "../Tab";
+import TertiaryButton from "../../tertiaryButton/TertiaryButton";
 
 const SideTab = (props) => {
   return (
@@ -17,7 +10,7 @@ const SideTab = (props) => {
           <p className="text-black text-lg font-medium">{props.headerText} </p>
           <p className="text-black text-xs ">{props.subheaderText}</p>
           <div className={!props.buttonText ? "hidden" : "button mt-8"}>
-            <TertiaryButton position="center" text={props.buttonText} link={props.link} buttonColor={props.buttonColor}/>
+            <TertiaryButton position="center" text={props.buttonText} buttonLink={props.buttonLink} buttonColor={props.buttonColor}/>
           </div>
           {props.children}
         </div>

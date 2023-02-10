@@ -1,7 +1,8 @@
 import React from "react";
-import { AiFillFacebook, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
-import Instagram from "../../../assets/icons/icons8-instagram-240.png";
+import { AiFillFacebook, AiFillYoutube } from "react-icons/ai";
+import Instagram from "../../../public/assets/icons/icons8-instagram-240.png";
 import SocialMediaTab from "./SocialMediaTab";
+import Image from "next/image";
 
 const SocialMedia = () => {
   return (
@@ -11,15 +12,17 @@ const SocialMedia = () => {
         text="Facebook"
         link="https://www.facebook.com/elmontesinai.org"
       />
-      <SocialMediaTab text="Instagram"         link="https://www.instagram.com/mp.montesinai"
->
-        <img className="w-8  " src={Instagram}></img>
+      <SocialMediaTab
+        text="Instagram"
+        link="https://www.instagram.com/mp.montesinai"
+      >
+        <Image className="w-8" alt="instagram" src={Instagram} width={100} height={100}/>
+
       </SocialMediaTab>
       <SocialMediaTab
         icon={<AiFillYoutube size={30} fill="#FF0000" />}
         text="Youtube"
         link="https://www.youtube.com/elmontesinai.org"
-
       />
     </div>
   );

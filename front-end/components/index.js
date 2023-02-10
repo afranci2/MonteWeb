@@ -8,3 +8,5 @@ export { default as Tab } from './tab/Tab'
 export { default as SideTab } from './tab/sideTab/SideTab'
 export { default as SocialMedia } from './tab/sideTab/SocialMedia'
 export { default as SecondaryButton } from './secondaryButton/SecondaryButton'
+export { default as TertiaryButton } from './tertiaryButton/TertiaryButton'
+

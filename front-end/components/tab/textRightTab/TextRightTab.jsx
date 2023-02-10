@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Tab, Card, SecondaryButton } from "../../../components/index";
+import { Tab} from "../../../components/index";
 
 const TextRightTab = (props) => {
   return (
