@@ -75,7 +75,7 @@ const page = () => {
           <DefaultBody>
             <MobileCard
               headerText="Conocernos"
-              subheadingText="Ver nuestra misin, lideres, historia, y mas
+              subheadingText="Ver nuestra mision, lideres, historia, y mas
 "
               buttonLink="/conocernos"
               buttonText="VER AHORA"
