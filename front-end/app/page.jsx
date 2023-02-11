@@ -71,17 +71,18 @@ const page = () => {
         </Banner>
       </Header>
       <div className="tabs-section">
-        <div className="MOBILE md:hidden">
+        <div className="MOBILE flex w-11/12 m-auto md:hidden ">
           <DefaultBody>
             <MobileCard
               headerText="Conocernos"
-              subheadingText="Ver nuestra mision, lideres, historia, y mas
+              subheadingText="Ver nuestra misin, lideres, historia, y mas
 "
               buttonLink="/conocernos"
               buttonText="VER AHORA"
               image={ConocernosCardImage}
               imagePosition="object-left "
             />
+
             <MobileCard
               headerText="Iglesias"
               subheadingText="¿Listo para conocer una iglesia? Encuentre una congregación cerca de ti
@@ -89,12 +90,14 @@ const page = () => {
               buttonLink="/iglesias"
               buttonText="ACOMPANANOS"
               image={IglesiasCardImage}
+              imagePosition="object-left "
             />
             <MobileCard
               headerText="Unete a Nosotros
           "
               subheadingText="Es hora de ver lo que Dios puede hacer a través de ti. ¡Únase a nosotros!
           "
+              imagePosition="object-left "
               buttonLink="/unete"
               buttonText="UNETE"
               image={UneteCardImage}
@@ -102,6 +105,7 @@ const page = () => {
             <MobileCard
               headerText="Eventos
           "
+              imagePosition="object-left "
               subheadingText="¡No te lo pierdas! Apunte en el calendario y acompáñenos en los eventos importantes
           "
               buttonLink="/unete"
