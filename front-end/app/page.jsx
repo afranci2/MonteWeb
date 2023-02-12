@@ -211,7 +211,7 @@ const page = () => {
             <DefaultBody>
         <Banner2 position="top-0">
           <div className="gap-12 text-black">
-            <p className="font-mediu font-serif text-4xl">Eventos</p>
+            <p className="font-medium font-serif text-4xl">Eventos</p>
             <Link to="/eventos">
               <p className="">Ver ahora</p>
             </Link>
