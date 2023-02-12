@@ -5,7 +5,7 @@ const SocialMediaTab = (props) => {
   return (
     <div>
       <a href={props.link} target="_blank">
-        <div className="icon flex  text-black text-center text-sm font-regular gap-2 rounded-lg">
+        <div className="icon  flex text-black text-center text-sm font-regular gap-2">
           <div className="flex  justify-center m-auto align-middle'">
             {props.children}
 
@@ -14,7 +14,13 @@ const SocialMediaTab = (props) => {
           <p className="flex font-medium justify-center m-auto align-middle">
             {props.text}
           </p>
-          <IoIosArrowForward className="flex  m-auto " size={20} fill="black" />
+          <div className="contain">
+            <IoIosArrowForward
+              className="flex  m-auto "
+              size={20}
+              fill="black"
+            />
+          </div>
         </div>
       </a>
     </div>

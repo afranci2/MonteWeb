@@ -11,7 +11,7 @@ import MobileCard from "../components/mobileCard/MobileCard";
 import SideTab from "../components/tab/sideTab/SideTab";
 import TextLeftTab from "../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../components/tab/textRightTab/TextRightTab";
-
+const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4"
 import ConocernosCardImage from "../public/section2.jpg";
 import IglesiasCardImage from "../public/assets/img/CHURCH-BUILDING.jpg";
 import UneteCardImage from "../public/assets/img/izzy.jpg";
@@ -190,6 +190,50 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Header
+        video={ConocernosVideo}
+        contentPosition="center"
+        headerText="Un Genuino Llamado de Dios"
+        subheadingText={
+          <div>
+            <p>
+              A lo largo de este movimiento, el fuego seguirá ardiendo en cada
+              corazón como en el día de Pentecostés.
+            </p>
+            <br></br>
+            <p className="font-light">
+              Deja que Dios encienda el fuego dentro de ti.
+            </p>
+          </div>
+        }
+        buttonText="Conocernos"
+      ></Header>
+            <DefaultBody>
+        <Banner2 position="top-0">
+          <div className="gap-12 text-black">
+            <p className="font-mediu font-serif text-4xl">Eventos</p>
+            <Link to="/eventos">
+              <p className="">Ver ahora</p>
+            </Link>
+          </div>
+        </Banner2>
+        <BodySectionImageLeft
+          buttonText="Historia"
+          headingText="50 anos"
+          subheadingText=">EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros
+"
+          buttonLink="/historia"
+          image={AnniversaryPicture}
+        />
+                <BodySectionImageRight
+          buttonText="Historia"
+          headingText="50 anos"
+          subheadingText=">EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros
+"
+          buttonLink="/historia"
+          image={AnniversaryPicture}
+        />
+      </DefaultBody>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const SocialMedia = () => {
         text="Instagram"
         link="https://www.instagram.com/mp.montesinai"
       >
-        <Image className="w-8" alt="instagram" src={Instagram} width={100} height={100}/>
+        <Image className="w-8" alt="instagram"src={Instagram} width={100} height={100}/>
 
       </SocialMediaTab>
       <SocialMediaTab
