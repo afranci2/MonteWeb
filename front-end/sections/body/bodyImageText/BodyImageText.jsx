@@ -1,19 +1,20 @@
 import React from "react";
 import { TertiaryButton } from "../../../components";
 import PropTypes from "prop-types";
+import Image from 'next/image'
 
 const BodyImageText = (props) => {
   return (
     <div className="h-fit md:h-[38rem] relative text-black bg-gradient-to-t from-black/10 to-black/0 py-8 ">
       <div className=" h-full content flex  flex-col w-3/4 m-auto gap-4 md:flex-row">
         {props.imagePosition === "right" ? (
-          <img className=" h-full object-cover md:p-4 md:ml-12 md:flex" src={props.image} />
+          <Image width={1000} height={1000} className=" h-full object-cover md:p-4 md:ml-12 md:flex" src={props.image} />
           
         ) : (
           <div></div>
         )}
         {props.imagePosition === "left" ? (
-          <img className=" h-full object-cover md:p-4 md:ml-12 md:hidden" src={props.image} />
+          <Image width={1000} height={1000} className=" h-full object-cover md:p-4 md:ml-12 md:hidden" src={props.image} />
           ) : (
           <div></div>
         )}
@@ -30,7 +31,7 @@ const BodyImageText = (props) => {
           ></TertiaryButton>
         </div>
         {props.imagePosition === "left" ? (
-          <img className="hidden h-full object-cover md:p-4 md:mr-12 md:flex" src={props.image} />
+          <Image width={1000} height={1000} className="hidden h-full object-cover md:p-4 md:mr-12 md:flex" src={props.image} />
           ) : (
           <div></div>
         )}

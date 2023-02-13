@@ -3,11 +3,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { RiMenu2Line, RiCloseLine, RiSearchLine } from "react-icons/ri";
 const logo = "https://monte-assets.s3.amazonaws.com/logo/new-logo.png";
-import otherlogo from '../../public/assets/logo/image2.png'
+import otherlogo from "../../public/assets/logo/image2.png";
 const mobile__logo__fileAWS =
   "https://monte-assets.s3.amazonaws.com/logo/mobile_logo.webp";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image";
+import mobileLogo2 from "../../public/assets/logo/image2 copy.png";
 import "./navbar.css";
 
 function Navbar() {
@@ -34,7 +35,7 @@ function Navbar() {
 
   const backgroundColor =
     scrollY > 50
-      ? " font-semibold bg-white text-black transition ease-in"
+      ? " font-semibold bg-white text-black transition ease-in  shadow-lg"
       : "font-medium navbar text-white";
   const icon = scrollY > 50 ? " 000" : "fff";
 
@@ -42,14 +43,19 @@ function Navbar() {
     <nav>
       <div
         className={
-          backgroundColor + " fixed top-0 h-16 items-center w-full z-50 "
+          backgroundColor + " fixed top-0 h-16 items-center w-full z-50"
         }
       >
         <div className="DESKTOP px-8 m-auto content hidden desktop:flex h-full md:items-center">
           <div>
             <Link href={"/"}>
               <div className="desktop-logo w-52 align-center top-2.5 absolute flex">
-                <Image width={200} height={1000} src={showDiv ? logo : otherlogo} alt="logo" />
+                <Image
+                  width={200}
+                  height={1000}
+                  src={showDiv ? logo : otherlogo}
+                  alt="logo"
+                />
               </div>
             </Link>
           </div>
@@ -78,13 +84,13 @@ function Navbar() {
           <div className="mobile-menu desktop:hidden">
             {toggleMenu ? (
               <RiCloseLine
-                color="#fff"
+                color={icon}
                 size={29}
                 onClick={() => setToggleMenu(false)}
               />
             ) : (
               <RiMenu2Line
-                color="#fff"
+                color={icon}
                 size={24}
                 onClick={() => setToggleMenu(true)}
               />
@@ -132,20 +138,18 @@ function Navbar() {
           </div>
           <div className="mobile__logo mx-auto block relative w-16 h-auto desktop:hidden">
             <Link href={"/"}>
-              {showDiv ? (
-                <img
-                  className="w-52 mr-2 mt-4 mb-4"
-                  src={mobile__logo__fileAWS}
-                />
-              ) : (
-                <p className="top-0 absolute font-serif text-lg">MONTE SINAI</p>
-              )}{" "}
+              <Image
+                width={200}
+                height={1000}
+                src={showDiv ? mobile__logo__fileAWS : mobileLogo2}
+                alt="logo"
+              />
             </Link>
           </div>
           <div className="mobile__search w-6 desktop:hidden">
             <Link href={"/"}>
               {" "}
-              <RiSearchLine size={20} color="fff" />
+              <RiSearchLine size={20} color={icon} />
             </Link>
           </div>
         </div>

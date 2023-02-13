@@ -27,7 +27,7 @@ function Header({
         } ${!headerText && "hidden"} `}
       >
         <div className="z-40 flex flex-col gap-2">
-          <p className="font-semibold text-4xl">{headerText}</p>
+          <p className="font-medium font-serif text-6xl">{headerText}</p>
           <div
             className={`${
               contentPosition === "center"
