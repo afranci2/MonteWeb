@@ -1,26 +1,59 @@
 "use client";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RiMenu2Line, RiCloseLine, RiSearchLine } from "react-icons/ri";
 const logo = "https://monte-assets.s3.amazonaws.com/logo/new-logo.png";
+import otherlogo from '../../public/assets/logo/image2.png'
 const mobile__logo__fileAWS =
   "https://monte-assets.s3.amazonaws.com/logo/mobile_logo.webp";
 import Link from "next/link";
+import Image from 'next/image'
 import "./navbar.css";
 
 function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [scrollY, setScrollY] = useState(50);
+  const [showDiv, setShowDiv] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      if (window.pageYOffset > 50) {
+        setShowDiv(false);
+      } else {
+        setShowDiv(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const backgroundColor =
+    scrollY > 50
+      ? " font-semibold bg-white text-black transition ease-in"
+      : "font-medium navbar text-white";
+  const icon = scrollY > 50 ? " 000" : "fff";
 
   return (
     <nav>
-      <div className="navbar fixed top-0 h-16 items-center w-full z-50 text-white">
+      <div
+        className={
+          backgroundColor + " fixed top-0 h-16 items-center w-full z-50 "
+        }
+      >
         <div className="DESKTOP px-8 m-auto content hidden desktop:flex h-full md:items-center">
-          <div className="desktop-logo w-56 absolute">
+          <div>
             <Link href={"/"}>
-              <img src={logo} alt="logo"/>
+              <div className="desktop-logo w-52 align-center top-2.5 absolute flex">
+                <Image width={200} height={1000} src={showDiv ? logo : otherlogo} alt="logo" />
+              </div>
             </Link>
           </div>
-          <ul className="desktop-links m-auto pt-1 text-xs tracking-wide font-medium  hidden md:flex items-center gap-6">
+          <ul className="desktop-links m-auto pt-1 text-xs tracking-wide  hidden md:flex items-center gap-6">
             <li key={1}>
               <Link href={"/conocernos"}>CONOCERNOS</Link>
             </li>
@@ -38,10 +71,10 @@ function Navbar() {
             </li>
           </ul>
           <div>
-            <RiSearchLine color="fff" size={18}/>
+            <RiSearchLine color={icon} size={18} />
           </div>
         </div>
-        <div className="MOBILE flex items-center h-full w-11/12 m-auto dekstop:hidden">
+        <div className="MOBILE flex items-center h-full w-11/12 m-auto ">
           <div className="mobile-menu desktop:hidden">
             {toggleMenu ? (
               <RiCloseLine
@@ -99,10 +132,14 @@ function Navbar() {
           </div>
           <div className="mobile__logo mx-auto block relative w-16 h-auto desktop:hidden">
             <Link href={"/"}>
-              <img
-                className="w-52 mr-2 mt-4 mb-4"
-                src={mobile__logo__fileAWS}
-              />
+              {showDiv ? (
+                <img
+                  className="w-52 mr-2 mt-4 mb-4"
+                  src={mobile__logo__fileAWS}
+                />
+              ) : (
+                <p className="top-0 absolute font-serif text-lg">MONTE SINAI</p>
+              )}{" "}
             </Link>
           </div>
           <div className="mobile__search w-6 desktop:hidden">

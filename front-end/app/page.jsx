@@ -5,22 +5,24 @@ import Header from "../sections/header/Header";
 import Banner from "../components/banner/Banner";
 import Banner2 from "../components/banner/Banner2";
 import SocialMedia from "../components/tab/sideTab/SocialMedia";
-import MediaQuery from "react-responsive";
 import DefaultBody from "../sections/body/defaultBody/DefaultBody";
 import MobileCard from "../components/mobileCard/MobileCard";
 import SideTab from "../components/tab/sideTab/SideTab";
 import TextLeftTab from "../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../components/tab/textRightTab/TextRightTab";
-const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4"
+const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 import ConocernosCardImage from "../public/section2.jpg";
 import IglesiasCardImage from "../public/assets/img/CHURCH-BUILDING.jpg";
 import UneteCardImage from "../public/assets/img/izzy.jpg";
 import EventosCardImage from "../public/assets/img/nimsy.jpg";
-
+import Link from 'next/link'
+import BodySectionImageLeft from '../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft'
+import BodySectionImageRight from '../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight'
+import AnniversaryPicture from '../public/assets/img/50Anni.F4.png'
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
-import Michael from "../public/section2.jpg";
+import Michael from "../public/assets/img/section2.jpg";
 
 const page = () => {
   return (
@@ -28,7 +30,7 @@ const page = () => {
       <Navbar />
       <Header video={HeroVideo}>
         <img
-          className="h-2/6 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-80 md:w-auto"
+          className="h-2/6 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[22rem] md:w-auto"
           src={Logo}
           alt="he"
         />
@@ -208,11 +210,11 @@ const page = () => {
         }
         buttonText="Conocernos"
       ></Header>
-            <DefaultBody>
+      <DefaultBody>
         <Banner2 position="top-0">
           <div className="gap-12 text-black">
             <p className="font-medium font-serif text-4xl">Eventos</p>
-            <Link to="/eventos">
+            <Link href="/eventos">
               <p className="">Ver ahora</p>
             </Link>
           </div>
@@ -225,7 +227,7 @@ const page = () => {
           buttonLink="/historia"
           image={AnniversaryPicture}
         />
-                <BodySectionImageRight
+        <BodySectionImageRight
           buttonText="Historia"
           headingText="50 anos"
           subheadingText=">EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros

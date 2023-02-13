@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import Button from "../../components/mainButton/MainButton";
 import Video from "../video/Video.jsx";
-import NewImage from "../../public/img/hero.png";
 import "./header.css";
 
 function Header({
