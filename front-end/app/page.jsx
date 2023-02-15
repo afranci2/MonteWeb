@@ -212,7 +212,7 @@ const page = () => {
       ></Header>
       <DefaultBody>
         <Banner2 position="top-0">
-          <div className="gap-12 text-black">
+          <div className="gap-12 text-white">
             <p className="font-medium font-serif text-4xl">Eventos</p>
             <Link href="/eventos">
               <p className="">Ver ahora</p>

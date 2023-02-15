@@ -35,7 +35,7 @@ function Navbar() {
 
   const backgroundColor =
     scrollY > 50
-      ? " font-semibold bg-white text-black transition ease-in  shadow-lg"
+      ? " font-semibold bg-white text-black transition ease-in  shadow-md"
       : "font-medium navbar text-white";
   const icon = scrollY > 50 ? " 000" : "fff";
 
