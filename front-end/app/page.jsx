@@ -15,7 +15,7 @@ const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 import ConocernosCardImage from "../public/section2.jpg";
 import IglesiasCardImage from "../public/assets/img/CHURCH-BUILDING.jpg";
 import UneteCardImage from "../public/assets/img/izzy.jpg";
-import EventosCardImage from "../public/assets/img/nimsy.jpg";
+import {EventosCardImage} from "../public/assets/img/nimsy.jpg";
 import Link from 'next/link'
 import BodySectionImageLeft from '../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft'
 import BodySectionImageRight from '../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight'
