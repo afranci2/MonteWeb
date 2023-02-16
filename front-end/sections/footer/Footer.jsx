@@ -1,11 +1,11 @@
 import React from "react";
-import Link  from "next/link";
+import Link from "next/link";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="bg-red-800 h-full z-50 relative text-center md:text-left text-white">
+    <div className="bg-white h-full z-50 relative text-center md:text-left shadow-lg">
       <div className="md:grid grid-cols-2 sm:gap-6 p-16 w-11/12">
         <div className=" content flex flex-col m-auto gap-4">
           <div className="logo">
@@ -35,9 +35,15 @@ const Footer = () => {
             </ul>
           </div>
           <div className="py-4 socials justify-center flex gap-4 md:justify-start">
-            <BsFacebook size={25} />
-            <AiFillInstagram size={30} />
-            <AiFillYoutube size={30} />
+            <a target="_blank" href="https://www.facebook.com/elmontesinai.org">
+              <BsFacebook size={25} />
+            </a>
+            <a target="_blank" href="https://www.instagram.com/mp.montesinai">
+              <AiFillInstagram size={30} />
+            </a>
+            <a target="_blank" href="https://www.youtube.com/elmontesinai.org">
+              <AiFillYoutube size={30} />
+            </a>
           </div>
           <div className="info text-xs">
             <p>
@@ -88,16 +94,16 @@ const Footer = () => {
         </div>
       </div>
       <div className="p-8 rights-reserved gap-2 flex flex-col justify-center m-auto bg-slate-100 w-screen md:flex-row md:justify-between">
-          <p className=" flex m-auto text-black text-xs md:mx-0">
-            © 2021 Movimiento Pentecostal Monte Sinai. All Rights Reserved
-          </p>
-          <div className=" flex justify-center gap-10 pt-6 md:pt-0">
-            <Link href="./rights-reserved">
-              <p className="text-black text-xs">Privacy Policy</p>
-            </Link>
-            <Link href="./terms-of-service">
-              <p className="text-black text-xs">Terms of Service</p>
-            </Link>
+        <p className=" flex m-auto text-black text-xs md:mx-0">
+          © 2021 Movimiento Pentecostal Monte Sinai. All Rights Reserved
+        </p>
+        <div className=" flex justify-center gap-10 pt-6 md:pt-0">
+          <Link href="./rights-reserved">
+            <p className="text-black text-xs">Privacy Policy</p>
+          </Link>
+          <Link href="./terms-of-service">
+            <p className="text-black text-xs">Terms of Service</p>
+          </Link>
         </div>
       </div>
     </div>

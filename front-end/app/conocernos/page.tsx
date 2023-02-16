@@ -3,6 +3,7 @@ import Navbar from "../../sections/navbar/Navbar";
 import Header from "../../sections/header/Header";
 import BodySectionImageLeft from "../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
 import Banner from "../../components/banner/Banner";
+import Footer from "../../sections/footer/Footer";
 import Banner2 from "../../components/banner/Banner2";
 import SocialMedia from "../../components/tab/sideTab/SocialMedia";
 import DefaultBody from "../../sections/body/defaultBody/DefaultBody";
@@ -14,6 +15,7 @@ const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 import Link from "next/link";
 import ConocernosHero from "../../public/assets/img/pastora.jpg";
 import Javier from "../../public/assets/img/javier.jpg";
+import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
 
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
@@ -25,6 +27,7 @@ const page = () => {
       <div>
         <Navbar />
         <Header
+          container={undefined}
           image={ConocernosHero}
           headerText="Conocernos
 "
@@ -40,7 +43,9 @@ const page = () => {
           }
         />
         <Banner2>
-          <ul className="flex gap-12 text-white text-sm font-medium">
+          <ul className="hidden gap-8 text-white text-md font-medium p-8 md:flex text-sm">
+            {/*use dropdown component             <Dropdown />
+             */}
             <Link href={"/"}>
               <li key={1}>
                 <p>Creencias Fundamentales</p>{" "}
@@ -99,8 +104,11 @@ const page = () => {
           classChangeText={undefined}
           buttonColor={undefined}
           buttonLink={undefined}
+          container={undefined}
         ></Header>
-      </div>
+        <CreenciasFundamentales />
+      </div>{" "}
+      <Footer />
     </div>
   );
 };
