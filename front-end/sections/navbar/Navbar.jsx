@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { useState, useEffect } from "react";
 import { RiMenu2Line, RiCloseLine, RiSearchLine } from "react-icons/ri";
