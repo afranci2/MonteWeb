@@ -237,7 +237,7 @@ const page = () => {
           image={AnniversaryPicture}
         />
       </DefaultBody>
-      <Footer></Footer>
+      <Footer/>
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "next/link";
+import Link  from "next/link";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="bg-red-900 h-full z-50 relative text-center md:text-left">
+    <div className="bg-red-800 h-full z-50 relative text-center md:text-left text-white">
       <div className="md:grid grid-cols-2 sm:gap-6 p-16 w-11/12">
         <div className=" content flex flex-col m-auto gap-4">
           <div className="logo">
@@ -30,7 +30,7 @@ const Footer = () => {
                 <Link href="/unete">Unete</Link>
               </li>
               <li key={4}>
-                <Link to="/donar">Donar</Link>
+                <Link href="/donar">Donar</Link>
               </li>
             </ul>
           </div>
@@ -51,38 +51,38 @@ const Footer = () => {
               <Link href="/conocernos">Conocernos</Link>
             </li>
             <li key={2}>
-              <Link href="/lidres">Lideres</Link>
+              <Link href="/lideres">Lideres</Link>
             </li>
             <li key={3}>
-              <Link href="/">Creencias</Link>
+              <Link href="/creencias">Creencias</Link>
             </li>
             <li key={4}>
-              <Link href="/">Historia</Link>
+              <Link href="/historia">Historia</Link>
             </li>
           </ul>
 
           <ul className="flex flex-col space-y-2 font-semibold">
             <li key={1}>
-              <Link to="/">Unete</Link>
+              <Link href="/unete">Unete</Link>
             </li>
             <li key={2}>
-              <Link to="/">Servir</Link>
+              <Link href="/servir">Servir</Link>
             </li>
             <li key={3}>
-              <Link to="/">Medios</Link>
+              <Link href="/medius">Medios</Link>
             </li>
           </ul>
           <ul className="flex flex-col space-y-2 font-semibold">
             <li key={1}>
-              <Link to="/">Iglesias</Link>
+              <Link href="/iglesias">Iglesias</Link>
             </li>
             <li key={2}>
-              <Link to="/">Busca Local</Link>
+              <Link href="/">Busca Local</Link>
             </li>
           </ul>
           <ul className="flex flex-col space-y-2 font-semibold">
             <li key={1}>
-              <Link to="/">Eventos</Link>
+              <Link href="/">Eventos</Link>
             </li>
           </ul>
         </div>
@@ -92,10 +92,10 @@ const Footer = () => {
             © 2021 Movimiento Pentecostal Monte Sinai. All Rights Reserved
           </p>
           <div className=" flex justify-center gap-10 pt-6 md:pt-0">
-            <Link to="./rights-reserved">
+            <Link href="./rights-reserved">
               <p className="text-black text-xs">Privacy Policy</p>
             </Link>
-            <Link to="./terms-of-service">
+            <Link href="./terms-of-service">
               <p className="text-black text-xs">Terms of Service</p>
             </Link>
         </div>
