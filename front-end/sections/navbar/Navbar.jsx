@@ -7,7 +7,6 @@ const otherlogo = "https://monte-assets.s3.amazonaws.com/logo/image2.png";
 const mobile__logo__fileAWS =
   "https://monte-assets.s3.amazonaws.com/logo/mobile_logo.webp";
 import Link from "next/link";
-import Image from "next/image";
 const mobileLogo2 = "https://monte-assets.s3.amazonaws.com/logo/image2+copy.png";
 import "./navbar.css";
 
@@ -50,9 +49,8 @@ function Navbar() {
           <div>
             <Link href={"/"}>
               <div className="desktop-logo w-52 align-center top-2.5 absolute flex">
-                <Image
-                  width={1000}
-                  height={1000}
+                <img
+                  fill
                   src={showDiv ? logo2 : otherlogo}
                   alt="logo"
                 />
@@ -138,9 +136,7 @@ function Navbar() {
           </div>
           <div className="mobile__logo mx-auto block relative w-16 h-auto desktop:hidden">
             <Link href={"/"}>
-              <Image
-                width={200}
-                height={1000}
+              <img
                 src={showDiv ? mobile__logo__fileAWS : mobileLogo2}
                 alt="logo"
               />
