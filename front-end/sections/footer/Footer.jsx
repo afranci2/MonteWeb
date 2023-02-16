@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "next/link";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
@@ -21,16 +21,16 @@ const Footer = () => {
           <div className="link flex flex-col gap-4 py-4 space-y-4 md:hidden">
             <ul className="flex p-2 flex-col space-y-2 font-semibold">
               <li key={1}>
-                <Link to="/">Conocernos</Link>
+                <Link href="/conocernos">Conocernos</Link>
               </li>
               <li key={2}>
-                <Link to="/">Iglesias</Link>
+                <Link href="/iglesias">Iglesias</Link>
               </li>
               <li key={3}>
-                <Link to="/">Unete</Link>
+                <Link href="/unete">Unete</Link>
               </li>
               <li key={4}>
-                <Link to="/">Donar</Link>
+                <Link to="/donar">Donar</Link>
               </li>
             </ul>
           </div>
@@ -48,16 +48,16 @@ const Footer = () => {
         <div className="md:flex px-8 gap-8 desktop-links sm: hidden">
           <ul className="flex flex-col space-y-2 font-semibold">
             <li key={1}>
-              <Link to="/">Conocernos</Link>
+              <Link href="/conocernos">Conocernos</Link>
             </li>
             <li key={2}>
-              <Link to="/">Liders</Link>
+              <Link href="/lidres">Lideres</Link>
             </li>
             <li key={3}>
-              <Link to="/">Creencias</Link>
+              <Link href="/">Creencias</Link>
             </li>
             <li key={4}>
-              <Link to="/">Historia</Link>
+              <Link href="/">Historia</Link>
             </li>
           </ul>
 

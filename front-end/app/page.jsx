@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/globals.css";
 import Navbar from "../sections/navbar/Navbar";
+import Footer from '../sections/footer/Footer'
 import Header from "../sections/header/Header";
 import Banner from "../components/banner/Banner";
 import Banner2 from "../components/banner/Banner2";
@@ -236,6 +237,7 @@ const page = () => {
           image={AnniversaryPicture}
         />
       </DefaultBody>
+      <Footer></Footer>
     </div>
   );
 };

@@ -1,28 +1,27 @@
 import React from "react";
 import { TertiaryButton } from "../../../components";
 import PropTypes from "prop-types";
-import Image from 'next/image'
+import Image from "next/image";
 
 const BodyImageText = (props) => {
   return (
     <div className="h-fit md:h-[38rem] relative text-black bg-gradient-to-t from-black/10 to-black/0 py-8 ">
-      <div className=" h-full content flex  flex-col w-3/4 m-auto gap-4 md:flex-row">
+      <div className=" h-full content flex flex-col  w-9/12 m-auto gap-4 md:flex-row">
         {props.imagePosition === "right" ? (
-          <Image width={1000} height={1000} className=" h-full object-cover md:p-4 md:ml-12 md:flex" src={props.image} />
-          
+          <Image
+            width={1000}
+            height={1000}
+            alt="header image"
+            className="h-full md:w-1/2 object-cover md:p-4 md:flex"
+            src={props.image}
+          />
         ) : (
           <div></div>
         )}
-        {props.imagePosition === "left" ? (
-          <Image width={1000} height={1000} className=" h-full object-cover md:p-4 md:ml-12 md:hidden" src={props.image} />
-          ) : (
-          <div></div>
-        )}
+
         <div className="align-center mt-4 md:m-auto flex flex-col gap-4">
           <p className="text-3xl ">{props.headingText}</p>
-          <p className="text-sm">
-          {props.subheadingText}
-          </p>
+          <p className="text-sm">{props.subheadingText}</p>
           <TertiaryButton
             buttonColor="bg-yellow-400"
             text={props.buttonText}
@@ -31,8 +30,14 @@ const BodyImageText = (props) => {
           ></TertiaryButton>
         </div>
         {props.imagePosition === "left" ? (
-          <Image width={1000} height={1000} className="hidden h-full object-cover md:p-4 md:mr-12 md:flex" src={props.image} />
-          ) : (
+          <Image
+            width={1000}
+            height={1000}
+            alt="header image"
+            className="h-full md:w-1/2 object-cover md:p-4 md:flex"
+            src={props.image}
+          />
+        ) : (
           <div></div>
         )}
       </div>
@@ -40,9 +45,5 @@ const BodyImageText = (props) => {
   );
 };
 
-BodyImageText.propTypes = {
-  children: PropTypes.oneOf(["left", "right"]),
-  image: PropTypes.string.isRequired,
-};
 
 export default BodyImageText;
