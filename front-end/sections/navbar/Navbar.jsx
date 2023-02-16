@@ -8,7 +8,7 @@ const mobile__logo__fileAWS =
   "https://monte-assets.s3.amazonaws.com/logo/mobile_logo.webp";
 import Link from "next/link";
 import Image from "next/image";
-const mobileLogo2 = "https://monte-assets.s3.amazonaws.com/logo/image2+copy.png";
+import mobileLogo2 from "https://monte-assets.s3.amazonaws.com/logo/image2+copy.png";
 import "./navbar.css";
 
 function Navbar() {
