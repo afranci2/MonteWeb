@@ -23,11 +23,10 @@ const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 
 const page = () => {
   return (
-    <div>
-      <div>
+    <div className="h-full w-full">
+      <div className="h-full w-full">
         <Navbar />
         <Header
-          container={undefined}
           image={ConocernosHero}
           headerText="Conocernos
 "
@@ -41,6 +40,7 @@ const page = () => {
           subheadingText={
             "EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros"
           }
+          containerheight=""
         />
         <Banner2>
           <ul className="hidden gap-8 text-white text-md font-medium p-8 md:flex text-sm">
@@ -104,9 +104,11 @@ const page = () => {
           classChangeText={undefined}
           buttonColor={undefined}
           buttonLink={undefined}
-          container={undefined}
+          containerheight={undefined}
         ></Header>
-        <CreenciasFundamentales />
+        <div className="h-full w-full">
+          <CreenciasFundamentales />
+        </div>
       </div>{" "}
       <Footer />
     </div>

@@ -33,7 +33,7 @@ const CreenciasFundamentales = () => {
   ];
 
   return (
-    <div>
+    <div className="w-full h-full bg-slate-100">
       <Header
         children={undefined}
         image={CreenciasImage}
@@ -45,32 +45,35 @@ const CreenciasFundamentales = () => {
         contentPosition={undefined}
         video={undefined}
         subheadingText={undefined}
-        container={undefined}
+        containerheight="h-72"
       />
+      <div className="py-8">
       <ul>
         {Creencias.map((section) => {
           return (
-            <div className="total bg-slate-100">
-            <div className="flex w-10/12 text-left p-8 m-auto ">
-              <li className="flex w-1/2 gap-12" key={section.id}>
-                <div className="w-1 contain">
-                  <div className=" bg-red-300 py-12">{section.image}</div>
-                  <p className="font-bold text-lg ">{section.title}</p>
-                  <p className="max-w-24">{section.subheading}</p>
-                </div>
-              </li>
-            </div>
-    
+            <div className="total ">
+              <div className="flex w-10/12 text-left p-8 m-auto ">
+                <li className="flex w-1/2 gap-12" key={section.id}>
+                  <div className="w-1 contain">
+                    <div className=" bg-red-300 py-12">{section.image}</div>
+                    <p className="font-bold text-lg ">{section.title}</p>
+                    <p className="max-w-24">{section.subheading}</p>
+                  </div>
+                </li>
+              </div>
             </div>
           );
         })}
       </ul>
-      <MainButton
-        link="/conocernos/creencias"
-        text="Leer mas"
-        buttonPosition="center"
-        buttonColor="bg-red-800 text-white py-4"
-      />
+      <div className="p-8">
+        <MainButton
+          link="/conocernos/creencias"
+          text="Leer mas"
+          buttonPosition="center"
+          buttonColor="bg-red-800 text-white"
+        />
+      </div>
+      </div>
     </div>
   );
 };

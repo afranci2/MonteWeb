@@ -15,10 +15,10 @@ function Header({
   contentPosition,
   video,
   subheadingText,
-  container
+  containerheight
 }) {
   return (
-    <div className={`overflow-hidden wrapper relative flex justify-center h-screen items-center z-40 text-white ${container ? container : ""}` }>
+    <div className={`${containerheight ? `${containerheight}` : "h-screen"} overflow-hidden wrapper relative flex justify-center items-center z-40 text-white`}>
       <div
         className={`${
           classChangeText
