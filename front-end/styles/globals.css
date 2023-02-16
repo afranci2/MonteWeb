@@ -13,6 +13,7 @@
   box-sizing: border-box;
   font-family: "Mona Sans", Poppins;
   scroll-behavior: smooth;
+  scale: .95;
 }
 
 .gradient-01 {
