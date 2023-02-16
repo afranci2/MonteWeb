@@ -18,7 +18,8 @@ const Tab = (props) => {
             alt="123"
             className={`h-full object-cover object-top ${props.imagePosition}`}
             src={props.image}
-
+            width={2000}
+            height={2000}
           />
         ) : null}
         {props.imagePosition2 ? (
@@ -26,6 +27,8 @@ const Tab = (props) => {
             alt="hey"
             className={`h-full object-cover object-top ${props.imagePosition2}`}
             src={props.image}
+            width={2000}
+            height={2000}
           />
         ) : null}
 
