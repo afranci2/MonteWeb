@@ -13,8 +13,8 @@ import TextLeftTab from "../../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../../components/tab/textRightTab/TextRightTab";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 import Link from "next/link";
-import ConocernosHero from '../../public/assets/img/pastora.jpg';
-import Javier from "../../public/assets/img/javier.jpg";
+const ConocernosHero = 'https://monte-assets.s3.amazonaws.com/img/pastora.jpg';
+const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
 import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
 
 const HeroVideo =
