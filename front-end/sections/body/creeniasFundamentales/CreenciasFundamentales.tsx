@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "../../header/Header";
-import CreenciasImage from "../../../public/assets/img/bible.jpg";
+const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 import MainButton from "../../../components/mainButton/MainButton";
-import Image from "next/image";
 import { BsSun } from "react-icons/bs";
 import { BiBible } from "react-icons/bi";
 import { TbCross } from "react-icons/tb";

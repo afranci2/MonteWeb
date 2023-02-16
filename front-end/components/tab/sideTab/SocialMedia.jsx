@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillFacebook, AiFillYoutube } from "react-icons/ai";
-import Instagram from "../../../public/assets/icons/icons8-instagram-240.png";
+const Instagram = "https://monte-assets.s3.amazonaws.com/icon/icons8-instagram-240.png";
 import SocialMediaTab from "./SocialMediaTab";
 import Image from "next/image";
 

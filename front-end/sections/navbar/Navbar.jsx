@@ -3,12 +3,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { RiMenu2Line, RiCloseLine, RiSearchLine } from "react-icons/ri";
 const logo = "https://monte-assets.s3.amazonaws.com/logo/new-logo.png";
-import otherlogo from "../../public/assets/logo/image2.png";
+const otherlogo = "https://monte-assets.s3.amazonaws.com/logo/image2.png";
 const mobile__logo__fileAWS =
   "https://monte-assets.s3.amazonaws.com/logo/mobile_logo.webp";
 import Link from "next/link";
 import Image from "next/image";
-import mobileLogo2 from "../../public/assets/logo/image2 copy.png";
+import mobileLogo2 from "https://monte-assets.s3.amazonaws.com/logo/image2+copy.png";
 import "./navbar.css";
 
 function Navbar() {

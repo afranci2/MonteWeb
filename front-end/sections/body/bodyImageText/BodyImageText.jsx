@@ -1,6 +1,5 @@
 import React from "react";
 import { TertiaryButton } from "../../../components";
-import PropTypes from "prop-types";
 import Image from "next/image";
 
 const BodyImageText = (props) => {

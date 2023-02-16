@@ -19,11 +19,11 @@ const EventosCardImage ="https://monte-assets.s3.amazonaws.com/img/nimsy.jpg";
 import Link from 'next/link'
 import BodySectionImageLeft from '../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft'
 import BodySectionImageRight from '../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight'
-import AnniversaryPicture from '../public/assets/img/50Anni.F4.png'
+const AnniversaryPicture = 'https://monte-assets.s3.amazonaws.com/img/50Anni.F4.png'
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
-import Michael from "../public/assets/img/section2.jpg";
+const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 
 const page = () => {
   return (
