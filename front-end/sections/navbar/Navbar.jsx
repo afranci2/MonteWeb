@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { RiMenu2Line, RiCloseLine, RiSearchLine } from "react-icons/ri";
-const logo = "https://monte-assets.s3.amazonaws.com/logo/new-logo.png";
+const logo2 = "https://monte-assets.s3.amazonaws.com/logo/new-logo.png";
 const otherlogo = "https://monte-assets.s3.amazonaws.com/logo/image2.png";
 const mobile__logo__fileAWS =
   "https://monte-assets.s3.amazonaws.com/logo/mobile_logo.webp";
@@ -53,7 +53,7 @@ function Navbar() {
                 <Image
                   width={200}
                   height={1000}
-                  src={showDiv ? logo : otherlogo}
+                  src={showDiv ? logo2 : otherlogo}
                   alt="logo"
                 />
               </div>
