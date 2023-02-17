@@ -15,7 +15,7 @@ Link to project: www.elmontesinai.org
 
 ## Tech Stack
 
-**Client:** HTML, CSS, Javascript, React, Redux, ReactRouter, TailwindCSS, POSTCSS
+**Client:** HTML, CSS, Javascript, TypeScript, React, NextJS, TailwindCSS, POSTCSS
 
 **Server:** Javascript, Node, Express
 
