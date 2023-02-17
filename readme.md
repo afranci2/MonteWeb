@@ -1,7 +1,3 @@
-TODO: ADD TESTIMONIAL TO CONOCERNOS AND HOME
-ADD BANNER TO HOME PAGE TO SIGN UP FOR VOLUNTEER OR EVENTOS OR GO TO LIVE ANYTIME WE ARE LIVE
-
-
 # Movimiento Pentecostal Monte Sinai Website
 
 Website for non profit religious organizations for visitors to track different churches around the globe, learn about the organization, watch sermons and live streams, donate, and more. 
