@@ -17,6 +17,7 @@ const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
 import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
+import Lideres from '../../sections/lideres/Lideres'
 
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
@@ -123,7 +124,8 @@ const page = () => {
         <div className="h-full w-full">
           <CreenciasFundamentales />
         </div>
-      </div>{" "}
+        <Lideres/>
+      </div>
       <Footer />
     </div>
   );

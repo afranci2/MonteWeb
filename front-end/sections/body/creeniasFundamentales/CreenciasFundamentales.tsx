@@ -54,7 +54,7 @@ const CreenciasFundamentales = () => {
           link="/conocernos/creencias"
           text="Leer mas"
           buttonPosition="center"
-          buttonColor="bg-red-800 text-white"
+          buttonColor="bg-yellow-400 text-black"
         />
       </div>
       </div>

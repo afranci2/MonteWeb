@@ -12,7 +12,7 @@ import SideTab from "../components/tab/sideTab/SideTab";
 import TextLeftTab from "../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../components/tab/textRightTab/TextRightTab";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
-const ConocernosCardImage = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
+const ConocernosCardImage = "https://monte-assets.s3.amazonaws.com/img/pastor1.jpg";
 const IglesiasCardImage = "https://monte-assets.s3.amazonaws.com/img/CHURCH-BUILDING.jpg";
 const UneteCardImage = "https://monte-assets.s3.amazonaws.com/img/izzy.jpg";
 const EventosCardImage ="https://monte-assets.s3.amazonaws.com/img/nimsy.jpg";
