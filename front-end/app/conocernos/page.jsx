@@ -13,7 +13,8 @@ import TextLeftTab from "../../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../../components/tab/textRightTab/TextRightTab";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 import Link from "next/link";
-const ConocernosHero = 'https://monte-assets.s3.amazonaws.com/img/pastora.jpg';
+const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
+const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
 import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
 
@@ -40,10 +41,9 @@ const page = () => {
           subheadingText={
             "EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros"
           }
-          containerheight=""
         />
-        <Banner2>
-          <ul className="hidden gap-8 text-white text-md font-medium p-8 md:flex text-sm">
+        <Banner2 position={"bg-slate-100"}>
+          <ul className="hidden gap-8 text-black text-md font-medium p-8 md:flex text-sm">
             {/*use dropdown component             <Dropdown />
              */}
             <Link href={"/"}>
@@ -82,6 +82,7 @@ const page = () => {
           }
           buttonText={"fewfe"}
         ></BodySectionImageLeft>
+
         <Header
           video={ConocernosVideo}
           contentPosition="center"
@@ -104,8 +105,21 @@ const page = () => {
           classChangeText={undefined}
           buttonColor={undefined}
           buttonLink={undefined}
-          containerheight={undefined}
+          containerheight={"h-screen"}
         ></Header>
+        <Header
+          children={undefined}
+          image={CreenciasImage}
+          headerText={"Creencias Fundamentales"}
+          classChangeText={undefined}
+          buttonColor={undefined}
+          buttonLink={undefined}
+          buttonText={undefined}
+          contentPosition={undefined}
+          video={undefined}
+          subheadingText={undefined}
+          containerheight={"h-96"}
+        />
         <div className="h-full w-full">
           <CreenciasFundamentales />
         </div>

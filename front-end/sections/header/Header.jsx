@@ -15,55 +15,58 @@ function Header({
   contentPosition,
   video,
   subheadingText,
-  containerheight
+  containerheight,
 }) {
+
   return (
-    <div className={`${containerheight ? `${containerheight}` : "h-screen"} overflow-hidden wrapper relative flex justify-center items-center z-40 text-white`}>
       <div
-        className={`${
-          classChangeText
-            ? `${classChangeText}`
-            : "w-11/12 z-50 absolute text-center justify-center m-auto md:w-1/2 gap-4 flex flex-col"
-        } ${!headerText && "hidden"} `}
+      className={`overflow-hidden wrapper relative flex justify-center items-center z-40 text-white ${containerheight ? containerheight : "h-screen"}`}
       >
-        <div className="z-40 flex flex-col gap-2">
-          <p className="font-medium font-serif text-6xl">{headerText}</p>
-          <div
-            className={`${
-              contentPosition === "center"
-            } ? "m-auto" : " sm: w-3/4" `}
-          >
-            {subheadingText}
+        <div
+          className={`${
+            classChangeText
+              ? `${classChangeText}`
+              : "w-11/12 z-50 absolute text-center justify-center m-auto md:w-1/2 gap-4 flex flex-col"
+          } ${!headerText && "hidden"} `}
+        >
+          <div className="z-40 flex flex-col gap-2">
+            <p className="font-medium font-serif text-6xl">{headerText}</p>
+            <div
+              className={`${
+                contentPosition === "center"
+              } ? "m-auto" : " sm: w-3/4" `}
+            >
+              {subheadingText}
+            </div>
+          </div>
+          <div className={buttonText ? "z-40 button flex py-6" : "hidden"}>
+            <Button
+              buttonColor={buttonColor ? `${buttonColor}` : "bg-red-800"}
+              link={buttonLink}
+              text={buttonText}
+              buttonPosition={contentPosition}
+            ></Button>
           </div>
         </div>
-        <div className={buttonText ? "z-40 button flex py-6" : "hidden"}>
-          <Button
-            buttonColor={buttonColor ? `${buttonColor}` : "bg-red-800"}
-            link={buttonLink}
-            text={buttonText}
-            buttonPosition={contentPosition}
-          ></Button>
+        {children}
+        <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
+        <div className={image ? "object-cover" : "hidden"}>
+          <div className="contain">
+            {image ? (
+              <Image
+                className="min-h-screen object-cover"
+                src={image}
+                alt="some"
+                width={10000}
+                height={10000}
+              />
+            ) : null}
+          </div>
+        </div>
+        <div className={video ? "w-full h-full" : "hidden"}>
+          <Video video={video} priority />
         </div>
       </div>
-      {children}
-      <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
-      <div className={image ? "object-cover" : "hidden"}>
-        <div className="contain">
-          {image ? (
-            <Image
-              className="min-h-screen object-cover"
-              src={image}
-              alt="some"
-              width={10000}
-              height={10000}
-            />
-          ) : null}
-        </div>
-      </div>
-      <div className={video ? "w-full h-full" : "hidden"}>
-        <Video video={video} priority />
-      </div>
-    </div>
   );
 }
 

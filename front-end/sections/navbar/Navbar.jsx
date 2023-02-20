@@ -50,7 +50,6 @@ function Navbar() {
             <Link href={"/"}>
               <div className="desktop-logo w-52 align-center top-2.5 absolute flex">
                 <img
-                  fill
                   src={showDiv ? logo2 : otherlogo}
                   alt="logo"
                 />

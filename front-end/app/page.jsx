@@ -198,7 +198,7 @@ const page = () => {
         contentPosition="center"
         headerText="Un Genuino Llamado de Dios"
         subheadingText={
-          <div>
+          <div className="">
             <p>
               A lo largo de este movimiento, el fuego seguirá ardiendo en cada
               corazón como en el día de Pentecostés.
@@ -213,7 +213,7 @@ const page = () => {
       ></Header>
       <DefaultBody>
         <Banner2 position="top-0">
-          <div className="gap-12 text-white">
+          <div className="p-6 gap-12 text-white">
             <p className="font-medium font-serif text-4xl">Eventos</p>
             <Link href="/eventos">
               <p className="">Ver ahora</p>
