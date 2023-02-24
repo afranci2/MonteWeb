@@ -9,6 +9,7 @@ Link to live app: https://www.monte-web.vercel.app/
 ![App Screenshot](https://monte-assets.s3.amazonaws.com/project-images/Monte/Screenshot+2023-02-14+at+6.46.05+PM.png)
 
 ![App Screenshot](https://monte-assets.s3.amazonaws.com/project-images/Monte/Screenshot+2023-02-14+at+6.46.23+PM.png)
+<img width="1433" alt="Screenshot 2023-02-14 at 6 46 23 PM" src="https://user-images.githubusercontent.com/108776240/221260488-0515a55a-72ce-4448-8529-fd221b9ca96f.png">
 
 
 
