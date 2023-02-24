@@ -11,9 +11,6 @@ Link to live app: https://www.monte-web.vercel.app/
 ![App Screenshot](https://monte-assets.s3.amazonaws.com/project-images/Monte/Screenshot+2023-02-14+at+6.46.23+PM.png)
 <img width="1433" alt="Screenshot 2023-02-14 at 6 46 23 PM" src="https://user-images.githubusercontent.com/108776240/221260488-0515a55a-72ce-4448-8529-fd221b9ca96f.png">
 
-<img width="501" alt="Screenshot 2023-01-18 at 1 52 40 PM" src="https://user-images.githubusercontent.com/108776240/221260583-acb1eee2-5e3c-4b59-89d5-c57a53b322cf.png">
-
-
 ## Tech Stack
 
 **Client:** HTML, CSS, Javascript, TypeScript, React, NextJS, TailwindCSS, POSTCSS
