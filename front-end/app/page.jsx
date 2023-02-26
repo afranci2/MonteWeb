@@ -118,8 +118,8 @@ const page = () => {
           </DefaultBody>
         </div>
         <div className="DESKTOP hidden md:flex">
-          <div className="hello gap-12 w-10/12 m-auto max-w-screen">
-            <div className="LEFT-SMALL-TABS  flex flex-col gap-4">
+          <div className="flex gap-12 w-10/12 m-auto max-w-screen">
+            <div className="LEFT-SMALL-TABS max-w-[200px] w-1/4 flex flex-col gap-4">
               <SideTab headerText="Siguenos">
                 <div className="content">
                   <SocialMedia />
@@ -152,7 +152,7 @@ const page = () => {
                 buttonLink="./"
               />
             </div>
-            <div className="RIGHT-MAIN-TABS  w-full maintabs">
+            <div className="RIGHT-MAIN-TABS w-full maintabs">
               <TextLeftTab
                 headerText="Conocernos"
                 subheadingText="Ver nuestra mision, lideres, historia, y mas
