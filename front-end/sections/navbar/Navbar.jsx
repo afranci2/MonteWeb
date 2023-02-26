@@ -56,7 +56,7 @@ function Navbar() {
               </div>
             </Link>
           </div>
-          <ul className="desktop-links m-auto pt-1 text-xs tracking-wide  hidden md:flex items-center gap-6">
+          <ul className="desktop-links font-bold m-auto pt-1 text-xs tracking-wide  hidden md:flex items-center gap-6">
             <li key={1}>
               <Link href={"/conocernos"}>CONOCERNOS</Link>
             </li>

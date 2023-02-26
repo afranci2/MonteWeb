@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../../sections/navbar/Navbar";
 import Header from "../../sections/header/Header";
 import BodySectionImageLeft from "../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
+import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
+
 import Banner from "../../components/banner/Banner";
 import Footer from "../../sections/footer/Footer";
 import Banner2 from "../../components/banner/Banner2";
@@ -126,6 +128,19 @@ const page = () => {
         </div>
         <Lideres/>
       </div>
+      <section>
+      <BodySectionImageRight
+          image={Javier}
+          headingText="50 anos de historia"
+          subheadingText={
+            "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
+          }
+          buttonColor="bg-yellow-400"
+          buttonText={"Historia"}
+          buttonLink="/historia"
+        ></BodySectionImageRight>
+
+      </section>
       <Footer />
     </div>
   );

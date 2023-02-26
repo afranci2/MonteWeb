@@ -3,7 +3,7 @@ import Tab from "../Tab";
 
 const LideresTab = (props) => {
   return (
-    <div className="w-5/6 m-auto">
+    <div className="w-5/6 ">
       <Tab className="flex flex-col ">      
         <img src={props.image} alt="dfsf" />
       </Tab>

@@ -30,33 +30,31 @@ const CreenciasFundamentales = () => {
   ];
 
   return (
-    <div className="w-full h-full bg-slate-100">
-      <div className="py-8">
-      <ul>
-        {Creencias.map((section) => {
-          return (
-            <div className="total ">
-              <div className="flex w-10/12 text-left p-8 m-auto ">
-                <li className="flex w-1/2 gap-12" key={section.index}>
-                  <div className="w-1 contain">
-                    <div className=" bg-red-300 py-12">{section.image}</div>
+    <div className="w-full flex h-full bg-slate-100">
+      <div className="m-auto w-11/12 p-16 flex flex-col">
+        <ul className="p-12 gap-8 m-auto flex flex-col md:flex-row">
+          {Creencias.map((section) => {
+            return (
+              <div className="">
+                <li className="" key={section.index}>
+                  <div className="">
+                    <div className="py-4">{section.image}</div>
                     <p className="font-bold text-lg ">{section.title}</p>
                     <p className="max-w-24">{section.subheading}</p>
                   </div>
                 </li>
               </div>
-            </div>
-          );
-        })}
-      </ul>
-      <div className="p-8">
-        <MainButton
-          link="/conocernos/creencias"
-          text="Leer mas"
-          buttonPosition="center"
-          buttonColor="bg-yellow-400 text-black"
-        />
-      </div>
+            );
+          })}
+        </ul>
+        <div className="p-8">
+          <MainButton
+            link="/conocernos/creencias"
+            text="Leer mas"
+            buttonPosition="center"
+            buttonColor="bg-yellow-400 text-black"
+          />
+        </div>
       </div>
     </div>
   );

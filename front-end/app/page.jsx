@@ -31,7 +31,7 @@ const page = () => {
       <Navbar />
       <Header video={HeroVideo}>
         <img
-          className="h-2/6 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[22rem] md:w-auto"
+          className="h-1/4 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[16rem] md:w-auto"
           src={Logo}
           alt="he"
         />
