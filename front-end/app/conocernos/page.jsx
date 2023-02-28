@@ -19,7 +19,7 @@ const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
 import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
-import Lideres from '../../sections/lideres/Lideres'
+import Lideres from "../../sections/lideres/Lideres";
 
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
@@ -30,21 +30,23 @@ const page = () => {
     <div className="h-full w-full">
       <div className="h-full w-full">
         <Navbar />
-        <Header
-          image={ConocernosHero}
-          headerText="Conocernos
+        <div className="">
+          <Header
+            image={ConocernosHero}
+            headerText="Conocernos
 "
-          children={undefined}
-          classChangeText={undefined}
-          buttonColor={undefined}
-          buttonLink={undefined}
-          buttonText={undefined}
-          contentPosition={undefined}
-          video={undefined}
-          subheadingText={
-            "EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros"
-          }
-        />
+            children={undefined}
+            classChangeText={undefined}
+            buttonColor={undefined}
+            buttonLink={undefined}
+            buttonText={undefined}
+            contentPosition={undefined}
+            video={undefined}
+            subheadingText={
+              "EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros"
+            }
+          />
+        </div>
         <Banner2 position={"bg-slate-100"}>
           <ul className="hidden gap-8 text-black text-md font-medium p-8 md:flex text-sm">
             {/*use dropdown component             <Dropdown />
@@ -126,10 +128,12 @@ const page = () => {
         <div className="h-full w-full">
           <CreenciasFundamentales />
         </div>
-        <Lideres/>
+        <section className=" ">
+          <Lideres />
+        </section>
       </div>
       <section>
-      <BodySectionImageRight
+        <BodySectionImageRight
           image={Javier}
           headingText="50 anos de historia"
           subheadingText={
@@ -139,7 +143,6 @@ const page = () => {
           buttonText={"Historia"}
           buttonLink="/historia"
         ></BodySectionImageRight>
-
       </section>
       <Footer />
     </div>

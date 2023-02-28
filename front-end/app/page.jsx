@@ -31,7 +31,7 @@ const page = () => {
       <Navbar />
       <Header video={HeroVideo}>
         <img
-          className="h-1/4 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[16rem] md:w-auto"
+          className="h-1/4 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[18rem] md:w-auto"
           src={Logo}
           alt="he"
         />
@@ -118,7 +118,7 @@ const page = () => {
           </DefaultBody>
         </div>
         <div className="DESKTOP hidden md:flex">
-          <div className="flex gap-12 w-10/12 m-auto max-w-screen">
+          <div className="flex py-24 gap-12 w-10/12 m-auto max-w-screen">
             <div className="LEFT-SMALL-TABS max-w-[200px] w-1/4 flex flex-col gap-4">
               <SideTab headerText="Siguenos">
                 <div className="content">
@@ -213,7 +213,7 @@ const page = () => {
       ></Header>
       <DefaultBody>
         <Banner2 position="top-0">
-          <div className="p-6 gap-12 text-white">
+          <div className="p-12 gap-12 text-black">
             <p className="font-medium font-serif text-4xl">Eventos</p>
             <Link href="/eventos">
               <p className="">Ver ahora</p>
@@ -237,6 +237,8 @@ const page = () => {
           image={AnniversaryPicture}
         />
       </DefaultBody>
+
+
       <Footer/>
     </div>
   );
