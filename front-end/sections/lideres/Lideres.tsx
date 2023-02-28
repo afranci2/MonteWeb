@@ -1,13 +1,35 @@
 import React from "react";
 import LideresTab from "../../components/tab/liderestab/LideresTab";
 const Pastor = "https://monte-assets.s3.amazonaws.com/img/pastor3.jpg";
-const Becky = 'https://monte-assets.s3.amazonaws.com/img/becky.jpgg'
+const Becky = "https://monte-assets.s3.amazonaws.com/img/becky.jpg";
 import { MainButton } from "../../components";
 import Header from "../header/Header";
 
 const Lideres = () => {
+  const lidereslist = [
+    {
+      image: Pastor,
+      heading: "Rev. Samuel Francisco",
+      subheading: "Presidente",
+    },
+    {
+      image: Pastor,
+      heading: "Rev. Isabel Francisco",
+      subheading: "Vice Presidente",
+    },
+    {
+      image: Becky,
+      heading: "Becky Ramos",
+      subheading: "Secretaria",
+    },
+    {
+      image: Pastor,
+      heading: "Dr. Anthony Francisco",
+      subheading: "Tesorero",
+    },
+  ];
   return (
-    <div className="py-8">
+    <div className="py-8 my-8">
       <div className="w-9/12 p-12 m-auto">
         <p className="font-serif text-4xl">Nuestros Lideres</p>
         <p>
@@ -16,26 +38,13 @@ const Lideres = () => {
         </p>
       </div>
       <div className="md:flex pb-8 gap-6 w-10/12 m-auto">
-        <LideresTab
-          image={Pastor}
-          heading="Rev. Samuel Francisco"
-          subheading="Presidente"
-        />
-        <LideresTab className=""
-          image={Pastor}
-          heading="Isabel Francisco"
-          subheading="Vice Presidente"
-        />
-        <LideresTab
-          image={Becky}
-          heading="Becky Ramos"
-          subheading="Presidente"
-        />
-        <LideresTab
-          image={Pastor}
-          heading="Dr. Anthony Francisco"
-          subheading="Presidente"
-        />
+        {lidereslist.map((lider) => {
+          return <LideresTab
+            image={lider.image}
+            heading={lider.heading}
+            subheading={lider.subheading}
+          ></LideresTab>;
+        })}
       </div>
       <div className="text-white flex justify-center p-12">
         <MainButton text="Ver Mas" />
