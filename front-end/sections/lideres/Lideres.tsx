@@ -39,7 +39,7 @@ const Lideres = () => {
     },
   ];
   return (
-    <div className="py-12">
+    <div className="py-8">
       <div className="w-10/12 mx-auto py-8 ">
         <p className="font-serif text-4xl">Nuestros Lideres</p>
         <p className="">
