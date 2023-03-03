@@ -6,31 +6,32 @@ const Pastora = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const Anthony = "https://monte-assets.s3.amazonaws.com/img/anthony.jpg";
 import { MainButton } from "../../components";
 import Header from "../header/Header";
+import Image from "next/image";
 
 const Lideres = () => {
   const lidereslist = [
     {
-      id:0,
+      id: 0,
       image: Pastor,
       heading: "Rev. Samuel Francisco",
       subheading: "Presidente",
     },
     {
-      id:1,
+      id: 1,
 
       image: Pastora,
       heading: "Rev. Isabel Francisco",
       subheading: "Vice Presidente",
     },
     {
-      id:2,
+      id: 2,
 
       image: Becky,
-      heading: "Becky Ramos",
+      heading: "Rebecca Ramos",
       subheading: "Secretaria",
     },
     {
-      id:3,
+      id: 3,
 
       image: Anthony,
       heading: "Dr. Anthony Francisco",
@@ -38,33 +39,32 @@ const Lideres = () => {
     },
   ];
   return (
-    <div className="py-24 ">
-      <div className="w-10/12 m-auto">
+    <div className="py-12">
+      <div className="w-10/12 mx-auto py-8 ">
         <p className="font-serif text-4xl">Nuestros Lideres</p>
         <p className="">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <div className="text-white py-8 my-8">
-          <MainButton text="Ver Mas" />
-        </div>
       </div>
-      <div className="w-11/12 flex py-8 gap-6 m-auto">
+      <div className="flex flex-col justify-center mx-auto w-10/12 md:flex md:flex-row gap-6 ">
         {lidereslist.map((lider) => {
           return (
-            < div className="" key={lider.id}>
-              <img
-                className="rounded-lg object-cover h-full"
-                src={lider.image}
-              />
-              <div className="py-4">
-              <p className="font-bold"> {lider.heading}   </p>
-              <p className="text-sm"> {lider.subheading} </p>
-</div>
+            <div className="flex flex-col w-10/12 mx-auto" key={lider.id}>
+              <div className="h-full flex flex-1 object-cover w-auto rounded-lg overflow-hidden">
+                <img className="object-cover" src={lider.image} alt="ewf" />
+              </div>
+              <div className="py-4 text-center md:text-left">
+                <p className="font-bold text-lg"> {lider.heading} </p>
+                <p className="text-sm"> {lider.subheading} </p>
+              </div>
             </div>
           );
         })}
       </div>
+      <div className="text-white flex justify-center py-8 ">
+          <MainButton text="Ver Mas" />
+        </div>
     </div>
   );
 };

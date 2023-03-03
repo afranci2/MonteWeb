@@ -128,9 +128,7 @@ const page = () => {
         <div className="h-full w-full">
           <CreenciasFundamentales />
         </div>
-        <section className=" ">
           <Lideres />
-        </section>
       </div>
       <section>
         <BodySectionImageRight
