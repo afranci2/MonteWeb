@@ -34,7 +34,7 @@ function Navbar() {
 
   const backgroundColor =
     scrollY > 50
-      ? " font-semibold bg-white text-black transition ease-in  shadow-sm"
+      ? " font-semibold bg-white text-black transition ease-in  shadow-xl"
       : "font-medium navbar text-white";
   const icon = scrollY > 50 ? " 000" : "fff";
 
@@ -56,21 +56,21 @@ function Navbar() {
               </div>
             </Link>
           </div>
-          <ul className="desktop-links font-semibold m-auto pt-1 text-xs tracking-wide  hidden md:flex items-center gap-6">
+          <ul className="desktop-links font-medium m-auto pt-1 text-xs tracking-wide  hidden md:flex items-center gap-6">
             <li key={1}>
-              <Link href={"/conocernos"}>CONOCERNOS</Link>
+              <Link href={"/conocernos"}>Conocernos</Link>
             </li>
             <li key={2}>
-              <Link href={"/iglesias"}>IGLESIAS</Link>
+              <Link href={"/iglesias"}>Iglesias</Link>
             </li>
             <li key={3}>
-              <Link href={"/unete"}>UNETE</Link>
+              <Link href={"/unete"}>Unete</Link>
             </li>
             <li key={4}>
-              <Link href={"/eventos"}>EVENTOS</Link>
+              <Link href={"/eventos"}>Eventos</Link>
             </li>
             <li key={5}>
-              <Link href={"/donar"}>DONAR</Link>
+              <Link href={"/donar"}>Donar</Link>
             </li>
           </ul>
           <div>
