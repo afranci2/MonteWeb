@@ -16,7 +16,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["monte-assets.s3.amazonaws.com"],
+    domains: ["monte-assets.s3.amazonaws.com", "www.google.com", "cheery-mandazi-5eb67f.netlify.app"],
   },
 };
 

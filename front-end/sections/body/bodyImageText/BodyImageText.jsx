@@ -19,7 +19,7 @@ const BodyImageText = (props) => {
         )}
 
         <div className="text-center align-center mt-4 md:m-auto flex flex-col gap-4 md:text-left">
-          <p className="text-3xl ">{props.headingText}</p>
+          <p className="text-3xl font-bold ">{props.headingText}</p>
           <p className="text-sm">{props.subheadingText}</p>
           <div className="py-2 pb-10 flex justify-center md:justify-start">
             {props.buttonLink && (
