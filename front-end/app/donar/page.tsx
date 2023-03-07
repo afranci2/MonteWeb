@@ -2,11 +2,11 @@ import React from "react";
 import Navbar from "../../sections/navbar/Navbar";
 import Header from "../../sections/header/Header";
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
-import TithelyGiving from '../../sections/body/giving/Giving'
-import StripeGiving from '../../sections/body/giving/Stripegiving'
-const HeaderImage = "https://monte-assets.s3.amazonaws.com/img/donar.jpg"
-const Computer = "https://monte-assets.s3.amazonaws.com/img/macbook+whilte+sp.png"
-
+import TithelyGiving from "../../sections/body/giving/Giving";
+import StripeGiving from "../../sections/body/giving/Stripegiving";
+const HeaderImage = "https://monte-assets.s3.amazonaws.com/img/donar.jpg";
+const Computer =
+  "https://monte-assets.s3.amazonaws.com/img/macbook+whilte+sp.png";
 
 const page = () => {
   return (
@@ -19,7 +19,12 @@ const page = () => {
         buttonLink={"/donar"}
         buttonText={"Dar Ahora"}
         contentPosition={"center"}
-        subheadingText={"lore wfrwf"} children={undefined} classChangeText={undefined} video={undefined} containerheight={undefined}      />
+        subheadingText={"lore wfrwf"}
+        children={undefined}
+        classChangeText={undefined}
+        video={undefined}
+        containerheight={undefined}
+      />
       <BodySectionImageRight
         image={Computer}
         headingText={"Donar de Manera Facil"}
@@ -27,9 +32,8 @@ const page = () => {
           "Sencillo y seguro. Haga un solo obsequio o programe donaciones recurrentes utilizando su cuenta corriente, tarjeta de debito o credito."
         }
       />
-      <TithelyGiving/>
-      <StripeGiving/>
-
+      <TithelyGiving />
+      <StripeGiving />
     </div>
   );
 };

@@ -9,8 +9,8 @@ const Googlestorespanish =
   "https://monte-assets.s3.amazonaws.com/img/Google_Play_Store_badge_FR.svg.png";
 const Giving = () => {
   return (
-    <div className="bg-black relative w-full py-12 mt-8 flex flex-col ">
-      <div className="flex flex-col mx-auto justify-center align-center">
+    <div className=" bg-slate-200 w-full py-12 mt-8 flex flex-col ">
+      <div className="flex  flex-col mx-auto justify-center align-center">
         <p className=" text-center font-regular">Dar Usando</p>
 
         <Image
@@ -20,24 +20,27 @@ const Giving = () => {
           alt="ewrf"
           src={Logo}
         />
-        <p className="py-8 text-center font-regular">
+        <p className="py-8 text-center font-regular text-xs">
           Nota: Tithe.ly se lleva un porcentaje de cada donación
         </p>
-        <div className="flex m-auto justify-center w-full">
+        <div className="flex m-auto justify-center w-full pb-8">
           <TertiaryButton
             text={"Dar Ahora"}
             buttonColor={"bg-yellow-400"}
             buttonLink={"https://www.efewf.com"}
           />
         </div>
-        <div className="flex p-12">
+        <div className="flex gap-4 p-12">
+          <a href="https://www.facebook.com">
             <Image
               className="flex m-auto "
-              width={125}
+              width={120}
               height={100}
               alt="ewrf"
               src={Appstorespanish}
             />
+          </a>
+          <a href="https://www.facebook.com">
             <Image
               className=" m-auto flex justify-between"
               width={140}
@@ -45,7 +48,11 @@ const Giving = () => {
               alt="ewrf"
               src={Googlestorespanish}
             />
+          </a>
         </div>
+        <p className="font-centerm m-auto">
+          Busca: Iglesia Pentecostal Monte Sinai
+        </p>
       </div>
     </div>
   );
