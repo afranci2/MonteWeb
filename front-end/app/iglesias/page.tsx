@@ -21,7 +21,7 @@ export default function page() {
       <p>Some</p>
       {churchesInfo.map((church) => (
         <IglesiasCard
-          name={church.name
+          name={church.name}
           location={church.location}
           description={church.description}
         />
