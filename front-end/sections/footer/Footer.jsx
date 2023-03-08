@@ -52,9 +52,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="md:flex px-8 gap-8 desktop-links sm: hidden">
-          <ul className="flex flex-col space-y-2 font-semibold">
+          <ul className="flex flex-col space-y-2 ">
             <li key={1}>
-              <Link href="/conocernos">Conocernos</Link>
+              <Link className=" font-semibold" href="/conocernos">Conocernos</Link>
             </li>
             <li key={2}>
               <Link href="/lideres">Lideres</Link>
@@ -67,9 +67,9 @@ const Footer = () => {
             </li>
           </ul>
 
-          <ul className="flex flex-col space-y-2 font-semibold">
+          <ul className="flex flex-col space-y-2">
             <li key={1}>
-              <Link href="/unete">Unete</Link>
+              <Link className=" font-semibold" href="/unete">Unete</Link>
             </li>
             <li key={2}>
               <Link href="/servir">Servir</Link>
@@ -78,9 +78,9 @@ const Footer = () => {
               <Link href="/medius">Medios</Link>
             </li>
           </ul>
-          <ul className="flex flex-col space-y-2 font-semibold">
+          <ul className="flex flex-col space-y-2">
             <li key={1}>
-              <Link href="/iglesias">Iglesias</Link>
+              <Link className=" font-semibold" href="/iglesias">Iglesias</Link>
             </li>
             <li key={2}>
               <Link href="/">Busca Local</Link>

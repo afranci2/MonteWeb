@@ -3,6 +3,7 @@ import Navbar from "../../sections/navbar/Navbar";
 import Header from "../../sections/header/Header";
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import TithelyGiving from "../../sections/body/giving/Giving";
+import Footer from '../../sections/footer/Footer'
 import StripeGiving from "../../sections/body/giving/Stripegiving";
 const HeaderImage = "https://monte-assets.s3.amazonaws.com/img/donar.jpg";
 const Computer =
@@ -34,6 +35,7 @@ const page = () => {
       />
       <TithelyGiving />
       <StripeGiving />
+      <Footer/>
     </div>
   );
 };
