@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "sections/header/Header.jsx", "app/page.tsx", "app/conocernos/page.jsx", "sections/body/giving/Stripegiving.jsx", "app/donar/page.jsx", "sections/body/giving/Donation.jsx"  ],
+, "sections/header/Header.jsx", "app/page.tsx", "app/conocernos/page.jsx", "sections/body/giving/Stripegiving.jsx", "app/donar/page.jsx", "sections/body/giving/Donation.jsx", "app/iglesias/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

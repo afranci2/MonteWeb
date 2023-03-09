@@ -18,6 +18,9 @@ const nextConfig = {
   images: {
     domains: ["monte-assets.s3.amazonaws.com", "www.google.com", "cheery-mandazi-5eb67f.netlify.app"],
   },
+
+  reactStrictMode: false,
+
 };
 
 module.exports = nextConfig;

@@ -33,6 +33,7 @@ export default function page() {
       <Navbar />
       <IglesiasMapList />
       <IglesiasMapRight />
+      
       <Footer />
     </div>
   );
