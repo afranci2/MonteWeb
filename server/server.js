@@ -1,8 +1,15 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express')
+
+const cors = require('cors');
+const env = require('dotenv').config({ path: './.env' })
+
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
 const app = express();
 const PORT = 8000;
+app.use(cors());
+app.use(express.json()); // to parse JSON data
+app.use(express.urlencoded({ extended: true })); //
 
 let churches = [
     {
@@ -47,7 +54,6 @@ let churches = [
         "email": "info@iglesia.com"
     }]
 
-app.use(cors())
 
 app.get("/", (req, res) => {
     res.send(`<!DOCTYPE html>
@@ -60,9 +66,9 @@ app.get("/", (req, res) => {
             <p>${`Server is now running on port ${PORT}`}</p>
           </body>
         </html>`
-        
-        )
-    
+
+    )
+
 })
 
 app.get("/iglesias", (request, response) => {
@@ -73,11 +79,25 @@ app.get("/admin", (request, response) => {
     response.json()
 })
 
-app.post('/donation', (req, res) => {
-    console.log(req)
-    res.send('Received donation');
-})
+app.post('/create-payment-intent', async (req, res) => {
+    const amount = req.body.amount;
+    console.log(`Received amount of $${amount}`);
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: amount,
+        currency: 'usd',
+        automatic_payment_methods: { enabled: true },
+    })
+    res.send({
+        clientSecret: paymentIntent.client_secret,
+        response: `Received amount of $${amount}`
+    })
+});
 
+app.get('/donation/config', (req, res) => {
+    res.send({
+        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`Server is now running on port ${PORT}`)

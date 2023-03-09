@@ -89,6 +89,22 @@ const page = () => {
         ></BodySectionImageLeft>
 
         <Header
+          children={undefined}
+          image={CreenciasImage}
+          headerText={"Creencias Fundamentales"}
+          classChangeText={undefined}
+          buttonColor={undefined}
+          buttonLink={undefined}
+          buttonText={undefined}
+          contentPosition={undefined}
+          video={undefined}
+          subheadingText={undefined}
+          containerheight={"h-96"}
+        />
+        <div className="h-full w-full">
+          <CreenciasFundamentales />
+        </div>
+        <Header
           video={ConocernosVideo}
           contentPosition="center"
           headerText="Un Mensaje del Presidente"
@@ -112,24 +128,9 @@ const page = () => {
           buttonLink={undefined}
           containerheight={"h-screen"}
         ></Header>
-        <Header
-          children={undefined}
-          image={CreenciasImage}
-          headerText={"Creencias Fundamentales"}
-          classChangeText={undefined}
-          buttonColor={undefined}
-          buttonLink={undefined}
-          buttonText={undefined}
-          contentPosition={undefined}
-          video={undefined}
-          subheadingText={undefined}
-          containerheight={"h-96"}
-        />
-        <div className="h-full w-full">
-          <CreenciasFundamentales />
-        </div>
-          <Lideres />
+        <Lideres />
       </div>
+
       <section>
         <BodySectionImageRight
           image={Javier}
