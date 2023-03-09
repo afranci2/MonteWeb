@@ -1,7 +1,7 @@
 import React from "react";
 import "../public/globals.css";
 import Navbar from "../sections/navbar/Navbar";
-import Footer from '../sections/footer/Footer'
+import Footer from "../sections/footer/Footer";
 import Header from "../sections/header/Header";
 import Banner from "../components/banner/Banner";
 import Banner2 from "../components/banner/Banner2";
@@ -12,14 +12,17 @@ import SideTab from "../components/tab/sideTab/SideTab";
 import TextLeftTab from "../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../components/tab/textRightTab/TextRightTab";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
-const ConocernosCardImage = "https://monte-assets.s3.amazonaws.com/img/pastor1.jpg";
-const IglesiasCardImage = "https://monte-assets.s3.amazonaws.com/img/CHURCH-BUILDING.jpg";
+const ConocernosCardImage =
+  "https://monte-assets.s3.amazonaws.com/img/pastor1.jpg";
+const IglesiasCardImage =
+  "https://monte-assets.s3.amazonaws.com/img/CHURCH-BUILDING.jpg";
 const UneteCardImage = "https://monte-assets.s3.amazonaws.com/img/izzy.jpg";
-const EventosCardImage ="https://monte-assets.s3.amazonaws.com/img/nimsy.jpg";
-import Link from 'next/link'
-import BodySectionImageLeft from '../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft'
-import BodySectionImageRight from '../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight'
-const AnniversaryPicture = 'https://monte-assets.s3.amazonaws.com/img/50Anni.F4.png'
+const EventosCardImage = "https://monte-assets.s3.amazonaws.com/img/nimsy.jpg";
+import Link from "next/link";
+import BodySectionImageLeft from "../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
+import BodySectionImageRight from "../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
+const AnniversaryPicture =
+  "https://monte-assets.s3.amazonaws.com/img/50Anni.F4.png";
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
@@ -119,7 +122,6 @@ const page = () => {
         </div>
         <div className="DESKTOP hidden md:flex">
           <div className="flex p-6 py-12 gap-8 w-10/12 m-auto max-w-screen">
-
             <div className="RIGHT-MAIN-TABS w-full maintabs">
               <TextLeftTab
                 headerText="Conocernos"
@@ -158,7 +160,7 @@ const page = () => {
                 image={EventosCardImage}
               />
             </div>
-            <div className="LEFT-SMALL-TABS max-w-[200px] w-1/4 flex flex-col gap-4">
+            <div className="LEFT-SMALL-TABS max-w-[200px] w-1/4 flex flex-col">
               <SideTab headerText="Siguenos">
                 <div className="content">
                   <SocialMedia />
@@ -239,8 +241,7 @@ const page = () => {
         />
       </DefaultBody>
 
-
-      <Footer/>
+      <Footer />
     </div>
   );
 };

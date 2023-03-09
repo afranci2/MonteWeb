@@ -99,7 +99,7 @@ const page = () => {
           contentPosition={undefined}
           video={undefined}
           subheadingText={undefined}
-          containerheight={"h-96"}
+          containerheight={"h-screen"}
         />
         <div className="h-full w-full">
           <CreenciasFundamentales />

@@ -31,7 +31,7 @@ const CreenciasFundamentales = () => {
 
   return (
     <div className="text-center w-full flex h-full bg-slate-100 md:text-left">
-      <div className="m-auto w-11/12 p-16 flex flex-col">
+      <div className="m-auto w-11/12 p-16 flex flex-col my-16">
         <ul className="p-12 gap-8 m-auto flex flex-col md:flex-row">
           {Creencias.map((section) => {
             return (

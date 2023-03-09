@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../../sections/navbar/Navbar";
+import Footer from "../../sections/navbar/Navbar";
+import IglesiasMapList from "../../sections/body/iglesiasMap/iglesiasListLeft/IglesiasMapListLeft";
+import IglesiasMapRight from "../../sections/body/iglesiasMap/iglesiasMapRight/IglesiasMapRight";
+
 import IglesiasCard from "../../components/IglesiasCard/IglesiasCard";
 
 async function fetchChurch() {
@@ -20,19 +24,16 @@ export default function page() {
     console.log("hey");
     const data = await fetchChurch();
     console.log(data.fact);
-    setFact(data.fact)
+    setFact(data.fact);
   }
   // Fetch the list of churches from the server
 
   return (
     <div>
-      <button
-        onClick={clickHandler}
-        className="bg-red-800 p-8 rounded-lg flex justify-center m-auto align-center"
-      >
-        Hello
-      </button>
-      <p>{fact}</p>
+      <Navbar />
+      <IglesiasMapList />
+      <IglesiasMapRight />
+      <Footer />
     </div>
   );
 }
