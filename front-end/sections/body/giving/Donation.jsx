@@ -73,7 +73,6 @@ function Donation() {
         />
       </form>
       <form>
-        <CardElement />
       </form>{" "}
       <div className="flex m-auto justify-center w-full pb-8">
         <button
