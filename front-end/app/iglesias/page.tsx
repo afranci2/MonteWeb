@@ -1,39 +1,37 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Navbar from "../../sections/navbar/Navbar";
-import Footer from "../../sections/navbar/Navbar";
+import Navbar2 from "../../sections/navbar/Navbar2";
+import Footer from "../../sections/footer/Footer";
 import IglesiasMapList from "../../sections/body/iglesiasMap/iglesiasListLeft/IglesiasMapListLeft";
 import IglesiasMapRight from "../../sections/body/iglesiasMap/iglesiasMapRight/IglesiasMapRight";
+import Map from '../../sections/body/iglesiasMap/Map'
 
 import IglesiasCard from "../../components/IglesiasCard/IglesiasCard";
 
-async function fetchChurch() {
-  const res = await fetch("https://catfact.ninja/fact?max_length=140");
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+async function fetchChurches() {
+  try {
+    const res = await fetch("http://localhost:8000/iglesias", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+    const data = await res.json();
+    return data; // parses
+  } catch (error) {
+    console.log(error);
   }
-  return res.json();
 }
 
-export default function page() {
-  const [fact, setFact] = useState(null);
-
-  async function clickHandler() {
-    console.log("hey");
-    const data = await fetchChurch();
-    console.log(data.fact);
-    setFact(data.fact);
-  }
+export default async function page() {
   // Fetch the list of churches from the server
-
+  const res = await fetchChurches()
   return (
     <div>
-      <Navbar />
+      <Navbar2 />
       <IglesiasMapList />
-      <IglesiasMapRight />
-      
+      <IglesiasMapRight churches={res}/>
       <Footer />
     </div>
   );

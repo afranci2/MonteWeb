@@ -122,6 +122,39 @@ const page = () => {
         </div>
         <div className="DESKTOP hidden md:flex">
           <div className="flex p-6 py-12 gap-8 w-10/12 m-auto max-w-screen">
+          <div className="LEFT-SMALL-TABS max-w-[200px] w-1/4 flex flex-col">
+              <SideTab headerText="Siguenos">
+                <div className="content">
+                  <SocialMedia />
+                </div>
+              </SideTab>
+              <SideTab
+                buttonColor="bg-yellow-400"
+                headerText="Listo para servir?
+              "
+                subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
+              "
+                buttonText="COMENZAR AHORA"
+                buttonLink="./"
+              />
+              <SideTab
+                buttonColor="bg-red-800 text-white"
+                headerText="Diezmar"
+                subheaderText="Dar una ofrenda o programa diezmos recurrentes.
+              "
+                buttonText="DAR AHORA"
+                buttonLink="./"
+              />
+              <SideTab
+                buttonColor="bg-yellow-400"
+                headerText="COVID-19
+              "
+                subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos
+              "
+                buttonText="LEER MAS"
+                buttonLink="./"
+              />
+            </div>
             <div className="RIGHT-MAIN-TABS w-full maintabs">
               <TextLeftTab
                 headerText="Conocernos"
@@ -160,39 +193,7 @@ const page = () => {
                 image={EventosCardImage}
               />
             </div>
-            <div className="LEFT-SMALL-TABS max-w-[200px] w-1/4 flex flex-col">
-              <SideTab headerText="Siguenos">
-                <div className="content">
-                  <SocialMedia />
-                </div>
-              </SideTab>
-              <SideTab
-                buttonColor="bg-yellow-400"
-                headerText="Listo para servir?
-              "
-                subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
-              "
-                buttonText="COMENZAR AHORA"
-                buttonLink="./"
-              />
-              <SideTab
-                buttonColor="bg-red-800 text-white"
-                headerText="Diezmar"
-                subheaderText="Dar una ofrenda o programa diezmos recurrentes.
-              "
-                buttonText="DAR AHORA"
-                buttonLink="./"
-              />
-              <SideTab
-                buttonColor="bg-yellow-400"
-                headerText="COVID-19
-              "
-                subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos
-              "
-                buttonText="LEER MAS"
-                buttonLink="./"
-              />
-            </div>
+
           </div>
         </div>
       </div>
