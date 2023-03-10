@@ -12,7 +12,7 @@ const IglesiasCard = ({ name, location, description, image }) => (
         src={image}
         alt="church-image"
       />
-      <div className="text text-lg font-semibold">
+      <div className="text ">
         <p className="font-semibold">{name}</p>
         <p>{location}</p>
         <p>{description}</p>

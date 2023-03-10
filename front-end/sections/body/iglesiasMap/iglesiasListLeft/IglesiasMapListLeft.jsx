@@ -9,7 +9,7 @@ const IglesiasMapListLeft = (props) => {
       </div>
 
       <div className="bg-white overflow-auto  h-96 relative w-full z-30 md:h-screen md:min-w-[310px] md:w-1/4 md:absolute ">
-      <div className="py-8 w-full flex m-auto justify-center border-b-2">
+      <div className="py-8 w-full flex m-auto justify-center border-b-2 text-lg font-semibold">
         <p>Find a Location</p>
       </div>
         <div className="flex flex-col">

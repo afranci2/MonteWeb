@@ -20,7 +20,7 @@ function Navbar() {
 
   return (
     <nav>
-      <div className="font-semibold bg-white text-black transition ease-in  shadow-md fixed top-0 h-16 items-center w-full z-50">
+      <div className=" bg-white text-black transition ease-in  shadow-md fixed top-0 h-16 items-center w-full z-50">
         <div className="DESKTOP px-8 m-auto content hidden desktop:flex h-full md:items-center">
           <div>
             <Link href={"/"}>
