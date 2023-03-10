@@ -15,7 +15,7 @@ const Computer =
 const page = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar />3
       <Header
         image={HeaderImage}
         headerText={"Donar de Manera Facil"}

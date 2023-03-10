@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const MainButton = (props) => {
   return (
-    <div className={`${props.buttonPosition==="center" ? "m-auto" : ""} container w-fit`}>
+    <div className={`${props.buttonPosition==="center" ? "m-auto" : ""} container w-fit min-w-[100px]`}>
       <Link href={`${props.link}`}> 
-        <div className= {`${props.buttonColor ? props.buttonColor : "bg-red-800"} shadow-sm px-12 rounded-lg p-4`}>
-          <p className="flex justify-center text-xs font-bold"> {props.text}</p>
+        <div className= {`${props.buttonColor ? props.buttonColor : "bg-red-800"} p-4 w-fit px-8 rounded-lg min-w-[100px]` }>
+          <p className="flex justify-center text-sm font-semibold min-w-[100px]"> {props.text}</p>
         </div>
       </Link>
     </div>

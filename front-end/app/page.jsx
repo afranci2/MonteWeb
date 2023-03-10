@@ -138,7 +138,7 @@ const page = () => {
                 buttonLink="./"
               />
               <SideTab
-                buttonColor="bg-red-800 text-white"
+                buttonColor="bg-yellow-400"
                 headerText="Diezmar"
                 subheaderText="Dar una ofrenda o programa diezmos recurrentes.
               "
@@ -146,7 +146,7 @@ const page = () => {
                 buttonLink="./"
               />
               <SideTab
-                buttonColor="bg-yellow-400"
+                buttonColor="bg-red-800 text-white"
                 headerText="COVID-19
               "
                 subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos

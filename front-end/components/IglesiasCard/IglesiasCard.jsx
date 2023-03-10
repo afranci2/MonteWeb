@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
 
+
 const IglesiasCard = ({ church }) => (
   <div>
-    <div className="p-6 py-8 w-full border-b-2 z-50 md:p-12 flex gap-8">
+    <div  className="hover:bg-gray-100/80  cursor-pointer p-6 py-6 w-full border-b-2 z-50 md:px-12 md:py-10 flex gap-8">
       <Image
         className="w-2/6 rounded-lg object-cover bg-black"
         width={80}

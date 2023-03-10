@@ -32,6 +32,7 @@ export default async function page() {
   return (
     <div>
       <Navbar2 />
+      
         <div className="hidden md:flex md:min-w-[380px] md:w-1/4 overflow-hidden">
           <IglesiasMapList churches={res} />
         </div>
