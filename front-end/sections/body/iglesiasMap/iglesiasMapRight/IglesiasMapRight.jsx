@@ -22,11 +22,11 @@ function IglesiasMapRight(props) {
     );
   } else {
     return (
-      <div className="z-0 relative">
+      <div className="z-0">
         <GoogleMap
           zoom={10}
           center={center}
-          mapContainerClassName="h-[355px] md:h-screen w-full  "
+          mapContainerClassName="z-0 h-[355px] md:h-screen w-full  "
         >
           {props.churches &&
             props.churches.map((church) => {

@@ -9,6 +9,9 @@ const HeaderImage = "https://monte-assets.s3.amazonaws.com/img/donar.jpg";
 const Computer =
   "https://monte-assets.s3.amazonaws.com/img/macbook+whilte+sp.png";
 
+  console.log("WEFRWE")
+
+
 const page = () => {
   return (
     <div>
