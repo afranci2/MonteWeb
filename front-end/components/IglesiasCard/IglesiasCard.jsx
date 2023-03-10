@@ -1,11 +1,23 @@
-import React from 'react';
+import React from "react";
+import Image from "next/image";
+import { IoIosArrowForward } from "react-icons/io";
 
-const IglesiasCard = ({ name, location, description }) => (
+const IglesiasCard = ({ name, location, description, image }) => (
   <div>
-    <div className="w-full bg-blue-400 p-8">
-      <h1>{name}</h1>
-      <p>{location}</p>
-      <p>{description}</p>
+    <div className="w-full border-b-2 z-50 p-12 flex gap-8">
+      <Image
+        className="rounded-lg object-cover"
+        width={80}
+        height={100}
+        src={image}
+        alt="church-image"
+      />
+      <div className="text text-lg font-semibold">
+        <p className="font-semibold">{name}</p>
+        <p>{location}</p>
+        <p>{description}</p>
+      </div>
+      <IoIosArrowForward />
     </div>
   </div>
 );

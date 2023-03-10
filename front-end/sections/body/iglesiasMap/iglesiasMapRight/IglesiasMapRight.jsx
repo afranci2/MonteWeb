@@ -10,7 +10,7 @@ function IglesiasMapRight(props) {
   });
 
   const center = useMemo(() => ({
-    lat: 41.86482006659902,
+    lat: 41.75482006659902,
     lng: -71.41359964022818,
   }));
 
@@ -22,11 +22,11 @@ function IglesiasMapRight(props) {
     );
   } else {
     return (
-      <div className="h-screen ">
+      <div className="z-0 relative">
         <GoogleMap
-          zoom={14}
+          zoom={10}
           center={center}
-          mapContainerClassName="h-screen w-full"
+          mapContainerClassName="h-[355px] md:h-screen w-full  "
         >
           {props.churches &&
             props.churches.map((church) => {

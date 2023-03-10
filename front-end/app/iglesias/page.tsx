@@ -4,9 +4,6 @@ import Navbar2 from "../../sections/navbar/Navbar2";
 import Footer from "../../sections/footer/Footer";
 import IglesiasMapList from "../../sections/body/iglesiasMap/iglesiasListLeft/IglesiasMapListLeft";
 import IglesiasMapRight from "../../sections/body/iglesiasMap/iglesiasMapRight/IglesiasMapRight";
-import Map from '../../sections/body/iglesiasMap/Map'
-
-import IglesiasCard from "../../components/IglesiasCard/IglesiasCard";
 
 async function fetchChurches() {
   try {
@@ -26,12 +23,18 @@ async function fetchChurches() {
 
 export default async function page() {
   // Fetch the list of churches from the server
-  const res = await fetchChurches()
+  const res = await fetchChurches();
   return (
     <div>
       <Navbar2 />
-      <IglesiasMapList />
-      <IglesiasMapRight churches={res}/>
+        <div className="hidden md:flex">
+          <IglesiasMapList churches={res} />
+        </div>
+        <IglesiasMapRight churches={res} />
+        <div className="md:hidden ">
+          <IglesiasMapList churches={res} />
+        </div>
+
       <Footer />
     </div>
   );
