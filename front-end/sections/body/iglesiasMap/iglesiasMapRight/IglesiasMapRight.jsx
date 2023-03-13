@@ -23,7 +23,7 @@ function IglesiasMapRight(props) {
 
   if (!isLoaded) {
     return (
-      <div className="w-full h-screen text-black flex font-bold justify-center items-center">
+      <div className="w-full h-screen text-black flex font-bold justify-center items-center md:pl-12">
         <p>Loading...</p>
       </div>
     );
