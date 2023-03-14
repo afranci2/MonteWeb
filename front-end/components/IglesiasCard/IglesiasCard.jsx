@@ -17,7 +17,7 @@ const IglesiasCard = ({ church }) => (
         <p className="font-semibold">{church.location}</p>
         <p className="text-gray-500 font-regular text-sm">{church.address}</p>
       </div>
-      <IoIosArrowForward className="w-1/ flex justify-end r-0 m-auto " size={20}/>
+      <IoIosArrowForward className="w-1/6 flex justify-end r-0 m-auto " size={20}/>
 
     </div>
   </div>
