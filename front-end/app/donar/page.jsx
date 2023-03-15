@@ -56,7 +56,7 @@ const page = () => {
               width={50}
               height={50}
             />
-            <p>Dar en Persona</p>
+            <p className="font-bold">Dar en Persona</p>
             <p>
               Puedes donar en persona con cualquier iglesia durante la
               experienca de adoracion del fin de semana
@@ -70,7 +70,7 @@ const page = () => {
               width={50}
               height={50}
             />
-            <p>Envie un regalo</p>
+            <p className="font-bold">Envie un regalo</p>
             <p>Attn: Tesoreria</p>
             <p>Movimiento Pentecostal Monte Sinai</p>
             <p>155 Power Rd.</p>
