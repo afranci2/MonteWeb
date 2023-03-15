@@ -1,7 +1,5 @@
 const express = require('express')
-
 const cors = require('cors');
-const { text } = require('stream/consumers');
 const env = require('dotenv').config({ path: './.env' })
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
