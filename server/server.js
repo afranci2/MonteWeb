@@ -38,7 +38,8 @@ let churches = [
         images: {
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 2,
@@ -65,7 +66,8 @@ let churches = [
         images: {
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_5188.jpg",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 3,
@@ -90,9 +92,10 @@ let churches = [
             lat: 41.65690967390518, lng: -70.92700191534158
         },
         images: {
-            main: "",
+            main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 4,
@@ -119,7 +122,8 @@ let churches = [
         images: {
             main: "",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 5,
@@ -146,7 +150,8 @@ let churches = [
         images: {
             main: "",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 6,
@@ -173,7 +178,8 @@ let churches = [
         images: {
             main: "",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 7,
@@ -200,7 +206,8 @@ let churches = [
         images: {
             main: "",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 8,
@@ -227,7 +234,8 @@ let churches = [
         images: {
             main: "",
             supporting: ["", "", ""]
-        }
+        },
+        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
 ];
 
