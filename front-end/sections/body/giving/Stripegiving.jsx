@@ -18,10 +18,8 @@ const Giving = () => {
         <p className="font-serif text-center text-3xl font-semibold">
           En Linea{" "}
         </p>
-        <Donation />
-
-
       </div>
+      <Donation />
     </div>
   );
 };
