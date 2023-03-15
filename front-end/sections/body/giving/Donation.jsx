@@ -23,7 +23,7 @@ function Donation() {
       return;
     }
     try {
-      const res = await fetch("http://localhost:8000/donation", {
+      const res = await fetch("http://localhost:8000/create-payment-intent", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

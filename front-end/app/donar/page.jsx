@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../sections/navbar/Navbar";
+import Navbar2 from "../../sections/navbar/Navbar2";
 import Header from "../../sections/header/Header";
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import TithelyGiving from "../../sections/body/giving/Giving";
@@ -15,7 +15,7 @@ const Computer =
 const page = () => {
   return (
     <div>
-      <Navbar />3
+      <Navbar2 />
       <Header
         image={HeaderImage}
         headerText={"Donar de Manera Facil"}

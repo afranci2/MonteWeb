@@ -20,7 +20,7 @@ const Giving = () => {
           alt="ewrf"
           src={Logo}
         />
-        <p className="py-8 text-center font-regular text-xs">
+        <p className="p-8 pb-12 text-center font-regular text-xs">
           Nota: Tithe.ly se lleva un porcentaje de cada donación
         </p>
         <div className="flex m-auto justify-center w-full pb-8">

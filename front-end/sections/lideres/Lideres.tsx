@@ -39,8 +39,8 @@ const Lideres = () => {
     },
   ];
   return (
-    <div className="py-8">
-      <div className="w-10/12 mx-auto py-8 ">
+    <div className="py-20">
+      <div className="w-10/12 mx-auto py-12 ">
         <p className="font-serif text-4xl">Nuestros Lideres</p>
         <p className="">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -62,7 +62,7 @@ const Lideres = () => {
           );
         })}
       </div>
-      <div className="text-white flex justify-center py-8 ">
+      <div className="text-white flex justify-center py-12 ">
           <MainButton text="Ver Mas" />
         </div>
     </div>

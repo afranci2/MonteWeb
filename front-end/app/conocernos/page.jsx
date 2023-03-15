@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../sections/navbar/Navbar";
+import Navbar2 from "../../sections/navbar/Navbar2";
 import Header from "../../sections/header/Header";
 import BodySectionImageLeft from "../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
@@ -29,7 +29,7 @@ const page = () => {
   return (
     <div className="h-full w-full">
       <div className="h-full w-full">
-        <Navbar />
+        <Navbar2 />
         <div className="">
           <Header
             image={ConocernosHero}

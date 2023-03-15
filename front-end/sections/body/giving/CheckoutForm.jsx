@@ -8,6 +8,8 @@ function CheckoutForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [priceId, setPriceId] = useState("");
+  const [amount, setAmount] = useState("");
+
   
   // stripe items
   const stripe = useStripe();
@@ -37,7 +39,8 @@ function CheckoutForm() {
           paymentMethod: paymentMethod?.paymentMethod?.id,
           name,
           email,
-          priceId
+          priceId,
+          amount
         }),
       }).then((res) => res.json());
 
@@ -76,10 +79,15 @@ function CheckoutForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-
+      <input
+        placeholder="Amount"
+        type="text"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+      />
       <CardElement />
       <button onClick={createSubscription} disabled={!stripe}>
-        Subscribe
+        Pay Now
       </button>
     </div>
   );
