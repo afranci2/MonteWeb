@@ -271,18 +271,23 @@ app.post('/create-payment-intent', async (req, res) => {
     const newAmount = convertPaymentAmount(amount)
     console.log(`Received converted amount of $${newAmount}`);
 
+    try {
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount: newAmount,
+            currency: 'usd',
+            automatic_payment_methods: { enabled: true },
+            receipt_email: req.body.email,
+            payment_method: req.body.paymentMethod
+        })
 
-    const paymentIntent = await stripe.paymentIntents.create({
-        amount: newAmount,
-        currency: 'usd',
-        automatic_payment_methods: { enabled: true },
-        receipt_email: req.body.email,
-    })
-
-    res.send({
-        clientSecret: paymentIntent.client_secret,
-        response: `Received amount of $${newAmount}`
-    })
+        res.send({
+            clientSecret: paymentIntent.client_secret,
+            response: `Received amount of $${newAmount}`
+        })
+    } catch (error) {
+        res.send(error)
+        console.log(error)
+    }
 });
 
 app.get('/donation/config', (req, res) => {
