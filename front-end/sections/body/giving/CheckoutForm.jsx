@@ -40,6 +40,7 @@ function CheckoutForm() {
   const createSubscription = async () => {
     setLoading(true);
     try {
+      
       // create a payment method
       const paymentMethod = await stripe?.createPaymentMethod({
         type: "card",
@@ -49,7 +50,7 @@ function CheckoutForm() {
           email,
         },
       });
-
+console.log(paymentMethod?.paymentMethod?.id,)
       // call the backend to create subscription
       const response = await fetch(
         "http://localhost:8000/create-payment-intent",
