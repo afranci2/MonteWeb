@@ -40,7 +40,6 @@ function CheckoutForm() {
   const createSubscription = async () => {
     setLoading(true);
     try {
-      
       // create a payment method
       const paymentMethod = await stripe?.createPaymentMethod({
         type: "card",
@@ -50,7 +49,7 @@ function CheckoutForm() {
           email,
         },
       });
-console.log(paymentMethod?.paymentMethod?.id,)
+      console.log(paymentMethod);
       // call the backend to create subscription
       const response = await fetch(
         "http://localhost:8000/create-payment-intent",
@@ -63,7 +62,6 @@ console.log(paymentMethod?.paymentMethod?.id,)
             paymentMethod: paymentMethod?.paymentMethod?.id,
             name,
             email,
-            priceId,
             amount,
           }),
         }
@@ -75,13 +73,13 @@ console.log(paymentMethod?.paymentMethod?.id,)
 
       if (confirmPayment?.error) {
         alert(confirmPayment.error.message);
-        console.log(confirmPayment.error.message)
+        console.log(confirmPayment.error.message);
       } else {
         setSuccess(true);
         setLoading(false);
       }
     } catch (error) {
-      alert(error)
+      alert(error);
       console.log(error);
     }
   };
