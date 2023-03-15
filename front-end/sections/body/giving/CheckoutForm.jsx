@@ -1,6 +1,6 @@
 "use client";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 
 function CheckoutForm() {
   // collect data from the user
@@ -86,6 +86,21 @@ function CheckoutForm() {
 
   return (
     <div className="grid gap-4 m-auto py-12">
+      <div className="amount pb-8 ">
+        <label className="text-lg font-bold flex justify-center m-auto" htmlFor="donation">
+          Cantidad:
+        </label>
+
+        <input
+          className="w-1/4 p-4 min-w-[100px] flex m-auto h-16 rounded-lg placeholder:mx-auto "
+          onChange={(e) => setAmount(e.target.value)}
+          id=" donation"
+          type="number"
+          step="0.01"
+          min="0"
+          placeholder="100.42"
+        />
+      </div>
       <div className="name">
         <label className="pl-2" htmlFor="name">
           Nombre:
@@ -107,20 +122,7 @@ function CheckoutForm() {
           type="text"
         />
       </div>
-      <div className="amount py-8">
-        <label className="pl-2" htmlFor="donation">
-          Cantidad:
-        </label>
-        <input
-          className="p-4 flex m-auto w-full h-10 rounded-lg placeholder:mx-auto"
-          onChange={(e) => setAmount(e.target.value)}
-          id=" donation"
-          type="number"
-          step="0.01"
-          min="0"
-          placeholder="100.42"
-        />
-      </div>
+
       {/*
       <div className="payment=method flex gap-4 py-8">
         <label className="pl-2" htmlFor="method">
