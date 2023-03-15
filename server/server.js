@@ -1,6 +1,7 @@
 const express = require('express')
 
 const cors = require('cors');
+const { text } = require('stream/consumers');
 const env = require('dotenv').config({ path: './.env' })
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
@@ -36,9 +37,9 @@ let churches = [
             lat: 41.86482006659902,
             lng: -71.41359964022818,
         },
-        images:{
+        images: {
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
     {
@@ -63,9 +64,9 @@ let churches = [
         coordinates: {
             lat: 41.84142288169135, lng: -71.47616923108586
         },
-        images:{
+        images: {
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_5188.jpg",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
     {
@@ -90,9 +91,9 @@ let churches = [
         coordinates: {
             lat: 41.65690967390518, lng: -70.92700191534158
         },
-        images:{
+        images: {
             main: "",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
     {
@@ -117,9 +118,9 @@ let churches = [
         coordinates: {
             lat: 41.65690967390518, lng: -70.92700191534158
         },
-        images:{
+        images: {
             main: "",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
     {
@@ -144,9 +145,9 @@ let churches = [
         coordinates: {
             lat: 41.65690967390518, lng: -70.92700191534158
         },
-        images:{
+        images: {
             main: "",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
     {
@@ -171,9 +172,9 @@ let churches = [
         coordinates: {
             lat: 41.65690967390518, lng: -70.92700191534158
         },
-        images:{
+        images: {
             main: "",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
     {
@@ -198,9 +199,9 @@ let churches = [
         coordinates: {
             lat: 41.65690967390518, lng: -70.92700191534158
         },
-        images:{
+        images: {
             main: "",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
     {
@@ -225,13 +226,19 @@ let churches = [
         coordinates: {
             lat: 41.65690967390518, lng: -70.92700191534158
         },
-        images:{
+        images: {
             main: "",
-            supporting:["","",""]
+            supporting: ["", "", ""]
         }
     },
 ];
 
+
+function convertPaymentAmount(amount) {
+    console.log(amount)
+    console.log(parseFloat(amount) * 100)
+    return parseFloat(amount) * 100
+}
 
 app.get("/", (req, res) => {
     res.send(`<!DOCTYPE html>
@@ -260,14 +267,21 @@ app.get("/admin", (request, response) => {
 app.post('/create-payment-intent', async (req, res) => {
     const amount = req.body.amount;
     console.log(`Received amount of $${amount}`);
+
+    const newAmount = convertPaymentAmount(amount)
+    console.log(`Received converted amount of $${newAmount}`);
+
+
     const paymentIntent = await stripe.paymentIntents.create({
-        amount: amount,
+        amount: newAmount,
         currency: 'usd',
         automatic_payment_methods: { enabled: true },
+        receipt_email: req.body.email,
     })
+
     res.send({
         clientSecret: paymentIntent.client_secret,
-        response: `Received amount of $${amount}`
+        response: `Received amount of $${newAmount}`
     })
 });
 
