@@ -52,7 +52,7 @@ function CheckoutForm() {
       console.log(paymentMethod);
       // call the backend to create subscription
       const response = await fetch(
-        "http://localhost:8000/create-payment-intent",
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/create-payment-intent`,
         {
           method: "POST",
           headers: {
