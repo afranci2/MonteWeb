@@ -14,7 +14,7 @@ function Donation() {
         <CheckoutForm />
       </Elements>
       <p className="text-sm m-auto flex justify-center">
-        **No almacenamos información financiera.**
+        **No almacenamos información financiera.*
       </p>{" "}
     </div>
   );
