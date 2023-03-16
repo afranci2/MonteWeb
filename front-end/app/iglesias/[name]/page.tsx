@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar2 from "../../../sections/navbar/Navbar2";
 import Banner2 from "../../../components/banner/Banner2";
-import Banner from "../../../components/banner/Banner";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Footer from "../../../sections/footer/Footer";
@@ -16,8 +15,8 @@ async function fetchChurches(id) {
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
     });
+
     const data = await res.json();
-    console.log(data[id - 1])
 
     return data[id - 1]; // parses
   } catch (error) {
@@ -27,6 +26,7 @@ async function fetchChurches(id) {
 
 export default async function page({ params }) {
   const res = await fetchChurches(params.name);
+  console.log(res);
   return (
     <div>
       <Navbar2 />
@@ -39,7 +39,9 @@ export default async function page({ params }) {
               <FaMapMarkerAlt size={12} />
             </div>
             <div>
-              <p className="">{res.location}</p>
+              <p className="">
+                {res.location ? res.location : null}
+              </p>
             </div>
           </div>
         </Banner2>
@@ -53,7 +55,6 @@ export default async function page({ params }) {
           direction={res.address}
           mapLink={res.mapLink}
         />
-
       </div>
 
       <Footer />
