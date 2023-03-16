@@ -5,9 +5,9 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const IglesiasCard = ({ church }) => (
   <div>
-    <div  className="hover:bg-gray-100/80  cursor-pointer p-6 py-6 w-full border-b-2 z-50 md:px-12 md:py-8 flex gap-8">
+    <div  className="hover:bg-gray-100/80  cursor-pointer p-8 py-4 w-full border-b-2 z-50 md:px-12 md:py-8 flex gap-8">
       <Image
-        className="w-2/6 rounded-md object-cover bg-black"
+        className="w-1/4 rounded-md object-cover bg-black"
         width={80}
         height={100}
         src={church.images.main}
