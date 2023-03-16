@@ -4,7 +4,7 @@ import Button from "../../components/mainButton/MainButton";
 import Video from "../video/Video.jsx";
 import "./header.css";
 import ChurchBanner from '../../components/banner/ChurchBanner'
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 import Link from 'next/link'
 
 function Header({
@@ -84,10 +84,11 @@ function Header({
         </div>
         <Link href={mapLink}>
         <ChurchBanner position={" bottom-0 absolute"} >
-          <div className="content align-center items-center h-16 justify-center flex gap-2 text-sm">
+          <div className="content align-center items-center h-16 justify-center flex  text-sm">
             <div>
-              <p className="text-black p-8">{direction}</p>
+              <p className="text-black p-16 font-semibold">{direction}</p>
             </div>
+            <IoIosArrowForward size={15} color="000"/>
           </div>
         </ChurchBanner>{" "}
         </Link>
