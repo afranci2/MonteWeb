@@ -17,7 +17,6 @@ async function fetchChurches() {
       },
     });
     const data = await res.json();
-    console.log(data);
     return data; // parses
   } catch (error) {
     console.log(error);

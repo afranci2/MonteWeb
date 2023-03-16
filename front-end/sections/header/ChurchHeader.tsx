@@ -28,7 +28,7 @@ function Header({
           className={`${
             classChangeText
               ? `${classChangeText}`
-              : "z-50 absolute bottom-0 py-20 px-8  text-left gap-4 flex flex-col"
+              : "z-30 absolute bottom-0 py-20 px-8  text-left gap-4 flex flex-col"
           } ${!headerText && "hidden"} `}
         >
           <div className="z-40 px-8 flex flex-col gap-2 py-12 text-4xl">
