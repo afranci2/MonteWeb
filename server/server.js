@@ -37,7 +37,7 @@ let churches = [
         },
         images: {
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
-            supporting: ["", "", ""]
+            supporting: ["https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg", "", ""]
         },
         mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
@@ -96,7 +96,8 @@ let churches = [
             supporting: ["", "", ""]
         },
         mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
-    }
+    },
+
 ];
 
 
