@@ -30,6 +30,7 @@ What optimizations did you make in your code? E.g. refactors, performance improv
 
 Animations: Add animations (similar to https://www.revolut.com/en-US/) when hovering over cards and other compoinents
 
+
 ## Lessons Learned
 During the development process of the Monte website, I learned several valuable lessons. Firstly, when working solely with HTML and CSS, it can be time-consuming to create a functional and interactive website. We encountered issues with embedding live streams from Facebook and wanted to include additional features like a map for tracking church locations and volunteer forms. With React, we were able to create objects and easily add events, making the task less tedious.
 

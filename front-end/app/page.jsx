@@ -27,6 +27,7 @@ const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
+import Image from 'next/image'
 
 const page = () => {
   return (
@@ -122,7 +123,6 @@ const page = () => {
         </div>
         <div className="DESKTOP hidden md:flex">
           <div className="flex p-6 py-12 gap-8 w-10/12 m-auto max-w-screen">
-
             <div className="RIGHT-MAIN-TABS w-full maintabs">
               <TextLeftTab
                 headerText="Conocernos"
@@ -241,7 +241,11 @@ const page = () => {
           image={AnniversaryPicture}
         />
       </DefaultBody>
+      <section className=" h-screen object-cover bg-black">
+        <Image className="object-cover h-screen w-full" src={Michael} alt="ewfe" width={1000} height={1000}>
 
+        </Image>
+      </section>
       <Footer />
     </div>
   );

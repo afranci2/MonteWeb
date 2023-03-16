@@ -3,9 +3,10 @@ import React from "react";
 import Button from "../../components/mainButton/MainButton";
 import Video from "../video/Video.jsx";
 import "./header.css";
-import ChurchBanner from '../../components/banner/ChurchBanner'
+import ChurchBanner from "../../components/banner/ChurchBanner";
 import { IoIosArrowForward } from "react-icons/io";
-import Link from 'next/link'
+import Link from "next/link";
+import './church.css'
 
 function Header({
   children,
@@ -18,14 +19,10 @@ function Header({
   contentPosition,
   containerheight,
   mapLink,
-  direction
+  direction,
 }) {
   return (
-    <div
-      className={`overflow-hidden wrapper relative flex justify-center items-center z-20 text-white ${
-        containerheight ? containerheight : "h-screen"
-      }`}
-    >
+    <div className="h-[500px] overflow-hidden wrapper relative flex justify-center items-center z-20 text-white">
       <div className="hidden md:flex">
         <div
           className={`${
@@ -70,27 +67,26 @@ function Header({
       </div>
       {children}
       <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
-      <div className={image ? "object-cover" : "hidden"}>
+      <div className={image ? "w-full" : "hidden"}>
         <div className="contain">
           {image ? (
-            <Image
-              className="min-h-screen object-cover"
+            <img
+              id="hello"
+              className="object-cover"
               src={image}
               alt="some"
-              width={10000}
-              height={10000}
             />
           ) : null}
         </div>
         <Link href={mapLink}>
-        <ChurchBanner position={" bottom-0 absolute"} >
-          <div className="content align-center items-center h-16 justify-center flex  text-sm">
-            <div>
-              <p className="text-black p-16 font-semibold">{direction}</p>
+          <ChurchBanner position={" bottom-0 absolute"}>
+            <div className="content align-center items-center h-16 justify-center flex  text-sm">
+              <div>
+                <p className="text-black p-16 font-semibold">{direction}</p>
+              </div>
+              <IoIosArrowForward size={15} color="000" />
             </div>
-            <IoIosArrowForward size={15} color="000"/>
-          </div>
-        </ChurchBanner>{" "}
+          </ChurchBanner>{" "}
         </Link>
       </div>
     </div>
