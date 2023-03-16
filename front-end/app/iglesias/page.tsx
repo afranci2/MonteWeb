@@ -5,7 +5,7 @@ import Footer from "../../sections/footer/Footer";
 import IglesiasMapList from "../../sections/body/iglesiasMap/iglesiasListLeft/IglesiasMapListLeft";
 import IglesiasMapRight from "../../sections/body/iglesiasMap/iglesiasMapRight/IglesiasMapRight";
 
-console.log(process.env.NEXT_PUBLIC_SERVER_URL)
+console.log(process.env.NEXT_PUBLIC_SERVER_URL);
 
 async function fetchChurches() {
   try {
@@ -17,29 +17,27 @@ async function fetchChurches() {
       },
     });
     const data = await res.json();
-console.log(data)
+    console.log(data);
     return data; // parses
-
   } catch (error) {
     console.log(error);
   }
 }
 
 export default async function page() {
-
   // Fetch the list of churches from the server
   const res = await fetchChurches();
   return (
     <div>
       <Navbar2 />
-      
-        <div className="hidden md:flex md:min-w-[380px] md:w-1/4 overflow-hidden">
-          <IglesiasMapList churches={res} />
-        </div>
-        <IglesiasMapRight churches={res} />
-        <div className="md:hidden ">
-          <IglesiasMapList churches={res} />
-        </div>
+
+      <div className="hidden md:flex md:min-w-[380px] md:w-1/4 overflow-hidden">
+        <IglesiasMapList churches={res} />
+      </div>
+      <IglesiasMapRight churches={res} />
+      <div className="md:hidden ">
+        <IglesiasMapList churches={res} />
+      </div>
 
       <Footer />
     </div>

@@ -17,7 +17,7 @@ async function fetchChurches(id) {
     });
 
     const data = await res.json();
-
+    console.log(data);
     return data[id - 1]; // parses
   } catch (error) {
     console.log(error);
@@ -26,7 +26,6 @@ async function fetchChurches(id) {
 
 export default async function page({ params }) {
   const res = await fetchChurches(params.name);
-  console.log(res);
   return (
     <div>
       <Navbar2 />
@@ -39,22 +38,23 @@ export default async function page({ params }) {
               <FaMapMarkerAlt size={12} />
             </div>
             <div>
-              <p className="">
-                {res.location ? res.location : null}
-              </p>
+              <p className="">{res ? res.location : "Loading"}</p>
             </div>
           </div>
         </Banner2>
-
-        <ChurchHeader
-          image={res.images.main}
-          headerText={res.name}
-          classChangeText={undefined}
-          contentPosition={undefined}
-          subheadingText={res.description}
-          direction={res.address}
-          mapLink={res.mapLink}
-        />
+        {res ? (
+          <ChurchHeader
+            image={res.images.main}
+            headerText={res.name}
+            classChangeText={undefined}
+            contentPosition={undefined}
+            subheadingText={res.description}
+            direction={res.address}
+            mapLink={res.mapLink}
+          />
+        ) : (
+          null
+        )}
       </div>
 
       <Footer />
