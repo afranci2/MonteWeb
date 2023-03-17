@@ -208,7 +208,6 @@ const page = () => {
               corazón como en el día de Pentecostés.
             </p>
             <br></br>
-
           </div>
         }
         buttonText="Conocernos"
@@ -240,11 +239,13 @@ const page = () => {
         />
       </DefaultBody>
       <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">
-        <div className="z-40 absolute text-white">
-          <p className="font-semibold text-3xl">
-            We are excited you'll join us!
+        <div className="z-40 absolute text-white w-1/2">
+          <p className="font-semibold py-4 font-serif text-5xl">
+            ¡Nos alegra tenerte con nosotros!
           </p>
-          <p className="text-lg">Deja que Dios encienda el fuego dentro de ti.</p>
+          <p className="text-lg">
+            Deja que Dios encienda el fuego dentro de ti.
+          </p>
         </div>
         <div className="z-30 absolute w-full h-full bg-black/30"></div>
         <Image
