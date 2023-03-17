@@ -7,7 +7,7 @@ import Tab from '../../components/tab/Tab'
 
 async function fetchEvents() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/eventos`, {
+    const res = await fetch(`http://localhost:8000/eventos`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -23,9 +23,8 @@ async function fetchEvents() {
 }
 
 
-async function page ()  {
+export default async function page ()  {
   const res = await fetchEvents();
-
   return (
     <div>
       <Navbar />
@@ -47,4 +46,3 @@ async function page ()  {
   );
 };
 
-export default page;

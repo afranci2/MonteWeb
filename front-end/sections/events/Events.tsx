@@ -6,9 +6,13 @@ const Events = ({ res }) => {
   return (
     <div className="w-full ">
       <div className="try">
-        {res.map((event) => {
-          return <EventTab key={event.id} info={event} />;
-        })}
+        {res ? (
+          <div>
+            {res.map((event) => {
+              return <EventTab key={event.id} info={event} />;
+            })}
+          </div>
+        ) : null}
       </div>
     </div>
   );

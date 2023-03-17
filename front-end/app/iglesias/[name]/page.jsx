@@ -20,6 +20,9 @@ async function fetchChurches(id) {
     });
 
     const data = await res.json();
+    console.log(data)
+    console.log(data[id-1])
+
     return data[id - 1]; // parses
   } catch (error) {
     console.log(error);
