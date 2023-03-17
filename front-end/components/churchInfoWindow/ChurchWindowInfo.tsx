@@ -5,8 +5,8 @@ import "./churchwindow.css";
 
 const ChurchWindowInfo = ({ church }) => {
   return (
-    <div className="w-[100px] trythis overflow-auto flex">
-      <div className="contain m-auto flex flex-col items-center">
+    <div className="w-[100px] trythis overflow-auto flex ">
+      <div className="contain m-auto flex flex-col items-center ">
         <div className=" overflow-auto flex gap-4 p-4">
           <div className="overflow-hidden relative rounded-lg image w-full h-3/4 object-cover bg-black">
             <Image className="relative object-cover w-full h-full" src={church.images.main} alt="church icon" fill/>
