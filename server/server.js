@@ -78,6 +78,23 @@ let events = [
             endTime: ["7:30PM"],
         },
         ],
+    },
+    {
+        id: 4,
+        name: "5wefwfq0 anniversary",
+        location: "Sede Central",
+        address: "155 Power Rd., Pawtucket, RI, 02860, US",
+        datesAndTimes: [{
+            date: "05/04/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"]
+        },
+        {
+            date: "05/05/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"],
+        },
+        ],
     }
 ]
 
