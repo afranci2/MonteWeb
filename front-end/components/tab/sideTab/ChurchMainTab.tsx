@@ -25,7 +25,7 @@ const ChurchMainTab = ({ res }) => {
       <Link href={res.socialMedia.Facebook}>
         <div className=" something overflow-hidden relative rounded-lg shadow-lg w-full">
           <div className="z-40 absolute text-white bottom-0 p-8">
-            <p className="text-2xl font-semibold">Conéctate con nosotros</p>
+            <p className="text-2xl font-semibold">Conéctate</p>
             <p>Meet the pastors and learn more about this location.</p>
           </div>
           <div className="absolute gradient w-full h-full"></div>

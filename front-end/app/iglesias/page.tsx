@@ -29,7 +29,6 @@ export default async function page() {
   return (
     <div>
       <Navbar2 />
-
       <div className="hidden md:flex md:min-w-[380px] md:w-1/4 overflow-hidden">
         <IglesiasMapList churches={res} />
       </div>
@@ -37,7 +36,6 @@ export default async function page() {
       <div className="md:hidden ">
         <IglesiasMapList churches={res} />
       </div>
-
       <Footer />
     </div>
   );

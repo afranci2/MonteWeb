@@ -17,7 +17,7 @@ const ChurchWindowInfo = ({ church }) => {
           </div>
         </div>
         <div className="flex justify-center p-2">
-          <MainButton text={"Ver Mas"} buttonColor={"bg-red-800 text-white"} />
+          <MainButton text={"Ver Mas"} buttonColor={"bg-red-800 text-white"} link={`/iglesias/${church.id}`}/>
         </div>
       </div>
     </div>
