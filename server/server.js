@@ -10,6 +10,77 @@ app.use(cors());
 app.use(express.json()); // to parse JSON data
 app.use(express.urlencoded({ extended: true })); //
 
+let events = [
+    {
+        id: 0,
+        name: "Cweferfeongresoewfwef de damas",
+        location: "Sede Central",
+        address: "155 Power Rd., Pawtucket, RI, 02860, US",
+        datesAndTimes: [{
+            date: "05/04/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"]
+        },
+        {
+            date: "05/05/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"],
+        },
+        ],
+    },
+    {
+        id: 1,
+        name: "Congresoewfwef de damas",
+        location: "Sede Central",
+        address: "155 Power Rd., Pawtucket, RI, 02860, US",
+        datesAndTimes: [{
+            date: "05/04/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"]
+        },
+        {
+            date: "05/05/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"],
+        },
+        ],
+    },
+    {
+        id: 2,
+        name: "Congresoewfwef de damas",
+        location: "Sede Central",
+        address: "155 Power Rd., Pawtucket, RI, 02860, US",
+        datesAndTimes: [{
+            date: "05/04/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"]
+        },
+        {
+            date: "05/05/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"],
+        },
+        ],
+    },
+    {
+        id: 3,
+        name: "50 anniversary",
+        location: "Sede Central",
+        address: "155 Power Rd., Pawtucket, RI, 02860, US",
+        datesAndTimes: [{
+            date: "05/04/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"]
+        },
+        {
+            date: "05/05/23",
+            startTime: ["7:30PM"],
+            endTime: ["7:30PM"],
+        },
+        ],
+    }
+]
+
 let churches = [
     {
         id: 1,
@@ -39,7 +110,7 @@ let churches = [
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
             supporting: ["https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg", "", ""]
         },
-        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
+        mapLink: "https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 2,
@@ -67,7 +138,7 @@ let churches = [
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_5188.jpg",
             supporting: ["", "", ""]
         },
-        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
+        mapLink: "https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
     {
         id: 3,
@@ -95,7 +166,7 @@ let churches = [
             main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
             supporting: ["", "", ""]
         },
-        mapLink:"https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
+        mapLink: "https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
     },
 
 ];
@@ -125,6 +196,10 @@ app.get("/", (req, res) => {
 
 app.get("/iglesias", (request, response) => {
     response.json(churches)
+})
+
+app.get("/eventos", (request, response) => {
+    response.json(events)
 })
 
 app.get("/admin", (request, response) => {
