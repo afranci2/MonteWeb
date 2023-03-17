@@ -27,6 +27,11 @@ let events = [
             "endTime": ["7:30PM"],
         },
         ],
+        services: [
+            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
+            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
+            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
+        ],
     },
     {
         id: 1,
@@ -43,6 +48,11 @@ let events = [
             "startTime": ["7:30PM"],
             "endTime": ["7:30PM"],
         },
+        ],
+        services: [
+            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
+            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
+            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
     },
     {
@@ -61,6 +71,11 @@ let events = [
             "endTime": ["7:30PM"],
         },
         ],
+        services: [
+            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
+            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
+            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
+        ],
     },
     {
         id: 3,
@@ -78,6 +93,11 @@ let events = [
             "endTime": ["7:30PM"],
         },
         ],
+        services: [
+            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
+            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
+            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
+        ],
     },
     {
         id: 4,
@@ -94,6 +114,11 @@ let events = [
             "startTime": ["7:30PM"],
             "endTime": ["7:30PM"],
         },
+        ],
+        services: [
+            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
+            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
+            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
     }
 ]
