@@ -1,16 +1,66 @@
 import React from "react";
-import Image from 'next/image'
+import Image from "next/image";
+import "./ChurchMainTab.css";
 
 const ChurchMainTab = ({ res }) => {
   return (
-    <div className="md:grid md:grid-cols-2 md:grid-rows-2">
-      <div className="bg-white rounded-lg shadow-lg h-16  w-11/12 m-auto">
-        <Image className="object-cover h-auto w-full" src={res.images.supporting[0]} alt="image" width={1000} height={1000}/>
+    <div className="md:p-4 else flex flex-col md:grid gap-4 grid-cols-2 ">
+      <div className=" something overflow-hidden relative rounded-lg shadow-lg w-full ">
+        <div className="z-40 absolute text-white bottom-0 p-8">
+          <p className="text-2xl font-semibold">Eres Nuevo?</p>
+          <p>Meet the pastors and learn more about this location.</p>
+        </div>
+        <div className="absolute gradient w-full h-full"></div>
+        <Image
+          className="object-cover h-full w-full overflow-hidden"
+          src={res.images.main}
+          alt="image"
+          width={1000}
+          height={1000}
+        />
       </div>
-      <div className="bg-white rounded-lg shadow-lg h-16  w-11/12 m-auto"></div>
-      <div className="bg-white rounded-lg shadow-lg h-16  w-11/12 m-auto"></div>
-      <div className="bg-white rounded-lg shadow-lg h-16  w-11/12 m-auto"></div>
-
+      <div className=" something overflow-hidden relative rounded-lg shadow-lg w-full">
+        <div className="z-40 absolute text-white bottom-0 p-8">
+          <p className="text-2xl font-semibold">Eres Nuevo?</p>
+          <p>Meet the pastors and learn more about this location.</p>
+        </div>
+        <div className="absolute gradient w-full h-full"></div>
+        <Image
+          className="object-cover h-full w-full overflow-hidden"
+          src={res.images.main}
+          alt="image"
+          width={1000}
+          height={1000}
+        />
+      </div>
+      <div className=" something overflow-hidden relative rounded-lg shadow-lg w-full">
+        <div className="z-40 absolute text-white bottom-0 p-8">
+          <p className="text-2xl font-semibold">Eres Nuevo?</p>
+          <p>Meet the pastors and learn more about this location.</p>
+        </div>
+        <div className="absolute gradient w-full h-full"></div>
+        <Image
+          className="object-cover h-full w-full overflow-hidden"
+          src={res.images.main}
+          alt="image"
+          width={1000}
+          height={1000}
+        />
+      </div>
+      <div className=" something overflow-hidden relative rounded-lg shadow-lg w-full">
+        <div className="z-40 absolute text-white bottom-0 p-8">
+          <p className="text-2xl font-semibold">Eres Nuevo?</p>
+          <p>Meet the pastors and learn more about this location.</p>
+        </div>
+        <div className="absolute gradient w-full h-full"></div>
+        <Image
+          className="object-cover h-full w-full overflow-hidden"
+          src={res.images.main}
+          alt="image"
+          width={1000}
+          height={1000}
+        />
+      </div>
     </div>
   );
 };

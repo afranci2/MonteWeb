@@ -27,7 +27,7 @@ const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
-import Image from 'next/image'
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -161,7 +161,7 @@ const page = () => {
                 image={EventosCardImage}
               />
             </div>
-            <div className="LEFT-SMALL-TABS max-w-[200px] w-1/4 flex flex-col">
+            <div className="LEFT-SMALL-TABS max-w-[300px] w-1/3 flex flex-col">
               <SideTab headerText="Siguenos">
                 <div className="content">
                   <SocialMedia />
@@ -208,9 +208,7 @@ const page = () => {
               corazón como en el día de Pentecostés.
             </p>
             <br></br>
-            <p className="font-light">
-              Deja que Dios encienda el fuego dentro de ti.
-            </p>
+
           </div>
         }
         buttonText="Conocernos"
@@ -241,11 +239,23 @@ const page = () => {
           image={AnniversaryPicture}
         />
       </DefaultBody>
-      <section className=" h-screen object-cover bg-black">
-        <Image className="object-cover h-screen w-full" src={Michael} alt="ewfe" width={1000} height={1000}>
-
-        </Image>
+      <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">
+        <div className="z-40 absolute text-white">
+          <p className="font-semibold text-3xl">
+            We are excited you'll join us!
+          </p>
+          <p className="text-lg">Deja que Dios encienda el fuego dentro de ti.</p>
+        </div>
+        <div className="z-30 absolute w-full h-full bg-black/30"></div>
+        <Image
+          className="object-cover h-screen w-full"
+          src={Michael}
+          alt="ewfe"
+          width={1000}
+          height={1000}
+        ></Image>
       </section>
+
       <Footer />
     </div>
   );

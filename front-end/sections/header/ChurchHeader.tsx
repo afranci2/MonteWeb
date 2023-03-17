@@ -28,10 +28,10 @@ function Header({
           className={`${
             classChangeText
               ? `${classChangeText}`
-              : "z-30 absolute bottom-0 py-20 px-8  text-left gap-4 flex flex-col"
+              : "z-40 absolute bottom-0 py-20 px-8  text-left gap-4 flex flex-col"
           } ${!headerText && "hidden"} `}
         >
-          <div className="z-40 px-8 flex flex-col gap-2 py-12 text-4xl">
+          <div className="z-20 px-8 flex flex-col gap-2 py-12 text-4xl">
             <div className="font-serif text-4xl">Monte Sinai</div>
             <p className="font-semibold text-6xl">{headerText}</p>
           </div>
@@ -49,14 +49,14 @@ function Header({
         className={`${
           classChangeText
             ? `${classChangeText}`
-            : "w-11/12 z-50 absolute md:hidden gap-4 flex flex-col"
+            : "w-11/12 z-20 absolute md:hidden gap-4 flex flex-col"
         } ${!headerText && "hidden"} `}
       >
         <div className=" m-auto z-40 flex flex-col gap-2">
           <div className={"text-lg text-left"}>Monte Sinai</div>
           <p className="font-semibold text-6xl">{headerText}</p>
         </div>
-        <div className={buttonText ? "z-40 button flex py-6" : "hidden"}>
+        <div className={buttonText ? "z-20 button flex py-6" : "hidden"}>
           <Button
             buttonColor={buttonColor ? `${buttonColor}` : "bg-red-800"}
             link={buttonLink}

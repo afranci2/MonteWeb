@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar2 from "../../../sections/navbar/Navbar2";
 import Banner2 from "../../../components/banner/Banner2";
-
+import BodySectionImageLeft from "../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
+import Lideres from "../../../sections/lideres/Lideres";
 import IglesiaTab from "../../../sections/body/homeTab/IglesiaTab.tsx/IglesiaTab";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -60,6 +61,19 @@ export default async function page({ params }) {
         )}
       </div>
       {res ? <IglesiaTab res={res} /> : null}
+      {res ? (
+        <div>
+          <BodySectionImageLeft
+            headingText="Nosotros"
+            buttonText="Leer Mas"
+            subheadingText={res.description}
+            image={res.images.main}
+            buttonLink={"/"}
+          />
+          <Lideres />
+        </div>
+      ) : null}
+
       <Footer />
     </div>
   );

@@ -8,7 +8,7 @@ import { MainButton } from "../../components";
 import Header from "../header/Header";
 import Image from "next/image";
 
-const Lideres = () => {
+async function Lideres() {
   const lidereslist = [
     {
       id: 0,
@@ -38,10 +38,12 @@ const Lideres = () => {
       subheading: "Tesorero",
     },
   ];
+
+
   return (
     <div className="py-20">
       <div className="w-10/12 mx-auto py-12 ">
-        <p className="font-serif text-4xl">Nuestros Lideres</p>
+        <p className="font-serif font-semibold text-4xl">Nuestros Lideres</p>
         <p className="">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.

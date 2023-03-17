@@ -4,16 +4,16 @@ import Link from "next/link";
 const TertiaryButton = (props) => {
   return (
     <div
-      className={` ${props.position === "center" && "m-auto"} ${
+      className={` ${props.position === "center" && "m-auto w-full"} ${
         props.margin
-      } flex justify-center max-h-fit w-full drop-shadow-sm`}
+      } flex justify-center max-h-fit w-full  rounded-lg  ${props.buttonColor} drop-shadow-sm`}
     >
       {props.buttonLink ? (
         <Link href={props.buttonLink ? props.buttonLink : null}>
           <div
-            className={`m-auto h-full rounded-lg ${props.buttonColor} min-w-[50px] justify-center p-4 px-8 w-full text-black `}
+            className={`m-auto h-full min-w-[50px] justify-center p-4  w-full  `}
           >
-            <p className="overflow-hidden flex justify-center text-xs font-semibold text-center ">
+            <p className="overflow-hidden flex justify-center text-xs font-semibold text-center w-full">
               {" "}
               {props.text}
             </p>
