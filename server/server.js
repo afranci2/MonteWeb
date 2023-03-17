@@ -7,7 +7,7 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 const app = express();
 const PORT = 8000;
 app.use(cors());
-app.use(express.json()); // to parse JSON data
+app.use(express.json()); // to parse JSON dat
 app.use(express.urlencoded({ extended: true })); //
 
 let events = [
