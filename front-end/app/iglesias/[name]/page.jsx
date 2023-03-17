@@ -60,7 +60,11 @@ export default async function page({ params }) {
           </div>
         )}
       </div>
-      {res ? <IglesiaTab res={res} /> : null}
+      {res ? (
+        <div className="bg-[#f7f7f7]">
+          <IglesiaTab res={res} />{" "}
+        </div>
+      ) : null}
       {res ? (
         <div>
           <BodySectionImageLeft

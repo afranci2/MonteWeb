@@ -4,7 +4,7 @@ const ServiceTimesTab = (props) => {
   console.log(props.res.services[0].name);
 
   return (
-    <div className="bg-white rounded-lg shadow-lg w-full">
+    <div className="bg-white rounded-lg shadow-md w-full">
       <div className="contetn w-11/12 m-auto p-8">
         <p className="font-semibold text-2xl">Horarios de Servicio</p>
         {props.res.services.map((service) => {

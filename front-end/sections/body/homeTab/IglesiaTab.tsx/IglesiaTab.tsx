@@ -12,7 +12,7 @@ const IglesiaTab = ({ res }) => {
   return (
     <div>
       {" "}
-      <div className="tabs-section w-10/12 m-auto bg-[#f7f7f7] md:flex md:grid-cols-2">
+      <div className="tabs-section w-10/12 m-auto md:flex md:grid-cols-2">
         <div className="py-8">    
           <ServiceTimesTab res={res}/>
         </div>

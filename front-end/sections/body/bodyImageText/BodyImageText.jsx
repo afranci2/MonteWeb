@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const BodyImageText = (props) => {
   return (
-    <div className=" border-t-gray-100 shadow-lg border-2 h-fit md:h-[42rem] relative text-black bg-gradient-to-t from-gray-300/50 to-gray-100/20 py-32 ">
+    <div className=" border-t-gray-100 border-2 h-fit md:h-[42rem] relative text-black bg-gradient-to-t from-gray-300/50 to-gray-100/20 py-32 ">
       <div className=" h-full content flex flex-col  w-9/12 m-auto gap-4 md:flex-row">
         {props.imagePosition === "right" ? (
           <Image
