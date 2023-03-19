@@ -23,7 +23,7 @@ let events = [
         },
         {
             "date": "05/05/23",
-            "startTime": ["7:30PM"],
+            "startTime": ["7:30P"],
             "endTime": ["7:30PM"],
         },
         ],
