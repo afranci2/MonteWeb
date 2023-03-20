@@ -117,7 +117,29 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-    }
+    },
+    {
+        id: 1,
+        name: "5wefwfq0 anniversary",
+        location: "Sede Central",
+        address: "155 Power Rd., Pawtucket, RI, 02860, US",
+        datesAndTimes: [{
+            "date": "05/04/23",
+            "startTime": ["7:30PM"],
+            "endTime": ["7:30PM"]
+        },
+        {
+            "date": "05/05/23",
+            "startTime": ["7:30PM"],
+            "endTime": ["7:30PM"],
+        },
+        ],
+        services: [
+            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
+            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
+            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
+        ],
+    },
 ]
 
 let churches = [
