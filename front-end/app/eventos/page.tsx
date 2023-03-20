@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "../../sections/header/Header";
 import Navbar from "../../sections/navbar/Navbar";
-import Events from '../../sections/events/Events'
-const Baptism = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg"
-import Tab from '../../components/tab/Tab'
+import Events from "../../sections/events/Events";
+const Baptism =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";
+import Tab from "../../components/tab/Tab";
 
 async function fetchEvents() {
   try {
@@ -23,8 +24,7 @@ async function fetchEvents() {
   }
 }
 
-
-async function page ()  {
+async function page() {
   const res = await fetchEvents();
   return (
     <div>
@@ -42,9 +42,11 @@ async function page ()  {
         subheadingText={"Excepteur sint occaeuiecat cupidatat."}
         containerheight={undefined}
       />
-      <Events res={res}/>
+      <div className="md:w-3/4">
+        <Events res={res} />
+      </div>
     </div>
   );
-};
+}
 
 export default page;

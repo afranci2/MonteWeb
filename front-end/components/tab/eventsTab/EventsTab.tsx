@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 const something =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";
-import "../sideTab/ChurchMainTab.css";
+import "../sideTab/ChurchMainTab.module.css";
 
 const EventsTab = ({ info }) => {
   return (
     <div className="">
       {" "}
       <Link href={info.name}>
-        <div className="something overflow-hidden relative rounded-lg shadow-lg bg-white">
+        <div className=" overflow-hidden relative rounded-lg bg-white">
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
