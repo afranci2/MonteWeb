@@ -1,6 +1,6 @@
 import React from "react";
 import EventTab from "../../components/tab/eventsTab/EventsTab";
-import "../../components/tab/sideTab/ChurchMainTab.module.css";
+import "../../components/tab/sideTab/ChurchMainTab.css";
 
 const Events = ({ res }) => {
   return (
@@ -8,15 +8,19 @@ const Events = ({ res }) => {
       <div>
         {res ? (
           <div className="w-full ">
-            <div className=" md:hidden ">
-              {res.map((event) => {
-                return <EventTab key={event.id} info={event} />;
-              })}
+            <div className="md:hidden">
+              <div className="">
+                {res.map((event) => {
+                  return <EventTab key={event.id} info={event} />;
+                })}
+              </div>
             </div>
-            <div className="w-full hidden md:flex gap-4 try2">
-              {res.map((event) => {
-                return <EventTab key={event.id} info={event} />;
-              })}
+            <div className="hidden md:flex">
+              <div className="try2 flex gap-4">
+                {res.map((event) => {
+                  return <EventTab key={event.id} info={event} />;
+                })}
+              </div>
             </div>
           </div>
         ) : (

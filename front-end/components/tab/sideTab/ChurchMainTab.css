@@ -10,8 +10,7 @@
 
 
 .try2{
-  background-color:#f7f7f7;
-  display: grid;
+  display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
