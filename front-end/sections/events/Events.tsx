@@ -1,13 +1,16 @@
+
 import React from "react";
 import EventTab from "../../components/tab/eventsTab/EventsTab";
 import "../../components/tab/sideTab/ChurchMainTab.css";
 
 const Events = ({ res }) => {
+
+
   return (
-    <div className=" m-auto w-11/12 ">
+    <div  className=" m-auto w-11/12 ">
       <div>
         {res ? (
-          <div className="w-full ">
+          <div className="w-full py-8 ">
             <div className="md:hidden">
               <div className="">
                 {res.map((event) => {
@@ -16,7 +19,7 @@ const Events = ({ res }) => {
               </div>
             </div>
             <div className="hidden md:flex">
-              <div className="try2 flex gap-4">
+              <div className="try2 py-8">
                 {res.map((event) => {
                   return <EventTab key={event.id} info={event} />;
                 })}

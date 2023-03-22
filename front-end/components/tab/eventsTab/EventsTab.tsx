@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,8 +8,10 @@ const something =
 import "../sideTab/ChurchMainTab.css";
 
 const EventsTab = ({ info }) => {
+
+
   return (
-    <div className="">
+    <div className="w-20">
       {" "}
       <Link href={info.name}>
         <div className=" overflow-hidden relative rounded-lg bg-white">

@@ -29,8 +29,30 @@ const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 import Image from "next/image";
 
-const page = () => {
+async function page () {
+
+  async function fetchEvents() {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/eventos`, {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      });
+  
+      const data = await res.json();
+
+      return data; // parses
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const res = await fetchEvents();
+
+
   return (
+
     <div>
       <Navbar />
       <Header video={HeroVideo}>
@@ -222,20 +244,18 @@ const page = () => {
           </div>
         </Banner2>
         <BodySectionImageLeft
-          buttonText="Historia"
-          headingText="50 anos"
-          subheadingText=">EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros
-"
-          buttonLink="/historia"
-          image={AnniversaryPicture}
+          buttonText={"Ver Mas"}
+          headingText={res[res.length-1].name}
+          subheadingText={res[res.length-1].description}
+          buttonLink={res[res.length-1].link}
+          image={res[res.length-1].image}
         />
         <BodySectionImageRight
-          buttonText="Historia"
-          headingText="50 anos"
-          subheadingText=">EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros
-"
+          buttonText="Ver Mas"
+          headingText={res[res.length-1].name}
+          subheadingText={res[res.length-1].description}
           buttonLink="/historia"
-          image={AnniversaryPicture}
+          image={res[res.length-1].image}
         />
       </DefaultBody>
       <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">

@@ -29,50 +29,53 @@ const page = () => {
     <div>
       <Navbar />
       <Header
-        video={HeroVideo}
-        image={undefined}
-        headerText={undefined}
+        image={Michael}
+        headerText={"Unete"}
         classChangeText={undefined}
         buttonColor={undefined}
-        buttonLink={undefined}
-        buttonText={undefined}
-        contentPosition={undefined}
-        subheadingText={undefined}
+        buttonLink={"/unete/ministerios"}
+        buttonText={"APLICA AHORA"}
+        contentPosition={"center"}
+        subheadingText={
+          "Check out opportunities to volunteer, donate, participate, and more!"
+        }
         containerheight={undefined}
-      >
-        <img
-          className="h-1/4 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[18rem] md:w-auto"
-          src={Logo}
-          alt="he"
-        />
-      </Header>
+        children={undefined}
+        video={undefined}
+      ></Header>
 
       <div className="tabs-section">
         <div className="MOBILE flex w-11/12 m-auto md:hidden ">
           <DefaultBody>
             <MobileCard
-              headerText="Conocernos"
-              subheadingText="Ver nuestra mision, lideres, historia, y mas
-"
+              headerText="Servir"
+              subheadingText="Utiliza tus dones y talentos para marcar la diferencia. Únete a cualquiera de nuestros equipos y sirve.
+              "
               buttonLink="/conocernos"
-              buttonText="VER AHORA"
+              buttonText="UNIRSE A UN EQUIPO"
               image={ConocernosCardImage}
               imagePosition="object-left "
             />
 
             <MobileCard
-              headerText="Iglesias"
-              subheadingText="¿Listo para conocer una iglesia? Encuentre una congregación cerca de ti
-"
+              headerText="En Vivo
+
+              "
+              subheadingText=" ¿Listo para conocer una iglesia? Encuentre una congregación cerca de ti
+              "
               buttonLink="/iglesias"
               buttonText="ACOMPANANOS"
               image={IglesiasCardImage}
               imagePosition="object-left "
             />
             <MobileCard
-              headerText="Unete a Nosotros
+              headerText="Redes Sociales
+
+
           "
-              subheadingText="Es hora de ver lo que Dios puede hacer a través de ti. ¡Únase a nosotros!
+              subheadingText="Únase a nosotros en línea para la adoración, la comunión, los estudios bíblicos y más. ¡Participa en vivo o transmite sermones pasados a través de Facebook Live!
+
+
           "
               imagePosition="object-left "
               buttonLink="/unete"
@@ -80,10 +83,10 @@ const page = () => {
               image={UneteCardImage}
             />
             <MobileCard
-              headerText="Eventos
+              headerText="Contacto
           "
               imagePosition="object-left "
-              subheadingText="¡No te lo pierdas! Apunte en el calendario y acompáñenos en los eventos importantes
+              subheadingText="Have a question or need to get in contact? Try here.
           "
               buttonLink="/unete"
               buttonText="EVENTOS"
