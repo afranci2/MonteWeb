@@ -32,6 +32,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
+        image:"",
+        description:"ewfwrefgwrg"
     },
     {
         id: 1,
@@ -39,13 +41,13 @@ let events = [
         location: "Sede Central",
         address: "155 Power Rd., Pawtucket, RI, 02860, US",
         datesAndTimes: [{
-            "date": "05/04/23",
-            "startTime": ["7:30PM"],
-            "endTime": ["7:30PM"]
+            date: "05/04/23",
+            startTime: "7:30PM",
+            endTime: "7:30PM"
         },
         {
             "date": "05/05/23",
-            "startTime": ["7:30PM"],
+            "startTime": ["7:30P"],
             "endTime": ["7:30PM"],
         },
         ],
@@ -54,17 +56,22 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
+        image:"",
+        description:"ewfwrefgwrg"
     },
     {
         id: 2,
         name: "5wefwfq0 anniversary",
         location: "Sede Central",
         address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [
-            {"date": "05/04/23","startTime": ["7:30PM"],"endTime": ["7:30PM"]},
+        datesAndTimes: [{
+            date: "05/04/23",
+            startTime: "7:30PM",
+            endTime: "7:30PM"
+        },
         {
             "date": "05/05/23",
-            "startTime": ["7:30PM"],
+            "startTime": ["7:30P"],
             "endTime": ["7:30PM"],
         },
         ],
@@ -73,6 +80,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
+        image:"",
+        description:"ewfwrefgwrg"
     },
     {
         id: 3,
@@ -80,13 +89,13 @@ let events = [
         location: "Sede Central",
         address: "155 Power Rd., Pawtucket, RI, 02860, US",
         datesAndTimes: [{
-            "date": "05/04/23",
-            "startTime": ["7:30PM"],
-            "endTime": ["7:30PM"]
+            date: "05/04/23",
+            startTime: "7:30PM",
+            endTime: "7:30PM"
         },
         {
             "date": "05/05/23",
-            "startTime": ["7:30PM"],
+            "startTime": ["7:30P"],
             "endTime": ["7:30PM"],
         },
         ],
@@ -95,6 +104,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
+        image:"",
+        description:"ewfwrefgwrg"
     },
     {
         id: 4,
@@ -102,13 +113,13 @@ let events = [
         location: "Sede Central",
         address: "155 Power Rd., Pawtucket, RI, 02860, US",
         datesAndTimes: [{
-            "date": "05/04/23",
-            "startTime": ["7:30PM"],
-            "endTime": ["7:30PM"]
+            date: "05/04/23",
+            startTime: "7:30PM",
+            endTime: "7:30PM"
         },
         {
             "date": "05/05/23",
-            "startTime": ["7:30PM"],
+            "startTime": ["7:30P"],
             "endTime": ["7:30PM"],
         },
         ],
@@ -117,20 +128,22 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
+        image:"",
+        description:"ewfwrefgwrg"
     },
     {
-        id: 1,
+        id: 5,
         name: "5wefwfq0 anniversary",
         location: "Sede Central",
         address: "155 Power Rd., Pawtucket, RI, 02860, US",
         datesAndTimes: [{
-            "date": "05/04/23",
-            "startTime": ["7:30PM"],
-            "endTime": ["7:30PM"]
+            date: "05/04/23",
+            startTime: "7:30PM",
+            endTime: "7:30PM"
         },
         {
             "date": "05/05/23",
-            "startTime": ["7:30PM"],
+            "startTime": ["7:30P"],
             "endTime": ["7:30PM"],
         },
         ],
@@ -139,6 +152,32 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
+        image:"",
+        description:"ewfwrefgwrg"
+    },
+    {
+        id: 6,
+        name: "5wefwfq0 anniversary",
+        location: "Sede Central",
+        address: "155 Power Rd., Pawtucket, RI, 02860, US",
+        datesAndTimes: [{
+            date: "05/04/23",
+            startTime: "7:30PM",
+            endTime: "7:30PM"
+        },
+        {
+            "date": "05/05/23",
+            "startTime": ["7:30P"],
+            "endTime": ["7:30PM"],
+        },
+        ],
+        services: [
+            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
+            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
+            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
+        ],
+        image:"",
+        description:"ewfwrefgwrg"
     },
 ]
 
