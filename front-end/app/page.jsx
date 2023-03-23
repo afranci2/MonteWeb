@@ -252,10 +252,10 @@ async function page () {
         />
         <BodySectionImageRight
           buttonText="Ver Mas"
-          headingText={res[res.length-1].name}
-          subheadingText={res[res.length-1].description}
-          buttonLink="/historia"
-          image={res[res.length-1].image}
+          headingText={res[res.length-2].name}
+          subheadingText={res[res.length-2].description}
+          buttonLink={res[res.length-2].link}
+          image={res[res.length-2].image}
         />
       </DefaultBody>
       <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">
