@@ -11,10 +11,8 @@ const page = () => {
           width="1280"
           height="720"
           scrolling="no"
-          frameborder="0"
-          allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          allowFullScreen="true"
+          allowFullScreen={true}
         ></iframe>
       </div>
     </div>
