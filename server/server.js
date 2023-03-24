@@ -1,14 +1,161 @@
 const express = require('express')
+const mysql = require('mysql')
+const PORT = 8000;
 const cors = require('cors');
 const env = require('dotenv').config({ path: './.env' })
+const app = express();
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
+const DB_NAME = 'MONTEDB'
 
-const app = express();
-const PORT = 8000;
+const db = mysql.createConnection({
+    host: `localhost`,
+    user: 'root',
+    password: '',
+    database: 'dbmonte'
+})
+
+db.connect((error) => {
+    if (error) {
+        console.log(error)
+    }
+    else { console.log('MySql Connected') }
+})
+
+
+
 app.use(cors());
 app.use(express.json()); // to parse JSON dat
 app.use(express.urlencoded({ extended: true })); //
+
+app.get('/createposttable', (req, res) => {
+    let sql1 = 'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255), address VARCHAR(255), image VARCHAR(255), description TEXT, datesAndTimesId int); ';
+    let sql1_2 = 'CREATE TABLE IF NOT EXISTS events_datesAndTimes (id INT AUTO_INCREMENT PRIMARY KEY,eventId INT,date VARCHAR(255),startTime VARCHAR(255),endTime VARCHAR(255));';
+    let sql2 = 'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255), description TEXT, leadPastor VARCHAR(255), associatePastors VARCHAR(255), services TEXT, socialMedia VARCHAR(255), address VARCHAR(255), phone VARCHAR(20), email VARCHAR(255), coordinates VARCHAR(255), mainImage VARCHAR(255), supportingImages TEXT, mapLink VARCHAR(255)); '
+    let sql3 = 'CREATE TABLE IF NOT EXISTS testimonials(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255), description TEXT, phone VARCHAR(20), email VARCHAR(255), images TEXT); '
+    let sql4 = 'CREATE TABLE IF NOT EXISTS applications(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255), description TEXT, areaOfService TEXT, phone VARCHAR(20), email VARCHAR(255), files VARCHAR(255)); '
+    db.query(sql1, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query(sql1_2, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query(sql2, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query(sql3, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query(sql4, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+})
+
+app.get('/try', (req, res) => {
+    db.query("ALTER TABLE events AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+    db.query("INSERT INTO events(name, location, address, image, description) VALUES ('Congreso', 'New Location', '1234 New Street', 'https://...', 'New event description');", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query("ALTER TABLE events_datesAndTimes AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+
+    db.query("ALTER TABLE events_datesAndTimes ADD CONSTRAINT fk_events FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+
+    db.query("SET @event_id = LAST_INSERT_ID();", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+    db.query("INSERT INTO events_datesAndTimes(eventId, date, startTime, endTime)VALUES(@event_id, '2023-04-01', '7:30PM', '10:00PM'), (@event_id, '2023-04-02', '6:00PM', '8:30PM');", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+
+
+
+})
+
+app.get('/get-event/:id', (req, response) => {
+
+
+    db.query(`SELECT * FROM events WHERE id = ${req.params.id};`, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query(`SELECT * FROM events_datesAndTimes WHERE eventId = ${req.params.id};`, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+
+})
+
+app.get('get-db', (req, res) => {
+    let sql = 'select * from persons'
+    db.query(sql, function (error, results) {
+        if (error) {
+            response.status(400).send('Error in database operation');
+        } else {
+            response.send(results);
+        }
+    });
+})
+
+app.post('/create-new-post-table', (req, res) => {
+    const sql = req.body.query;
+    db.query(sql, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+})
 
 let events = [
     {
@@ -32,8 +179,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-        image:"",
-        description:"ewfwrefgwrg"
+        image: "",
+        description: "ewfwrefgwrg"
     },
     {
         id: 1,
@@ -56,8 +203,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-        image:"",
-        description:"ewfwrefgwrg"
+        image: "https://....",
+        description: "ewfwrefgwrg"
     },
     {
         id: 2,
@@ -80,8 +227,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-        image:"",
-        description:"ewfwrefgwrg"
+        image: "",
+        description: "ewfwrefgwrg"
     },
     {
         id: 3,
@@ -104,8 +251,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-        image:"",
-        description:"ewfwrefgwrg"
+        image: "",
+        description: "ewfwrefgwrg"
     },
     {
         id: 4,
@@ -128,8 +275,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-        image:"",
-        description:"ewfwrefgwrg"
+        image: "",
+        description: "ewfwrefgwrg"
     },
     {
         id: 5,
@@ -152,8 +299,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-        image:"",
-        description:"ewfwrefgwrg"
+        image: "",
+        description: "ewfwrefgwrg"
     },
     {
         id: 6,
@@ -176,8 +323,8 @@ let events = [
             { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
             { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
         ],
-        image:"",
-        description:"ewfwrefgwrg"
+        image: "",
+        description: "ewfwrefgwrg"
     },
 ]
 
@@ -271,6 +418,9 @@ let churches = [
 
 ];
 
+let testimonials = []
+
+let applications = []
 
 function convertPaymentAmount(amount) {
     console.log(amount)
@@ -296,6 +446,17 @@ app.get("/", (req, res) => {
 
 app.get("/iglesias", (request, response) => {
     response.json(churches)
+})
+
+app.get("/iglesias2/:id", (request, response) => {
+    let sql = `SELECT * FROM churches WHERE location="${request.params.id}"`
+    let query = db.query(sql, (err, results) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(results)
+        response.json(results)
+    })
 })
 
 app.get("/eventos", (request, response) => {
