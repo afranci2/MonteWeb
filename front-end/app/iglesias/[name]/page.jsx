@@ -11,7 +11,7 @@ import ChurchHeader from "../../../sections/header/ChurchHeader";
 
 async function fetchChurches(id) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/iglesias`, {
+    const res = await fetch(`http://localhost:8000/iglesias2/${id}`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -20,10 +20,9 @@ async function fetchChurches(id) {
     });
 
     const data = await res.json();
-    console.log(data)
-    console.log(data[id-1])
+    console.log(data);
 
-    return data[id - 1]; // parses
+    return data; // parses
   } catch (error) {
     console.log(error);
   }

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import EventForm from './EventForm'
 
-const page = () => {
+async function page() {
+
+  
   return (
-    <div>pag</div>
-  )
+    <div className="bg-gray-200">
+      <p>Admin Event Form</p>
+      <EventForm/>
+    </div>
+  );
 }
 
-export default page
+export default page;
