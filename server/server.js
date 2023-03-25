@@ -28,12 +28,14 @@ app.use(cors());
 app.use(express.json()); // to parse JSON dat
 app.use(express.urlencoded({ extended: true })); //
 
-app.get('/createposttable', (req, res) => {
+app.get('/create-tables', (req, res) => {
     let sql1 = 'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255), address VARCHAR(255), image VARCHAR(255), description TEXT, datesAndTimesId int); ';
     let sql1_2 = 'CREATE TABLE IF NOT EXISTS events_datesAndTimes (id INT AUTO_INCREMENT PRIMARY KEY,eventId INT,date VARCHAR(255),startTime VARCHAR(255),endTime VARCHAR(255));';
     let sql2 = 'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255), description TEXT, leadPastor VARCHAR(255), associatePastors VARCHAR(255), services TEXT, socialMedia VARCHAR(255), address VARCHAR(255), phone VARCHAR(20), email VARCHAR(255), coordinates VARCHAR(255), mainImage VARCHAR(255), supportingImages TEXT, mapLink VARCHAR(255)); '
     let sql3 = 'CREATE TABLE IF NOT EXISTS testimonials(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255), description TEXT, phone VARCHAR(20), email VARCHAR(255), images TEXT); '
     let sql4 = 'CREATE TABLE IF NOT EXISTS applications(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255), description TEXT, areaOfService TEXT, phone VARCHAR(20), email VARCHAR(255), files VARCHAR(255)); '
+    let sql5 = 'CREATE TABLE IF NOT EXISTS events_services(id INT AUTO_INCREMENT PRIMARY KEY,eventId INT, name VARCHAR(255), day VARCHAR(255), startTime VARCHAR(100), endTime VARCHAR(100)); '
+
     db.query(sql1, (err, res) => {
         if (err) {
             console.log(err)
@@ -64,10 +66,16 @@ app.get('/createposttable', (req, res) => {
         }
         console.log(res)
     })
+    db.query(sql5, (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
 
 })
 
-app.get('/try', (req, res) => {
+app.get('/add-event', (req, res) => {
     db.query("ALTER TABLE events AUTO_INCREMENT = 1;", (err, res) => {
         if (err) {
             console.log(err)
@@ -75,7 +83,7 @@ app.get('/try', (req, res) => {
         console.log(res)
     })
 
-    db.query("INSERT INTO events(name, location, address, image, description) VALUES ('Congreso', 'New Location', '1234 New Street', 'https://...', 'New event description');", (err, res) => {
+    db.query("INSERT INTO events(name, location, address, image, description) VALUES ('Congresweqfefo', 'New Location', '1234 New Street', 'https://...', 'New event description');", (err, res) => {
         if (err) {
             console.log(err)
         }
@@ -110,7 +118,12 @@ app.get('/try', (req, res) => {
         }
         console.log(res)
     })
-
+    db.query("INSERT INTO events_services(eventId, date, startTime, endTime)VALUES(@event_id, '2023-04-01', '7:30PM', '10:00PM'), (@event_id, '2023-04-02', '6:00PM', '8:30PM');", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
 
 
 
@@ -135,16 +148,60 @@ app.get('/get-event/:id', (req, response) => {
 
 })
 
-app.get('get-db', (req, res) => {
-    let sql = 'select * from persons'
+app.get('/get-all-events', (req, res) => {
+    let sql = 'SELECT * FROM events'
+    let sql2 = 'SELECT * FROM events_datesAndTimes'
+
     db.query(sql, function (error, results) {
         if (error) {
-            response.status(400).send('Error in database operation');
+            console.log('Error in database operation');
         } else {
-            response.send(results);
+            console.log(results);
+        }
+    });
+    db.query(sql2, function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
         }
     });
 })
+
+
+
+
+app.get('/get-all-churches', (req, res) => {
+    let sql = 'SELECT * FROM churches'
+
+    db.query(sql, function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
+})
+
+
+app.get('/add-church', (req, res) => {
+    db.query("ALTER TABLE churches AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+    db.query("INSERT INTO churches(name, location, description, associatePastors, services, socialMedia, address, phone, email, coordinates, mainImage, supportingImages, mapLink) VALUES ('Congqwerweresweqfefo', 'New Location', '1234 weqwew Street', 'Isaiah', 'fewfwefqw','qwefwfeq','wqefwef','wqefwefweq', 'weqfwqef','qwefwfef','weqfweewf','ewfwefwfe','wefwfwef');", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+
+})
+
 
 app.post('/create-new-post-table', (req, res) => {
     const sql = req.body.query;
