@@ -49,7 +49,7 @@ function Header({
           </div>
         </div>
         {children}
-        <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
+        <div className=" h-full w-full absolute z-0"></div>
         <div className={image ? "object-cover" : "hidden"}>
           <div className="contain">
             {image ? (
