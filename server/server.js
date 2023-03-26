@@ -29,14 +29,19 @@ app.use(express.json()); // to parse JSON dat
 app.use(express.urlencoded({ extended: true })); //
 
 app.get('/create-tables', (req, res) => {
-    let sql1 = 'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255), address VARCHAR(255), image VARCHAR(255), description TEXT, datesAndTimesId int); ';
-    let sql1_2 = 'CREATE TABLE IF NOT EXISTS events_datesAndTimes (id INT AUTO_INCREMENT PRIMARY KEY,eventId INT,date VARCHAR(255),startTime VARCHAR(255),endTime VARCHAR(255));';
-    let sql2 = 'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255), description TEXT, leadPastor VARCHAR(255), associatePastors VARCHAR(255), services TEXT, socialMedia VARCHAR(255), address VARCHAR(255), phone VARCHAR(20), email VARCHAR(255), coordinates VARCHAR(255), mainImage VARCHAR(255), supportingImages TEXT, mapLink VARCHAR(255)); '
+    let sql1_1 = 'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255) UNIQUE, address VARCHAR(255), image VARCHAR(255), description TEXT); ';
+    let sql1_2 = 'CREATE TABLE IF NOT EXISTS events_datesAndTimes (id INT AUTO_INCREMENT PRIMARY KEY,eventId INT NOT NULL,date VARCHAR(255),startTime VARCHAR(255),endTime VARCHAR(255), FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE);';
+    let sql1_3 = 'CREATE TABLE IF NOT EXISTS events_services(id INT AUTO_INCREMENT PRIMARY KEY,eventId INT NOT NULL, name VARCHAR(255), day VARCHAR(255), startTime VARCHAR(100), endTime VARCHAR(100), FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE); '
+
+    let sql2_1 = 'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255), description TEXT, leadPastor VARCHAR(255), associatePastors VARCHAR(255), services TEXT, socialMedia VARCHAR(255), address VARCHAR(255), phone VARCHAR(20), email VARCHAR(255), coordinates VARCHAR(255), mainImage VARCHAR(255), supportingImages TEXT, mapLink VARCHAR(255)); '
+    let sql2_2 = 'CREATE TABLE IF NOT EXISTS churches_associatePastors (id INT AUTO_INCREMENT PRIMARY KEY,eventId INT NOT NULL,date VARCHAR(255),startTime VARCHAR(255),endTime VARCHAR(255), FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE);';
+
+    
+    
     let sql3 = 'CREATE TABLE IF NOT EXISTS testimonials(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255), description TEXT, phone VARCHAR(20), email VARCHAR(255), images TEXT); '
     let sql4 = 'CREATE TABLE IF NOT EXISTS applications(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255), description TEXT, areaOfService TEXT, phone VARCHAR(20), email VARCHAR(255), files VARCHAR(255)); '
-    let sql5 = 'CREATE TABLE IF NOT EXISTS events_services(id INT AUTO_INCREMENT PRIMARY KEY,eventId INT, name VARCHAR(255), day VARCHAR(255), startTime VARCHAR(100), endTime VARCHAR(100)); '
 
-    db.query(sql1, (err, res) => {
+    db.query(sql1_1, (err, res) => {
         if (err) {
             console.log(err)
         }
@@ -48,30 +53,19 @@ app.get('/create-tables', (req, res) => {
         }
         console.log(res)
     })
-    db.query(sql2, (err, res) => {
+    db.query(sql1_3, (err, res) => {
         if (err) {
             console.log(err)
         }
         console.log(res)
     })
-    db.query(sql3, (err, res) => {
+    db.query(sql2_1, (err, res) => {
         if (err) {
             console.log(err)
         }
         console.log(res)
     })
-    db.query(sql4, (err, res) => {
-        if (err) {
-            console.log(err)
-        }
-        console.log(res)
-    })
-    db.query(sql5, (err, res) => {
-        if (err) {
-            console.log(err)
-        }
-        console.log(res)
-    })
+  
 
 })
 
@@ -83,47 +77,56 @@ app.get('/add-event', (req, res) => {
         console.log(res)
     })
 
-    db.query("INSERT INTO events(name, location, address, image, description) VALUES ('Congresweqfefo', 'New Location', '1234 New Street', 'https://...', 'New event description');", (err, res) => {
-        if (err) {
-            console.log(err)
-        }
-        console.log(res)
-    })
+
     db.query("ALTER TABLE events_datesAndTimes AUTO_INCREMENT = 1;", (err, res) => {
         if (err) {
             console.log(err)
         }
         console.log(res)
     })
-
-
-    db.query("ALTER TABLE events_datesAndTimes ADD CONSTRAINT fk_events FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE;", (err, res) => {
+    db.query("ALTER TABLE events_services AUTO_INCREMENT = 1;", (err, res) => {
         if (err) {
             console.log(err)
         }
         console.log(res)
     })
 
+
+    db.query("INSERT INTO events(name, location, address, image, description) VALUES ('newscwservice', 'New Locguvubation', '1234 New Street', 'https://...', 'New event description');", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+        console.log("fyfvygvghbgbg")
+    })
 
     db.query("SET @event_id = LAST_INSERT_ID();", (err, res) => {
         if (err) {
             console.log(err)
         }
         console.log(res)
+        console.log("done")
     })
 
-    db.query("INSERT INTO events_datesAndTimes(eventId, date, startTime, endTime)VALUES(@event_id, '2023-04-01', '7:30PM', '10:00PM'), (@event_id, '2023-04-02', '6:00PM', '8:30PM');", (err, res) => {
+
+
+    db.query("INSERT INTO events_datesAndTimes(eventId, date, startTime, endTime)VALUES(@event_id, '2023-04-01', '7:30PM', '10:00PM'), (@event_id,'2023-04-02', '6:00PM', '8:30PM');", (err, res) => {
         if (err) {
             console.log(err)
         }
         console.log(res)
+        console.log("done2")
+
     })
-    db.query("INSERT INTO events_services(eventId, date, startTime, endTime)VALUES(@event_id, '2023-04-01', '7:30PM', '10:00PM'), (@event_id, '2023-04-02', '6:00PM', '8:30PM');", (err, res) => {
-        if (err) {
-            console.log(err)
-        }
-        console.log(res)
-    })
+
+    for (let i = 0; i < 3; i++) {
+        db.query(`INSERT INTO events_services(eventId,name, day, startTime, endTime)VALUES(@event_id,'Servicio Evangelistico${i}', 'Sunday', '7:30PM', '10:00PM')`, (err, res) => {
+            if (err) {
+                console.log(err)
+            }
+            console.log(res)
+        })
+    }
 
 
 
