@@ -8,16 +8,17 @@ import DefaultBody from "../../../../sections/body/defaultBody/DefaultBody";
 import TextLeftTab from "../../../../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../../../../components/tab/textRightTab/TextRightTab";
 
-const IglesiaTab = ({ res }) => {
+const IglesiaTab = ({ services, socials, images }) => {
+  console.log("all data",services, socials, images)
   return (
     <div>
       {" "}
       <div className="tabs-section w-10/12 m-auto md:flex md:grid-cols-2">
         <div className="py-8">    
-          <ServiceTimesTab res={res}/>
+          <ServiceTimesTab res={services}/>
         </div>
         <div className="w-full py-8">
-            <ChurchMainTab res={res}/>
+            <ChurchMainTab socials={socials} images = {images}/>
         </div>
       </div>
     </div>

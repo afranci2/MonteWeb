@@ -15,8 +15,8 @@ const IglesiasMapListLeft = (props) => {
         <div className="aflex flex-col">
           {props.churches.map((church) => {
             return (
-              <Link href={`/iglesias/${church.name}`} key={church.name}>
-                <IglesiasCard church={church} />
+              <Link href={`/iglesias/${church.id}`} key={church.name}>
+                <IglesiasCard church={church} images={props.images} />
               </Link>
             );
           })}

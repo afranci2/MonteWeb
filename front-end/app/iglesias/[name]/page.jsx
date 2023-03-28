@@ -11,7 +11,7 @@ import ChurchHeader from "../../../sections/header/ChurchHeader";
 
 async function fetchChurches(id) {
   try {
-    const res = await fetch(`http://localhost:8000/iglesias2/${id}`, {
+    const res = await fetch(`http://localhost:8000/get-church/${id}`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -28,8 +28,62 @@ async function fetchChurches(id) {
   }
 }
 
+async function fetchChurchesImages(id) {
+  try {
+    const res = await fetch(`http:localhost:8000/get-church-images/${id}`, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+    const data = await res.json();
+    return data; // parses
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function fetchChurchesServices(id) {
+  try {
+    const res = await fetch(`http:localhost:8000/get-church-services/${id}`, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+    const data = await res.json();
+    return data; // parses
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function fetchChurchesSocials(id) {
+  try {
+    const res = await fetch(`http:localhost:8000/get-church-socials/${id}`, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+    const data = await res.json();
+    return data; // parses
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default async function page({ params }) {
-  const res = await fetchChurches(params.name);
+  const res = await fetchChurches(1);
+  const res2 = await fetchChurchesImages(1);
+  const res3 = await fetchChurchesServices(1);
+  const res4 = await fetchChurchesSocials(1);
+
+  const mainImage = res2?.find((image) => image.is_main === 1);
+
   return (
     <div>
       <Navbar2 />
@@ -48,13 +102,13 @@ export default async function page({ params }) {
         </Banner2>
         {res ? (
           <ChurchHeader
-            image={res.images.main}
+            image={mainImage}
             headerText={res.name}
             classChangeText={undefined}
             contentPosition={undefined}
             subheadingText={res.description}
             direction={res.address}
-            mapLink={res.mapLink}
+            mapLink={"https://facebook.com"}
           />
         ) : (
           <div className="h-full w-full text-center flex justify-center m-auto items-center">
@@ -64,7 +118,7 @@ export default async function page({ params }) {
       </div>
       {res ? (
         <div className="bg-[#f7f7f7]">
-          <IglesiaTab res={res} />{" "}
+          <IglesiaTab social={res4} services={res3} />{" "}
         </div>
       ) : null}
       {res ? (
@@ -73,7 +127,7 @@ export default async function page({ params }) {
             headingText="Nosotros"
             buttonText="Leer Mas"
             subheadingText={res.description}
-            image={res.images.main}
+            image={mainImage}
             buttonLink={"/"}
           />
           <Lideres />

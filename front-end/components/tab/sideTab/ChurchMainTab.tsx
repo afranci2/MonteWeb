@@ -3,10 +3,14 @@ import Image from "next/image";
 import "./ChurchMainTab.css";
 import Link from "next/link";
 
-const ChurchMainTab = ({ res }) => {
+const ChurchMainTab = ({ socials, images }) => {
+  console.log("this one", socials)
+  console.log("this one too", images)
+
+
   return (
     <div className="md:p-4 else flex flex-col md:grid gap-4 grid-cols-2 ">
-      <Link href={"iglesias/"}>
+      <Link href={"/iglesias"}>
         <div className=" something overflow-hidden relative rounded-lg shadow-lg w-full ">
           <div className="z-40 absolute text-white bottom-0 p-8">
             <p className="text-2xl font-semibold">Eres Nuevo?</p>
@@ -15,14 +19,14 @@ const ChurchMainTab = ({ res }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={res.images.main}
+            src={images}
             alt="image"
             width={1000}
             height={1000}
           />
         </div>
       </Link>
-      <Link href={res.socialMedia.Facebook}>
+      <Link href={"/iglesias"}>
         <div className=" something overflow-hidden relative rounded-lg shadow-lg w-full">
           <div className="z-40 absolute text-white bottom-0 p-8">
             <p className="text-2xl font-semibold">Conéctate</p>
@@ -31,7 +35,7 @@ const ChurchMainTab = ({ res }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={res.images.main}
+            src={null}
             alt="image"
             width={1000}
             height={1000}
@@ -48,7 +52,7 @@ const ChurchMainTab = ({ res }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={res.images.main}
+            src={null}
             alt="image"
             width={1000}
             height={1000}
@@ -64,7 +68,7 @@ const ChurchMainTab = ({ res }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={res.images.main}
+            src={null}
             alt="image"
             width={1000}
             height={1000}

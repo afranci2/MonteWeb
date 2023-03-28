@@ -4,6 +4,7 @@ import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps
 import ChurchInfoWindow from '../../../../components/churchInfoWindow/ChurchWindowInfo'
 
 function IglesiasMapRight(props) {
+
   function clickHandler() {
     console.log("ewfr");
     setChurches(true);
@@ -52,7 +53,10 @@ function IglesiasMapRight(props) {
                     }
                   }}
                   key={church.id}
-                  position={church.coordinates}
+                  position={{
+                    lat:parseFloat(church.coordinates.split(",")[0]),
+                    lng:parseFloat(church.coordinates.split(",")[1])
+                  }}
                   
                 >
                   {selectedMarker === church.id && (

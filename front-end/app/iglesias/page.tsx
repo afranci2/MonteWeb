@@ -9,7 +9,7 @@ console.log(process.env.NEXT_PUBLIC_SERVER_URL);
 
 async function fetchChurches() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/iglesias`, {
+    const res = await fetch(`http:localhost:8000/get-all-churches`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -17,7 +17,6 @@ async function fetchChurches() {
       },
     });
     const data = await res.json();
-    console.log(data)
     return data; // parses
   } catch (error) {
     console.log(error);
@@ -35,7 +34,7 @@ export default async function page() {
       </div>
       <IglesiasMapRight churches={res} />
       <div className="md:hidden ">
-        <IglesiasMapList churches={res} />
+        <IglesiasMapList churches={res}/>
       </div>
       <Footer />
     </div>
