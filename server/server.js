@@ -23,8 +23,6 @@ db.connect((error) => {
     else { console.log('MySql Connected') }
 })
 
-
-
 app.use(cors());
 app.use(express.json()); // to parse JSON dat
 app.use(express.urlencoded({ extended: true })); //
@@ -35,7 +33,7 @@ app.get('/create-tables', (req, res) => {
         'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255) UNIQUE, address VARCHAR(255), image VARCHAR(255), description TEXT); ',
         'CREATE TABLE IF NOT EXISTS events_dates_and_times (id INT AUTO_INCREMENT PRIMARY KEY,event_id INT NOT NULL,date VARCHAR(255),start_time VARCHAR(255),end_time VARCHAR(255), FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) UNIQUE, location VARCHAR(255), description TEXT, address VARCHAR(255), coordinates TEXT ,phone VARCHAR(20), email VARCHAR(255), map_link VARCHAR(255)); ',
-        'CREATE TABLE IF NOT EXISTS churches_pastors (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, title VARCHAR(255), position VARCHAR(255), last_name VARCHAR(255), first_name VARCHAR(255) UNIQUE, bio TEXT, main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
+        'CREATE TABLE IF NOT EXISTS churches_pastors (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, title VARCHAR(255), position VARCHAR(255), last_name VARCHAR(255), first_name VARCHAR(255), bio TEXT, main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches_socials (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, name VARCHAR(255), link TEXT, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches_images (id INT AUTO_INCREMENT PRIMARY KEY, church_id INT NOT NULL, source TEXT, is_main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches_services(id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, name VARCHAR(255), day VARCHAR(255), start_time VARCHAR(100), end_time VARCHAR(100), FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE); '];
@@ -235,6 +233,38 @@ app.delete('/delete-event-dates-and-times/:id', (req, res) => {
 
 app.put('/update-event/:id', (req, res) => {
     const { name, location, address, image, description } = req.body;
+    const eventId = req.params.id;
+    const sql = `UPDATE events SET 
+    name = COALESCE(?, name), 
+    location = COALESCE(?, location),
+     address = COALESCE(?, address),
+     image = COALESCE(?, image), 
+     description = COALESCE(?, description) 
+     WHERE id = ?`;
+    db.query("USE db_monte", function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
+    db.query(sql, [name, location, address, image, description, eventId], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error updating event.");
+        } else {
+            console.log(result);
+            res.status(200).send("Event updated successfully.");
+        }
+    });
+});
+app.get('/update-dummy-event/:id', (req, res) => {
+    const name = "updated name";
+    const location = null;
+    const address = null;
+    const image = null;
+    const description = null
+
     const eventId = req.params.id;
     const sql = `UPDATE events SET 
     name = COALESCE(?, name), 
@@ -477,12 +507,36 @@ app.get('/add-dummy-church', (req, res) => {
         }
         console.log(res)
     })
+    db.query("ALTER TABLE churches_pastors AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query("ALTER TABLE churches_socials AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query("ALTER TABLE churches_images AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query("ALTER TABLE churches_services AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
     let church = {
-        name: "Sede Central",
-        location: "Pawtucket",
+        name: "trythis",
+        location: "pawtucket",
         description: "A nice church",
         address: "155 Power Rd",
-        coordinates: "23432.21341,12342134.431",
+        coordinates: "41.75482006659902,-71.41359964022818",
         phone: "401342414",
         email: "anthony.frwfaadfw@fqwef",
         map_link: "https...."
@@ -491,7 +545,7 @@ app.get('/add-dummy-church', (req, res) => {
         title: "Rev",
         position: "Lead Pastor",
         last_name: "Francisco",
-        first_name: "Samuel",
+        first_name: "wefwef",
         bio: "mpwrfkwmrf",
         main: "TRUE",
     },
@@ -499,7 +553,7 @@ app.get('/add-dummy-church', (req, res) => {
         title: "Rev",
         position: "Lead Pastor",
         last_name: "Francisco",
-        first_name: "Isabel",
+        first_name: "wefefewf",
         bio: "mpwrfkwmrf",
         main: "FALSE",
     }
@@ -515,16 +569,16 @@ app.get('/add-dummy-church', (req, res) => {
     }]
 
     let church_images = [{
-        source: "https..wef",
-        is_main: "TRUE"
+        source: "https://monte-assets.s3.amazonaws.com/img/section2.jpg",
+        is_main: true
     },
     {
         source: "https...",
-        is_main: "FALSE"
+        is_main: false
     },
     {
         source: "https...",
-        is_main: "FALSE"
+        is_main: false
     }]
 
     let church_services = [{
@@ -629,15 +683,14 @@ app.get('/add-dummy-church', (req, res) => {
             if (err) {
                 console.log(err)
                 res.send("Error!")
-                console.log(`Church service ${i} done`)
+                console.log(`Church service ${i} error while adding`)
+
 
 
             }
             console.log(result)
             console.log("FIFTH DONE")
-            console.log(`Church service ${i} error while adding`)
-
-
+            console.log(`Church service ${i} added successfully`)
         })
     }
 
@@ -646,7 +699,7 @@ app.get('/add-dummy-church', (req, res) => {
 
 
 
-app.delete('/delete-church/:id', (req, res) => {
+app.get('/delete-church/:id', (req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -658,12 +711,15 @@ app.delete('/delete-church/:id', (req, res) => {
     db.query(`DELETE FROM churches WHERE id = ${eventId}`, (err, result) => {
         if (err) {
             console.log(err);
+            console.log(`Church with ID ${eventId} deleted successfully.`);
+
             return res.status(500).send('An error occurred while deleting the event.');
         }
 
         if (result.affectedRows === 0) {
             return res.status(404).send('Event not found.');
         }
+        console.log(`Church with ID ${eventId} deleted successfully.`);
 
         return res.send(`Church with ID ${eventId} deleted successfully.`);
     });
@@ -836,10 +892,11 @@ app.put('/update-church-socials/:id', (req, res) => {
         }
     });
 });
-app.put('/update-church-images/:id', (req, res) => {
-    const { source, is_main } = req.body;
+app.get('/update-church-images/:id', (req, res) => {
+    let source = "https://monte-assets.s3.amazonaws.com/img/section2.jpg"
+    let is_main= true
     const id = req.params.id;
-    const sql = `UPDATE churches_socials SET source = COALESCE(?, source), is_main = COALESCE(?, is_main) WHERE id = ?`;
+    const sql = `UPDATE churches_images SET source = COALESCE(?, source), is_main = COALESCE(?, is_main) WHERE id = ?`;
     db.query("USE db_monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
@@ -936,7 +993,7 @@ app.get('/get-all-churches-socials', (req, res) => {
     });
 })
 app.get('/get-all-churches-images', (req, res) => {
-    let sql = 'SELECT * FROM churches_imges'
+    let sql = 'SELECT * FROM churches_images'
     db.query("USE db_monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
@@ -971,6 +1028,13 @@ app.get('/get-all-churches-services', (req, res) => {
 })
 
 app.get('/get-church/:id', (req, response) => {
+    db.query("USE db_monte", function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
     db.query(`SELECT * FROM churches WHERE id = ${req.params.id};`, (err, res) => {
         if (err) {
             console.log(err)
@@ -981,7 +1045,13 @@ app.get('/get-church/:id', (req, response) => {
     })
 })
 app.get('/get-church-pastors/:id', (req, response) => {
-
+    db.query("USE db_monte", function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
     db.query(`SELECT * FROM churches_pastors WHERE church_id = ${req.params.id};`, (err, res) => {
         if (err) {
             console.log(err)
@@ -992,7 +1062,13 @@ app.get('/get-church-pastors/:id', (req, response) => {
     })
 })
 app.get('/get-church-socials/:id', (req, response) => {
-
+    db.query("USE db_monte", function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
     db.query(`SELECT * FROM churches_socials WHERE church_id = ${req.params.id};`, (err, res) => {
         if (err) {
             console.log(err)
@@ -1003,7 +1079,13 @@ app.get('/get-church-socials/:id', (req, response) => {
     })
 })
 app.get('/get-church-images/:id', (req, response) => {
-
+    db.query("USE db_monte", function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
     db.query(`SELECT * FROM churches_images WHERE church_id = ${req.params.id};`, (err, res) => {
         if (err) {
             console.log(err)
@@ -1014,7 +1096,13 @@ app.get('/get-church-images/:id', (req, response) => {
     })
 })
 app.get('/get-church-services/:id', (req, response) => {
-
+    db.query("USE db_monte", function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
     db.query(`SELECT * FROM churches_services WHERE church_id = ${req.params.id};`, (err, res) => {
         if (err) {
             console.log(err)
