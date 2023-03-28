@@ -34,7 +34,6 @@ app.get('/create-tables', (req, res) => {
         'CREATE DATABASE db_monte', 'USE db_monte',
         'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255) UNIQUE, address VARCHAR(255), image VARCHAR(255), description TEXT); ',
         'CREATE TABLE IF NOT EXISTS events_dates_and_times (id INT AUTO_INCREMENT PRIMARY KEY,event_id INT NOT NULL,date VARCHAR(255),start_time VARCHAR(255),end_time VARCHAR(255), FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE);',
-        'CREATE TABLE IF NOT EXISTS events_services(id INT AUTO_INCREMENT PRIMARY KEY,event_id INT NOT NULL, name VARCHAR(255), day VARCHAR(255), start_time VARCHAR(100), end_time VARCHAR(100), FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE); ',
         'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) UNIQUE, location VARCHAR(255), description TEXT, address VARCHAR(255), coordinates TEXT ,phone VARCHAR(20), email VARCHAR(255), map_link VARCHAR(255)); ',
         'CREATE TABLE IF NOT EXISTS churches_pastors (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, title VARCHAR(255), position VARCHAR(255), last_name VARCHAR(255), first_name VARCHAR(255) UNIQUE, bio TEXT, main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches_socials (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, name VARCHAR(255), link TEXT, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
@@ -98,21 +97,13 @@ app.post('/add-event', (req, res) => {
     })
 
     for (let i = 0; i < event_dates_and_times.length; i++) {
-        db.query("INSERT INTO events_dates_and_times(event_id, date, start_time, end_time)VALUES(@event_id, ?, ?, '?);", [event_dates_and_times[i].date, event_dates_and_times[i].start_time, event_dates_and_times[i].end_time], (err, res) => {
+        db.query("INSERT INTO events_dates_and_times(event_id, date, start_time, end_time)VALUES(@event_id, ?, ?, ?);", [event_dates_and_times[i].date, event_dates_and_times[i].start_time, event_dates_and_times[i].end_time], (err, res) => {
             if (err) {
                 console.log(err)
             }
             console.log(res)
             console.log("done2")
 
-        })
-    }
-    for (let i = 0; i < event_services.length; i++) {
-        db.query(`INSERT INTO events_services(event_id,name, day, start_time, end_time)VALUES(@event_id,?, ?,?, ?);`, [event_services[i].name, event_services[i].day, event_services[i].start_time, event_services[i].end_time], (err, res) => {
-            if (err) {
-                console.log(err)
-            }
-            console.log(res)
         })
     }
 
@@ -138,28 +129,6 @@ app.delete('/delete-event/:id', (req, res) => {
         }
 
         return res.send(`Event with ID ${eventId} deleted successfully.`);
-    });
-});
-app.delete('/delete-event-services/:id', (req, res) => {
-    const eventId = req.params.id;
-    db.query("USE db_monte", function (error, results) {
-        if (error) {
-            console.log('Error in database operation');
-        } else {
-            console.log(results);
-        }
-    });
-    db.query(`DELETE FROM events_services WHERE id = ${eventId}`, (err, result) => {
-        if (err) {
-            console.log(err);
-            return res.status(500).send('An error occurred while deleting the event.');
-        }
-
-        if (result.affectedRows === 0) {
-            return res.status(404).send('Event not found.');
-        }
-
-        return res.send(`Event service with ID ${eventId} deleted successfully.`);
     });
 });
 app.delete('/delete-event-dates-and-times/:id', (req, res) => {
@@ -212,42 +181,13 @@ app.put('/update-event/:id', (req, res) => {
         }
     });
 });
-app.put('/update-event-services/:id', (req, res) => {
-    const { name, location, address, image, description } = req.body;
-    const eventId = req.params.id;
-    const sql = `UPDATE events_services 
-    SET name = COALESCE(?, name), 
-    location = COALESCE(?, location), 
-    address = COALESCE(?, address), 
-    image = COALESCE(?, image), 
-    description = COALESCE(?, description) 
-    WHERE id = ?`;
-    db.query("USE db_monte", function (error, results) {
-        if (error) {
-            console.log('Error in database operation');
-        } else {
-            console.log(results);
-        }
-    });
-    db.query(sql, [name, location, address, image, description, eventId], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error updating event.");
-        } else {
-            console.log(result);
-            res.status(200).send("Event service updated successfully.");
-        }
-    });
-});
 app.put('/update-event-dates-and-times/:id', (req, res) => {
-    const { name, location, address, image, description } = req.body;
+    const { date, start_time, end_time } = req.body;
     const eventId = req.params.id;
     const sql = `UPDATE events_dates_and_times SET 
-    name = COALESCE(?, name), 
-    location = COALESCE(?, location), 
-    address = COALESCE(?, address), 
-    image = COALESCE(?, image), 
-    description = COALESCE(?, description) 
+    date = COALESCE(?, date), 
+    start_time = COALESCE(?, start_time), 
+    end_time = COALESCE(?, end_time), 
     WHERE event_id = ?`;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -256,7 +196,7 @@ app.put('/update-event-dates-and-times/:id', (req, res) => {
             console.log(results);
         }
     });
-    db.query(sql, [name, location, address, image, description, eventId], (err, result) => {
+    db.query(sql, [date, start_time, end_time, eventId], (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send("Error updating event.");
@@ -269,17 +209,6 @@ app.put('/update-event-dates-and-times/:id', (req, res) => {
 
 app.get('/get-event/:id', (req, response) => {
     db.query(`SELECT * FROM events WHERE id = ${req.params.id};`, (err, res) => {
-        if (err) {
-            console.log(err)
-        }
-        console.log(res)
-        response.send(res)
-
-    })
-})
-app.get('/get-event-services/:id', (req, response) => {
-
-    db.query(`SELECT * FROM events_services WHERE event_id = ${req.params.id};`, (err, res) => {
         if (err) {
             console.log(err)
         }
@@ -337,29 +266,13 @@ app.get('/get-all-events-dates-and-times', async (req, res) => {
         }
     });
 });
-app.get('/get-all-events-services', async (req, res) => {
-    let sql = 'SELECT * FROM events_services';
-    db.query("USE db_monte", function (error, results) {
-        if (error) {
-            console.log('Error in database operation');
-        } else {
-            console.log(results);
-        }
-    });
-    db.query(sql, function (error, results) {
-        if (error) {
-            console.log('Error in database operation');
-            res.send("Error!")
 
-        } else {
-            res.json(results);
-        }
-    });
-});
 
 
 
 app.post('/add-church', (req, res) => {
+    const { church, church_pastors, church_socials, church_images, church_services } = req.body;
+
     db.query("USE db_monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
@@ -374,14 +287,18 @@ app.post('/add-church', (req, res) => {
         console.log(res)
     })
 
-    db.query("INSERT INTO churches(name, location, description, address, coordinates, phone, email, map_link) VALUES ('Pawtucket', 'New Location', '1234 weqwew Street','qwefwfeq','wqefwef','wqefwefweq', 'weqfwqef','qwefwfef');", (err, result) => {
+    db.query("INSERT INTO churches(name, location, description, address, coordinates, phone, email, map_link) VALUES (?, ?, ?,?,?,?,?,?);", [church.name, church.location, church.description, church.address, church.coordinates, church.phone, church.email, church.map_link], (err, result) => {
         if (err) {
             console.log(err)
             res.send("Error!")
+            console.log("Church not added")
+
 
         } else {
             console.log(result)
             console.log("FIRST DONE")
+            console.log("Church added")
+
         }
 
     })
@@ -394,49 +311,76 @@ app.post('/add-church', (req, res) => {
         console.log("done")
     })
 
+    for (let i = 0; i < church_pastors.length; i++) {
+        db.query("INSERT INTO churches_pastors(church_id, title, position, last_name, first_name, bio, main) VALUES (@church_id, ?, ?,?, ?, ?, ?)", [church_pastors[i].title, church_pastors[i].position, church_pastors[i].last_name, church_pastors[i].first_name, church_pastors[i].bio, church_pastors[i].main], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church pastor ${1} error while adding`)
 
-    db.query("INSERT INTO churches_pastors(church_id, title, position, last_name, first_name, bio, main) VALUES (@church_id, 'Rev.', 'Lead Pastor','Francisco', 'Samuel', '1234 weqwew Streetwefwfqefwfe', TRUE),(@church_id, 'Rev.', 'Lead Pastor','Francisco', 'Isabel', '1234 weqwew Streetwefwfqefwfe', FALSE)", (err, result) => {
-        if (err) {
-            console.log(err)
-            res.send("Error!")
 
-        }
-        else {
+            }
+            else {
+                console.log(result)
+                console.log("SECOND DONE")
+                console.log(`Church pastor ${1} done`)
+
+            }
+
+        })
+    }
+
+    for (let i = 0; i < church_socials.length; i++) {
+        db.query("INSERT INTO churches_socials(church_id, name, link) VALUES (@church_id, ?, ?)", [church_socials[i].name, church_socials[i].link], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church socials ${1} error while adding`)
+
+
+            }
             console.log(result)
-            console.log("SECOND DONE")
-        }
+            console.log("THID DONE")
+            console.log(`Church social ${1} done`)
 
-    })
-    db.query("INSERT INTO churches_socials(church_id, name, link) VALUES (@church_id, 'Facebook', 'ht3t34t2'),(@church_id, 'twitter', 'werfrwg');", (err, result) => {
-        if (err) {
-            console.log(err)
-            res.send("Error!")
 
-        }
-        console.log(result)
-        console.log("THID DONE")
+        })
+    }
 
-    })
-    db.query("INSERT INTO churches_images(church_id, source, is_main) VALUES (@church_id, 'wfwfwe', 'false'),(@church_id, 'twitwefter', 'true');", (err, result) => {
-        if (err) {
-            console.log(err)
-            res.send("Error!")
+    for (let i = 0; i < church_images.length; i++) {
+        db.query("INSERT INTO churches_images(church_id, source, is_main) VALUES (@church_id, ?, ?);", [church_images[i].source, church_images[i].is_main], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church image ${1} error while adding`)
 
-        }
-        console.log(result)
-        console.log("FOURTH DONE")
 
-    })
-    db.query("INSERT INTO churches_services(church_id, name, day, start_time, end_time) VALUES (@church_id, 'Servicio Evangelistico', 'Lunes', '7:30 PM', '10:00PM'), (@church_id, 'Servicio Biblico', 'Martes', '7:30 PM', '10:00PM')", (err, result) => {
-        if (err) {
-            console.log(err)
-            res.send("Error!")
+            }
+            console.log(result)
+            console.log("FOURTH DONE")
+            console.log(`Church image ${1} done`)
 
-        }
-        console.log(result)
-        console.log("FIFTH DONE")
 
-    })
+        })
+    }
+
+    for (let i = 0; i < church_services.length; i++) {
+        db.query("INSERT INTO churches_services(church_id, name, day, start_time, end_time) VALUES (@church_id, ?, ?, ?, ?);", [church_services[i].name, church_services[i].day, church_services[i].start_time, church_services[i].end_time], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church service ${1} done`)
+
+
+            }
+            console.log(result)
+            console.log("FIFTH DONE")
+            console.log(`Church service ${1} error while adding`)
+
+
+        })
+    }
+
 
 })
 
@@ -555,13 +499,13 @@ app.put('/update-church/:id', (req, res) => {
     const { name, location, description, address, coordinates, phone, image, map_link } = req.body;
     const id = req.params.id;
     const sql = `UPDATE churches SET name = ?,
-      location = ?,
-      description = ?,
-      address = ?,
-      coordinates = ?,
-      phone = ?,
-      email = ?,
-      map_link = ?
+      location = COALESCE(?, location),
+      description = COALESCE(?, description),
+      address = COALESCE(?, address),
+      coordinates = COALESCE(?, coordinates),
+      phone = COALESCE(?, phone),
+      email = COALESCE(?, email),
+      map_link = COALESCE(?, map_link)
     WHERE id = ?;
     `;
     db.query("USE db_monte", function (error, results) {
@@ -584,7 +528,14 @@ app.put('/update-church/:id', (req, res) => {
 app.put('/update-church-pastors/:id', (req, res) => {
     const { title, position, last_name, first_name, bio, main } = req.body;
     const id = req.params.id;
-    const sql = `UPDATE churches_pastors SET title = ?, position = ?, last_name = ?, first_name = ?, bio = ?, main = ? WHERE id = ?`;
+    const sql = `UPDATE churches_pastors SET 
+    title = COALESCE(?, title), 
+    position = COALESCE(?, position), 
+    last_name = COALESCE(?, last_name), 
+    first_name = COALESCE(?, first_name), 
+    bio = COALESCE(?, bio), 
+    main = COALESCE(?, main) 
+    WHERE id = ?`;
     db.query("USE db_monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
@@ -605,7 +556,7 @@ app.put('/update-church-pastors/:id', (req, res) => {
 app.put('/update-church-socials/:id', (req, res) => {
     const { name, link } = req.body;
     const id = req.params.id;
-    const sql = `UPDATE churches_socials SET name = ?, link = ? WHERE id = ?`;
+    const sql = `UPDATE churches_socials SET name = COALESCE(?, name), link = COALESCE(?, link) WHERE id = ?`;
     db.query("USE db_monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
@@ -626,7 +577,7 @@ app.put('/update-church-socials/:id', (req, res) => {
 app.put('/update-church-images/:id', (req, res) => {
     const { source, is_main } = req.body;
     const id = req.params.id;
-    const sql = `UPDATE churches_socials SET source = ?, is_main = ? WHERE id = ?`;
+    const sql = `UPDATE churches_socials SET source = COALESCE(?, source), is_main = COALESCE(?, is_main) WHERE id = ?`;
     db.query("USE db_monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
@@ -647,7 +598,12 @@ app.put('/update-church-images/:id', (req, res) => {
 app.put('/update-church-services/:id', (req, res) => {
     const { name, day, start_time, end_time } = req.body;
     const id = req.params.id;
-    const sql = `UPDATE churches_services SET name = ?, day = ?, start_time = ?, end_time = ? WHERE id = ?`;
+    const sql = `UPDATE churches_services SET 
+    name = COALESCE(?, name), 
+    day = COALESCE(?, date), 
+    start_time = COALESCE(?, start_time), 
+    end_time = COALESCE(?, end_time) 
+    WHERE id = ?`;
     db.query("USE db_monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
