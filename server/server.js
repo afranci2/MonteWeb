@@ -46,14 +46,17 @@ app.get('/create-tables', (req, res) => {
         db.query(queries[i], (err, res) => {
             if (err) {
                 console.log(err)
+                console.log(`Query ${i} was not completed successfully`)
             }
             console.log(res)
+            console.log(`Query ${i} was completed successfully`)
+
         })
     }
 })
 
 app.post('/add-event', (req, res) => {
-    const { event, event_dates_and_times, event_services } = req.body;
+    const { event, event_dates_and_times } = req.body;
 
     db.query("USE db_monte", (err, res) => {
         if (err) {
@@ -100,14 +103,90 @@ app.post('/add-event', (req, res) => {
         db.query("INSERT INTO events_dates_and_times(event_id, date, start_time, end_time)VALUES(@event_id, ?, ?, ?);", [event_dates_and_times[i].date, event_dates_and_times[i].start_time, event_dates_and_times[i].end_time], (err, res) => {
             if (err) {
                 console.log(err)
+                console.log(`Event ${i} was not added successfully`)
+
             }
             console.log(res)
             console.log("done2")
+            console.log(`Event ${i} added successfully`)
+
 
         })
     }
 
 })
+
+app.get('/add-dummy-event', (req, res) => {
+    db.query("USE db_monte", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query("ALTER TABLE events AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    db.query("ALTER TABLE events_dates_and_times AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+
+
+    db.query("INSERT INTO events(name, location, address, image, description) VALUES (?, ?, ?, ?, ?);", ["Second event",
+        "Providnce", "155 Power Road", "http...", "a super fun event"], (err, res) => {
+            if (err) {
+                console.log(err)
+                console.log("Event not added successfully...")
+
+            }
+            console.log(res)
+            console.log("Event added successfully!")
+
+        })
+
+    db.query("SET @event_id = LAST_INSERT_ID();", (err, res) => {
+        if (err) {
+            console.log(err)
+            console.log("Didnt get the last inser id")
+
+        }
+        console.log(res)
+        console.log("Got last inser id")
+    })
+
+    let event_dates_and_times = [{
+        date: "10/04/23",
+        start_time: "7:30PM",
+        end_time: "8:30PM"
+
+    }, {
+        date: "10/05/23",
+        start_time: "7:00PM",
+        end_time: "9:30PM"
+
+    }]
+
+    for (let i = 0; i < event_dates_and_times.length; i++) {
+        db.query("INSERT INTO events_dates_and_times(event_id, date, start_time, end_time)VALUES(@event_id, ?, ?, ?);",
+            [event_dates_and_times[i].date, event_dates_and_times[i].start_time, event_dates_and_times[i].end_time], (err, res) => {
+                if (err) {
+                    console.log(err)
+                    console.log(`Event date and time ${i} was not added successfully`)
+
+                }
+                console.log(res)
+                console.log("done2")
+                console.log(`Event date and time ${i} added successfully`)
+            })
+    }
+
+})
+
 
 app.delete('/delete-event/:id', (req, res) => {
     const eventId = req.params.id;
@@ -383,6 +462,189 @@ app.post('/add-church', (req, res) => {
 
 
 })
+
+app.get('/add-dummy-church', (req, res) => {
+    db.query("USE db_monte", function (error, results) {
+        if (error) {
+            console.log('Error in database operation');
+        } else {
+            console.log(results);
+        }
+    });
+    db.query("ALTER TABLE churches AUTO_INCREMENT = 1;", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+    })
+    let church = {
+        name: "Sede Central",
+        location: "Pawtucket",
+        description: "A nice church",
+        address: "155 Power Rd",
+        coordinates: "23432.21341,12342134.431",
+        phone: "401342414",
+        email: "anthony.frwfaadfw@fqwef",
+        map_link: "https...."
+    }
+    let church_pastors = [{
+        title: "Rev",
+        position: "Lead Pastor",
+        last_name: "Francisco",
+        first_name: "Samuel",
+        bio: "mpwrfkwmrf",
+        main: "TRUE",
+    },
+    {
+        title: "Rev",
+        position: "Lead Pastor",
+        last_name: "Francisco",
+        first_name: "Isabel",
+        bio: "mpwrfkwmrf",
+        main: "FALSE",
+    }
+    ]
+
+    let church_socials = [{
+        name: "Twitter",
+        link: "http..."
+    },
+    {
+        name: "facebook",
+        link: "http..."
+    }]
+
+    let church_images = [{
+        source: "https..wef",
+        is_main: "TRUE"
+    },
+    {
+        source: "https...",
+        is_main: "FALSE"
+    },
+    {
+        source: "https...",
+        is_main: "FALSE"
+    }]
+
+    let church_services = [{
+        name: "Servicio evangelistico",
+        day: "Martes",
+        start_time: "7:30PM",
+        end_time: "9:30PM"
+    },
+    {
+        name: "estudio biblico",
+        day: "Lunes",
+        start_time: "8:30PM",
+        end_time: "9:30PM"
+    }]
+
+    db.query("INSERT INTO churches(name, location, description, address, coordinates, phone, email, map_link) VALUES (?, ?, ?,?,?,?,?,?);",
+        [
+            church.name,
+            church.location,
+            church.description,
+            church.address,
+            church.coordinates,
+            church.phone,
+            church.email,
+            church.map_link], (err, result) => {
+                if (err) {
+                    console.log(err)
+                    res.send("Error!")
+                    console.log("Church not added")
+
+
+                } else {
+                    console.log(result)
+                    console.log("FIRST DONE")
+                    console.log("Church added")
+
+                }
+
+            })
+
+    db.query("SET @church_id = LAST_INSERT_ID();", (err, res) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(res)
+        console.log("done")
+    })
+
+    for (let i = 0; i < church_pastors.length; i++) {
+        db.query("INSERT INTO churches_pastors(church_id, title, position, last_name, first_name, bio, main) VALUES (@church_id, ?, ?,?, ?, ?, ?)", [church_pastors[i].title, church_pastors[i].position, church_pastors[i].last_name, church_pastors[i].first_name, church_pastors[i].bio, church_pastors[i].main], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church pastor ${1} error while adding`)
+            }
+            else {
+                console.log(result)
+                console.log("SECOND DONE")
+                console.log(`Church pastor ${1} done`)
+
+            }
+
+        })
+    }
+
+    for (let i = 0; i < church_socials.length; i++) {
+        db.query("INSERT INTO churches_socials(church_id, name, link) VALUES (@church_id, ?, ?)", [church_socials[i].name, church_socials[i].link], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church socials ${1} error while adding`)
+
+
+            }
+            console.log(result)
+            console.log("THID DONE")
+            console.log(`Church social ${1} done`)
+
+
+        })
+    }
+
+    for (let i = 0; i < church_images.length; i++) {
+        db.query("INSERT INTO churches_images(church_id, source, is_main) VALUES (@church_id, ?, ?);", [church_images[i].source, church_images[i].is_main], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church image ${1} error while adding`)
+
+
+            }
+            console.log(result)
+            console.log("FOURTH DONE")
+            console.log(`Church image ${1} done`)
+
+
+        })
+    }
+
+    for (let i = 0; i < church_services.length; i++) {
+        db.query("INSERT INTO churches_services(church_id, name, day, start_time, end_time) VALUES (@church_id, ?, ?, ?, ?);", [church_services[i].name, church_services[i].day, church_services[i].start_time, church_services[i].end_time], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.send("Error!")
+                console.log(`Church service ${i} done`)
+
+
+            }
+            console.log(result)
+            console.log("FIFTH DONE")
+            console.log(`Church service ${i} error while adding`)
+
+
+        })
+    }
+
+
+})
+
+
 
 app.delete('/delete-church/:id', (req, res) => {
     const eventId = req.params.id;
