@@ -3,10 +3,7 @@ import Image from "next/image";
 import "./ChurchMainTab.css";
 import Link from "next/link";
 
-const ChurchMainTab = ({ socials, images }) => {
-  console.log("this one", socials)
-  console.log("this one too", images)
-
+const ChurchMainTab = ({ socials, images, mainImage }) => {
 
   return (
     <div className="md:p-4 else flex flex-col md:grid gap-4 grid-cols-2 ">
@@ -19,7 +16,7 @@ const ChurchMainTab = ({ socials, images }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={images}
+            src={images[0]}
             alt="image"
             width={1000}
             height={1000}
@@ -35,7 +32,7 @@ const ChurchMainTab = ({ socials, images }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={null}
+            src={images[1]}
             alt="image"
             width={1000}
             height={1000}
@@ -52,7 +49,7 @@ const ChurchMainTab = ({ socials, images }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={null}
+            src={images[2]}
             alt="image"
             width={1000}
             height={1000}
@@ -68,7 +65,7 @@ const ChurchMainTab = ({ socials, images }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={null}
+            src={images[3]}
             alt="image"
             width={1000}
             height={1000}

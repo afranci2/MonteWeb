@@ -1,7 +1,6 @@
 import React from "react";
 
 const ServiceTimesTab = (props) => {
-  console.log("this is service times tab", props.res);
 
   return (
     <div className="bg-white rounded-lg shadow-md w-full">

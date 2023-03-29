@@ -29,27 +29,26 @@ const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 import Image from "next/image";
 
-async function page () {
+async function fetchEvents() {
+  try {
+    const res = await fetch(`http://localhost:8000/get-all-events`, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
 
-  async function fetchEvents() {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/eventos`, {
-        method: "GET", // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      });
-  
-      const data = await res.json();
-
-      return data; // parses
-    } catch (error) {
-      console.log(error);
-    }
+    const data = await res.json();
+    return data; // parses
+  } catch (error) {
+    console.log(error);
   }
-  const res = await fetchEvents();
+}
 
+async function page () {
+  const res = await fetchEvents();
+  console.log(res[0].name)
 
   return (
 

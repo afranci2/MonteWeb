@@ -20,7 +20,6 @@ async function fetchChurches(id) {
     });
 
     const data = await res.json();
-    console.log(data);
 
     return data; // parses
   } catch (error) {
@@ -76,14 +75,30 @@ async function fetchChurchesSocials(id) {
   }
 }
 
+async function fetchChurchesPastors(id) {
+  try {
+    const res = await fetch(`http:localhost:8000/get-church-pastors/${id}`, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+    const data = await res.json();
+    return data; // parses
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default async function page({ params }) {
-  const res = await fetchChurches(1);
-  const res2 = await fetchChurchesImages(1);
-  const res3 = await fetchChurchesServices(1);
-  const res4 = await fetchChurchesSocials(1);
+  const res = await fetchChurches(parseInt(params.name));
+  const res2 = await fetchChurchesImages(parseInt(params.name));
+  const res3 = await fetchChurchesServices(parseInt(params.name));
+  const res4 = await fetchChurchesSocials(parseInt(params.name));
+  const res5 = await fetchChurchesPastors(parseInt(params.name));
 
-  const mainImage = res2?.find((image) => image.is_main === 1);
-
+  const mainImage = res2?.find((image) => image.is_main === 1).source;
   return (
     <div>
       <Navbar2 />
@@ -96,19 +111,19 @@ export default async function page({ params }) {
               <FaMapMarkerAlt size={12} />
             </div>
             <div>
-              <p className="">{res ? res.location : "Loading"}</p>
+              <p className="">{res ? res[0].location : "Loading"}</p>
             </div>
           </div>
         </Banner2>
         {res ? (
           <ChurchHeader
             image={mainImage}
-            headerText={res.name}
+            headerText={res[0].name}
             classChangeText={undefined}
             contentPosition={undefined}
-            subheadingText={res.description}
-            direction={res.address}
-            mapLink={"https://facebook.com"}
+            subheadingText={res[0].description}
+            direction={res[0].address}
+            mapLink={res[0].map_link}
           />
         ) : (
           <div className="h-full w-full text-center flex justify-center m-auto items-center">
@@ -118,7 +133,12 @@ export default async function page({ params }) {
       </div>
       {res ? (
         <div className="bg-[#f7f7f7]">
-          <IglesiaTab social={res4} services={res3} />{" "}
+          <IglesiaTab
+            socials={res4}
+            services={res3}
+            images={res2}
+            mainImage={mainImage}
+          />{" "}
         </div>
       ) : null}
       {res ? (
@@ -130,7 +150,7 @@ export default async function page({ params }) {
             image={mainImage}
             buttonLink={"/"}
           />
-          <Lideres />
+          <Lideres pastors={res5} />
         </div>
       ) : null}
 

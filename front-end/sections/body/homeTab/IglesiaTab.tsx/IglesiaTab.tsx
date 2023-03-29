@@ -8,8 +8,7 @@ import DefaultBody from "../../../../sections/body/defaultBody/DefaultBody";
 import TextLeftTab from "../../../../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../../../../components/tab/textRightTab/TextRightTab";
 
-const IglesiaTab = ({ services, socials, images }) => {
-  console.log("all data",services, socials, images)
+const IglesiaTab = ({ services, socials, images, mainImage }) => {
   return (
     <div>
       {" "}
@@ -18,7 +17,7 @@ const IglesiaTab = ({ services, socials, images }) => {
           <ServiceTimesTab res={services}/>
         </div>
         <div className="w-full py-8">
-            <ChurchMainTab socials={socials} images = {images}/>
+            <ChurchMainTab socials={socials} images={images} mainImage={mainImage}/>
         </div>
       </div>
     </div>

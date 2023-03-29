@@ -20,12 +20,51 @@ const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
 import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
 import Lideres from "../../sections/lideres/Lideres";
+const Pastor = "https://monte-assets.s3.amazonaws.com/img/pastor3.jpg";
+const Becky = "https://monte-assets.s3.amazonaws.com/img/becky.jpg";
+const Pastora = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
+const Anthony = "https://monte-assets.s3.amazonaws.com/img/anthony.jpg";
 
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 
 const page = () => {
+  const lidereslist = [
+    {
+      id: 0,
+      image: Pastor,
+      title: "Rev.",
+      position: "Presidente",
+      last_name: "Francisco",
+      first_name: "Samuel",
+    },
+    {
+      id: 1,
+      image: Pastora,
+      title: "Rev.",
+      position: "Vice Presidente",
+      last_name: "Francisco",
+      first_name: "Isabel",
+    },
+    {
+      id: 2,
+      image: Becky,
+      title: "",
+      position: "Secretaria",
+      last_name: "Ramos",
+      first_name: "Rebecca",
+    },
+    {
+      id: 3,
+
+      image: Anthony,
+      title: "Dr.",
+      position: "Tesorero",
+      last_name: "Francisco",
+      first_name: "Anthony",
+    },
+  ];
   return (
     <div className="h-full w-full">
       <div className="h-full w-full">
@@ -51,31 +90,31 @@ const page = () => {
           <ul className="hidden gap-8 text-black text-md font-medium p-8 md:flex text-sm">
             {/*use dropdown component             <Dropdown />
              */}
-            <Link href={"/"}>
+            <a href="#creencias">
               <li key={1}>
-                <p>Creencias Fundamentales</p>{" "}
+                <p>Creencias Fundamentales</p>
               </li>
-            </Link>
-            <Link href={"/"}>
+            </a>
+            <a href="#historia-h">
               <li key={1}>
                 <p>Historia</p>{" "}
               </li>
-            </Link>
-            <Link href={"/"}>
+            </a>
+            <a href={"#iglesias-i"}>
               <li key={1}>
                 <p>Iglesias</p>{" "}
               </li>
-            </Link>
-            <Link href={"/"}>
+            </a>
+            <a href="#lideres">
               <li key={1}>
                 <p>Lideres</p>{" "}
               </li>
-            </Link>
-            <Link href={"/"}>
+            </a>
+            <a href={"#mensaje-m"}>
               <li key={1}>
                 <p>Un Mensaje Del Presidente</p>{" "}
               </li>
-            </Link>
+            </a>
           </ul>
         </Banner2>
         <BodySectionImageLeft
@@ -87,61 +126,68 @@ const page = () => {
           }
           buttonText={"fewfe"}
         ></BodySectionImageLeft>
-
-        <Header
-          children={undefined}
-          image={CreenciasImage}
-          headerText={"Creencias Fundamentales"}
-          classChangeText={undefined}
-          buttonColor={undefined}
-          buttonLink={undefined}
-          buttonText={undefined}
-          contentPosition={undefined}
-          video={undefined}
-          subheadingText={undefined}
-          containerheight={"h-screen"}
-        />
+        <div className="div" id="creencias">
+          <Header
+            children={undefined}
+            image={CreenciasImage}
+            headerText={"Creencias Fundamentales"}
+            classChangeText={undefined}
+            buttonColor={undefined}
+            buttonLink={undefined}
+            buttonText={undefined}
+            contentPosition={undefined}
+            video={undefined}
+            subheadingText={undefined}
+            containerheight={"h-screen"}
+          />
+        </div>
         <div className="h-full w-full">
           <CreenciasFundamentales />
         </div>
-        <Header
-          video={ConocernosVideo}
-          contentPosition="center"
-          headerText="Un Mensaje del Presidente"
-          subheadingText={
-            <div>
-              <p>
-                A lo largo de este movimiento, el fuego seguirá ardiendo en cada
-                corazón como en el día de Pentecostés.
-              </p>
-              <br></br>
-              <p className="font-light">
-                Deja que Dios encienda el fuego dentro de ti.
-              </p>
-            </div>
-          }
-          buttonText="Historia"
-          children={undefined}
-          image={undefined}
-          classChangeText={undefined}
-          buttonColor={undefined}
-          buttonLink={undefined}
-          containerheight={"h-screen"}
-        ></Header>
-        <Lideres />
+        <div id="mensaje-m">
+          <Header
+            video={ConocernosVideo}
+            contentPosition="center"
+            headerText="Un Mensaje del Presidente"
+            subheadingText={
+              <div>
+                <p>
+                  A lo largo de este movimiento, el fuego seguirá ardiendo en
+                  cada corazón como en el día de Pentecostés.
+                </p>
+                <br></br>
+                <p className="font-light">
+                  Deja que Dios encienda el fuego dentro de ti.
+                </p>
+              </div>
+            }
+            buttonText="Historia"
+            children={undefined}
+            image={undefined}
+            classChangeText={undefined}
+            buttonColor={undefined}
+            buttonLink={undefined}
+            containerheight={"h-screen"}
+          ></Header>
+        </div>
+        <div id="lideres">
+          <Lideres pastors={lidereslist} />
+        </div>
       </div>
 
       <section>
-        <BodySectionImageRight
-          image={Javier}
-          headingText="50 anos de historia"
-          subheadingText={
-            "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
-          }
-          buttonColor="bg-yellow-400"
-          buttonText={"Historia"}
-          buttonLink="/historia"
-        ></BodySectionImageRight>
+        <div id="historia-h">
+          <BodySectionImageRight
+            image={Javier}
+            headingText="50 anos de historia"
+            subheadingText={
+              "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
+            }
+            buttonColor="bg-yellow-400"
+            buttonText={"Historia"}
+            buttonLink="/historia"
+          ></BodySectionImageRight>
+        </div>
       </section>
       <Footer />
     </div>
