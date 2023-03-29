@@ -6,13 +6,12 @@ const env = require('dotenv').config({ path: './.env' })
 const app = express();
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
-const DB_NAME = 'MONTEDB'
 
 const db = mysql.createConnection({
     host: `monte.cluster-crrmrmm19nia.us-east-1.rds.amazonaws.com`,
     port: '3306',
     user: 'admin',
-    password: 'Franc15c0!',
+    password: process.env.DB_PASSWORD,
 
 })
 
@@ -33,7 +32,7 @@ app.get('/create-tables', (req, res) => {
         'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255) UNIQUE, address VARCHAR(255), image VARCHAR(255), description TEXT); ',
         'CREATE TABLE IF NOT EXISTS events_dates_and_times (id INT AUTO_INCREMENT PRIMARY KEY,event_id INT NOT NULL,date VARCHAR(255),start_time VARCHAR(255),end_time VARCHAR(255), FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) UNIQUE, location VARCHAR(255), description TEXT, address VARCHAR(255), coordinates TEXT ,phone VARCHAR(20), email VARCHAR(255), map_link VARCHAR(255)); ',
-        'CREATE TABLE IF NOT EXISTS churches_pastors (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, title VARCHAR(255), position VARCHAR(255), last_name VARCHAR(255), first_name VARCHAR(255), bio TEXT, main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
+        'CREATE TABLE IF NOT EXISTS churches_pastors (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, title VARCHAR(255), position VARCHAR(255), last_name VARCHAR(255), first_name VARCHAR(255), bio TEXT, image TEXT, main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches_socials (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, name VARCHAR(255), link TEXT, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches_images (id INT AUTO_INCREMENT PRIMARY KEY, church_id INT NOT NULL, source TEXT, is_main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches_services(id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, name VARCHAR(255), day VARCHAR(255), start_time VARCHAR(100), end_time VARCHAR(100), FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE); '];
@@ -135,8 +134,8 @@ app.get('/add-dummy-event', (req, res) => {
     })
 
 
-    db.query("INSERT INTO events(name, location, address, image, description) VALUES (?, ?, ?, ?, ?);", ["Second event",
-        "Providnce", "155 Power Road", "http...", "a super fun event"], (err, res) => {
+    db.query("INSERT INTO events(name, location, address, image, description) VALUES (?, ?, ?, ?, ?);", ["third event",
+        "werf", "155 Power werweqrRoad", "hterqtp...", "a supewerqwerr fun event"], (err, res) => {
             if (err) {
                 console.log(err)
                 console.log("Event not added successfully...")
