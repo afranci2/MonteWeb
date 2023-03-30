@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true })); //
 app.get('/create-tables', (req, res) => {
     let queries = ['DROP DATABASE IF EXISTS db_monte',
         'CREATE DATABASE db_monte', 'USE db_monte',
-        'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255) UNIQUE, address VARCHAR(255), image VARCHAR(255), description TEXT); ',
+        'CREATE TABLE IF NOT EXISTS events(id int AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), location VARCHAR(255) UNIQUE, address VARCHAR(255), image VARCHAR(255), description TEXT, link TEXT); ',
         'CREATE TABLE IF NOT EXISTS events_dates_and_times (id INT AUTO_INCREMENT PRIMARY KEY,event_id INT NOT NULL,date VARCHAR(255),start_time VARCHAR(255),end_time VARCHAR(255), FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE);',
         'CREATE TABLE IF NOT EXISTS churches(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) UNIQUE, location VARCHAR(255), description TEXT, address VARCHAR(255), coordinates TEXT ,phone VARCHAR(20), email VARCHAR(255), map_link VARCHAR(255)); ',
         'CREATE TABLE IF NOT EXISTS churches_pastors (id INT AUTO_INCREMENT PRIMARY KEY,church_id INT NOT NULL, title VARCHAR(255), position VARCHAR(255), last_name VARCHAR(255), first_name VARCHAR(255), bio TEXT, image TEXT, main BOOLEAN NOT NULL DEFAULT FALSE, FOREIGN KEY (church_id) REFERENCES churches(id) ON DELETE CASCADE);',
@@ -111,6 +111,17 @@ app.post('/add-event', (req, res) => {
         })
     }
 
+})
+
+
+app.post('/password', (req, res) => {
+    const client = req.body
+    if (client.username === "admin" && client.password === "123") {
+        res.send("good")
+    } else {
+        res.send("bad")
+
+    }
 })
 
 app.get('/add-dummy-event', (req, res) => {
@@ -893,7 +904,7 @@ app.put('/update-church-socials/:id', (req, res) => {
 });
 app.get('/update-church-images/:id', (req, res) => {
     let source = "https://monte-assets.s3.amazonaws.com/img/section2.jpg"
-    let is_main= true
+    let is_main = true
     const id = req.params.id;
     const sql = `UPDATE churches_images SET source = COALESCE(?, source), is_main = COALESCE(?, is_main) WHERE id = ?`;
     db.query("USE db_monte", function (error, results) {
