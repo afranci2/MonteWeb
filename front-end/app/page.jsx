@@ -48,7 +48,7 @@ async function fetchEvents() {
 
 async function page () {
   const res = await fetchEvents();
-  console.log(res[0].name)
+  console.log(res)
 
   return (
 
@@ -246,15 +246,15 @@ async function page () {
           buttonText={"Ver Mas"}
           headingText={res[res.length-1].name}
           subheadingText={res[res.length-1].description}
-          buttonLink={res[res.length-1].link}
-          image={res[res.length-1].image}
+          buttonLink={"/"}
+          image={Michael}
         />
         <BodySectionImageRight
-          buttonText="Ver Mas"
+          buttonText={"Ver Mas"}
           headingText={res[res.length-2].name}
           subheadingText={res[res.length-2].description}
-          buttonLink={res[res.length-2].link}
-          image={res[res.length-2].image}
+          buttonLink={"/"}
+          image={Michael}
         />
       </DefaultBody>
       <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">

@@ -189,6 +189,16 @@ const page = () => {
           ></BodySectionImageRight>
         </div>
       </section>
+      <section className="w-full h-screen bg-black md:flex">
+        <div className="bg-blue-400 md:flex-none md:h-full md:w-1/3 h-1/6">
+          <div className="h-auto bg-red-400">
+            <p className="p-12 text-center justify-center flex align-center items-center h-full ">
+              Time to Pick a Church wef nowenfwi oefnfeoi
+            </p>
+          </div>
+        </div>
+        <div className="h-full md:flex-1 bg-red-400"></div>
+      </section>
       <Footer />
     </div>
   );
