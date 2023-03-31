@@ -1,9 +1,12 @@
 const express = require('express')
+const jwt = require('jsonwebtoken');
+
 const mysql = require('mysql')
 const PORT = 8000;
 const cors = require('cors');
 const env = require('dotenv').config({ path: './.env' })
 const app = express();
+const generatedToken = "heyman123"
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
@@ -116,10 +119,16 @@ app.post('/add-event', (req, res) => {
 
 app.post('/password', (req, res) => {
     const client = req.body
+    console.log(req.body)
     if (client.username === "admin" && client.password === "123") {
-        res.send("good")
+        const payload = { username: client.username };
+        const secretKey = 'mysecretkey';
+    
+        const token = jwt.sign(payload, secretKey);
+    
+        res.json({ token });
     } else {
-        res.send("bad")
+        res.send(false)
 
     }
 })
