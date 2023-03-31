@@ -120,15 +120,21 @@ app.post('/add-event', (req, res) => {
 app.post('/password', (req, res) => {
     const client = req.body
     console.log(req.body)
+
     if (client.username === "admin" && client.password === "123") {
-        const payload = { username: client.username };
+        const payload = { username: client.username, is_admin: true };
+
         const secretKey = 'mysecretkey';
     
         const token = jwt.sign(payload, secretKey);
     
-        res.json({ token });
+        res.json({name:"Anthony", token });
     } else {
-        res.send(false)
+        const payload2 = { username: client.username, is_admin: false };
+        const secretKey = 'mysecretkey';
+
+        const token2 = jwt.sign(payload2,secretKey);
+        res.json({name:"Anthony", token2 });
 
     }
 })
