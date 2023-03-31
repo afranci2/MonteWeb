@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import EventForm from "./EventForm";
-import Admin from "../admin-dashboard/page";
-import { useSession, signIn, signOut } from "next-auth/react";
+import "./admin.css";
+import { useSession, signIn, signOut } from "next-auth/react"
 
-const page = ({searchParams}) => {
+
+const page = () => {
   async function fetchCredentials(e) {
     e.preventDefault();
     try {
@@ -25,7 +26,7 @@ const page = ({searchParams}) => {
         const trysignin = await signIn("credentials", {
           redirect: false,
           username,
-          password,
+          password
         });
       } catch (error) {
         console.log(error);
@@ -38,15 +39,7 @@ const page = ({searchParams}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [response, setResponse] = useState();
-
-  const onSubmit = async () => {
-    const result = await signIn("credentials", {
-      username,
-      password,
-      redirect: true,
-      callbackUrl: "/admin-dashboard",
-    });
-  }
+  console.log(response);
 
   return (
     <div className=" h-screen w-screen  flex justify-center items-center">
@@ -55,7 +48,6 @@ const page = ({searchParams}) => {
           {" "}
           Admin{" "}
         </p>
-        {searchParams?.message && <p>You are not admin {searchParams?.message}</p>}
         <form>
           <div className="input-area flex gap-2 flex-col">
             <label htmlFor="username">Username</label>
@@ -74,7 +66,7 @@ const page = ({searchParams}) => {
           <div className="py-8">
             <button
               className="p-2 px-8 bg-white rounded-lg flex justify-center"
-              onClick={onSubmit}
+              onClick={fetchCredentials}
             >
               Submit
             </button>
