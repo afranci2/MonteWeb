@@ -1,0 +1,9 @@
+.admin {
+  max-width: 750px;
+}
+.trymeforadmin {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+}

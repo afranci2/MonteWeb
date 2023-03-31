@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import EventForm from "./EventForm";
+import './admin.css'
+import Admin from '../admin-dashboard/page'
 
 const page = () => {
   async function fetchCredentials(e) {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const res = await fetch(`http://localhost:8000/password`, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -16,34 +18,66 @@ const page = () => {
       });
 
       const data = await res.json();
-      setResponse(data) ; // parses
+      console.log( data);
+      setResponse(data);
     } catch (error) {
       console.log(error);
     }
   }
 
+
+  const handleLogin = () => {
+    if (response === false) {
+      console.log("Wrong credentials");
+      alert("Wrong credentials");
+    } else {
+
+
+      console.log("Login successful");
+      const url = `/admin-dashboard/${response}`;
+      window.location.href = url;
+    }
+  }
+
+
+  
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [response, setResponse] = useState()
-  console.log(response)
+  const [response, setResponse] = useState();
+console.log(response)
+
   return (
-    <div className="bg-gray-200">
-      <p>Admin Event Form</p>
-      <form>
-        <label htmlFor="username">Username</label>
-        <input
-          onChange={(e) => setUsername(e.target.value)}
-          id="username"
-        ></input>
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          id="password"
-        ></input>
-        <button onClick={fetchCredentials}>Submit</button>
-      </form>{" "}
-      <p>This is the answer</p>
-      <p>{response ? "hey" : "nah"}</p>
+
+    <div className=" h-screen w-screen  flex justify-center items-center">
+      <div className=" w-3/4 admin h-1/2 bg-gray-200 p-12   rounded-lg">
+          <p className="font-bold pb-4 flex justify-center content-center"> Admin </p>
+          <form>
+            <div className="input-area flex gap-2 flex-col">
+              <label htmlFor="username">Username</label>
+              <input
+                onChange={(e) => setUsername(e.target.value)}
+                id="username"
+                className="rounded-lg p-2"
+              ></input>
+              <label htmlFor="password">Password</label>
+              <input
+                onChange={(e) => setPassword(e.target.value)}
+                id="password"
+                className="rounded-lg p-2"
+              ></input>
+            </div>
+            <div className="py-8">
+              <button
+                className="p-2 px-8 bg-white rounded-lg flex justify-center"
+                onClick={fetchCredentials}
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+
+        </div>
     </div>
   );
 };
