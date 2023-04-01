@@ -4,7 +4,7 @@ import EventForm from "./EventForm";
 import Admin from "../admin-dashboard/page";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-const page = ({searchParams}) => {
+const page = ({ searchParams }) => {
   async function fetchCredentials(e) {
     e.preventDefault();
     try {
@@ -44,9 +44,9 @@ const page = ({searchParams}) => {
       username,
       password,
       redirect: true,
-      callbackUrl: "/admin-dashboard",
+      callbackUrl: "/admin-test",
     });
-  }
+  };
 
   return (
     <div className=" h-screen w-screen  flex justify-center items-center">
@@ -55,7 +55,9 @@ const page = ({searchParams}) => {
           {" "}
           Admin{" "}
         </p>
-        {searchParams?.message && <p>You are not admin {searchParams?.message}</p>}
+        {searchParams?.message && (
+          <p>You are not admin {searchParams?.message}</p>
+        )}
         <form>
           <div className="input-area flex gap-2 flex-col">
             <label htmlFor="username">Username</label>
@@ -74,7 +76,9 @@ const page = ({searchParams}) => {
           <div className="py-8">
             <button
               className="p-2 px-8 bg-white rounded-lg flex justify-center"
-              onClick={onSubmit}
+              onClick={() => {
+                signIn();
+              }}
             >
               Submit
             </button>

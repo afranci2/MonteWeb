@@ -128,15 +128,9 @@ app.post('/password', (req, res) => {
     
         const token = jwt.sign(payload, secretKey);
     
-        res.json({name:"Anthony", token });
-    } else {
-        const payload2 = { username: client.username, is_admin: false };
-        const secretKey = 'mysecretkey';
-
-        const token2 = jwt.sign(payload2,secretKey);
-        res.json({name:"Anthony", token2 });
-
+        res.json({name:"Anthony", role:"admin", token });
     }
+    return false
 })
 
 app.get('/add-dummy-event', (req, res) => {
