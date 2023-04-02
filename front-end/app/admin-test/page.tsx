@@ -3,22 +3,30 @@ import React from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 const page = () => {
-  const session = useSession();
+
+  const { data: session } = useSession()
   console.log({ session });
 
+  if (session) {
+    return (
+      <>
+        Signed in <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  } else {
   return (
-    <div>
-      <p>Try this</p>
-      <button
-        className="p-2 px-8 bg-white rounded-lg flex justify-center"
-        onClick={() => {
-          signIn();
-        }}
-      >
-        Submit
-      </button>
-    </div>
-  );
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+      
+    </>
+    
+  )}
+  
+
+  
+
 };
 
 export default page;

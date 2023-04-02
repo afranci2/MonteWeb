@@ -23,13 +23,12 @@ export const authOptions = {
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
         const { username, password } = credentials;
-        const res = await fetch("http:localhost:8000/password", {
+        const res = await fetch("http://localhost:8000/password", {
           method: "POST",
           body: JSON.stringify({ username, password }),
           headers: { "Content-Type": "application/json" },
         });
         console.log(res)
-
         const user = await res.json();
         console.log(user);
         // If no error and we have user data, return it
@@ -53,6 +52,9 @@ export const authOptions = {
   session: {
     strategy: "jwt",
   },
+  pages: {
+    signIn: '/admin',
+  }
 
 };
 

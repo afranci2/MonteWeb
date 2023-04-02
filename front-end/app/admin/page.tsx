@@ -44,7 +44,7 @@ const page = ({ searchParams }) => {
       username,
       password,
       redirect: true,
-      callbackUrl: "/admin-test",
+      callbackUrl:'/admin-test'
     });
   };
 
@@ -76,9 +76,7 @@ const page = ({ searchParams }) => {
           <div className="py-8">
             <button
               className="p-2 px-8 bg-white rounded-lg flex justify-center"
-              onClick={() => {
-                signIn();
-              }}
+              onClick={onSubmit}
             >
               Submit
             </button>
