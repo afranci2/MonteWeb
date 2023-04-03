@@ -56,7 +56,7 @@ async function page () {
       <Navbar />
       <Header video={HeroVideo}>
         <img
-          className="h-1/4 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[18rem] md:w-auto"
+          className="h-1/3 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[18rem] md:w-auto"
           src={Logo}
           alt="he"
         />
