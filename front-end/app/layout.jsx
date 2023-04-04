@@ -1,8 +1,6 @@
-"use client";
-import { SessionProvider } from "next-auth/react";
 import "../public/globals.css";
 
-const RootLayout = ({ children, session }) => (
+const RootLayout = ({ children }) => (
   <html lang="en">
     <head>
       <link rel="preconnect" href="https://stijndv.com" />
@@ -11,9 +9,7 @@ const RootLayout = ({ children, session }) => (
         href="https://stijndv.com/fonts/Eudoxus-Sans.css"
       />
     </head>
-    <SessionProvider session={session}>
-      <body className="">{children}</body>
-    </SessionProvider>
+    <body className="">{children}</body>
   </html>
 );
 

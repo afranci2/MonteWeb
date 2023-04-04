@@ -1,53 +1,43 @@
 "use client";
 import React, { useState } from "react";
-import EventForm from "./EventForm";
-import Admin from "../admin-dashboard/page";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { setCookie } from "nookies";
+
+import { redirect } from "next/navigation";
+
 
 const page = ({ searchParams }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [response, setResponse] = useState();
+
   async function fetchCredentials(e) {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:8000/password`, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const res = await fetch(
+        `http://localhost:8000/password`,
+        {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       const data = await res.json();
       console.log(data);
       setResponse(data);
-
-      try {
-        const trysignin = await signIn("credentials", {
-          redirect: false,
-          username,
-          password,
-        });
-      } catch (error) {
-        console.log(error);
-      }
+      sessionStorage.setItem("jwt", data.token);
+      return data;
     } catch (error) {
       console.log(error);
     }
   }
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [response, setResponse] = useState();
-
-  const onSubmit = async () => {
-    const result = await signIn("credentials", {
-      username,
-      password,
-      redirect: true,
-      callbackUrl:'/admin-test'
-    });
-  };
-
+  function redirectPage(token) {
+    redirect("/admin-test");
+  }
   return (
     <div className=" h-screen w-screen  flex justify-center items-center">
       <div className=" w-3/4 admin h-1/2 bg-gray-200 p-12   rounded-lg">
@@ -76,15 +66,17 @@ const page = ({ searchParams }) => {
           <div className="py-8">
             <button
               className="p-2 px-8 bg-white rounded-lg flex justify-center"
-              onClick={onSubmit}
+              onClick={fetchCredentials}
             >
               Submit
             </button>
           </div>
         </form>
       </div>
+      {response?.role && response?.role === "admin"
+        ? redirectPage(response.token)
+        : null}
     </div>
   );
 };
-
 export default page;
