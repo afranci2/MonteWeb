@@ -130,7 +130,7 @@ app.post('/password', (req, res) => {
     
         res.json({name:"Anthony", role:"admin", token });
     }
-    return false
+    res.status(401).json({ error: 'Invalid credentials' });
 })
 
 app.get('/add-dummy-event', (req, res) => {
