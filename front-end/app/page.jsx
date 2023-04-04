@@ -258,7 +258,7 @@ async function page () {
         />
       </DefaultBody>
       <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">
-        <div className="z-40 absolute text-white w-1/2">
+        <div className="z-40 absolute text-white text-center w-3/4">
           <p className="font-semibold py-4 font-serif text-5xl">
             ¡Nos alegra tenerte con nosotros!
           </p>
