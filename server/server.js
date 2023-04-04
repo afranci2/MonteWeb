@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const mysql = require('mysql')
 const PORT = 8000;
 const cors = require('cors');
+const { json } = require('stream/consumers');
 const env = require('dotenv').config({ path: './.env' })
 const app = express();
 const generatedToken = "heyman123"
@@ -11,7 +12,7 @@ const generatedToken = "heyman123"
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
 const db = mysql.createConnection({
-    host: `monte.cluster-crrmrmm19nia.us-east-1.rds.amazonaws.com`,
+    host: process.env.SERVER_URL,
     port: '3306',
     user: 'admin',
     password: process.env.DB_PASSWORD,
@@ -55,7 +56,7 @@ app.get('/create-tables', (req, res) => {
     }
 })
 
-app.post('/add-event', (req, res) => {
+app.post('/add-event', authorizeUser, (req, res) => {
     const { event, event_dates_and_times } = req.body;
 
     db.query("USE db_monte", (err, res) => {
@@ -119,19 +120,37 @@ app.post('/add-event', (req, res) => {
 
 app.post('/password', (req, res) => {
     const client = req.body
-    console.log(req.body)
 
     if (client.username === "admin" && client.password === "123") {
-        const payload = { username: client.username, is_admin: true };
+        const payload = { username: client.username, is_admin: true, role: "admin" };
 
-        const secretKey = 'mysecretkey';
-    
-        const token = jwt.sign(payload, secretKey);
-    
-        res.json({name:"Anthony", role:"admin", token });
+        const token = jwt.sign(payload, process.env.secretKey);
+        res.json({ name: "Anthony", role: "admin", token });
+
     }
-    res.status(401).json({ error: 'Invalid credentials' });
+    else {
+        res.status(401).json({ error: 'Invalid credentials' });
+    }
 })
+
+
+function authorizeUser(req, res, next) {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+    console.log(token)
+    if (token == null) return res.json("bad1")
+    jwt.verify(token, process.env.secretKey, (err, user) => {
+        if (err) {
+            console.log(err)
+            return res.json("bad2")
+        }
+        req.user = user
+        console.log("great job!", user)
+        next()
+    })
+
+}
+
 
 app.get('/add-dummy-event', (req, res) => {
     db.query("USE db_monte", (err, res) => {
@@ -205,7 +224,7 @@ app.get('/add-dummy-event', (req, res) => {
 })
 
 
-app.delete('/delete-event/:id', (req, res) => {
+app.delete('/delete-event/:id', authorizeUser, (req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -227,7 +246,7 @@ app.delete('/delete-event/:id', (req, res) => {
         return res.send(`Event with ID ${eventId} deleted successfully.`);
     });
 });
-app.delete('/delete-event-dates-and-times/:id', (req, res) => {
+app.delete('/delete-event-dates-and-times/:id',authorizeUser, (req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -250,7 +269,24 @@ app.delete('/delete-event-dates-and-times/:id', (req, res) => {
     });
 });
 
-app.put('/update-event/:id', (req, res) => {
+app.post('/test', (req, res, next) => {
+    const { name } = req.body;
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+    console.log(token)
+    if (token == null) return res.json("bad1")
+    jwt.verify(token, process.env.secretKey, (err, user) => {
+        if (err) {
+            console.log(err)
+            return res.json("bad2")
+        }
+        req.user = user
+        console.log("great job!", user)
+        next()
+    })
+})
+
+app.put('/update-event/:id', authorizeUser, (req, res) => {
     const { name, location, address, image, description } = req.body;
     const eventId = req.params.id;
     const sql = `UPDATE events SET 
@@ -276,7 +312,11 @@ app.put('/update-event/:id', (req, res) => {
             res.status(200).send("Event updated successfully.");
         }
     });
+    console.log("accessed")
+    res.json({"done" : "dff"})
 });
+
+
 app.get('/update-dummy-event/:id', (req, res) => {
     const name = "updated name";
     const location = null;
@@ -309,7 +349,7 @@ app.get('/update-dummy-event/:id', (req, res) => {
         }
     });
 });
-app.put('/update-event-dates-and-times/:id', (req, res) => {
+app.put('/update-event-dates-and-times/:id',authorizeUser, (req, res) => {
     const { date, start_time, end_time } = req.body;
     const eventId = req.params.id;
     const sql = `UPDATE events_dates_and_times SET 
@@ -398,7 +438,7 @@ app.get('/get-all-events-dates-and-times', async (req, res) => {
 
 
 
-app.post('/add-church', (req, res) => {
+app.post('/add-church', authorizeUser, (req, res) => {
     const { church, church_pastors, church_socials, church_images, church_services } = req.body;
 
     db.query("USE db_monte", function (error, results) {
@@ -718,7 +758,7 @@ app.get('/add-dummy-church', (req, res) => {
 
 
 
-app.get('/delete-church/:id', (req, res) => {
+app.get('/delete-church/:id',authorizeUser, (req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -743,7 +783,7 @@ app.get('/delete-church/:id', (req, res) => {
         return res.send(`Church with ID ${eventId} deleted successfully.`);
     });
 });
-app.delete('/delete-church-pastors/:id', (req, res) => {
+app.delete('/delete-church-pastors/:id', authorizeUser,(req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -765,7 +805,7 @@ app.delete('/delete-church-pastors/:id', (req, res) => {
         return res.send(`Church pastor with ID ${eventId} deleted successfully.`);
     });
 });
-app.delete('/delete-church-socials/:id', (req, res) => {
+app.delete('/delete-church-socials/:id', authorizeUser,(req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -787,7 +827,7 @@ app.delete('/delete-church-socials/:id', (req, res) => {
         return res.send(`Church social with ID ${eventId} deleted successfully.`);
     });
 });
-app.delete('/delete-church-images/:id', (req, res) => {
+app.delete('/delete-church-images/:id', authorizeUser,(req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -809,7 +849,7 @@ app.delete('/delete-church-images/:id', (req, res) => {
         return res.send(`Image with ID ${eventId} deleted successfully.`);
     });
 });
-app.delete('/delete-church-services/:id', (req, res) => {
+app.delete('/delete-church-services/:id', authorizeUser,(req, res) => {
     const eventId = req.params.id;
     db.query("USE db_monte", function (error, results) {
         if (error) {
@@ -832,7 +872,7 @@ app.delete('/delete-church-services/:id', (req, res) => {
     });
 });
 
-app.put('/update-church/:id', (req, res) => {
+app.put('/update-church/:id', authorizeUser,(req, res) => {
     const { name, location, description, address, coordinates, phone, image, map_link } = req.body;
     const id = req.params.id;
     const sql = `UPDATE churches SET name = ?,
@@ -862,7 +902,7 @@ app.put('/update-church/:id', (req, res) => {
         }
     });
 });
-app.put('/update-church-pastors/:id', (req, res) => {
+app.put('/update-church-pastors/:id', authorizeUser,(req, res) => {
     const { title, position, last_name, first_name, bio, main } = req.body;
     const id = req.params.id;
     const sql = `UPDATE churches_pastors SET 
@@ -890,7 +930,7 @@ app.put('/update-church-pastors/:id', (req, res) => {
         }
     });
 });
-app.put('/update-church-socials/:id', (req, res) => {
+app.put('/update-church-socials/:id', authorizeUser,(req, res) => {
     const { name, link } = req.body;
     const id = req.params.id;
     const sql = `UPDATE churches_socials SET name = COALESCE(?, name), link = COALESCE(?, link) WHERE id = ?`;
@@ -911,7 +951,7 @@ app.put('/update-church-socials/:id', (req, res) => {
         }
     });
 });
-app.get('/update-church-images/:id', (req, res) => {
+app.get('/update-church-images/:id', authorizeUser,(req, res) => {
     let source = "https://monte-assets.s3.amazonaws.com/img/section2.jpg"
     let is_main = true
     const id = req.params.id;
@@ -933,7 +973,7 @@ app.get('/update-church-images/:id', (req, res) => {
         }
     });
 });
-app.put('/update-church-services/:id', (req, res) => {
+app.put('/update-church-services/:id', authorizeUser,(req, res) => {
     const { name, day, start_time, end_time } = req.body;
     const id = req.params.id;
     const sql = `UPDATE churches_services SET 
@@ -1131,272 +1171,6 @@ app.get('/get-church-services/:id', (req, response) => {
 
     })
 })
-
-
-let events = [
-    {
-        id: 0,
-        name: "5wefwfq0 anniversary",
-        location: "Sede Central",
-        address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [{
-            date: "05/04/23",
-            startTime: "7:30PM",
-            endTime: "7:30PM"
-        },
-        {
-            "date": "05/05/23",
-            "startTime": ["7:30P"],
-            "endTime": ["7:30PM"],
-        },
-        ],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        image: "",
-        description: "ewfwrefgwrg"
-    },
-    {
-        id: 1,
-        name: "5wefwfq0 anniversary",
-        location: "Sede Central",
-        address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [{
-            date: "05/04/23",
-            startTime: "7:30PM",
-            endTime: "7:30PM"
-        },
-        {
-            "date": "05/05/23",
-            "startTime": ["7:30P"],
-            "endTime": ["7:30PM"],
-        },
-        ],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        image: "https://....",
-        description: "ewfwrefgwrg"
-    },
-    {
-        id: 2,
-        name: "5wefwfq0 anniversary",
-        location: "Sede Central",
-        address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [{
-            date: "05/04/23",
-            startTime: "7:30PM",
-            endTime: "7:30PM"
-        },
-        {
-            "date": "05/05/23",
-            "startTime": ["7:30P"],
-            "endTime": ["7:30PM"],
-        },
-        ],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        image: "",
-        description: "ewfwrefgwrg"
-    },
-    {
-        id: 3,
-        name: "5wefwfq0 anniversary",
-        location: "Sede Central",
-        address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [{
-            date: "05/04/23",
-            startTime: "7:30PM",
-            endTime: "7:30PM"
-        },
-        {
-            "date": "05/05/23",
-            "startTime": ["7:30P"],
-            "endTime": ["7:30PM"],
-        },
-        ],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        image: "",
-        description: "ewfwrefgwrg"
-    },
-    {
-        id: 4,
-        name: "5wefwfq0 anniversary",
-        location: "Sede Central",
-        address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [{
-            date: "05/04/23",
-            startTime: "7:30PM",
-            endTime: "7:30PM"
-        },
-        {
-            "date": "05/05/23",
-            "startTime": ["7:30P"],
-            "endTime": ["7:30PM"],
-        },
-        ],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        image: "",
-        description: "ewfwrefgwrg"
-    },
-    {
-        id: 5,
-        name: "5wefwfq0 anniversary",
-        location: "Sede Central",
-        address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [{
-            date: "05/04/23",
-            startTime: "7:30PM",
-            endTime: "7:30PM"
-        },
-        {
-            "date": "05/05/23",
-            "startTime": ["7:30P"],
-            "endTime": ["7:30PM"],
-        },
-        ],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        image: "",
-        description: "ewfwrefgwrg"
-    },
-    {
-        id: 6,
-        name: "5wefwfq0 anniversary",
-        location: "Sede Central",
-        address: "155 Power Rd., Pawtucket, RI, 02860, US",
-        datesAndTimes: [{
-            date: "05/04/23",
-            startTime: "7:30PM",
-            endTime: "7:30PM"
-        },
-        {
-            "date": "05/05/23",
-            "startTime": ["7:30P"],
-            "endTime": ["7:30PM"],
-        },
-        ],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        image: "",
-        description: "ewfwrefgwrg"
-    },
-]
-
-let churches = [
-    {
-        id: 1,
-        name: "Sede Central",
-        location: "Pawtucket",
-        description: "A church that focuses on spreading the word of God.",
-        leadPastor: "Samuel Francisco",
-        associatePastors: ["Javier Torres"],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        socialMedia: {
-            Facebook: "https://www.facebook.com/iglesia.cristiana",
-            Instagram: "https://www.instagram.com/iglesia.cristiana",
-            YouTube: "https://www.youtube.com/channel/UCBVz1_Cristiana",
-        },
-        address: "1234 Main St",
-        phone: "401-555-1234",
-        email: "info@iglesia.com",
-        coordinates: {
-            lat: 41.86482006659902,
-            lng: -71.41359964022818,
-        },
-        images: {
-            main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
-            supporting: ["https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg", "", ""]
-        },
-        mapLink: "https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
-    },
-    {
-        id: 2,
-        name: "Iglesia Cristiana 2",
-        location: "Pawtucket",
-        description: "A church that focuses on spreading the word of God.",
-        leadPastor: "Isabel Francisco",
-        associatePastors: ["Javier Torres"],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        socialMedia: {
-            Facebook: "https://www.facebook.com/iglesia2.cristiana",
-            Instagram: "https://www.instagram.com/",
-        },
-        address: "1234 Main St",
-        phone: "401-555-1234",
-        email: "info@iglesia.com",
-        coordinates: {
-            lat: 41.84142288169135, lng: -71.47616923108586
-        },
-        images: {
-            main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_5188.jpg",
-            supporting: ["", "", ""]
-        },
-        mapLink: "https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
-    },
-    {
-        id: 3,
-        name: "New Bedford",
-        location: "New Bedford",
-        description: "A church that focuses on spreading the word of God.",
-        leadPastor: "Isabel Francisco",
-        associatePastors: ["Javier Torres"],
-        services: [
-            { name: "Servicio Evangelistico", day: "Sunday", time: "3:00PM" },
-            { name: "Estudio Biblico", day: "Tuesday", time: "7:00PM" },
-            { name: "Servicio Especial", day: "Thursday", time: "7:30PM" },
-        ],
-        socialMedia: {
-            Facebook: "https://www.facebook.com/iglesia2.cristiana",
-            Instagram: "https://www.instagram.com/",
-        },
-        address: "1234 Main St",
-        phone: "401-555-1234",
-        email: "info@iglesia.com",
-        coordinates: {
-            lat: 41.65690967390518, lng: -70.92700191534158
-        },
-        images: {
-            main: "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/MS+Building+Session/DSC_1662.jpg",
-            supporting: ["", "", ""]
-        },
-        mapLink: "https://www.google.com/maps/dir/41.8110146,-71.418062/155+Power+Rd,+Pawtucket,+RI+02860/"
-    },
-
-];
-
-let testimonials = []
-
-let applications = []
 
 function convertPaymentAmount(amount) {
     console.log(amount)
