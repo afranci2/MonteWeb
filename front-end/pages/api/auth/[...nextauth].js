@@ -23,7 +23,7 @@ export const authOptions = {
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
         const { username, password } = credentials;
-        const res = await fetch("http://localhost:8000/password", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/password`, {
           method: "POST",
           body: JSON.stringify({ username, password }),
           headers: { "Content-Type": "application/json" },

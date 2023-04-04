@@ -7,7 +7,7 @@ const something =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";
 import "../sideTab/ChurchMainTab.css";
 
-const EventsTab = ({ info, props }) => {
+const EventsTab = ({ info, props, info2}) => {
   const [showDetails, setShowDetails] = useState(false);
   const [showDetails2, setShowDetails2] = useState(false);
 

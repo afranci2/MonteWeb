@@ -8,7 +8,25 @@ import Tab from "../../components/tab/Tab";
 
 async function fetchEvents() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/eventos`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events`, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+
+    const data = await res.json();
+
+    return data; // parses
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function fetchEvent2() {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events-dates-and-times`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -26,6 +44,8 @@ async function fetchEvents() {
 
 async function page() {
   const res = await fetchEvents();
+  const res2 = await fetchEvent2();
+
   return (
     <div>
       <Navbar />
@@ -43,7 +63,7 @@ async function page() {
         containerheight={undefined}
       />
       <div className="md:w-3/4">
-        <Events res={res} />
+        <Events res={res} res2={res2}/>
       </div>
     </div>
   );

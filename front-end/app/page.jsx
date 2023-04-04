@@ -31,7 +31,7 @@ import Image from "next/image";
 
 async function fetchEvents() {
   try {
-    const res = await fetch(`http://localhost:8000/get-all-events`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
