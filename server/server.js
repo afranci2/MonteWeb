@@ -5,7 +5,6 @@ const PORT = 8000;
 const cors = require('cors');
 const env = require('dotenv').config({ path: './.env' })
 const app = express();
-const generatedToken = "heyman123"
 app.use(cors());
 app.use(express.json()); // to parse JSON dat
 app.use(express.urlencoded({ extended: true })); //
