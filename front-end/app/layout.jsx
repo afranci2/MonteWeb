@@ -1,7 +1,7 @@
 import "../public/globals.css";
 
 const RootLayout = ({ children }) => (
-  <html lang="en">
+  <html lang="es">
     <head>
       <link rel="preconnect" href="https://stijndv.com" />
       <link
