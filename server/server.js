@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 
 const PORT = 8000;
 const cors = require('cors');
-const { json } = require('stream/consumers');
 const env = require('dotenv').config({ path: './.env' })
 const app = express();
 const generatedToken = "heyman123"
