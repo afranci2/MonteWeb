@@ -215,7 +215,7 @@ app.get('/add-dummy-event', (req, res) => {
 
 app.delete('/delete-event/:id', authorizeUser, (req, res) => {
     const eventId = req.params.id;
-    db.query("USE db_monte", function (error, results) {
+    db.query("USE monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
         } else {
@@ -388,9 +388,10 @@ app.get('/get-event-dates-and-times/:id', (req, response) => {
 
 app.get('/get-all-events', async (req, res) => {
     let sql = 'SELECT * FROM events';
-    db.query("USE db_monte", function (error, results) {
+    db.query("USE monte", function (error, results) {
         if (error) {
             console.log('Error in database operation');
+            console.log(error)
         } else {
             console.log(results);
         }
@@ -399,6 +400,7 @@ app.get('/get-all-events', async (req, res) => {
         if (error) {
             console.log('Error in database operation');
             res.send("Error!")
+            console.log(error)
 
         } else {
             res.json(results);
