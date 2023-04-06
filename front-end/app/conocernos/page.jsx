@@ -3,18 +3,12 @@ import Navbar2 from "../../sections/navbar/Navbar2";
 import Header from "../../sections/header/Header";
 import BodySectionImageLeft from "../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
+import IglesiasChurchSection from "../../sections/body/iglesiaschurchsection/IglesiasChurchSection";
 
-import Banner from "../../components/banner/Banner";
 import Footer from "../../sections/footer/Footer";
 import Banner2 from "../../components/banner/Banner2";
-import SocialMedia from "../../components/tab/sideTab/SocialMedia";
-import DefaultBody from "../../sections/body/defaultBody/DefaultBody";
-import MobileCard from "../../components/mobileCard/MobileCard";
-import SideTab from "../../components/tab/sideTab/SideTab";
-import TextLeftTab from "../../components/tab/textLeftTab/TextLeftTab";
-import TextRightTab from "../../components/tab/textRightTab/TextRightTab";
+
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
-import Link from "next/link";
 const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
@@ -25,11 +19,30 @@ const Becky = "https://monte-assets.s3.amazonaws.com/img/becky.jpg";
 const Pastora = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const Anthony = "https://monte-assets.s3.amazonaws.com/img/anthony.jpg";
 
-const HeroVideo =
-  "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
-const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
+async function fetchChurches() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-churches`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
 
-const page = () => {
+    const data = await res.json();
+
+    return data; // parses
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const page = async () => {
+  const res = await fetchChurches();
+  console.log(res);
   const lidereslist = [
     {
       id: 0,
@@ -189,16 +202,11 @@ const page = () => {
           ></BodySectionImageRight>
         </div>
       </section>
-      <section className="w-full h-screen bg-black md:flex">
-        <div className="bg-blue-400 md:flex-none md:h-full md:w-1/3 h-1/6">
-          <div className="h-auto bg-red-400">
-            <p className="p-12 text-center justify-center flex align-center items-center h-full ">
-              Time to Pick a Church wef nowenfwi oefnfeoi
-            </p>
-          </div>
-        </div>
-        <div className="h-full md:flex-1 bg-red-400"></div>
+
+      <section>
+        <IglesiasChurchSection churches={res} conocernos={"Wrg"}/>
       </section>
+
       <Footer />
     </div>
   );

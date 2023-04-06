@@ -1,9 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import Navbar2 from "../../sections/navbar/Navbar2";
 import Footer from "../../sections/footer/Footer";
-import IglesiasMapList from "../../sections/body/iglesiasMap/iglesiasListLeft/IglesiasMapListLeft";
-import IglesiasMapRight from "../../sections/body/iglesiasMap/iglesiasMapRight/IglesiasMapRight";
 import IglesiasChurchSection from "../../sections/body/iglesiaschurchsection/IglesiasChurchSection";
 
 console.log(process.env.NEXT_PUBLIC_SERVER_URL);
