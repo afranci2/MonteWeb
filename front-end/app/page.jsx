@@ -31,13 +31,16 @@ import Image from "next/image";
 
 async function fetchEvents() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
 
     const data = await res.json();
     return data; // parses
@@ -46,12 +49,40 @@ async function fetchEvents() {
   }
 }
 
-async function page () {
+async function fetchEvents2() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events-dates-and-times`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
+
+    const data = await res.json();
+    return data; // parses
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function getDateAndTimeForChurchId(events, id) {
+  const matchingEvent = events.filter((event) => event.event_id === id);
+  const dateAndTime = `${matchingEvent[0].date} - ${
+    matchingEvent[matchingEvent.length - 1].date
+  }`;
+  console.log(dateAndTime);
+  return dateAndTime;
+}
+
+async function page() {
   const res = await fetchEvents();
-  console.log(res)
+  const res2 = await fetchEvents2();
 
   return (
-
     <div>
       <Navbar />
       <Header video={HeroVideo}>
@@ -244,15 +275,23 @@ async function page () {
         </Banner2>
         <BodySectionImageLeft
           buttonText={"Ver Mas"}
-          headingText={res[res.length-1].name}
-          subheadingText={res[res.length-1].description}
+          headingText={res[res.length - 1].name}
+          subheadingText={res[res.length - 1].description}
+          subheadingText2={getDateAndTimeForChurchId(
+            res2,
+            res[res.length - 1].id
+          )}
           buttonLink={"/"}
           image={Michael}
         />
         <BodySectionImageRight
           buttonText={"Ver Mas"}
-          headingText={res[res.length-2].name}
-          subheadingText={res[res.length-2].description}
+          headingText={res[res.length - 2].name}
+          subheadingText={res[res.length - 2].description}
+          subheadingText2={getDateAndTimeForChurchId(
+            res2,
+            res[res.length - 2].id
+          )}
           buttonLink={"/"}
           image={Michael}
         />
@@ -279,6 +318,6 @@ async function page () {
       <Footer />
     </div>
   );
-};
+}
 
 export default page;

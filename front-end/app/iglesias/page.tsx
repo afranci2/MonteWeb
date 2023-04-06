@@ -4,18 +4,22 @@ import Navbar2 from "../../sections/navbar/Navbar2";
 import Footer from "../../sections/footer/Footer";
 import IglesiasMapList from "../../sections/body/iglesiasMap/iglesiasListLeft/IglesiasMapListLeft";
 import IglesiasMapRight from "../../sections/body/iglesiasMap/iglesiasMapRight/IglesiasMapRight";
+import IglesiasChurchSection from "../../sections/body/iglesiaschurchsection/IglesiasChurchSection";
 
 console.log(process.env.NEXT_PUBLIC_SERVER_URL);
 
 async function fetchChurches() {
   try {
-    const res = await fetch(`http:localhost:8000/get-all-churches`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-churches`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
     const data = await res.json();
     return data; // parses
   } catch (error) {
@@ -25,17 +29,17 @@ async function fetchChurches() {
 
 export default async function page() {
   // Fetch the list of churches from the server
-  const res = await fetchChurches();
+  const churches = await fetchChurches();
+
   return (
-    <div>
+    <div className="contain">
       <Navbar2 />
-      <div className="hidden md:flex md:min-w-[380px] md:w-1/4 overflow-hidden">
-        <IglesiasMapList churches={res} />
-      </div>
-      <IglesiasMapRight churches={res} />
-      <div className="md:hidden ">
-        <IglesiasMapList churches={res}/>
-      </div>
+
+      {churches ? (
+        <IglesiasChurchSection churches={churches} />
+      ) : (
+        <div>Loading...</div>
+      )}
       <Footer />
     </div>
   );

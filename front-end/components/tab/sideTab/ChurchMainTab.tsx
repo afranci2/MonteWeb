@@ -4,7 +4,7 @@ import "./ChurchMainTab.css";
 import Link from "next/link";
 
 const ChurchMainTab = ({ socials, images, mainImage }) => {
-
+console.log(images)
   return (
     <div className="md:p-4 else flex flex-col md:grid gap-4 grid-cols-2 ">
       <Link href={"/iglesias"}>
@@ -16,7 +16,7 @@ const ChurchMainTab = ({ socials, images, mainImage }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={images[0]}
+            src={images[0].source}
             alt="image"
             width={1000}
             height={1000}
@@ -32,7 +32,7 @@ const ChurchMainTab = ({ socials, images, mainImage }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={images[1]}
+            src={images[0].source}
             alt="image"
             width={1000}
             height={1000}
@@ -49,7 +49,7 @@ const ChurchMainTab = ({ socials, images, mainImage }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={images[2]}
+            src={images[0].source}
             alt="image"
             width={1000}
             height={1000}
@@ -65,7 +65,7 @@ const ChurchMainTab = ({ socials, images, mainImage }) => {
           <div className="absolute gradient w-full h-full"></div>
           <Image
             className="object-cover h-full w-full overflow-hidden"
-            src={images[3]}
+            src={images[0].source}
             alt="image"
             width={1000}
             height={1000}

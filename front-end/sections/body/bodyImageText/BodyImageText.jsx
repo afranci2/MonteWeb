@@ -17,10 +17,22 @@ const BodyImageText = (props) => {
         ) : (
           <div></div>
         )}
-
-        <div className="md:w-1/2 text-center align-center mt-4 md:m-auto flex flex-col gap-4 md:text-left">
+{props.imagePosition === "left" ? (
+          <Image
+            width={1000}
+            height={1000}
+            alt="header image"
+            className="h-full md:w-1/2 object-cover md:p-4  md:pl-12 md:hidden"
+            src={props.image}
+          />
+        ) : (
+          <div></div>
+        )}
+        <div className="md:w-1/2 text-center align-center mt-4 md:m-auto flex flex-col  md:text-left">
           <p className="text-3xl font-bold ">{props.headingText}</p>
-          <p className="text-sm  ">{props.subheadingText}</p>
+          <p className="text-sm py-2 pt-4">{props.subheadingText}</p>
+          <p className="text-sm pb-8">{props.subheadingText2}</p>
+
           <div className="py-2 pb-10 flex justify-center md:justify-start">
             {props.buttonLink && (
               <MainButton
@@ -37,7 +49,7 @@ const BodyImageText = (props) => {
             width={1000}
             height={1000}
             alt="header image"
-            className="h-full md:w-1/2 object-cover md:p-4  md:pl-12 md:flex"
+            className="hidden h-full md:w-1/2 object-cover md:p-4  md:pl-12 md:flex"
             src={props.image}
           />
         ) : (

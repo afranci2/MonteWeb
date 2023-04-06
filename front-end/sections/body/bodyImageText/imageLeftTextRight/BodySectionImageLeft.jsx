@@ -3,7 +3,7 @@ import  BodyImageText  from '../BodyImageText'
 
 const BodySectionImageLeft = (props) => {
   return <>
-  <BodyImageText image={props.image} headingText={props.headingText} subheadingText={props.subheadingText} buttonText={props.buttonText} buttonLink={props.buttonLink} imagePosition="right"></BodyImageText>
+  <BodyImageText image={props.image} headingText={props.headingText} subheadingText={props.subheadingText} subheadingText2={props.subheadingText2} buttonText={props.buttonText} buttonLink={props.buttonLink} imagePosition="right"></BodyImageText>
   </>;
 };
 

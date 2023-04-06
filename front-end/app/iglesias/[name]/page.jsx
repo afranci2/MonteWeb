@@ -11,7 +11,7 @@ import ChurchHeader from "../../../sections/header/ChurchHeader";
 
 async function fetchChurches(id) {
   try {
-    const res = await fetch(`http://localhost:8000/get-church/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church/${id}`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ async function fetchChurches(id) {
 
 async function fetchChurchesImages(id) {
   try {
-    const res = await fetch(`http:localhost:8000/get-church-images/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-images/${id}`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ async function fetchChurchesImages(id) {
 
 async function fetchChurchesServices(id) {
   try {
-    const res = await fetch(`http:localhost:8000/get-church-services/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-services/${id}`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ async function fetchChurchesServices(id) {
 
 async function fetchChurchesSocials(id) {
   try {
-    const res = await fetch(`http:localhost:8000/get-church-socials/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-socials/${id}`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ async function fetchChurchesSocials(id) {
 
 async function fetchChurchesPastors(id) {
   try {
-    const res = await fetch(`http:localhost:8000/get-church-pastors/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-pastors/${id}`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -99,6 +99,7 @@ export default async function page({ params }) {
   const res5 = await fetchChurchesPastors(parseInt(params.name));
 
   const mainImage = res2?.find((image) => image.is_main === 1).source;
+  
   return (
     <div>
       <Navbar2 />
@@ -141,13 +142,13 @@ export default async function page({ params }) {
           />{" "}
         </div>
       ) : null}
-      {res ? (
+      {res5 ? (
         <div>
           <BodySectionImageLeft
             headingText="Nosotros"
             buttonText="Leer Mas"
-            subheadingText={res.description}
-            image={mainImage}
+            subheadingText={res[0].description}
+            image={res2[0].source}
             buttonLink={"/"}
           />
           <Lideres pastors={res5} />
