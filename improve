@@ -13,3 +13,8 @@ include full tithing on donar page
 
 activate stripe payment
 add kpi such as visitor number. each time someone accesses send fetch to server which will add one to db table visitors
+
+
+LANDING PAGE:
+add section at bottom showing most recent sermon
+add missionary section

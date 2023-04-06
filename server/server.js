@@ -159,7 +159,7 @@ app.get('/add-dummy-event', (req, res) => {
 
 
     db.query("INSERT INTO events(name, location, address, image, description) VALUES (?, ?, ?, ?, ?);", ["third event",
-        "werf", "155 Power werweqrRoad", "hterqtp...", "a supewerqwerr fun event"], (err, res) => {
+        "weewfwrefrf", "155 wrefewrfPower werweqrRoad", "hterqwweftp...", "apr thur"], (err, res) => {
             if (err) {
                 console.log(err)
                 console.log("Event not added successfully...")
