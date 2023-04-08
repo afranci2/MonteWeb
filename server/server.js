@@ -258,6 +258,7 @@ app.delete('/delete-event-dates-and-times/:id', authorizeUser, (req, res) => {
 
 app.post('/test', (req, res, next) => {
     const { name } = req.body;
+    console.log(name)
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
     console.log(token)
