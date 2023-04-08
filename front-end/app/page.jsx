@@ -74,7 +74,6 @@ function getDateAndTimeForChurchId(events, id) {
   const dateAndTime = `${matchingEvent[0].date} - ${
     matchingEvent[matchingEvent.length - 1].date
   }`;
-  console.log(dateAndTime);
   return dateAndTime;
 }
 

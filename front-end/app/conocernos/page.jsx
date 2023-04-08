@@ -204,7 +204,22 @@ const page = async () => {
       </section>
 
       <section>
-        <IglesiasChurchSection churches={res} conocernos={"Wrg"}/>
+        <Header
+          image={ConocernosHero}
+          headerText="Find your Church"
+          children={undefined}
+          classChangeText={undefined}
+          buttonColor={undefined}
+          buttonLink={undefined}
+          buttonText={undefined}
+          contentPosition={undefined}
+          video={undefined}
+          subheadingText={
+            "EDIT THIS Para más información sobre diezmos y donaciones, , etc., póngase en contacto con nosotros"
+          }
+          containerheight={"h-72"}
+        />
+        <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
       </section>
 
       <Footer />

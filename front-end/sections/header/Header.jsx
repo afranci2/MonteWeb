@@ -30,7 +30,7 @@ function Header({
           } ${!headerText && "hidden"} `}
         >
           <div className="z-40 flex flex-col gap-2">
-            <p className="font-semibold font-serif text-6xl">{headerText}</p>
+            <p className="font-semibold  font-serif text-6xl ">{headerText}</p>
             <div
               className={`${
                 contentPosition === "center"
@@ -49,7 +49,7 @@ function Header({
           </div>
         </div>
         {children}
-        <div className=" h-full w-full absolute z-0"></div>
+        <div className=" h-full w-full absolute z-0 bg-gradient-to-b from-slate-800/20 to-black/70"></div>
         <div className={image ? "object-cover" : "hidden"}>
           <div className="contain">
             {image ? (

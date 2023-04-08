@@ -77,49 +77,52 @@ function Navbar() {
         </div>
         <div className="MOBILE flex items-center h-full w-11/12 m-auto ">
           {toggleMenu && (
-            <div className=" ">
-              <div
-                className="text-center z-50 mobile-links top-0 left-0 w-3/4 h-screen p-10 shadow-lg bg-white
+            <div className="relative">
+              <div className="relative">
+                <div
+                  className="text-center z-50 mobile-links top-0 left-0 w-3/4 h-screen p-10 shadow-lg bg-white
                flex-col fixed text-black 
              
               font-semibold text-2xl py-20"
-              >
-                <div className="text-left mobile-menu-pop">
-                  <ul>
-                    <li className="p-2 py-8 border-b-2" key={1}>
-                      <Link href={"/conocernos"}>
-                        <p>Conocernos</p>
-                      </Link>
-                    </li>
-                    <li className="p-2 py-8 border-b-2" key={1}>
-                      <Link href={"/iglesias"}>
-                        <p>Iglesias</p>
-                      </Link>
-                    </li>
-                    <li className="p-2 py-8 border-b-2" key={1}>
-                      <Link href={"/unete"}>
-                        <p>Unete</p>
-                      </Link>
-                    </li>
-                    <li className="p-2 py-8 border-b-2" key={1}>
-                      <Link href={"/eventos"}>
-                        <p>Eventos</p>
-                      </Link>
-                    </li>
-                    <li className="p-2 py-8" key={1}>
-                      <Link href={"/donar"}>
-                        <p>Donar</p>
-                      </Link>
-                    </li>
-                  </ul>
+                >
+                  <div className="text-left mobile-menu-pop">
+                    <ul>
+                      <li className="p-2 py-8 border-b-2" key={1}>
+                        <Link href={"/conocernos"}>
+                          <p>Conocernos</p>
+                        </Link>
+                      </li>
+                      <li className="p-2 py-8 border-b-2" key={1}>
+                        <Link href={"/iglesias"}>
+                          <p>Iglesias</p>
+                        </Link>
+                      </li>
+                      <li className="p-2 py-8 border-b-2" key={1}>
+                        <Link href={"/unete"}>
+                          <p>Unete</p>
+                        </Link>
+                      </li>
+                      <li className="p-2 py-8 border-b-2" key={1}>
+                        <Link href={"/eventos"}>
+                          <p>Eventos</p>
+                        </Link>
+                      </li>
+                      <li className="p-2 py-8" key={1}>
+                        <Link href={"/donar"}>
+                          <p>Donar</p>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <RiCloseLine
+                    className="absolute top-0 right-0 cursor-pointer m-8"
+                    color={"#000000"}
+                    size={30}
+                    onClick={() => setToggleMenu(false)}
+                  />
                 </div>
-                <RiCloseLine
-                  className="absolute top-0 right-0 cursor-pointer m-8"
-                  color={"#000000"}
-                  size={30}
-                  onClick={() => setToggleMenu(false)}
-                />
               </div>
+              <div className="fixed top-0 w-screen h-screen bg-black/70"></div>
             </div>
           )}
           <div className="mobile-menu desktop:hidden">

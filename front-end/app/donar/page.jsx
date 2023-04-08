@@ -23,7 +23,9 @@ const page = () => {
         buttonColor={"bg-yellow-400 text-black"}
         buttonText={"Dar Ahora"}
         contentPosition={"center"}
-        subheadingText={"Give donations directly online, tithely, or in person and help support missionary efforts. Start now and see what god can do through you"}
+        subheadingText={
+          "Give donations directly online, tithely, or in person and help support missionary efforts. Start now and see what god can do through you"
+        }
         children={undefined}
         classChangeText={undefined}
         video={undefined}
@@ -92,7 +94,6 @@ const page = () => {
           />
         </div>
       </div>
-
       <Footer />
     </div>
   );

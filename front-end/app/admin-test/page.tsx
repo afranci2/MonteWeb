@@ -32,14 +32,13 @@ const page = () => {
   // retrieve the token from localStorage
   useEffect(() => {
     setGetToken(sessionStorage.getItem("jwt"));
-    if (getToken) {
-      const res =  fetchProtectedData(getToken);
-      console.log(getToken)
-  
-    }
   }, []);
 
+  if (getToken) {
+    const res =  fetchProtectedData(getToken);
+    console.log(res)
 
+  }
 
   return (
     <div>
