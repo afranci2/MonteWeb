@@ -1,17 +1,18 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { parseCookies } from "nookies";
+import AdminDashboard from "../../components/admindashboard/AdminDashboard";
+import NotAdmin from "../../components/admindashboard/NotAdmin";
+
 
 // retrieve the token from the cookie
 const fetchProtectedData = async (token) => {
-  console.log("here is token", token);
   try {
-    const res = await fetch(`http://localhost:8000/update-church/1`, {
+    const res = await fetch(`http://localhost:8000/test`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({
@@ -31,18 +32,28 @@ const page = () => {
   // retrieve the token from localStorage
   useEffect(() => {
     setGetToken(sessionStorage.getItem("jwt"));
+    if (getToken) {
+      const res =  fetchProtectedData(getToken);
+      console.log(getToken)
+  
+    }
   }, []);
 
 
-  if (getToken) {
-    fetchProtectedData(getToken)
-  }
 
   return (
     <div>
-      <p>Hello There</p>{" "}
-      {getToken ? <p>You are authorized</p> : <p>Not Authorized</p>}
-      <button>Fetch Protected Data</button>
+      <p>Hello </p>{" "}
+      {getToken ? (
+        <div>
+          <AdminDashboard />
+        </div>
+      ) : (
+        <div>
+          {" "}
+          <NotAdmin />
+        </div>
+      )}
     </div>
   );
 };

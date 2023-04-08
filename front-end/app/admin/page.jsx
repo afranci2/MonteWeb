@@ -4,17 +4,17 @@ import { setCookie } from "nookies";
 
 import { redirect } from "next/navigation";
 
-
 const page = ({ searchParams }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [response, setResponse] = useState();
 
   async function fetchCredentials(e) {
+    console.log("clicked");
     e.preventDefault();
     try {
       const res = await fetch(
-        `http://localhost:8000/password`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/password`,
         {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           headers: {
@@ -40,14 +40,16 @@ const page = ({ searchParams }) => {
   }
   return (
     <div className=" h-screen w-screen  flex justify-center items-center">
-      <div className=" w-3/4 admin h-1/2 bg-gray-200 p-12   rounded-lg">
+      <div className=" w-3/4 admin h-fit bg-gray-200 p-12   rounded-lg">
         <p className="font-bold pb-4 flex justify-center content-center">
           {" "}
           Admin{" "}
         </p>
-        {searchParams?.message && (
-          <p>You are not admin {searchParams?.message}</p>
-        )}
+        {response?.error ? (
+            <div>
+              <p className="py-2 text-red-400">Incorrect Credentials</p>
+            </div>
+          ) : null}
         <form>
           <div className="input-area flex gap-2 flex-col">
             <label htmlFor="username">Username</label>
