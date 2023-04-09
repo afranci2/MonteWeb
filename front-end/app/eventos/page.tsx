@@ -24,27 +24,9 @@ async function fetchEvents() {
   }
 }
 
-async function fetchEvent2() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events-dates-and-times`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
-
-    const data = await res.json();
-
-    return data; // parses
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 async function page() {
   const res = await fetchEvents();
-  const res2 = await fetchEvent2();
 
   return (
     <div>
@@ -63,7 +45,7 @@ async function page() {
         containerheight={undefined}
       />
       <div className="md:w-3/4">
-        <Events res={res} res2={res2}/>
+        <Events res={res} />
       </div>
     </div>
   );

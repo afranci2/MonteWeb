@@ -40,16 +40,16 @@ const page = () => {
       />
       <TithelyGiving />
       <StripeGiving />
-      <div className=" text-center m-auto w-9/12 py-24 flex flex-col gap-16">
+      <div className=" text-center m-auto w-full py-28 flex flex-col gap-16 md:w-9/12">
         <div className="heading-text w-8/12 m-auto">
-          <p className="font-semibold text-3xl">Otra formas de dar</p>
+          <p className="font-semibold text-3xl p-2">Otra formas de dar</p>
           <p>
             Dar en línea (web, texto o aplicación móvil) es la forma más segura,
             sencilla y eficiente de dar. Pero si esto no es posible, siga estas
             opciones
           </p>
         </div>
-        <div className="images grid grid-cols-2 ">
+        <div className="images grid grid-cols-2 w-10/12 m-auto">
           <div className="1st  text-center">
             <Image
               className="mx-auto"

@@ -18,6 +18,8 @@ const Giving = () => {
         <p className="font-serif text-center text-3xl font-semibold">
           En Linea{" "}
         </p>
+        <p className=" text-center text-xs w-10/12 m-auto pt-4 font-regular">Secure online giving. Enter an amount and provide billing information. </p>
+
       </div>
       <Donation />
     </div>
