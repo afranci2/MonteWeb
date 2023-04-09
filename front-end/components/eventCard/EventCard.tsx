@@ -20,7 +20,7 @@ const EventCard = ({ event, dates }) => {
     <div className="">
       {click && (
         <div
-          className="w-screen left[-10px] absolute z-50 flex justify-center items-center  bg-opacity-50"
+          className="w-screen left-[-10px] absolute z-50 flex justify-center items-center  bg-opacity-50"
           onClick={() => setClick(false)}
         >
           <div className="w-full h-full max-w-screen-lg mx-auto p-16 bg-white rounded-lg shadow-lg">
