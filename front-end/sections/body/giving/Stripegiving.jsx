@@ -11,11 +11,11 @@ const Googlestorespanish =
 
 const Giving = () => {
   return (
-    <div className=" bg-gradient-to-b from-slate-500/10 to-black/10 w-full py-12 mt-8 flex flex-col ">
+    <div className=" bg-gradient-to-b from-slate-500/10 to-black/10 w-full py-12  flex flex-col ">
       <div className="flex  flex-col mx-auto justify-center align-center">
         <p className=" text-center font-regular">Dar </p>
 
-        <p className="font-serif text-center text-3xl font-semibold">
+        <p className=" text-center text-3xl font-semibold">
           En Linea{" "}
         </p>
         <p className=" text-center text-xs w-10/12 m-auto pt-4 font-regular">Secure online giving. Enter an amount and provide billing information. </p>

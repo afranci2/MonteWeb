@@ -42,7 +42,6 @@ async function fetchChurches() {
 
 const page = async () => {
   const res = await fetchChurches();
-  console.log(res);
   const lidereslist = [
     {
       id: 0,
@@ -131,6 +130,7 @@ const page = async () => {
           </ul>
         </Banner2>
         <BodySectionImageLeft
+        backgroundColor={"bg-white"}
           image={Javier}
           headingText="Nuestra Misión
         "
@@ -183,14 +183,10 @@ const page = async () => {
             containerheight={"h-screen"}
           ></Header>
         </div>
-        <div id="lideres">
-          <Lideres pastors={lidereslist} />
-        </div>
-      </div>
-
-      <section>
+        <section>
         <div id="historia-h">
           <BodySectionImageRight
+
             image={Javier}
             headingText="50 anos de historia"
             subheadingText={
@@ -202,6 +198,12 @@ const page = async () => {
           ></BodySectionImageRight>
         </div>
       </section>
+        <div id="lideres">
+          <Lideres pastors={lidereslist} />
+        </div>
+      </div>
+
+
 
       <section>
         <Header
@@ -217,7 +219,7 @@ const page = async () => {
           subheadingText={
             "EDIT THIS Para más información sobre diezmos y donaciones, , etc., póngase en contacto con nosotros"
           }
-          containerheight={"h-72"}
+          containerheight={"h-96"}
         />
         <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
       </section>

@@ -30,17 +30,17 @@ const CreenciasFundamentales = () => {
   ];
 
   return (
-    <div className="text-center w-full flex h-full bg-slate-100 md:text-left py-20">
+    <div className="text-center w-full flex h-full bg-white md:text-left py-20">
       <div className="m-auto w-11/12 flex flex-col my-16 md:p-16">
-        <ul className="p-12 gap-12 m-auto flex flex-col md:flex-row">
+        <ul className="p-12 gap-16 m-auto flex flex-col md:flex-row">
           {Creencias.map((section) => {
             return (
-              <div className="">
+              <div key={section.index} className="p-2">
                 <li className="" key={section.index}>
                   <div className="">
                     <div className="justify-center flex py-4 md:justify-start">{section.image}</div>
                     <p className="font-bold text-lg ">{section.title}</p>
-                    <p className="max-w-24">{section.subheading}</p>
+                    <p className="w-full m-auto">{section.subheading}</p>
                   </div>
                 </li>
               </div>

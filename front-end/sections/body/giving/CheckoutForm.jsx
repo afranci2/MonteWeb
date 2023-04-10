@@ -29,9 +29,7 @@ function CheckoutForm() {
     },
   };
 
-  const onOptionChange = (e) => {
-    setMethod(e.target.value);
-  };
+
   // stripe items
   const stripe = useStripe();
   const elements = useElements();

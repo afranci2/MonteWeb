@@ -261,18 +261,12 @@ async function page() {
             <br></br>
           </div>
         }
-        buttonText="Conocernos"
+        buttonText="CONOCERNOS"
       ></Header>
       <DefaultBody>
-        <Banner2 position="top-0">
-          <div className="p-12 gap-12 text-black">
-            <p className="font-medium font-serif text-4xl">Eventos</p>
-            <Link href="/eventos">
-              <p className="">Ver ahora</p>
-            </Link>
-          </div>
-        </Banner2>
+        <Header containerheight={"h-72"} headerText="Eventos" image={Michael} />
         <BodySectionImageLeft
+          card={"qwgrwr"}
           buttonText={"Ver Mas"}
           headingText={res[res.length - 1].name}
           subheadingText={res[res.length - 1].description}
@@ -284,6 +278,7 @@ async function page() {
           image={Michael}
         />
         <BodySectionImageRight
+          card={"qwgrwr"}
           buttonText={"Ver Mas"}
           headingText={res[res.length - 2].name}
           subheadingText={res[res.length - 2].description}
@@ -294,6 +289,9 @@ async function page() {
           buttonLink={"/"}
           image={Michael}
         />
+        <div className="pb-24 bg-gray-300/50 m-auto">
+          <button className="text-sm flex w-fit bg-yellow-400 p-4 px-16 rounded-lg m-auto">Ver Mas</button>
+        </div>
       </DefaultBody>
       <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">
         <div className="z-40 absolute text-white text-center w-3/4">

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 async function Lideres({pastors}) {
   return (
-    <div className="py-20">
+    <div className="py-20 bg-white">
       <div className="w-10/12 mx-auto py-12 ">
         <p className="font-serif font-semibold text-4xl">Nuestros Lideres</p>
         <p className="">
@@ -14,7 +14,7 @@ async function Lideres({pastors}) {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div className="flex flex-col justify-center mx-auto w-full md:flex md:flex-row gap-6 ">
+      <div className="flex flex-col justify-center mx-auto md:flex md:flex-row gap-6  w-10/12">
         {pastors.map((lider) => {
           return (
             <div className="flex flex-col w-10/12 mx-auto" key={lider.id}>

@@ -44,7 +44,7 @@ const page = () => {
         video={undefined}
       ></Header>
 
-      <div className="tabs-section">
+      <div className="tabs-section bg-slate-100">
         <div className="MOBILE flex w-11/12 m-auto md:hidden ">
           <DefaultBody>
             <MobileCard
@@ -63,8 +63,8 @@ const page = () => {
               "
               subheadingText=" ¿Listo para conocer una iglesia? Encuentre una congregación cerca de ti
               "
-              buttonLink="/iglesias"
-              buttonText="ACOMPANANOS"
+              buttonLink="/en-vivo"
+              buttonText="VER AHORA"
               image={IglesiasCardImage}
               imagePosition="object-left "
             />
@@ -98,39 +98,39 @@ const page = () => {
           <div className="flex p-6 py-12 gap-8 w-10/12 m-auto max-w-screen">
             <div className="RIGHT-MAIN-TABS w-full maintabs">
               <TextLeftTab
-                headerText="Conocernos"
-                subheadingText="Ver nuestra mision, lideres, historia, y mas
+                headerText="Servir"
+                subheadingText="Utiliza tus dones y talentos para marcar la diferencia. Únete a cualquiera de nuestros equipos y sirve. 
 "
-                buttonLink="/conocernos"
-                buttonText="VER AHORA"
+                buttonLink="/servir"
+                buttonText="APLICAR"
                 image={ConocernosCardImage}
               />
               <TextRightTab
-                headerText="Iglesias"
+                headerText="En Vivo"
                 subheadingText="¿Listo para conocer una iglesia? Encuentre una congregación cerca de ti
                   "
-                buttonLink="/iglesias"
-                buttonText="ACOMPANANOS"
+                buttonLink="/en-vivo"
+                buttonText="VER AHORA"
                 image={IglesiasCardImage}
               />
 
               <TextLeftTab
-                headerText="Unete a Nosotros
+                headerText="Redes Sociales
                   "
                 subheadingText="Es hora de ver lo que Dios puede hacer a través de ti. ¡Únase a nosotros!
                   "
-                buttonLink="/unete"
-                buttonText="UNETE"
+                buttonLink="/redes-sociales"
+                buttonText="VER MAS"
                 imagePosition="object-bottom "
                 image={UneteCardImage}
               />
               <TextRightTab
-                headerText="Eventos
+                headerText="Contacto
                 "
                 subheadingText="¡No te lo pierdas! Apunte en el calendario y acompáñenos en los eventos importantes
                 "
-                buttonLink="/unete"
-                buttonText="EVENTOS"
+                buttonLink="/contacto"
+                buttonText="ENVIAR UN MENSAJE"
                 image={EventosCardImage}
               />
             </div>
