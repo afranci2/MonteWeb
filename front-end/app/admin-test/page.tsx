@@ -8,7 +8,7 @@ import NotAdmin from "../../components/admindashboard/NotAdmin";
 // retrieve the token from the cookie
 const fetchProtectedData = async (token) => {
   try {
-    const res = await fetch(`http://localhost:8000/test`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/test`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
