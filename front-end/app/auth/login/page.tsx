@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import "./admin.css";
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
