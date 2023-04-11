@@ -158,8 +158,8 @@ app.get('/add-dummy-event', (req, res) => {
     })
 
 
-    db.query("INSERT INTO events(name, location, address, image, description) VALUES (?, ?, ?, ?, ?);", ["third event",
-        "weewfwrefrf", "155 wrefewrfPower werweqrRoad", "hterqwweftp...", "apr thur"], (err, res) => {
+    db.query("INSERT INTO events(name, location, address, image, description) VALUES (?, ?, ?, ?, ?);", ["last2",
+        "apr9", "1er werweqrRoad", "...", "apr thur"], (err, res) => {
             if (err) {
                 console.log(err)
                 console.log("Event not added successfully...")
@@ -303,7 +303,6 @@ app.put('/update-event/:id', authorizeUser, (req, res) => {
     console.log("accessed")
     res.json({ "done": "dff" })
 });
-
 
 app.get('/update-dummy-event/:id', (req, res) => {
     const name = "updated name";
