@@ -4,6 +4,7 @@ import { BsSun } from "react-icons/bs";
 import { BiBible } from "react-icons/bi";
 import { TbCross } from "react-icons/tb";
 
+
 const CreenciasFundamentales = () => {
   const Creencias = [
     {
@@ -50,9 +51,9 @@ const CreenciasFundamentales = () => {
         <div className="p-8">
           <MainButton
             link="/conocernos/creencias"
-            text="Leer mas"
+            text="Leer Mas"
             buttonPosition="center"
-            buttonColor="bg-yellow-400 text-black"
+            buttonColor="bg-orange-500 text-white"
           />
         </div>
       </div>

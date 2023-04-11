@@ -28,6 +28,8 @@ const TitheSection = () => {
             <section className="w-full">
               <div className="p-8 py-16">
                 <div className="flex  flex-col">
+                  <p className="p-4 py-8 font-semibold">Options to choose from</p>
+
                   <a
                     value="Tithely"
                     onClick={clickHandler}
@@ -179,7 +181,6 @@ const TitheSection = () => {
                 <a
                   href="#person"
                   value="Person"
-
                   onClick={clickHandler}
                   className={` ${
                     option == "Person" ? "bg-gray-100 font-bold shadow-sm" : ""

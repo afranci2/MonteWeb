@@ -130,14 +130,13 @@ const page = async () => {
           </ul>
         </Banner2>
         <BodySectionImageLeft
-        backgroundColor={"bg-white"}
+          backgroundColor={"bg-white"}
           image={Javier}
           headingText="Nuestra Misión
         "
           subheadingText={
             "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
           }
-          buttonText={"fewfe"}
         ></BodySectionImageLeft>
         <div className="div" id="creencias">
           <Header
@@ -184,26 +183,23 @@ const page = async () => {
           ></Header>
         </div>
         <section>
-        <div id="historia-h">
-          <BodySectionImageRight
-
-            image={Javier}
-            headingText="50 anos de historia"
-            subheadingText={
-              "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
-            }
-            buttonColor="bg-yellow-400"
-            buttonText={"Historia"}
-            buttonLink="/historia"
-          ></BodySectionImageRight>
-        </div>
-      </section>
+          <div id="historia-h">
+            <BodySectionImageRight
+              image={Javier}
+              headingText="50 anos de historia"
+              subheadingText={
+                "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
+              }
+              buttonColor="bg-yellow-400"
+              buttonText={"Historia"}
+              buttonLink="/historia"
+            ></BodySectionImageRight>
+          </div>
+        </section>
         <div id="lideres">
           <Lideres pastors={lidereslist} />
         </div>
       </div>
-
-
 
       <section>
         <Header

@@ -52,7 +52,7 @@ const BodyImageText = (props) => {
           <div className="py-2 overflow-hidden text-white pb-10 flex justify-center md:justify-start">
             {props.buttonLink && (
               <MainButton
-                buttonColor="bg-red-800"
+                buttonColor="bg-orange-500 text-white"
                 text={props.buttonText}
                 margin="my-8"
                 link={props.buttonLink}

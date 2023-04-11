@@ -1,5 +1,6 @@
 import React from "react";
 import "../public/globals.css";
+import { IoIosArrowForward } from "react-icons/io";
 import Navbar from "../sections/navbar/Navbar";
 import Footer from "../sections/footer/Footer";
 import Header from "../sections/header/Header";
@@ -99,6 +100,7 @@ async function page() {
         subheadingText="Le invitamos a nuestro servicio de adoración en persona o en linea"
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
+        buttonColor={"bg-red-800"}
       >
         <Banner
           color="bg-red-800/90"
@@ -219,7 +221,7 @@ async function page() {
                 </div>
               </SideTab>
               <SideTab
-                buttonColor="bg-yellow-400"
+                buttonColor="bg-gray-200 text-black"
                 headerText="Listo para servir?
               "
                 subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
@@ -228,7 +230,7 @@ async function page() {
                 buttonLink="./"
               />
               <SideTab
-                buttonColor="bg-yellow-400"
+                buttonColor="bg-orange-500 text-white"
                 headerText="Diezmar"
                 subheaderText="Dar una ofrenda o programa diezmos recurrentes.
               "
@@ -236,7 +238,7 @@ async function page() {
                 buttonLink="./"
               />
               <SideTab
-                buttonColor="bg-red-800 text-white"
+                buttonColor="bg-gray-200 text-black"
                 headerText="COVID-19
               "
                 subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos
@@ -262,9 +264,17 @@ async function page() {
           </div>
         }
         buttonText="CONOCERNOS"
+        buttonLink={"/conocernos"}
       ></Header>
       <DefaultBody>
-        <Header containerheight={"h-72"} headerText="Eventos" image={Michael} />
+        <h2 className="pt-28 font-serif text-5xl m-auto flex justify-center items-center">
+          Eventos
+        </h2>
+        <p className="text-md w-3/4 p-4 m-auto flex text-center justify-center items-center">
+          Ueferfewfwr fwerfwerf werfwerfrew fewrf frf rfr frpcoming events that
+          are mdae for godle erwferfwerf rf
+        </p>
+
         <BodySectionImageLeft
           card={"qwgrwr"}
           buttonText={"Ver Mas"}
@@ -290,7 +300,12 @@ async function page() {
           image={Michael}
         />
         <div className="pb-24 bg-gray-300/50 m-auto">
-          <button className="text-sm flex w-fit bg-yellow-400 p-4 px-16 rounded-lg m-auto">Ver Mas</button>
+          <div className="flex justify-center gap-4">
+            <button className="text-black text-sm  font-bold  rounded-lg text-center ">
+              Mas Eventos{" "}
+            </button>{" "}
+            <IoIosArrowForward className=" flex items-center my-auto" size={12} />{" "}
+          </div>
         </div>
       </DefaultBody>
       <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">
