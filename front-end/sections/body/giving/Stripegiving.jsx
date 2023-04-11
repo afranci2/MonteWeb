@@ -11,7 +11,7 @@ const Googlestorespanish =
 
 const Giving = () => {
   return (
-    <div className=" bg-gradient-to-b from-slate-500/10 to-black/10 w-full py-12  flex flex-col ">
+    <div className=" w-full py-12  flex flex-col ">
       <div className="flex  flex-col mx-auto justify-center align-center">
         <p className=" text-center font-regular">Dar </p>
 

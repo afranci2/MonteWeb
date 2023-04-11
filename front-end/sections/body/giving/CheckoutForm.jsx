@@ -6,9 +6,7 @@ function CheckoutForm() {
   // collect data from the user
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [priceId, setPriceId] = useState("");
   const [amount, setAmount] = useState("");
-  const [method, setMethod] = useState();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 

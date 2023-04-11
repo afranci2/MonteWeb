@@ -9,7 +9,7 @@ const Googlestorespanish =
   "https://monte-assets.s3.amazonaws.com/img/Google_Play_Store_badge_FR.svg.png";
 const Giving = () => {
   return (
-    <div className="bg-red-300 w-full py-12 mt-8 flex flex-col ">
+    <div className=" w-full py-12 mt-8 flex flex-col ">
       <div className="flex flex-col mx-auto justify-center align-center">
         <p className=" text-center font-regular">Dar Usando</p>
 
