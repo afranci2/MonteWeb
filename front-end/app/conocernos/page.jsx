@@ -80,7 +80,7 @@ const page = async () => {
   return (
     <div className="h-full w-full">
       <div className="h-full w-full">
-        <Navbar2 />
+        <Navbar2 id="top" />
         <div className="">
           <Header
             image={ConocernosHero}
@@ -173,12 +173,12 @@ const page = async () => {
                 </p>
               </div>
             }
-            buttonText="Historia"
+            buttonText="Leer Ahora"
             children={undefined}
             image={undefined}
+            buttonColor="bg-red-800"
             classChangeText={undefined}
-            buttonColor={undefined}
-            buttonLink={undefined}
+            buttonLink={"/conocernos/mensaje"}
             containerheight={"h-screen"}
           ></Header>
         </div>
@@ -190,7 +190,7 @@ const page = async () => {
               subheadingText={
                 "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
               }
-              buttonColor="bg-yellow-400"
+              buttonColor="bg-orange-500 text-white"
               buttonText={"Historia"}
               buttonLink="/historia"
             ></BodySectionImageRight>

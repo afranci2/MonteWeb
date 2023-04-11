@@ -36,11 +36,11 @@ const page = ({ searchParams }) => {
   }
 
   function redirectPage(token) {
-    redirect("/admin-test");
+    redirect("/dashboard");
   }
   return (
     <div className=" h-screen w-screen  flex justify-center items-center">
-      <div className=" w-3/4 admin h-fit bg-gray-200 p-12   rounded-lg">
+      <div className=" w-3/4 admin h-fit bg-gray-200 p-12   ">
         <p className="font-bold pb-4 flex justify-center content-center">
           {" "}
           Admin{" "}

@@ -230,7 +230,7 @@ async function page() {
                 buttonLink="./"
               />
               <SideTab
-                buttonColor="bg-orange-500 text-white"
+                buttonColor="bg-yellow-400 text-black"
                 headerText="Diezmar"
                 subheaderText="Dar una ofrenda o programa diezmos recurrentes.
               "
@@ -251,6 +251,7 @@ async function page() {
         </div>
       </div>
       <Header
+      buttonColor={"bg-red-800"}
         video={ConocernosVideo}
         contentPosition="center"
         headerText="Un Genuino Llamado de Dios"
@@ -264,7 +265,7 @@ async function page() {
           </div>
         }
         buttonText="CONOCERNOS"
-        buttonLink={"/conocernos"}
+        buttonLink={"/conocernos#top"}
       ></Header>
       <DefaultBody>
         <h2 className="pt-28 font-serif text-5xl m-auto flex justify-center items-center">
@@ -302,7 +303,7 @@ async function page() {
         <div className="pb-24 bg-gray-300/50 m-auto">
           <div className="flex justify-center gap-4">
             <button className="text-black text-sm  font-bold  rounded-lg text-center ">
-              Mas Eventos{" "}
+             Eventos{" "}
             </button>{" "}
             <IoIosArrowForward className=" flex items-center my-auto" size={12} />{" "}
           </div>

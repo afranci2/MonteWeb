@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import AdminDashboard from "../../components/admindashboard/AdminDashboard";
 import NotAdmin from "../../components/admindashboard/NotAdmin";
-
+import Navbar3 from '../../sections/navbar/NavbarAdmin'
 
 // retrieve the token from the cookie
 const fetchProtectedData = async (token) => {
@@ -42,9 +42,9 @@ const page = () => {
 
   return (
     <div>
-      <p>Hello </p>{" "}
       {getToken ? (
         <div>
+          <Navbar3/>
           <AdminDashboard />
         </div>
       ) : (

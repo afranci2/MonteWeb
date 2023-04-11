@@ -3,6 +3,8 @@ import MainButton from "../../../components/mainButton/MainButton";
 import { BsSun } from "react-icons/bs";
 import { BiBible } from "react-icons/bi";
 import { TbCross } from "react-icons/tb";
+import Link from "next/link";
+import { IoIosArrowForward } from "react-icons/io";
 
 
 const CreenciasFundamentales = () => {
@@ -39,7 +41,9 @@ const CreenciasFundamentales = () => {
               <div key={section.index} className="p-2">
                 <li className="" key={section.index}>
                   <div className="">
-                    <div className="justify-center flex py-4 md:justify-start">{section.image}</div>
+                    <div className="justify-center flex py-4 md:justify-start">
+                      {section.image}
+                    </div>
                     <p className="font-bold text-lg ">{section.title}</p>
                     <p className="w-full m-auto">{section.subheading}</p>
                   </div>
@@ -49,12 +53,17 @@ const CreenciasFundamentales = () => {
           })}
         </ul>
         <div className="p-8">
-          <MainButton
-            link="/conocernos/creencias"
-            text="Leer Mas"
-            buttonPosition="center"
-            buttonColor="bg-orange-500 text-white"
-          />
+          <Link href="/conocernos/creencias">
+            <div className="flex justify-center gap-4">
+              <button className="text-black text-sm  font-bold  rounded-lg text-center ">
+                Creencias{" "}
+              </button>{" "}
+              <IoIosArrowForward
+                className=" flex items-center my-auto"
+                size={12}
+              />{" "}
+            </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -21,21 +21,21 @@ const TitheSection = () => {
   const [option, setOption] = useState("Tithely");
 
   return (
-    <div>
+    <div id="donar">
       <div className="hidden md:flex">
         <div className="m-auto min-h-screen w-screen flex justify-center">
           <div className="w-full grid tithingsection ">
             <section className="w-full">
               <div className="p-8 py-16">
                 <div className="flex  flex-col">
-                  <p className="p-4 py-8 font-semibold">Options to choose from</p>
+                  <p className="flex px-4 pb-8 font-semibold">Dar usando</p>
 
                   <a
                     value="Tithely"
                     onClick={clickHandler}
                     className={` ${
                       option == "Tithely" ? "bg-gray-100" : ""
-                    } p-8 border-b-2  hover:font-bold `}
+                    } p-8 border-b-2  hover:font-bold cursor-pointer `}
                   >
                     <div className="flex gap-2">
                       {option == "Tithely" ? (
@@ -52,7 +52,7 @@ const TitheSection = () => {
                     onClick={clickHandler}
                     className={` ${
                       option == "Online" ? "bg-gray-100 font-bold" : ""
-                    } p-8 border-b-2  hover:font-bold hover:bg-gray-100`}
+                    } p-8 border-b-2 cursor-pointer hover:font-bold hover:bg-gray-100`}
                   >
                     <p className=" m-auto ">En Linea</p>
                   </a>
@@ -61,7 +61,7 @@ const TitheSection = () => {
                     onClick={clickHandler}
                     className={` ${
                       option == "Person" ? "bg-gray-100 font-bold" : ""
-                    } p-8 border-b-2  hover:font-bold hover:bg-gray-100`}
+                    } p-8 border-b-2 cursor-pointer hover:font-bold hover:bg-gray-100`}
                   >
                     <p className="m-auto ">En Persona</p>
                   </a>
@@ -70,7 +70,7 @@ const TitheSection = () => {
                     onClick={clickHandler}
                     className={` ${
                       option == "Envios" ? "bg-gray-100 font-bold" : ""
-                    } p-8 border-b-2  hover:font-bold hover:bg-gray-100`}
+                    } p-8 border-b-2 cursor-pointer hover:font-bold hover:bg-gray-100`}
                   >
                     <p className="m-auto  ">Envios</p>
                   </a>
@@ -134,7 +134,7 @@ const TitheSection = () => {
                       nosotros
                     </p>
                     <MainButton
-                      buttonColor={"bg-yellow-400"}
+                      buttonColor={"bg-orange-500 text-white"}
                       buttonPosition={"center"}
                       buttonLink={"/"}
                       text={"Contacto"}
@@ -163,7 +163,7 @@ const TitheSection = () => {
                   onClick={clickHandler}
                   className={` ${
                     option == "Tithely" ? "bg-gray-100 font-bold shadow-sm" : ""
-                  } p-8 rounded-lg hover:font-bold hover:bg-gray-100`}
+                  } p-8 hover:font-bold hover:bg-gray-100`}
                 >
                   <Image src={Logo} width={100} height={100} />
                 </a>
@@ -173,7 +173,7 @@ const TitheSection = () => {
                   onClick={clickHandler}
                   className={` ${
                     option == "Online" ? "bg-gray-100 font-bold shadow-sm" : ""
-                  } p-8 rounded-lg hover:font-bold hover:bg-gray-100`}
+                  } p-8 hover:font-bold hover:bg-gray-100`}
                 >
                   {" "}
                   <p className="text-center m-auto ">En Linea</p>
@@ -184,7 +184,7 @@ const TitheSection = () => {
                   onClick={clickHandler}
                   className={` ${
                     option == "Person" ? "bg-gray-100 font-bold shadow-sm" : ""
-                  } p-8 rounded-lg hover:font-bold hover:bg-gray-100`}
+                  } p-8 hover:font-bold hover:bg-gray-100`}
                 >
                   {" "}
                   <p className="m-auto text-center">En Persona</p>
@@ -195,7 +195,7 @@ const TitheSection = () => {
                   onClick={clickHandler}
                   className={` ${
                     option == "Envios" ? "bg-gray-100 font-bold shadow-sm" : ""
-                  } p-8 rounded-lg hover:font-bold hover:bg-gray-100`}
+                  } p-8  hover:font-bold hover:bg-gray-100`}
                 >
                   {" "}
                   <p className="m-auto  text-center  ">Envios</p>

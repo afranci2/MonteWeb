@@ -5,6 +5,7 @@ const BodySectionImageLeft = (props) => {
   return (
     <>
       <BodyImageText
+      buttonColor={props.buttonColor}
         backgroundColor={props.backgroundColor}
         card={props.card}
         image={props.image}

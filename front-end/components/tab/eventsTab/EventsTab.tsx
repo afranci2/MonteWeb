@@ -27,7 +27,8 @@ const EventsTab = async ({ info }) => {
   const res = await fetchEvents(info.id);
   return (
     <div className="relative bg-white">
-      {res ? <EventCard event={info} dates={res}  /> : <div>Loading</div>}
+      {res ? 
+      <EventCard event={info} dates={res}  /> : <div>Loading</div>}
     </div>
   );
 };

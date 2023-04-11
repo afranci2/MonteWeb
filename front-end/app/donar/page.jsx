@@ -25,8 +25,7 @@ const page = () => {
       <Header
         image={HeaderImage}
         headerText={"Donar de Manera Facil"}
-        buttonColor={"bg-yellow-400 text-black"}
-        buttonText={"Dar Ahora"}
+
         contentPosition={"center"}
         subheadingText={
           "Give donations directly online, tithely, or in person and help support missionary efforts. Start now and see what god can do through you"
