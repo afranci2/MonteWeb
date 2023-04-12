@@ -305,15 +305,17 @@ async function page() {
           buttonColor="bg-yellow-400 text-black"
         />
         <div className="pb-24 bg-gray-300/50 m-auto">
-          <div className="flex justify-center gap-4">
-            <button className="text-black text-sm  font-bold  rounded-lg text-center ">
-              Eventos
-            </button>
-            <IoIosArrowForward
-              className=" flex items-center my-auto"
-              size={12}
-            />
-          </div>
+          <Link href={"/eventos"}>
+            <div className="flex justify-center gap-4">
+              <button className="text-black text-sm font-bold rounded-lg text-center ">
+                Eventos
+              </button>
+              <IoIosArrowForward
+                className=" flex items-center my-auto"
+                size={12}
+              />
+            </div>
+          </Link>
         </div>
       </DefaultBody>
       <section className="z-10 h-screen object-cover bg-black flex m-auto justify-center items-center">
@@ -332,7 +334,7 @@ async function page() {
           alt="ewfe"
           width={1000}
           height={1000}
-        ></Image>
+        />
       </section>
 
       <Footer />
