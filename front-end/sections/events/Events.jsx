@@ -13,7 +13,7 @@ const Events = ({ res }) => {
     <div className="">
       <div>
         {res ? (
-          <div className="w-full py-8 ">
+          <div className="w-11/12 py-8 m-auto">
             <div className="m-auto flex justify-center">
               <div className="try2  py-8 ">
                 {res.map((event) => {

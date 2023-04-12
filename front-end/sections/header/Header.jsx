@@ -41,7 +41,7 @@ function Header({
           </div>
           <div className={buttonText ? "z-40 button flex py-6 " : "hidden"}>
             <Button
-              buttonColor={buttonColor ? `${buttonColor}` : "bg-orange-500"}
+              buttonColor={buttonColor ? `${buttonColor}` : "bg-red-800"}
               link={buttonLink}
               text={buttonText}
               buttonPosition={contentPosition}

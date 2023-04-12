@@ -29,6 +29,7 @@ const HeroVideo =
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 import Image from "next/image";
+const Markos = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/41260321_2236714596400663_4054600941633011712_o.jpg"
 
 async function fetchEvents() {
   try {
@@ -251,7 +252,7 @@ async function page() {
         </div>
       </div>
       <Header
-      buttonColor={"bg-red-800"}
+
         video={ConocernosVideo}
         contentPosition="center"
         headerText="Un Genuino Llamado de Dios"
@@ -287,6 +288,7 @@ async function page() {
           )}
           buttonLink={"/"}
           image={Michael}
+          buttonColor="bg-yellow-400 text-black"
         />
         <BodySectionImageRight
           card={"qwgrwr"}
@@ -299,13 +301,15 @@ async function page() {
           )}
           buttonLink={"/"}
           image={Michael}
+          buttonColor="bg-yellow-400 text-black"
+
         />
         <div className="pb-24 bg-gray-300/50 m-auto">
           <div className="flex justify-center gap-4">
             <button className="text-black text-sm  font-bold  rounded-lg text-center ">
-             Eventos{" "}
-            </button>{" "}
-            <IoIosArrowForward className=" flex items-center my-auto" size={12} />{" "}
+             Eventos
+            </button>
+            <IoIosArrowForward className=" flex items-center my-auto" size={12} />
           </div>
         </div>
       </DefaultBody>
@@ -321,7 +325,7 @@ async function page() {
         <div className="z-30 absolute w-full h-full bg-black/30"></div>
         <Image
           className="object-cover h-screen w-full"
-          src={Michael}
+          src={Markos}
           alt="ewfe"
           width={1000}
           height={1000}

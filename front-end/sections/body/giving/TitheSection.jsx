@@ -204,15 +204,15 @@ const TitheSection = () => {
             </div>
           </section>
           <section>
-            <div id="tithely">
+            <div className="border-2 py-16" id="tithely">
               <TithelyGiving />
             </div>
-            <div id="online">
+            <div className="border-b-2 py-16" id="online">
               <StripeGiving />
             </div>
             <div
               id="person"
-              className=" text-center m-auto w-full py-28 flex flex-col gap-16 md:w-9/12"
+              className=" text-center m-auto w-full py-36 flex flex-col gap-16 md:w-9/12"
             >
               <div className="heading-text w-8/12 m-auto">
                 <p className="font-semibold text-3xl p-2">Otra formas de dar</p>
@@ -253,8 +253,8 @@ const TitheSection = () => {
                 </div>{" "}
               </div>
             </div>
-            <div id="envios" className="section bg-gray-200 p-28">
-              <div className="contain flex flex-col gap-8 justify-center m-auto p-8">
+            <div id="envios" className="section bg-gray-100 p-28 py-32">
+              <div className="contain flex flex-col gap-8 justify-center m-auto p-8 py-16">
                 <p className="font-bold text-center m-auto">
                   Para más información sobre diezmos y donaciones, seguridad y
                   privacidad, impuestos, etc., póngase en contacto con nosotros

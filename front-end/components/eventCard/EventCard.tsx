@@ -38,7 +38,7 @@ const EventCard = ({ event, dates }) => {
         </div>
       )}
       <a target={"_blank"} href={event.link}>
-        <div onClick={clickHandler} className="p-8">
+        <div onClick={clickHandler} className="p-4">
           <div className=" overflow-hidden relative rounded-lg">
             <div className="absolute gradient w-full h-full"></div>
             <Image
