@@ -101,10 +101,9 @@ async function page() {
         subheadingText="Le invitamos a nuestro servicio de adoración en persona o en linea"
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
-        buttonColor={"bg-red-800"}
       >
         <Banner
-          color="bg-red-800/90"
+          color="bg-orange-500/90"
           headerText=""
           subheadingText=""
           position="bottom-0"
