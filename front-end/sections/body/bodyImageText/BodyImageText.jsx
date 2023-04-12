@@ -49,7 +49,7 @@ const BodyImageText = (props) => {
             <p className="text-sm pb-8">{props.subheadingText2}</p>
           )}
 
-          <div className="pt-4 overflow-hidden text-white flex justify-center md:justify-start">
+          <div className={`pt-4 overflow-hidden text-white flex justify-center md:justify-start ${props.card && "pb-16 md:pb-0"}`}>
             {props.buttonLink && (
               <MainButton
                 buttonColor={

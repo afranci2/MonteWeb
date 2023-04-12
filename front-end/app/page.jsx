@@ -30,7 +30,7 @@ const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 import Image from "next/image";
 const Markos =
-  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/311001539_8160709100667820_2937524187257999025_n.jpg";
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Women/312557903_8245686698836726_2489476650725182482_n.jpg";
 
 async function fetchEvents() {
   try {
@@ -89,7 +89,7 @@ async function page() {
       <Navbar />
       <Header video={HeroVideo}>
         <img
-          className="h-1/3 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[18rem] md:w-auto"
+          className="h-1/4 w-auto flex place-content-center justify-center absolute m-auto z-40 md:h-[18rem] md:w-auto"
           src={Logo}
           alt="he"
         />
@@ -111,21 +111,23 @@ async function page() {
           position="bottom-0"
         >
           <div className="content">
-            <p className="text-yellow-400 font-semibold text-md">
-              HORARIOS DE SERVICIO GENERAL
-            </p>
-            <p className="text-xs">
-              ** Tiempos de servicio pueden variar según la ubicación **
-            </p>
+            <div className="pb-8 border-b-2">
+              <p className="text-yellow-400 font-semibold text-md">
+                HORARIOS DE SERVICIO GENERAL
+              </p>
+              <p className="text-xs">
+                Tiempos de servicio pueden variar según la ubicación
+              </p>
+            </div>
             <br></br>
-            <div className="times flex justify-between font-medium text-sm">
-              <p>
+            <div className="pt-2 times flex justify-between font-medium text-sm">
+              <p className="f text-sm">
                 Domingo <br></br>3:00 PM EST
               </p>
-              <p>
+              <p className=" text-sm">
                 Martes <br></br>7:00 PM EST
               </p>
-              <p>
+              <p className=" text-sm">
                 Jueves <br></br>7:30 PM EST
               </p>
             </div>
@@ -270,7 +272,7 @@ async function page() {
         buttonLink={"/conocernos#top"}
       ></Header>
       <DefaultBody>
-        <h2 className="pt-28 font-serif text-5xl m-auto flex justify-center items-center">
+        <h2 className="pt-28 font-semibold font-serif text-5xl m-auto flex justify-center items-center">
           Eventos
         </h2>
         <p className="text-sm w-3/4 p-4 m-auto flex text-center justify-center items-center">
@@ -319,11 +321,11 @@ async function page() {
         </div>
       </DefaultBody>
       <section className="z-10 h-screen object-cover bg-black flex m-auto justify-center items-center">
-        <div className="z-40 absolute text-white text-center w-10/12">
+        <div className="z-40 absolute text-white text-center w-11/12">
           <p className="font-semibold py-4 font-serif text-5xl">
             ¡Nos alegra tenerte con nosotros!
           </p>
-          <p className="text-lg">
+          <p className="text-md">
             Deja que Dios encienda el fuego dentro de ti.
           </p>
         </div>

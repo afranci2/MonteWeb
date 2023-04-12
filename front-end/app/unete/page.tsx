@@ -19,7 +19,8 @@ const AnniversaryPicture =
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
-const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
+const Michael = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Women/312581454_8245687048836691_2558137973907464007_n.jpg";
+
 
 const page = () => {
   return (

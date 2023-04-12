@@ -3,8 +3,7 @@ import Header from "../../sections/header/Header";
 import Navbar from "../../sections/navbar/Navbar";
 import Events from "../../sections/events/Events";
 const Baptism =
-  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";
-import Tab from "../../components/tab/Tab";
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";import Michael2 from './red2.jpg'
 
 async function fetchEvents() {
   try {
