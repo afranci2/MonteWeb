@@ -30,7 +30,7 @@ function Header({
           } ${!headerText && "hidden"} `}
         >
           <div className="z-40 flex flex-col gap-2">
-            <p className="font-semibold  font-serif text-5xl ">{headerText}</p>
+            <p className="font-medium  font-serif text-5xl ">{headerText}</p>
             <div
               className={`${
                 contentPosition === "center"
@@ -41,7 +41,7 @@ function Header({
           </div>
           <div className={buttonText ? "z-40 button flex py-6 " : "hidden"}>
             <Button
-              buttonColor={buttonColor ? `${buttonColor}` : "bg-yellow-400"}
+              buttonColor={buttonColor ? `${buttonColor}` : "bg-orange-500"}
               link={buttonLink}
               text={buttonText}
               buttonPosition={contentPosition}

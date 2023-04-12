@@ -29,7 +29,8 @@ const HeroVideo =
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 import Image from "next/image";
-const Markos = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/311001539_8160709100667820_2937524187257999025_n.jpg"
+const Markos =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/311001539_8160709100667820_2937524187257999025_n.jpg";
 
 async function fetchEvents() {
   try {
@@ -101,6 +102,7 @@ async function page() {
         subheadingText="Le invitamos a nuestro servicio de adoración en persona o en linea"
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
+        buttonColor={"bg-red-800"}
       >
         <Banner
           color="bg-red-800/90"
@@ -251,7 +253,7 @@ async function page() {
         </div>
       </div>
       <Header
-
+        buttonColor={"bg-red-800"}
         video={ConocernosVideo}
         contentPosition="center"
         headerText="Un Genuino Llamado de Dios"
@@ -301,14 +303,16 @@ async function page() {
           buttonLink={"/"}
           image={Michael}
           buttonColor="bg-yellow-400 text-black"
-
         />
         <div className="pb-24 bg-gray-300/50 m-auto">
           <div className="flex justify-center gap-4">
             <button className="text-black text-sm  font-bold  rounded-lg text-center ">
-             Eventos
+              Eventos
             </button>
-            <IoIosArrowForward className=" flex items-center my-auto" size={12} />
+            <IoIosArrowForward
+              className=" flex items-center my-auto"
+              size={12}
+            />
           </div>
         </div>
       </DefaultBody>

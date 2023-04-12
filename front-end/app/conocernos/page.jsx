@@ -176,7 +176,7 @@ const page = async () => {
             buttonText="Leer Ahora"
             children={undefined}
             image={undefined}
-            buttonColor="bg-red-800"
+            buttonColor="bg-orange-500"
             classChangeText={undefined}
             buttonLink={"/conocernos/mensaje"}
             containerheight={"h-screen"}
@@ -190,7 +190,7 @@ const page = async () => {
               subheadingText={
                 "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
               }
-              buttonColor="bg-red-800 text-white"
+              buttonColor="bg-orange-500"
               buttonText={"Historia"}
               buttonLink="/historia"
             ></BodySectionImageRight>
