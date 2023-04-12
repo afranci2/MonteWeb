@@ -29,7 +29,7 @@ const HeroVideo =
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 import Image from "next/image";
-const Markos = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/41260321_2236714596400663_4054600941633011712_o.jpg"
+const Markos = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Kids/245164592_6304981806240568_2941321431489227706_n.jpg"
 
 async function fetchEvents() {
   try {
