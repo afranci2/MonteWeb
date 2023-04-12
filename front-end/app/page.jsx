@@ -273,7 +273,7 @@ async function page() {
         <h2 className="pt-28 font-serif text-5xl m-auto flex justify-center items-center">
           Eventos
         </h2>
-        <p className="text-md w-3/4 p-4 m-auto flex text-center justify-center items-center">
+        <p className="text-sm w-3/4 p-4 m-auto flex text-center justify-center items-center">
           Ueferfewfwr fwerfwerf werfwerfrew fewrf frf rfr frpcoming events that
           are mdae for godle erwferfwerf rf
         </p>

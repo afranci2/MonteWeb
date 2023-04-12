@@ -16,8 +16,10 @@ import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/Cr
 import Lideres from "../../sections/lideres/Lideres";
 const Pastor = "https://monte-assets.s3.amazonaws.com/img/pastor3.jpg";
 const Becky = "https://monte-assets.s3.amazonaws.com/img/becky.jpg";
-const Pastora = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
+const Pastora = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/274605267_7121837261221681_6242282331205613768_n.jpg";
 const Anthony = "https://monte-assets.s3.amazonaws.com/img/anthony.jpg";
+const other="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Bible+Images/245227922_6304984779573604_1327394422995187786_n.jpg"
+const anniversary = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg"
 
 async function fetchChurches() {
   try {
@@ -64,8 +66,8 @@ const page = async () => {
       image: Becky,
       title: "",
       position: "Secretaria",
-      last_name: "Ramos",
-      first_name: "Rebecca",
+      last_name: "Delaroca",
+      first_name: "Flor",
     },
     {
       id: 3,
@@ -185,12 +187,12 @@ const page = async () => {
         <section>
           <div id="historia-h">
             <BodySectionImageRight
-              image={Javier}
-              headingText="50 anos de historia"
+              image={anniversary}
+              headingText="50 Años de Historia"
               subheadingText={
                 "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
               }
-              buttonColor="bg-orange-500"
+              buttonColor="bg-red-800"
               buttonText={"Historia"}
               buttonLink="/historia"
             ></BodySectionImageRight>

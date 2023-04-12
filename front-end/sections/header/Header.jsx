@@ -26,17 +26,17 @@ function Header({
           className={`${
             classChangeText
               ? `${classChangeText}`
-              : "w-11/12 z-50 absolute text-center justify-center m-auto md:w-1/2 gap-4 flex flex-col"
+              : "w-10/12 z-50 absolute text-center justify-center m-auto md:w-1/2 gap-4 flex flex-col"
           } ${!headerText && "hidden"} `}
         >
           <div className="z-40 flex flex-col gap-2">
-            <p className="font-medium  font-serif text-5xl ">{headerText}</p>
+            <h className="font-medium  font-serif text-5xl ">{headerText}</h>
             <div
               className={`${
                 contentPosition === "center"
               } ? "m-auto" : " sm: w-3/4" `}
             >
-              {subheadingText}
+              <p className="text-sm">{subheadingText}</p>
             </div>
           </div>
           <div className={buttonText ? "z-40 button flex py-6 " : "hidden"}>

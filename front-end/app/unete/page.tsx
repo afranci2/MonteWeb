@@ -3,11 +3,8 @@ import "../../public/globals.css";
 import Navbar from "../../sections/navbar/Navbar";
 import Footer from "../../sections/footer/Footer";
 import Header from "../../sections/header/Header";
-
-import SocialMedia from "../../components/tab/sideTab/SocialMedia";
 import DefaultBody from "../../sections/body/defaultBody/DefaultBody";
 import MobileCard from "../../components/mobileCard/MobileCard";
-import SideTab from "../../components/tab/sideTab/SideTab";
 import TextLeftTab from "../../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../../components/tab/textRightTab/TextRightTab";
 const ConocernosCardImage =
@@ -32,7 +29,7 @@ const page = () => {
         image={Michael}
         headerText={"Unete"}
         classChangeText={undefined}
-        buttonColor={undefined}
+        buttonColor={"bg-red-800"}
         buttonLink={"/unete/ministerios"}
         buttonText={"APLICA AHORA"}
         contentPosition={"center"}
