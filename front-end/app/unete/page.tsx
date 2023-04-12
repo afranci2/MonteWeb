@@ -8,11 +8,11 @@ import MobileCard from "../../components/mobileCard/MobileCard";
 import TextLeftTab from "../../components/tab/textLeftTab/TextLeftTab";
 import TextRightTab from "../../components/tab/textRightTab/TextRightTab";
 const ConocernosCardImage =
-  "https://monte-assets.s3.amazonaws.com/img/pastor1.jpg";
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Poetry/274688543_7121958261209581_1265145167667835553_n.jpg";
 const IglesiasCardImage =
-  "https://monte-assets.s3.amazonaws.com/img/CHURCH-BUILDING.jpg";
-const UneteCardImage = "https://monte-assets.s3.amazonaws.com/img/izzy.jpg";
-const EventosCardImage = "https://monte-assets.s3.amazonaws.com/img/nimsy.jpg";
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Media/315306956_8339967716075290_9033138615889496268_n.jpg";
+const UneteCardImage = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/240894583_6088691674536250_7517035433702364537_n.jpg";
+const EventosCardImage = 'https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Ushers/279019125_7399278380144233_724713185633846961_n.jpg'
 
 const AnniversaryPicture =
   "https://monte-assets.s3.amazonaws.com/img/50Anni.F4.png";
@@ -29,9 +29,6 @@ const page = () => {
         image={Michael}
         headerText={"Unete"}
         classChangeText={undefined}
-        buttonColor={"bg-red-800"}
-        buttonLink={"/unete/ministerios"}
-        buttonText={"APLICA AHORA"}
         contentPosition={"center"}
         subheadingText={
           "Check out opportunities to volunteer, donate, participate, and more!"
@@ -40,7 +37,6 @@ const page = () => {
         children={undefined}
         video={undefined}
       ></Header>
-
       <div className="tabs-section bg-slate-100">
         <div className="MOBILE flex w-11/12 m-auto md:hidden ">
           <DefaultBody>

@@ -5,9 +5,9 @@ import Link from "next/link";
 function IglesiasMapListLeft(props) {
   return (
     <div className="relative md:z-30 md:absolute rounded-lg overflow-auto ">
-      <div className={props.conocernos ? "hidden" :""}>
-        <div className="md:bg-white shadow-lg p-4 m-auto text-md z-0 font-semibold h-16 w-full flex bg-slate-100 justify-center items-center text-black">
-
+      <div className={props.conocernos ? "hidden" : ""}>
+        <div className="md:bg-white shadow-lg p-8 m-auto text-md z-0 font-semibold h-16 w-full flex border-b-2 justify-center items-center text-black">
+          <p>Busca Local</p>
         </div>
       </div>
       <div className="md:bg-white z-50 border-b-2 hidden shadow-lg m-auto p-10 font-semibold h-16 w-full md:flex justify-center items-center ">
