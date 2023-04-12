@@ -36,7 +36,7 @@ const Tab = (props) => {
           className={
             props.children
               ? "hidden"
-              : `flex p-8 text-center rounded-xl ${props.contentPosition} absolute z-50 content ${props.contentHeight} items-center bg-orange-600/95 ${props.contentWidth}`
+              : `flex p-8 text-center rounded-xl ${props.contentPosition} absolute z-50 content ${props.contentHeight} items-center bg-red-800/95 ${props.contentWidth}`
           }
         >
           <div className="flex flex-col m-auto w-full">

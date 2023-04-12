@@ -103,7 +103,7 @@ async function page() {
         buttonLink="/en-vivo"
       >
         <Banner
-          color="bg-orange-500/90"
+          color="bg-red-800/90"
           headerText=""
           subheadingText=""
           position="bottom-0"
