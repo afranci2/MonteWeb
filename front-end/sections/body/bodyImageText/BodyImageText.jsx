@@ -9,7 +9,7 @@ const BodyImageText = (props) => {
         props.backgroundColor
           ? `${props.backgroundColor}`
           : "bg-gradient-to-t from-gray-300/50 to-gray-100/20"
-      } ${props.card ? "py-24" : "py-32 "}`}
+      } ${props.card ? "py-24" : "py-24"}`}
     >
       <div
         className={`${
@@ -41,7 +41,7 @@ const BodyImageText = (props) => {
         <div
           className={` ${
             props.card ? "md:pl-12 p-4" : ""
-          } md:w-1/2 overflow-hidden text-center align-center mt-4 md:m-auto flex flex-col  md:text-left`}
+          } md:w-1/2 overflow-hidden text-center align-center mt-16 md:m-auto flex flex-col  md:text-left md:mt-4`}
         >
           <p className="text-3xl font-bold ">{props.headingText}</p>
           <p className="text-sm py-2 pt-4">{props.subheadingText}</p>

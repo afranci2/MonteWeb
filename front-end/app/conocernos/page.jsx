@@ -176,7 +176,7 @@ const page = async () => {
             buttonText="Leer Ahora"
             children={undefined}
             image={undefined}
-            buttonColor="bg-orange-500"
+            buttonColor="bg-red-800"
             classChangeText={undefined}
             buttonLink={"/conocernos/mensaje"}
             containerheight={"h-screen"}
@@ -201,8 +201,9 @@ const page = async () => {
         </div>
       </div>
 
-      <section>
-        <Header
+      <section className="pt-4">
+        <div className="">
+      <Header
           image={ConocernosHero}
           headerText="Find your Church"
           children={undefined}
@@ -215,8 +216,11 @@ const page = async () => {
           subheadingText={
             "EDIT THIS Para más información sobre diezmos y donaciones, , etc., póngase en contacto con nosotros"
           }
-          containerheight={"h-96"}
+          containerheight={"h-72"}
         />
+        </div>
+
+
         <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
       </section>
 
