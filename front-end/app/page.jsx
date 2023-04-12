@@ -316,8 +316,8 @@ async function page() {
           </div>
         </div>
       </DefaultBody>
-      <section className=" h-screen object-cover bg-black flex m-auto justify-center items-center">
-        <div className="z-40 absolute text-white text-center w-3/4">
+      <section className="z-10 h-screen object-cover bg-black flex m-auto justify-center items-center">
+        <div className="z-40 absolute text-white text-center w-10/12">
           <p className="font-semibold py-4 font-serif text-5xl">
             ¡Nos alegra tenerte con nosotros!
           </p>
