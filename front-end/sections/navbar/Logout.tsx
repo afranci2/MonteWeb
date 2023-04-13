@@ -8,21 +8,27 @@ function clickHandler() {
 
 function Logout() {
   const [hover, setHover] = useState(false);
-  function hoverHandler() {
-    setHover(!hover);
-    console.log("Rg");
+
+  function handleMouseEnter() {
+    setTimeout(() => {
+      setHover(false);
+    }, 1000);
+  }
+
+  function clickHandler() {
+    sessionStorage.removeItem("jwt");
   }
 
   return (
     <div
       onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className="flex gap-2" 
+      onMouseLeave={() => handleMouseEnter()}
+      className="flex gap-2"
     >
       {" "}
       <p className="text-sm">Hello Admin</p>
       {hover == true && (
-        <Link href={"/admin/"}>
+        <Link onClick={clickHandler} href={"/admin/"}>
           <p className="text-sm font-bold ">Sign Out</p>{" "}
         </Link>
       )}
