@@ -69,18 +69,19 @@ function page() {
       </div>
       <div className="h-16 w-full "></div>
       <section className="">
-        <div className="overflow-hidden h-60 m-auto items-center w-full  flex justify-center">
-          <div className="  m-auto absolute text-white  w-10/12 ">
+        <div className=" relative overflow-hidden h-60 m-auto items-center w-full  flex justify-center">
+          <div className="z-40  m-auto absolute text-white  w-10/12 ">
             <h1 className="font-semibold font-serif text-5xl">
               Creencias Fundamentales
             </h1>
             <h1 className="py-4">A full look at our beliefs</h1>
           </div>
-          <div className="blur-sm">
-            <img className="object-cover w-full" src={pic}></img>
+          <div className="z-20 absolute w-full h-full bg-black/30"></div>
+          <div className="md:hidden">
+            <img className="object-cover w-screen" src={pic}></img>
           </div>
         </div>
-        <div className=" relative">
+        <div className="z-40 relative">
           {beliefs_title.map((belief, index) => {
             return (
               <div className="py-8 p-4">

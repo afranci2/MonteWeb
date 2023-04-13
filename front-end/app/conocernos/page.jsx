@@ -181,7 +181,7 @@ const page = async () => {
             image={undefined}
             buttonColor="bg-red-800"
             classChangeText={undefined}
-            buttonLink={"/conocernos/mensaje"}
+            buttonLink={"/conocernos/mensaje-del-presidente"}
             containerheight={"h-screen"}
           ></Header>
         </div>
