@@ -331,10 +331,18 @@ async function page() {
             Deja que Dios encienda el fuego dentro de ti.
           </p>
         </div>
-        <div className="z-30 absolute w-full h-full bg-black/30"></div>
-        <div className="w-full h-full object-cover">
+        <div className="absolute h-full w-full bg-black/30">
+
+        </div>
+        <div className=" h-full object-cover">
           {" "}
-          <Image className="h-full object-cover" src={Markos} alt="ewfe" height={1000} width={1000} />
+          <Image
+            className="h-full object-cover"
+            src={Markos}
+            alt="ewfe"
+            height={1000}
+            width={1000}
+          />
         </div>
       </section>
 
