@@ -16,14 +16,13 @@ const BodyImageText = (props) => {
           props.card && "bg-white md:p-10 overflow-hidden rounded-lg shadow-lg"
         } h-full content md:flex flex-col w-10/12 m-auto gap-4 md:flex-row`}
       >
-        {props.blog2 == undefined &&
-          <div className={`${props.blog != undefined && "hidden"}`}>
+
             {props.imagePosition === "right" ? (
               <Image
                 width={1000}
                 height={1000}
                 alt="header image"
-                className="overflow-hidden h-full md:w-1/2 object-cover md:p-4 md:pr-12 md:flex"
+                className={` ${props.blog2 == undefined && props.blog == undefined ? "hidden" : ""}overflow-hidden h-full md:w-1/2 object-cover md:p-4 md:pr-12 md:flex`}
                 src={props.image}
               />
             ) : (
@@ -40,8 +39,7 @@ const BodyImageText = (props) => {
             ) : (
               <div></div>
             )}
-          </div>
-        }
+
         {props.blog2 == undefined ? (
           <div
             className={` ${props.card ? "md:pl-12 p-4" : ""} ${
@@ -74,12 +72,12 @@ const BodyImageText = (props) => {
             </div>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-4 w-full">
+          <div className="grid md:grid-cols-2 gap-8 w-full text-sm">
             <div className="w-full h-full ">
-              <p >{props.subheadingText}</p>
+              {props.blog2}
             </div>
             <div className="w-full h-full">
-              <p >{props.subheadingText2}</p>
+             {props.blog}
             </div>
           </div>
         )}

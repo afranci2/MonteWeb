@@ -4,6 +4,7 @@ import Header from "../../sections/header/Header";
 import BodySectionImageLeft from "../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import IglesiasChurchSection from "../../sections/body/iglesiaschurchsection/IglesiasChurchSection";
+import { AiOutlineSearch } from "react-icons/ai";
 
 import Footer from "../../sections/footer/Footer";
 import Banner2 from "../../components/banner/Banner2";
@@ -11,16 +12,21 @@ import Banner2 from "../../components/banner/Banner2";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
-const churchImage = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Couple/274685981_7121899154548825_4616241431371263813_n.jpg"
+const churchImage =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Couple/274685981_7121899154548825_4616241431371263813_n.jpg";
 const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
 import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
 import Lideres from "../../sections/lideres/Lideres";
 const Pastor = "https://monte-assets.s3.amazonaws.com/img/pastor3.jpg";
 const Becky = "https://monte-assets.s3.amazonaws.com/img/becky.jpg";
-const Pastora = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/274605267_7121837261221681_6242282331205613768_n.jpg";
-const Anthony = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Mens/305628064_8245683625503700_961665000343553299_n.jpg";
-const otherOne="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Mens/312465605_8245751052163624_6268065564327914459_n.jpg"
-const anniversary = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg"
+const Pastora =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/274605267_7121837261221681_6242282331205613768_n.jpg";
+const Anthony =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Mens/305628064_8245683625503700_961665000343553299_n.jpg";
+const otherOne =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Mens/312465605_8245751052163624_6268065564327914459_n.jpg";
+const anniversary =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg";
 
 async function fetchChurches() {
   try {
@@ -44,6 +50,11 @@ async function fetchChurches() {
 }
 
 const page = async () => {
+
+function zipSubmit(){
+  console.log("hey")
+}
+
   const res = await fetchChurches();
   const lidereslist = [
     {
@@ -163,16 +174,13 @@ const page = async () => {
           <Header
             video={ConocernosVideo}
             contentPosition="center"
-            headerText="Un Mensaje del Presidente"
+            headerText="Un Mensaje de la  Vicepresidente"
             subheadingText={
               <div>
-                <p>
-                  A lo largo de este movimiento, el fuego seguirá ardiendo en
-                  cada corazón como en el día de Pentecostés.
-                </p>
-                <br></br>
-                <p className="font-light">
-                  Deja que Dios encienda el fuego dentro de ti.
+                <p className="">
+                  "Su propósito es presentarte a un Dios que todo lo puede,
+                  aunque hayan cosas imposibles para los hombres, para Dios todo
+                  es posible."
                 </p>
               </div>
             }
@@ -181,7 +189,7 @@ const page = async () => {
             image={undefined}
             buttonColor="bg-red-800"
             classChangeText={undefined}
-            buttonLink={"/conocernos/mensaje-del-presidente"}
+            buttonLink={"/conocernos/mensaje"}
             containerheight={"h-screen"}
           ></Header>
         </div>
@@ -205,26 +213,37 @@ const page = async () => {
       </div>
 
       <section className="pt-4">
-        <div className="">
-      <Header
-          image={otherOne}
-          headerText="Find your Church"
-          children={undefined}
-          classChangeText={undefined}
-          buttonColor={undefined}
-          buttonLink={undefined}
-          buttonText={undefined}
-          contentPosition={undefined}
-          video={undefined}
-          subheadingText={
-            "EDIT THIS Para más información sobre diezmos y donaciones, , etc., póngase en contacto con nosotros"
-          }
-          containerheight={"h-60"}
-        />
+        <div className="md:hidden">
+          <Header
+            image={otherOne}
+            headerText="Find your Church"
+            children={undefined}
+            classChangeText={undefined}
+            buttonColor={undefined}
+            buttonLink={undefined}
+            buttonText={undefined}
+            contentPosition={undefined}
+            video={undefined}
+            subheadingText={
+              "EDIT THIS Para más información sobre diezmos y donaciones, , etc., póngase en contacto con nosotros"
+            }
+            containerheight={"h-60"}
+          />
         </div>
-
-
-        <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
+        <div className="bg-gray-100 text-black hidden px-20 p-14 justify-between md:flex">
+          <p className=" font-semibold font-serif text-4xl  ">
+            Find your Church
+          </p>
+          <form className="h-8 text-sm my-auto flex gap-2">
+            <input
+              placeholder="02939"
+              className="rounded-lg px-2 bg-gray-200"
+              id="zip"
+            ></input>
+            <AiOutlineSearch color={"fffff"} onClick={zipSubmit()} className="pl-2 m-auto cursor-pointer" size={30} />
+          </form>
+        </div>
+        <IglesiasChurchSection  churches={res} conocernos={"Wrg"} />
       </section>
 
       <Footer />
