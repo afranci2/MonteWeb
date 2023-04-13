@@ -331,7 +331,7 @@ async function page() {
             Deja que Dios encienda el fuego dentro de ti.
           </p>
         </div>
-        <div className="absolute h-screen w-screen bg-black/30">
+        <div className="absolute h-screen w-screen bg-blck/30">
 
         </div>
         <div className=" h-screen w-screen object-cover">
