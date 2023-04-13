@@ -15,6 +15,8 @@ const BodySectionImageLeft = (props) => {
         buttonText={props.buttonText}
         buttonLink={props.buttonLink}
         imagePosition="right"
+        children={props.children}
+        blog={props.blog}
       ></BodyImageText>
     </>
   );
