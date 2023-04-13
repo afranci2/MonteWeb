@@ -6,8 +6,8 @@ import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 const Footer = () => {
   return (
     <div className="bg-white text-black h-full z-40 relative text-center md:text-left shadow-lg">
-      <div className="md:grid grid-cols-2 sm:gap-6 p-16 w-11/12">
-        <div className=" content flex flex-col m-auto gap-4">
+      <div className="m-auto  md:grid grid-cols-2 sm:gap-6 p-8 py-16 w-11/12">
+        <div className=" justify-center content flex flex-col m-auto gap-4">
           <div className="logo">
             <p className="text-md">MOVIMIENTO PENTECOSTAL</p>
             <p className="font-serif text-4xl text-gold">MONTE SINAI</p>

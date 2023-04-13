@@ -46,7 +46,7 @@ function Navbar() {
           backgroundColor + " fixed top-0 h-16 items-center w-full z-50"
         }
       >
-        <div className="DESKTOP px-8 m-auto content hidden desktop:flex h-full md:items-center">
+        <div className="DESKTOP hidden px-8 m-auto content  md:flex h-full md:items-center">
           <div>
             <Link href={"/"}>
               <div className="desktop-logo w-52 align-center top-2.5 absolute flex">
@@ -75,7 +75,7 @@ function Navbar() {
             <RiSearchLine color={icon} size={18} />
           </div>
         </div>
-        <div className="MOBILE flex items-center h-full w-11/12 m-auto ">
+        <div className="MOBILE flex items-center h-full w-11/12 m-auto md:hidden">
           {toggleMenu && (
             <div className="relative">
               <div className="relative">
@@ -125,7 +125,7 @@ function Navbar() {
               <div className="fixed top-0 w-screen h-screen bg-black/70"></div>
             </div>
           )}
-          <div className="mobile-menu desktop:hidden">
+          <div className="mobile-menu md:hidden">
             {toggleMenu ? (
               <RiCloseLine
                 color={icon}
@@ -140,7 +140,7 @@ function Navbar() {
               />
             )}
           </div>
-          <div className="mobile__logo mx-auto block relative w-16 h-auto desktop:hidden">
+          <div className="mobile__logo mx-auto block relative w-16 h-auto md:hidden">
             <Link href={"/"}>
               <img
                 src={showDiv ? mobile__logo__fileAWS : mobileLogo2}
@@ -148,7 +148,7 @@ function Navbar() {
               />
             </Link>
           </div>
-          <div className="mobile__search w-6 desktop:hidden">
+          <div className="mobile__search w-6 md:hidden">
             <Link href={"/"}>
               {" "}
               <RiSearchLine size={20} color={icon} />

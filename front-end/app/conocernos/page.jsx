@@ -11,14 +11,15 @@ import Banner2 from "../../components/banner/Banner2";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
+const churchImage = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Couple/274685981_7121899154548825_4616241431371263813_n.jpg"
 const Javier = "https://monte-assets.s3.amazonaws.com/img/javier.jpg";
 import CreenciasFundamentales from "../../sections/body/creeniasFundamentales/CreenciasFundamentales";
 import Lideres from "../../sections/lideres/Lideres";
 const Pastor = "https://monte-assets.s3.amazonaws.com/img/pastor3.jpg";
 const Becky = "https://monte-assets.s3.amazonaws.com/img/becky.jpg";
 const Pastora = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/274605267_7121837261221681_6242282331205613768_n.jpg";
-const Anthony = "https://monte-assets.s3.amazonaws.com/img/anthony.jpg";
-const other="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Bible+Images/245227922_6304984779573604_1327394422995187786_n.jpg"
+const Anthony = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Mens/305628064_8245683625503700_961665000343553299_n.jpg";
+const otherOne="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Mens/312465605_8245751052163624_6268065564327914459_n.jpg"
 const anniversary = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg"
 
 async function fetchChurches() {
@@ -206,7 +207,7 @@ const page = async () => {
       <section className="pt-4">
         <div className="">
       <Header
-          image={ConocernosHero}
+          image={otherOne}
           headerText="Find your Church"
           children={undefined}
           classChangeText={undefined}
@@ -218,7 +219,7 @@ const page = async () => {
           subheadingText={
             "EDIT THIS Para más información sobre diezmos y donaciones, , etc., póngase en contacto con nosotros"
           }
-          containerheight={"h-72"}
+          containerheight={"h-60"}
         />
         </div>
 
