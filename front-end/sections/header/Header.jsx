@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "../../components/mainButton/MainButton";
 import Video from "../video/Video.jsx";
+import { IoIosArrowDown } from "react-icons/io";
 import "./header.css";
 
 function Header({
@@ -16,6 +17,7 @@ function Header({
   video,
   subheadingText,
   containerheight,
+  show
 }) {
   return (
     <div
@@ -47,6 +49,9 @@ function Header({
             text={buttonText}
             buttonPosition={contentPosition}
           ></Button>
+        </div>
+        <div className={`${show!=undefined ? "hidden" :""} m-auto`}>
+          <IoIosArrowDown />
         </div>
       </div>
       {children}

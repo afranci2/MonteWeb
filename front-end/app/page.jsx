@@ -103,6 +103,7 @@ async function page() {
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
         buttonColor={"bg-red-800"}
+        show={false}
       >
         <Banner
           color="bg-red-800/90"
@@ -268,6 +269,7 @@ async function page() {
             <br></br>
           </div>
         }
+        show={false}
         buttonText="CONOCERNOS"
         buttonLink={"/conocernos#top"}
       ></Header>
@@ -320,7 +322,7 @@ async function page() {
           </Link>
         </div>
       </DefaultBody>
-      <section className="z-10 h-screen object-cover bg-black flex m-auto justify-center items-center">
+      <section className="z-10 h-screen object-cover flex m-auto justify-center items-center">
         <div className="z-40 absolute text-white text-center w-11/12">
           <p className="font-semibold py-4 font-serif text-5xl">
             ¡Nos alegra tenerte con nosotros!
@@ -330,13 +332,10 @@ async function page() {
           </p>
         </div>
         <div className="z-30 absolute w-full h-full bg-black/30"></div>
-        <Image
-          className="object-cover h-screen w-full"
-          src={Markos}
-          alt="ewfe"
-          width={1000}
-          height={1000}
-        />
+        <div className="w-full h-full object-cover">
+          {" "}
+          <Image className="h-full object-cover" src={Markos} alt="ewfe" height={1000} width={1000} />
+        </div>
       </section>
 
       <Footer />
