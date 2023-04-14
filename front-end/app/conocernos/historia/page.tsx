@@ -128,7 +128,7 @@ function page() {
           <Header
             children={undefined}
             image={secondpic}
-            headerText={`Conociendo Con Profundidad Al Rev. Samuel Francisco`}
+            headerText={`"Conociendo Con Profundidad Al Rev. Samuel Francisco"`}
             classChangeText={undefined}
             buttonColor={undefined}
             buttonLink={undefined}
@@ -144,7 +144,7 @@ function page() {
           <Header
             children={undefined}
             image={secondpic}
-            headerText={`Las Experiencias Vividas Durante la Estadia en la Westminster St.
+            headerText={`"Las Experiencias Vividas Durante la Estadia en la Westminster St."
             `}
             classChangeText={undefined}
             buttonColor={undefined}
@@ -157,6 +157,53 @@ function page() {
             show={undefined}
           />{" "}
         </Link>
+
+        <div className="grid grid-cols-2 w-full py-12 p-8">
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black w-full rounded-lg">
+              {" "}
+              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+                <Header
+                  children={undefined}
+                  image={secondpic}
+                  headerText={`Un Mensaje del Presidente
+            `}
+                  classChangeText={undefined}
+                  buttonColor={undefined}
+                  buttonLink={undefined}
+                  buttonText={undefined}
+                  contentPosition={undefined}
+                  video={undefined}
+                  subheadingText={"(Relatado por: Rev. Samuel Francisco)"}
+                  containerheight={undefined}
+                  show={undefined}
+                />{" "}
+              </Link>
+            </div>
+          </div>
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black h-full w-full rounded-lg">
+              {" "}
+              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+                <Header
+                  children={undefined}
+                  image={secondpic}
+                  headerText={`Un Mensaje de la Vicepresidenta
+            `}
+                  classChangeText={undefined}
+                  buttonColor={undefined}
+                  buttonLink={undefined}
+                  buttonText={undefined}
+                  contentPosition={undefined}
+                  video={undefined}
+                  subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
+                  containerheight={"h-full"}
+                  show={undefined}
+                />{" "}
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
       <Footer />

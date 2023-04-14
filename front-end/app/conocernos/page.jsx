@@ -5,9 +5,10 @@ import BodySectionImageLeft from "../../sections/body/bodyImageText/imageLeftTex
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import IglesiasChurchSection from "../../sections/body/iglesiaschurchsection/IglesiasChurchSection";
 import { AiOutlineSearch } from "react-icons/ai";
-
+import Link from "next/link";
 import Footer from "../../sections/footer/Footer";
 import Banner2 from "../../components/banner/Banner2";
+import { IoIosArrowForward } from "react-icons/io";
 
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
@@ -150,6 +151,22 @@ const page = async () => {
             "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
           }
         ></BodySectionImageLeft>
+        <Link href={"/conocernos/historia/como-nace-monte-sinai"}>
+          <Header
+            children={undefined}
+            image={Pastora}
+            headerText={`"Como Nace Monte Sinai?"`}
+            classChangeText={undefined}
+            buttonColor={undefined}
+            buttonLink={undefined}
+            buttonText={undefined}
+            contentPosition={undefined}
+            video={undefined}
+            subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
+            containerheight={undefined}
+            show={undefined}
+          />{" "}
+        </Link>
         <div className="div" id="creencias">
           <Header
             children={undefined}
@@ -162,11 +179,56 @@ const page = async () => {
             contentPosition={undefined}
             video={undefined}
             subheadingText={undefined}
-            containerheight={"h-screen"}
+            containerheight={"h-96"}
           />
+          <div className="h-full w-full">
+            <CreenciasFundamentales />
+          </div>
         </div>
-        <div className="h-full w-full">
-          <CreenciasFundamentales />
+
+        <div id="historia-h">
+          
+          <BodySectionImageRight
+            image={anniversary}
+            headingText="50 Años de Historia"
+            subheadingText={
+              " Descubre cómo comenzamos y cómo hemos crecido como comunidad.​"
+            }
+            buttonColor="bg-red-800"
+            buttonText={"Historia"}
+            buttonLink="/conocernos/historia"
+          >
+            <ul className="grid grid-cols-2 gap-2 w-10/12 ">
+              <li className="bg-gray-300/20 ">
+                <Link href="/conocernos/historia/como-nace-monte-sinai">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
+                   
+                  </div>
+                </Link>
+              </li>
+              <li className="bg-gray-300/20 ">
+                <Link href="/conocernos/historia/como-nace-monte-sinai">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
+                   
+                  </div>
+                </Link>
+              </li>
+              <li className="bg-gray-300/20 ">
+                <Link href="/conocernos/historia/como-nace-monte-sinai">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
+                   
+                  </div>
+                </Link>
+              </li>
+              
+            </ul>
+          </BodySectionImageRight>
+        </div>
+        <div id="lideres">
+          <Lideres pastors={lidereslist} />
         </div>
         <div id="mensaje-m">
           <Header
@@ -190,23 +252,6 @@ const page = async () => {
             buttonLink={"/conocernos/mensaje"}
             containerheight={"h-screen"}
           ></Header>
-        </div>
-        <section>
-          <div id="historia-h">
-            <BodySectionImageRight
-              image={anniversary}
-              headingText="50 Años de Historia"
-              subheadingText={
-                " Descubre cómo comenzamos y cómo hemos crecido como comunidad.​"
-              }
-              buttonColor="bg-red-800"
-              buttonText={"Historia"}
-              buttonLink="/conocernos/historia"
-            ></BodySectionImageRight>
-          </div>
-        </section>
-        <div id="lideres">
-          <Lideres pastors={lidereslist} />
         </div>
       </div>
 

@@ -5,7 +5,9 @@ import Image from "next/image";
 const BodyImageText = (props) => {
   return (
     <div
-      className={`flex ${props.blog ? "md:h-fit" : "md:h-[42rem]"} relative text-black ${
+      className={`flex ${
+        props.blog ? "md:h-fit" : "md:h-[42rem]"
+      } relative text-black ${
         props.backgroundColor
           ? `${props.backgroundColor}`
           : "bg-gradient-to-t from-gray-300/50 to-gray-100/20"
@@ -53,11 +55,13 @@ const BodyImageText = (props) => {
               props.blog != undefined ? "md:w-full" : "md:w-1/2"
             } text-center  overflow-hidden items-center mt-16 md:m-auto md:text-left`}
           >
-            <p className={` font-bold ${props.blog3 ? "text-xl" : "text-3xl"}`}>{props.headingText}</p>
+            <p className={` font-bold ${props.blog3 ? "text-xl" : "text-3xl"}`}>
+              {props.headingText}
+            </p>
             <p className="text-sm py-2 pt-4">{props.subheadingText}</p>
             {props.subheadingText2 && (
               <p className="text-sm pb-8">{props.subheadingText2}</p>
-            )}
+            )}{" "}
             {props.children}
             <div
               className={`pt-4 overflow-hidden text-white flex justify-center md:justify-start ${
@@ -83,7 +87,9 @@ const BodyImageText = (props) => {
             {props.blog3 && props.blog3}
 
             <div className="grid md:grid-cols-2 gap-8 w-full text-sm">
-              <div className="w-full h-full overflow-hidden ">{props.blog2}</div>
+              <div className="w-full h-full overflow-hidden ">
+                {props.blog2}
+              </div>
               <div className="w-full h-full">{props.blog}</div>
             </div>
           </div>
