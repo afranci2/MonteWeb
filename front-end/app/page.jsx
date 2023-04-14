@@ -271,16 +271,17 @@ async function page() {
         }
         show={false}
         buttonText="CONOCERNOS"
-        buttonLink={"/conocernos#top"}
+        buttonLink={"/conocerns#top"}
       ></Header>
       <DefaultBody>
-        <h2 className="pt-28 font-semibold font-serif text-5xl m-auto flex justify-center items-center">
-          Eventos
-        </h2>
-        <p className="text-sm w-3/4 p-4 m-auto flex text-center justify-center items-center">
-          Ueferfewfwr fwerfwerf werfwerfrew fewrf frf rfr frpcoming events that
-          are mdae for godle erwferfwerf rf
-        </p>
+        <div className="w-2/3 border-b-2 m-auto pt-24 pb-12">
+          <h2 className=" font-semibold font-serif text-5xl m-auto flex justify-center items-center">
+            Eventos
+          </h2>
+          <p className=" w-1/2 p-4 m-auto flex text-center justify-center items-center">
+            Descubre nuestros próximos eventos y únete a nuestra comunidad de fe
+          </p>
+        </div>
 
         <BodySectionImageLeft
           card={"qwgrwr"}
@@ -331,9 +332,7 @@ async function page() {
             Deja que Dios encienda el fuego dentro de ti.
           </p>
         </div>
-        <div className="absolute h-screen w-screen bg-black/30">
-
-        </div>
+        <div className="absolute h-screen w-screen bg-black/30"></div>
         <div className=" h-screen w-screen object-cover">
           {" "}
           <Image

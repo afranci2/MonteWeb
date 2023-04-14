@@ -35,7 +35,7 @@ function Header({
         <div className="z-40 flex flex-col gap-2">
           <h className="font-semibold font-serif text-5xl ">{headerText}</h>
           <div
-            className={`  text-sm${
+            className={`w-3/4 m-auto ${
               contentPosition === "center"
             } ? "m-auto" : "  sm:w-3/4" `}
           >

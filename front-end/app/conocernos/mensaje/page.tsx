@@ -9,11 +9,13 @@ const pic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/241045481_6088712877867463_5615439554713167151_n.jpg";
 import BodySectionImageLeft from "../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import BodySectionImageRight from "../../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
+const pic2="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/127053599_4787008098037954_87363432099015818_n.jpg"
 const firstpic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg";
 const secondpic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274687118_7121994934539247_7298005248163609642_n.jpg";
-import Image from "next/image";
+const third="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274641260_7121963861209021_5223219459611293665_n.jpg"
+  import Image from "next/image";
 
 function page() {
   return (
@@ -77,7 +79,7 @@ function page() {
           subheadingText2="Levantándo y creándo un cuerpo representativo de la gente redimida. Creyentes llenos del Espíritu Santo, comisionando en ellos: Evangelístas, Pastores, Maestros y Misioneros, para el trabajo local y la evangelización del mundo. Nuestro propósito y objetivo es promover actividades y cultos conforme al orden Bíblico. Nuestro Movimiento siempre se ha caracterizado en todo su apogeo desde antes de su comienzo, con el Ministerio de las Misiones, tanto locales como Internacionales.
 
           "
-          image={secondpic}
+          image={third}
         />
         <BodySectionImageLeft
           blog2={

@@ -15,11 +15,11 @@ const Giving = () => {
       <div className="flex  flex-col mx-auto justify-center align-center">
         <p className=" text-center font-regular">Dar </p>
 
-        <p className=" text-center text-3xl font-semibold">
-          En Linea{" "}
+        <p className=" text-center text-3xl font-semibold">En Linea </p>
+        <p className=" text-center text-xs w-10/12 m-auto pt-4 font-regular">
+          Donación segura en línea. Ingresa la cantidad y proporciona la
+          información de facturación.
         </p>
-        <p className=" text-center text-xs w-10/12 m-auto pt-4 font-regular">Secure online giving. Enter an amount and provide billing information. </p>
-
       </div>
       <Donation />
     </div>

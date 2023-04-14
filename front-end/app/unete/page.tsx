@@ -32,7 +32,7 @@ const page = () => {
         classChangeText={undefined}
         contentPosition={"center"}
         subheadingText={
-          "Check out opportunities to volunteer, donate, participate, and more!"
+          "Descubre cómo puedes formar parte de nuestra familia de fe"
         }
         containerheight={undefined}
         children={undefined}

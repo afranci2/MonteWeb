@@ -50,10 +50,9 @@ async function fetchChurches() {
 }
 
 const page = async () => {
-
-function zipSubmit(){
-  console.log("hey")
-}
+  function zipSubmit() {
+    console.log("hey");
+  }
 
   const res = await fetchChurches();
   const lidereslist = [
@@ -98,8 +97,7 @@ function zipSubmit(){
         <div className="">
           <Header
             image={ConocernosHero}
-            headerText="Conocernos
-"
+            headerText="Conocernos"
             children={undefined}
             classChangeText={undefined}
             buttonColor={undefined}
@@ -107,38 +105,38 @@ function zipSubmit(){
             buttonText={undefined}
             contentPosition={undefined}
             video={undefined}
-            subheadingText={
-              "EDIT THIS Para más información sobre diezmos y donaciones, seguridad y privacidad, impuestos, etc., póngase en contacto con nosotros"
-            }
+            subheadingText={"Conoce quiénes somos y lo que representamos"}
           />
         </div>
         <Banner2 position={"bg-slate-100"}>
           <ul className="hidden gap-8 text-black text-md font-medium p-8 md:flex text-sm">
             {/*use dropdown component             <Dropdown />
              */}
+
             <a href="#creencias">
               <li key={1}>
                 <p>Creencias Fundamentales</p>
               </li>
             </a>
+            <a href={"#mensaje-m"}>
+              <li key={5}>
+                <p>Un Mensaje de la Presidente</p>{" "}
+              </li>
+            </a>
             <a href="#historia-h">
-              <li key={1}>
+              <li key={2}>
                 <p>Historia</p>{" "}
               </li>
             </a>
-            <a href={"#iglesias-i"}>
-              <li key={1}>
-                <p>Iglesias</p>{" "}
-              </li>
-            </a>
+
             <a href="#lideres">
-              <li key={1}>
+              <li key={4}>
                 <p>Lideres</p>{" "}
               </li>
             </a>
-            <a href={"#mensaje-m"}>
-              <li key={1}>
-                <p>Un Mensaje Del Presidente</p>{" "}
+            <a href={"#iglesias-i"}>
+              <li key={3}>
+                <p>Iglesias</p>{" "}
               </li>
             </a>
           </ul>
@@ -199,7 +197,7 @@ function zipSubmit(){
               image={anniversary}
               headingText="50 Años de Historia"
               subheadingText={
-                "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
+                " Descubre cómo comenzamos y cómo hemos crecido como comunidad.​"
               }
               buttonColor="bg-red-800"
               buttonText={"Historia"}
@@ -216,7 +214,7 @@ function zipSubmit(){
         <div className="md:hidden">
           <Header
             image={otherOne}
-            headerText="Find your Church"
+            headerText="Conectate con Nosotros"
             children={undefined}
             classChangeText={undefined}
             buttonColor={undefined}
@@ -225,25 +223,33 @@ function zipSubmit(){
             contentPosition={undefined}
             video={undefined}
             subheadingText={
-              "EDIT THIS Para más información sobre diezmos y donaciones, , etc., póngase en contacto con nosotros"
+              "Descubre cómo puedes formar parte de nuestra familia de fe"
             }
             containerheight={"h-60"}
           />
         </div>
         <div className="bg-gray-100 text-black hidden px-20 p-14 justify-between md:flex">
-          <p className=" font-semibold font-serif text-4xl  ">
-            Find your Church
-          </p>
+          <div>
+            <p className=" font-semibold font-serif text-4xl  ">
+              Un Mision Global
+            </p>
+            <p>Conectate con Nosotros</p>
+          </div>
           <form className="h-8 text-sm my-auto flex gap-2">
             <input
               placeholder="02939"
               className="rounded-lg px-2 bg-gray-200"
               id="zip"
             ></input>
-            <AiOutlineSearch color={"fffff"} onClick={zipSubmit()} className="pl-2 m-auto cursor-pointer" size={30} />
+            <AiOutlineSearch
+              color={"fffff"}
+              onClick={zipSubmit()}
+              className="pl-2 m-auto cursor-pointer"
+              size={30}
+            />
           </form>
         </div>
-        <IglesiasChurchSection  churches={res} conocernos={"Wrg"} />
+        <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
       </section>
 
       <Footer />

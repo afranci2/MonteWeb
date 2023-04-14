@@ -21,7 +21,7 @@ const TitheSection = () => {
   const [option, setOption] = useState("Tithely");
 
   return (
-    <div  id="donar">
+    <div id="donar">
       <div className="hidden md:flex">
         <div className="m-auto min-h-screen w-screen flex justify-center">
           <div className="w-full grid tithingsection ">
@@ -152,7 +152,7 @@ const TitheSection = () => {
             <div className="py-16">
               <div className="p-4">
                 <p className="m-auto flex justify-center pb-8 ">
-                  Safe and secure checkout with
+                  Pago seguro y protegido con
                 </p>
               </div>
 
@@ -204,12 +204,16 @@ const TitheSection = () => {
             </div>
           </section>
           <section>
-            <div className="w-10/12 border-y-2 py-16 m-auto" id="tithely">
+            <div className="w-10/12  py-16 m-auto" id="tithely">
               <TithelyGiving />
             </div>
-            <div className="w-10/12 m-auto border-b-2 py-16" id="online">
+            <div className="bg-gray-100 ">
+
+            <div className="w-10/12  m-auto py-16" id="online">
               <StripeGiving />
             </div>
+            </div>
+
             <div
               id="person"
               className=" text-center m-auto w-full py-32 flex flex-col gap-16 md:w-9/12"

@@ -9,7 +9,7 @@ const stripePromise = loadStripe("pk_test_1AXziSFrubdLvwUJtpued2HQ00Jh0EcJoo", {
 
 function Donation() {
   return (
-    <div className="w-full m-auto max-w-[400px] md:w-1/2">
+    <div className="w-full  m-auto max-w-[400px] md:w-1/2">
       <Elements stripe={stripePromise}>
         <CheckoutForm />
       </Elements>

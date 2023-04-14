@@ -27,9 +27,7 @@ const page = () => {
         headerText={"Donar de Manera Facil"}
 
         contentPosition={"center"}
-        subheadingText={
-          "Give donations directly online, tithely, or in person and help support missionary efforts. Start now and see what god can do through you"
-        }
+        subheadingText={"Conviértete en un agente de cambio al contribuir con tus donaciones."}
         children={undefined}
         classChangeText={undefined}
         video={undefined}
