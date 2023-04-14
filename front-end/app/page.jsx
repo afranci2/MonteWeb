@@ -271,7 +271,7 @@ async function page() {
         }
         show={false}
         buttonText="CONOCERNOS"
-        buttonLink={"/conocerns#top"}
+        buttonLink={"/conocernos#top"}
       ></Header>
       <DefaultBody>
         <div className="w-2/3 border-b-2 m-auto pt-24 pb-12">
