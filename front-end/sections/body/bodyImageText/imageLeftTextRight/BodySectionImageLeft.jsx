@@ -17,6 +17,9 @@ const BodySectionImageLeft = (props) => {
         imagePosition="right"
         children={props.children}
         blog={props.blog}
+        blog2={props.blog2}
+
+        blog3={props.blog3}
       ></BodyImageText>
     </>
   );

@@ -1,8 +1,10 @@
-import React from "react";
+"use client"
+import React, {useState} from "react";
 import "./admin.css";
 import LeftOptions from './components/LeftOptions'
 
 const AdminDashboard = () => {
+  const [option, setOption] = useState()
   return (
     <div className="h-screen w-screen dashboard">
       <LeftOptions/>

@@ -17,6 +17,7 @@ const BodySectionImageLeft = (props) => {
         buttonColor={props.buttonColor}
         blog = {props.blog}
         blog2={props.blog2}
+        blog3={props.blog3}
       ></BodyImageText>
     </>
   );

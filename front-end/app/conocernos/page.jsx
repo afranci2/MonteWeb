@@ -201,7 +201,7 @@ const page = async () => {
               }
               buttonColor="bg-red-800"
               buttonText={"Historia"}
-              buttonLink="/historia"
+              buttonLink="/conocernos/historia"
             ></BodySectionImageRight>
           </div>
         </section>

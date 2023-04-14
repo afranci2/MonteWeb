@@ -10,7 +10,7 @@ import Link from "next/link";
 const mobileLogo2 =
   "https://monte-assets.s3.amazonaws.com/logo/image2+copy.png";
 import "./navbar.css";
-import Logout from './Logout'
+import Logout from "./Logout";
 
 function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -26,13 +26,13 @@ function Navbar() {
           <div className="">
             <Link href={"/"}>
               <div className="desktop-logo w-52 align-center top-2.5 absolute flex">
-                <img src={showDiv ? logo2 : otherlogo} alt="logo" />
+                {/*<img src={showDiv ? logo2 : otherlogo} alt="logo" />   */}
               </div>
             </Link>
           </div>
 
           <div className="right-0">
-            <Logout/>
+            <Logout />
           </div>
         </div>
       </div>

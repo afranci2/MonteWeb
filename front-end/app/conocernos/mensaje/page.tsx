@@ -9,13 +9,15 @@ const pic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/241045481_6088712877867463_5615439554713167151_n.jpg";
 import BodySectionImageLeft from "../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import BodySectionImageRight from "../../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
-const pic2="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/127053599_4787008098037954_87363432099015818_n.jpg"
+const pic2 =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/127053599_4787008098037954_87363432099015818_n.jpg";
 const firstpic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg";
 const secondpic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274687118_7121994934539247_7298005248163609642_n.jpg";
-const third="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274641260_7121963861209021_5223219459611293665_n.jpg"
-  import Image from "next/image";
+const third =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274641260_7121963861209021_5223219459611293665_n.jpg";
+import Image from "next/image";
 
 function page() {
   return (
@@ -40,6 +42,7 @@ function page() {
             <img className="object-cover h-full w-screen" src={pic}></img>
           </div>
         </div>
+
         <BodySectionImageLeft
           headingText={"Bienvenida Pastoral"}
           subheadingText={
@@ -167,7 +170,6 @@ function page() {
           }
           blog={
             <div className="">
-
               <p className="text-sm">
                 Él te dará las fuerzas que necesitarás y te dará las
                 herramientas necesarias para que esa Misión sea victoriosa.
@@ -176,8 +178,7 @@ function page() {
                 estar puesta sobre la blanca soberanía y vocación, a Jesucristo
                 mismo. “No mirando nosotros las cosas que se ven, sino las que
                 no se ven; pues las cosas que se ven son temporales, pero las
-                que no se ven son eternas.” (2 Corintios 4:18). 
-                De la misma
+                que no se ven son eternas.” (2 Corintios 4:18). De la misma
                 manera que la Biblia registra los acontecimientos ocurridos a
                 José (Gén. 37-48-penúltimo hijo de Jacob [llamado después,
                 Israel]), así mismo Dios ha de cumplir lo que Él prometió a tu
@@ -189,7 +190,7 @@ function page() {
           }
           image={undefined}
         ></BodySectionImageLeft>
-                <Header
+        <Header
           children={undefined}
           image={secondpic}
           headerText={"Conclusion"}
