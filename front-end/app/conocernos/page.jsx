@@ -218,7 +218,7 @@ const page = async () => {
               <li className="bg-gray-300/20 ">
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
-                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
+                    <p className="font-bold text-xs">ComoNace Monte Sinai?</p>
                    
                   </div>
                 </Link>
