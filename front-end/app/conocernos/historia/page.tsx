@@ -41,6 +41,39 @@ function page() {
             <img className="object-cover h-full w-screen" src={pic}></img>
           </div>
         </div>
+        <Banner2 position={"bg-slate-100"}>
+          <ul className="hidden gap-8 text-black text-md font-medium p-8 md:flex text-sm">
+            {/*use dropdown component             <Dropdown />
+             */}
+
+            <a href="#creencias">
+              <li key={1}>
+                <p>Como Nace Monte Sinai?</p>
+              </li>
+            </a>
+            <a href={"#mensaje-m"}>
+              <li key={5}>
+                <p>Conociendo al Rev. Samuel Francisco</p>{" "}
+              </li>
+            </a>
+            <a href="#historia-h">
+              <li key={2}>
+                <p> Experiencias en Westmister St.</p>{" "}
+              </li>
+            </a>
+
+            <a href="#lideres">
+              <li key={4}>
+                <p>Lideres</p>{" "}
+              </li>
+            </a>
+            <a href={"#iglesias-i"}>
+              <li key={3}>
+                <p>Iglesias</p>{" "}
+              </li>
+            </a>
+          </ul>
+        </Banner2>
         <BodySectionImageLeft
           blog3={
             <div className="py-4 pb-8 w-10/12 border-b-2">
@@ -144,7 +177,7 @@ function page() {
           <Header
             children={undefined}
             image={secondpic}
-            headerText={`"Las Experiencias Vividas Durante la Estadia en la Westminster St."
+            headerText={`"Las Experiencias Vividas Durante la Estadia en Westminster St."
             `}
             classChangeText={undefined}
             buttonColor={undefined}
