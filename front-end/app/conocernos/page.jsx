@@ -104,7 +104,7 @@ const page = async () => {
             buttonColor={undefined}
             buttonLink={undefined}
             buttonText={undefined}
-            contentPosition={undefined}
+            contentPosition={"center"}
             video={undefined}
             subheadingText={"Conoce quiénes somos y lo que representamos"}
           />
@@ -160,7 +160,7 @@ const page = async () => {
             buttonColor={undefined}
             buttonLink={undefined}
             buttonText={undefined}
-            contentPosition={undefined}
+            contentPosition={"center"}
             video={undefined}
             subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
             containerheight={undefined}
@@ -187,7 +187,6 @@ const page = async () => {
         </div>
 
         <div id="historia-h">
-          
           <BodySectionImageRight
             image={anniversary}
             headingText="50 Años de Historia"
@@ -203,7 +202,6 @@ const page = async () => {
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
                     <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
-                   
                   </div>
                 </Link>
               </li>
@@ -211,7 +209,6 @@ const page = async () => {
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
                     <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
-                   
                   </div>
                 </Link>
               </li>
@@ -219,11 +216,9 @@ const page = async () => {
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
                     <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
-                   
                   </div>
                 </Link>
               </li>
-              
             </ul>
           </BodySectionImageRight>
         </div>

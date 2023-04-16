@@ -150,7 +150,7 @@ function page() {
             buttonColor={undefined}
             buttonLink={undefined}
             buttonText={undefined}
-            contentPosition={undefined}
+            contentPosition={"center"}
             video={undefined}
             subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
             containerheight={undefined}
@@ -166,7 +166,7 @@ function page() {
             buttonColor={undefined}
             buttonLink={undefined}
             buttonText={undefined}
-            contentPosition={undefined}
+            contentPosition={"center"}
             video={undefined}
             subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
             containerheight={undefined}
@@ -183,7 +183,7 @@ function page() {
             buttonColor={undefined}
             buttonLink={undefined}
             buttonText={undefined}
-            contentPosition={undefined}
+            contentPosition={"center"}
             video={undefined}
             subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
             containerheight={undefined}
@@ -205,7 +205,7 @@ function page() {
                   buttonColor={undefined}
                   buttonLink={undefined}
                   buttonText={undefined}
-                  contentPosition={undefined}
+                  contentPosition={"center"}
                   video={undefined}
                   subheadingText={"(Relatado por: Rev. Samuel Francisco)"}
                   containerheight={undefined}
@@ -227,7 +227,7 @@ function page() {
                   buttonColor={undefined}
                   buttonLink={undefined}
                   buttonText={undefined}
-                  contentPosition={undefined}
+                  contentPosition={"center"}
                   video={undefined}
                   subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
                   containerheight={"h-full"}

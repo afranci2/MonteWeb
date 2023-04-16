@@ -414,12 +414,50 @@ function page() {
           image={undefined}
           children={<div>dfwe</div>}
         />
-        <div className="grid grid-cols-2 w-full h-96">
-          <div className="text-white m-auto w-11/12 h-full p-16">
-            <div className=" bg-black h-full w-full rounded-lg">wef</div>
+        <div className="grid grid-cols-2 w-full py-12 p-8">
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black w-full rounded-lg">
+              {" "}
+              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+                <Header
+                  children={undefined}
+                  image={secondpic}
+                  headerText={`Un Mensaje del Presidente
+            `}
+                  classChangeText={undefined}
+                  buttonColor={undefined}
+                  buttonLink={undefined}
+                  buttonText={undefined}
+                  contentPosition={"center"}
+                  video={undefined}
+                  subheadingText={"(Relatado por: Rev. Samuel Francisco)"}
+                  containerheight={undefined}
+                  show={undefined}
+                />{" "}
+              </Link>
+            </div>
           </div>
-          <div className="text-white m-auto w-11/12 h-full p-16">
-            <div className=" bg-black h-full w-full rounded-lg">wef</div>
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black h-full w-full rounded-lg">
+              {" "}
+              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+                <Header
+                  children={undefined}
+                  image={secondpic}
+                  headerText={`Un Mensaje de la Vicepresidenta
+            `}
+                  classChangeText={undefined}
+                  buttonColor={undefined}
+                  buttonLink={undefined}
+                  buttonText={undefined}
+                  contentPosition={"center"}
+                  video={undefined}
+                  subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
+                  containerheight={"h-full"}
+                  show={undefined}
+                />{" "}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
