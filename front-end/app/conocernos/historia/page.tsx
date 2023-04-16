@@ -58,7 +58,7 @@ function page() {
             </a>
             <a href="#historia-h">
               <li key={2}>
-                <p> Experiencias en Westmister St.</p>{" "}
+                <p> Experiencias en Westminster St.</p>{" "}
               </li>
             </a>
 
