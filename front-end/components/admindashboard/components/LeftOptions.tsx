@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 const LeftOptions = ({ clickHandler }) => {
   const [option, setOption] = useState("");
-  console.log("hety, ", option);
   return (
     <div>
       {" "}

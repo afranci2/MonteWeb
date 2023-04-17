@@ -4,7 +4,6 @@ import "./admin.css";
 import LeftOptions from "./components/LeftOptions";
 
 const AdminDashboard = () => {
-  const [option, setOption] = useState(true);
 
   function clickHandler(string) {
     console.log(string);
