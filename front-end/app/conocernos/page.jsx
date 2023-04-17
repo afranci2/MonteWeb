@@ -226,31 +226,75 @@ const page = async () => {
           <Lideres pastors={lidereslist} />
         </div>
         <div id="mensaje-m">
-          <Header
-            video={ConocernosVideo}
-            contentPosition="center"
-            headerText="Un Mensaje de la  Vicepresidente"
-            subheadingText={
-              <div>
-                <p className="">
-                  "Su propósito es presentarte a un Dios que todo lo puede,
-                  aunque hayan cosas imposibles para los hombres, para Dios todo
-                  es posible."
-                </p>
-              </div>
-            }
-            buttonText="Leer Ahora"
-            children={undefined}
-            image={undefined}
-            buttonColor="bg-red-800"
-            classChangeText={undefined}
-            buttonLink={"/conocernos/mensaje"}
-            containerheight={"h-screen"}
-          ></Header>
+          <Link href="/conocernos/mensaje">
+            <Header
+              video={ConocernosVideo}
+              contentPosition="center"
+              headerText="Un Mensaje de la  Vicepresidente"
+              subheadingText={
+                <div>
+                  <p className="">
+                    "Su propósito es presentarte a un Dios que todo lo puede,
+                    aunque hayan cosas imposibles para los hombres, para Dios
+                    todo es posible."
+                  </p>
+                </div>
+              }
+              children={undefined}
+              image={undefined}
+              classChangeText={undefined}
+              containerheight={"h-screen"}
+            ></Header>
+          </Link>
         </div>
       </div>
-
-      <section className="pt-4">
+      <div className="overflow-hidden relative  grid grid-cols-2 w-full py-12 p-8">
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black w-full rounded-lg">
+              {" "}
+              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+                <Header
+                  children={undefined}
+                  image={Pastor}
+                  headerText={`Un Mensaje del Presidente
+            `}
+                  classChangeText={undefined}
+                  buttonColor={undefined}
+                  buttonLink={undefined}
+                  buttonText={undefined}
+                  contentPosition={"center"}
+                  video={undefined}
+                  subheadingText={"(Relatado por: Rev. Samuel Francisco)"}
+                  containerheight={undefined}
+                  show={undefined}
+                />{" "}
+              </Link>
+            </div>
+          </div>
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black h-full w-full rounded-lg">
+              {" "}
+              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+                <Header
+                  children={undefined}
+                  image={Pastor}
+                  headerText={`Un Mensaje de la Vicepresidenta
+            `}
+                  classChangeText={undefined}
+                  buttonColor={undefined}
+                  buttonLink={undefined}
+                  buttonText={undefined}
+                  contentPosition={"center"}
+                  video={undefined}
+                  subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
+                  containerheight={"h-full"}
+                  show={undefined}
+                />{" "}
+              </Link>
+            </div>
+          </div>
+        </div>
+      <section className="relative pt-4">
         <div className="md:hidden">
           <Header
             image={otherOne}
