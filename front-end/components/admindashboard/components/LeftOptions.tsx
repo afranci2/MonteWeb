@@ -1,20 +1,45 @@
-"use client"
-import React, {useState} from "react";
+"use client";
+import React, { useState } from "react";
 
-const LeftOptions = () => {
-    const [option, setOption] = useState()
-    function clickHandler(e){
-        console.log("click")
-    }
+const LeftOptions = ({ clickHandler }) => {
+  const [option, setOption] = useState("");
+  console.log("hety, ", option);
   return (
     <div>
       {" "}
-      <div className="h-full w-full bg-black">
-        <div onClick={clickHandler} className="w-full  bg-white border-b-2">
-          <p className="py-12 m-auto text-center ">jwnefkjnew</p>
+      <div className="h-full w-full bg-gray-100">
+        <div
+          onClick={() => {
+            clickHandler("Events");
+            setOption("Events");
+          }}
+          className={`${
+            option == "Events" ? "bg-gray-100" : "bg-white"
+          } w-full cursor-pointer border-b-2 hover:bg-gray-100`}
+        >
+          <p className="py-8 m-auto text-center ">Events</p>
         </div>
-        <div onClick={clickHandler} className="w-full  bg-white border-b-2">
-          <p className="py-12 m-auto text-center ">jwnefkjnew</p>
+        <div
+          onClick={() => {
+            clickHandler("Churches");
+            setOption("Churches");
+          }}
+          className={`${
+            option == "Churches" ? "bg-gray-100" : "bg-white"
+          } w-full cursor-pointer border-b-2 hover:bg-gray-100`}
+        >
+          <p className="py-8 m-auto text-center ">Cg</p>
+        </div>
+        <div
+          onClick={() => {
+            clickHandler("Other");
+            setOption("Other");
+          }}
+          className={`${
+            option == "Other" ? "bg-gray-100" : "bg-white"
+          } w-full cursor-pointer border-b-2 hover:bg-gray-100`}
+        >
+          <p className="py-8 m-auto text-center ">Cg</p>
         </div>
       </div>
     </div>
