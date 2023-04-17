@@ -198,7 +198,7 @@ function page() {
           buttonColor={undefined}
           buttonLink={undefined}
           buttonText={undefined}
-          contentPosition={undefined}
+          contentPosition={"center"}
           video={undefined}
           subheadingText={`De la misma
           manera que la Biblia registra los acontecimientos ocurridos a
