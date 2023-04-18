@@ -8,8 +8,6 @@ const ChurchZip = () => {
   }
 
   return (
-    <div>
-      {" "}
       <div className="bg-gray-100 text-black hidden px-20 p-14 justify-between md:flex">
         <div>
           <p className=" font-semibold font-serif text-4xl  ">
@@ -31,7 +29,6 @@ const ChurchZip = () => {
           />
         </form>
       </div>
-    </div>
   );
 };
 

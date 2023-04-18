@@ -164,99 +164,7 @@ const page = async () => {
             show={undefined}
           />{" "}
         </Link>
-        <div className="div" id="creencias">
-          <Header
-            children={undefined}
-            image={CreenciasImage}
-            headerText={"Creencias Fundamentales"}
-            classChangeText={undefined}
-            buttonColor={undefined}
-            buttonLink={undefined}
-            buttonText={undefined}
-            contentPosition={undefined}
-            video={undefined}
-            subheadingText={undefined}
-            containerheight={"h-96"}
-          />
-          <div className="h-full w-full">
-            <CreenciasFundamentales />
-          </div>
-        </div>
-
-        <div id="historia-h">
-          <div id="mensaje-m">
-            <Link href="/conocernos/historia">
-              <Header
-                video={ConocernosVideo}
-                contentPosition="center"
-                headerText="50 Años de Historia
-
-              "
-                subheadingText={
-                  <div>
-                    <p className="">
-                      "...Su propósito es presentarte a un Dios que todo lo
-                      puede, aunque hayan cosas imposibles para los hombres,
-                      para Dios todo es posible."
-                    </p>
-                  </div>
-                }
-                children={undefined}
-                image={undefined}
-                classChangeText={undefined}
-                containerheight={"h-screen"}
-              ></Header>
-            </Link>
-          </div>
-          <BodySectionImageRight
-            image={anniversary}
-            headingText="Historia"
-            subheadingText={
-              " Descubre cómo comenzamos y cómo hemos crecido como comunidad.​"
-            }
-            buttonColor="bg-red-800"
-          >
-            <ul className="grid grid-cols-2 gap-2 w-10/12 ">
-              <li className="bg-gray-300/20 ">
-                <Link href="/conocernos/historia/como-nace-monte-sinai">
-                  <div className=" p-4">
-                    <p className="font-bold text-xs">Historia</p>
-                  </div>
-                </Link>
-              </li>
-              <li className="bg-gray-300/20 ">
-                <Link href="/conocernos/historia/como-nace-monte-sinai">
-                  <div className=" p-4">
-                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
-                  </div>
-                </Link>
-              </li>
-              <li className="bg-gray-300/20 ">
-                <Link href="/conocernos/historia/como-nace-monte-sinai">
-                  <div className=" p-4">
-                    <p className="font-bold text-xs">
-                      Conociendo al Rev. Samuel Francisco
-                    </p>
-                  </div>
-                </Link>
-              </li>
-              <li className="bg-gray-300/20 ">
-                <Link href="/conocernos/historia/como-nace-monte-sinai">
-                  <div className=" p-4">
-                    <p className="font-bold text-xs">
-                      La Experiencias de Westminster St.
-                    </p>
-                  </div>
-                </Link>
-              </li>
-            </ul>
-          </BodySectionImageRight>
-        </div>
-        <div id="lideres">
-          <Lideres pastors={lidereslist} />
-        </div>
-      </div>
-      <div className="overflow-hidden relative gap-8  grid md:grid-cols-2 w-full py-12 p-8 md:gap-0">
+        <div className="overflow-hidden relative gap-8  grid md:grid-cols-2 w-full py-12 p-8 md:gap-0">
         <div className="text-white m-auto w-11/12">
           <div className="overflow-hidden bg-black h-full rounded-lg">
             {" "}
@@ -290,6 +198,75 @@ const page = async () => {
           </div>
         </div>
       </div>
+        <div className="div" id="creencias">
+          <Header
+            children={undefined}
+            image={CreenciasImage}
+            headerText={"Creencias Fundamentales"}
+            classChangeText={undefined}
+            buttonColor={undefined}
+            buttonLink={undefined}
+            buttonText={undefined}
+            contentPosition={undefined}
+            video={undefined}
+            subheadingText={undefined}
+            containerheight={"h-96"}
+          />
+          <div className="h-full w-full">
+            <CreenciasFundamentales />
+          </div>
+        </div>
+
+        <div id="historia-h">
+
+          <BodySectionImageRight
+            image={anniversary}
+            headingText="Historia"
+            subheadingText={
+              " Descubre cómo comenzamos y cómo hemos crecido como comunidad.​"
+            }
+            buttonColor="bg-red-800"
+          >
+            <ul className="grid grid-cols-2 gap-2 w-10/12 py-4 sm:m-auto">
+              <li className="bg-gray-300/20 rounded-sm hover:bg-white">
+                <Link href="/conocernos/historia/">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">Historia</p>
+                  </div>
+                </Link>
+              </li>
+              <li className="bg-gray-300/20 rounded-sm hover:bg-white">
+                <Link href="/conocernos/historia/como-nace-monte-sinai">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
+                  </div>
+                </Link>
+              </li>
+              <li className="bg-gray-300/20 rounded-sm hover:bg-white">
+                <Link href="/conocernos/historia/conociendo-el-presidente">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">
+                      Conociendo al Rev. Samuel Francisco
+                    </p>
+                  </div>
+                </Link>
+              </li>
+              <li className="bg-gray-300/20 rounded-sm hover:bg-white">
+                <Link href="/conocernos/historia/experiencias-de-westminster">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">
+                      La Experiencias de Westminster St.
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </BodySectionImageRight>
+        </div>
+        <div id="lideres">
+          <Lideres pastors={lidereslist} />
+        </div>
+      </div>
       <section className="relative pt-4">
         <div className="md:hidden">
           <Header
@@ -308,6 +285,7 @@ const page = async () => {
             containerheight={"h-60"}
           />
         </div>
+        
         <ChurchZip />
 
         <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
