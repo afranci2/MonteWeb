@@ -10,6 +10,7 @@ import Banner2 from "../../components/banner/Banner2";
 import { IoIosArrowForward } from "react-icons/io";
 import ChurchZip from "../../components/churchzip/ChurchZip";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
+const pastor2 = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274687118_7121994934539247_7298005248163609642_n.jpg"
 const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
 const churchImage =
@@ -27,6 +28,7 @@ const otherOne =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Mens/312465605_8245751052163624_6268065564327914459_n.jpg";
 const anniversary =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg";
+const vid2 = "https://monte-assets.s3.amazonaws.com/video/Monte+Sinai+Promo2.mp4"
 
 async function fetchChurches() {
   try {
@@ -111,35 +113,41 @@ const page = async () => {
             {/*use dropdown component             <Dropdown />
              */}
 
-            <a href="#creencias">
+            <a href="#nace">
               <li key={1}>
-                <p>Creencias Fundamentales</p>
+                <p>Como Nace Monte Sinai?</p>
               </li>
             </a>
-            <a href={"#mensaje-m"}>
-              <li key={5}>
-                <p>Un Mensaje de la Presidente</p>{" "}
+            <a href={"#presidencia"}>
+              <li key={2}>
+                <p>Mensajes del Presidencia</p>{" "}
+              </li>
+            </a>
+            <a href="#creencias">
+              <li key={3}>
+                <p>Creencias</p>
               </li>
             </a>
             <a href="#historia-h">
-              <li key={2}>
+              <li key={4}>
                 <p>Historia</p>{" "}
               </li>
             </a>
 
             <a href="#lideres">
-              <li key={4}>
+              <li key={5}>
                 <p>Lideres</p>{" "}
               </li>
             </a>
             <a href={"#iglesias-i"}>
-              <li key={3}>
+              <li key={6}>
                 <p>Iglesias</p>{" "}
               </li>
             </a>
           </ul>
         </Banner2>
         <BodySectionImageLeft
+
           backgroundColor={"bg-white"}
           image={Javier}
           headingText="Nuestra Misión
@@ -150,15 +158,16 @@ const page = async () => {
         ></BodySectionImageLeft>
         <Link href={"/conocernos/historia/como-nace-monte-sinai"}>
           <Header
+          id="nace"
             children={undefined}
-            image={Pastora}
+            image={undefined}
             headerText={`"Como Nace Monte Sinai?"`}
             classChangeText={undefined}
             buttonColor={undefined}
             buttonLink={undefined}
             buttonText={undefined}
             contentPosition={"center"}
-            video={undefined}
+            video={vid2}
             subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
             containerheight={undefined}
             show={undefined}
@@ -166,15 +175,15 @@ const page = async () => {
         </Link>
         <div className="overflow-hidden relative gap-8  grid md:grid-cols-2 w-full py-12 p-8 md:gap-0">
           <div className="text-white m-auto w-11/12">
-            <div className="overflow-hidden bg-black h-full rounded-lg">
+            <div id="presidencia" className="overflow-hidden bg-black h-full rounded-lg">
               {" "}
               <Link href={"/conocernos/historia/conociendo-el-presidente"}>
                 <Header
-                  video={ConocernosVideo}
+                  video={undefined}
                   contentPosition="center"
                   headerText="Un Mensaje del Presidente"
                   children={undefined}
-                  image={undefined}
+                  image={pastor2}
                   classChangeText={undefined}
                   containerheight={"h-screen"}
                 ></Header>
@@ -186,11 +195,11 @@ const page = async () => {
               {" "}
               <Link href="/conocernos/mensaje-de-la-vicepresidenta">
                 <Header
-                  video={ConocernosVideo}
+                  video={undefined}
                   contentPosition="center"
                   headerText="Un Mensaje de la Vicepresidenta"
                   children={undefined}
-                  image={undefined}
+                  image={Pastora}
                   classChangeText={undefined}
                   containerheight={"h-screen"}
                 ></Header>

@@ -73,7 +73,7 @@ const BodyImageText = (props) => {
                   buttonColor={
                     props.buttonColor
                       ? props.buttonColor
-                      : "bg-orange-500 text-white"
+                      : "bg-yellow-400 text-black"
                   }
                   text={props.buttonText}
                   margin="my-8"

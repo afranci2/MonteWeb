@@ -8,14 +8,15 @@ const ChurchZip = () => {
   }
 
   return (
-      <div className="bg-gray-100 text-black hidden p-12 justify-between md:flex">
+    <div className="w-full py-8 p-16 m-auto bg-gray-100">
+      <div className="w-10/12 m-auto text-black justify-between flex">
         <div>
           <p className=" font-semibold font-serif text-4xl  ">
             Un Mision Global
           </p>
-          <p>Conectate con Nosotros y Encuentra su Nuevo Casa Espiritual</p>
+          <p className="text-sm">Conectate con Nosotros y Encuentra su Nuevo Casa Espiritual</p>
         </div>
-        <form className="h-8 text-sm my-auto flex gap-2">
+        <form className="h-8 w-fit text-sm my-auto flex gap-2">
           <input
             placeholder="02939"
             className="rounded-lg px-2 bg-gray-200"
@@ -28,6 +29,7 @@ const ChurchZip = () => {
             size={30}
           />
         </form>
+      </div>
       </div>
   );
 };

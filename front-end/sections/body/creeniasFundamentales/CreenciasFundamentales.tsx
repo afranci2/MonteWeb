@@ -45,7 +45,7 @@ const CreenciasFundamentales = () => {
                       {section.image}
                     </div>
                     <p className="font-bold text-lg ">{section.title}</p>
-                    <p className="w-full m-auto">{section.subheading}</p>
+                    <p className="w-full text-sm m-auto">{section.subheading}</p>
                   </div>
                 </li>
               </div>

@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Navbar2 from "../../../../sections/navbar/Navbar2";
 import Footer from "../../../../sections/footer/Footer";
 import Header from "../../../../sections/header/Header";
-
+import pastor3 from './pastor3.webp'
 const pic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/241045481_6088712877867463_5615439554713167151_n.jpg";
 import BodySectionImageLeft from "../../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
@@ -85,12 +85,11 @@ function page() {
               <div>
                 <Image
                   className="w-full "
-                  src={secondpic}
+                  src={pastor3}
                   width={500}
                   height={500}
                   alt="pastor-pic"
                 ></Image>
-                <p className="text-xs py-2">Src: Pastor Samuel</p>
               </div>
 
               <br></br>
@@ -414,50 +413,26 @@ function page() {
           image={undefined}
           children={<div>dfwe</div>}
         />
-        <div className="grid grid-cols-2 w-full py-12 p-8">
-          <div className="text-white m-auto w-11/12">
-            <div className="overflow-hidden bg-black w-full rounded-lg">
-              {" "}
-              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
-                <Header
-                  children={undefined}
-                  image={secondpic}
-                  headerText={`Un Mensaje del Presidente
+        <div className="text-white m-auto w-11/12">
+          <div className="overflow-hidden bg-black h-full w-full rounded-lg">
+            {" "}
+            <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+              <Header
+                children={undefined}
+                image={pic}
+                headerText={`Un Mensaje de la Vicepresidenta
             `}
-                  classChangeText={undefined}
-                  buttonColor={undefined}
-                  buttonLink={undefined}
-                  buttonText={undefined}
-                  contentPosition={"center"}
-                  video={undefined}
-                  subheadingText={"(Relatado por: Rev. Samuel Francisco)"}
-                  containerheight={undefined}
-                  show={undefined}
-                />{" "}
-              </Link>
-            </div>
-          </div>
-          <div className="text-white m-auto w-11/12">
-            <div className="overflow-hidden bg-black h-full w-full rounded-lg">
-              {" "}
-              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
-                <Header
-                  children={undefined}
-                  image={secondpic}
-                  headerText={`Un Mensaje de la Vicepresidenta
-            `}
-                  classChangeText={undefined}
-                  buttonColor={undefined}
-                  buttonLink={undefined}
-                  buttonText={undefined}
-                  contentPosition={"center"}
-                  video={undefined}
-                  subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
-                  containerheight={"h-full"}
-                  show={undefined}
-                />{" "}
-              </Link>
-            </div>
+                classChangeText={undefined}
+                buttonColor={undefined}
+                buttonLink={undefined}
+                buttonText={undefined}
+                contentPosition={"center"}
+                video={undefined}
+                subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
+                containerheight={"h-full"}
+                show={undefined}
+              />{" "}
+            </Link>
           </div>
         </div>
       </section>

@@ -163,10 +163,9 @@ export default async function page({ params }) {
         <div>
           <BodySectionImageLeft
             headingText="Nosotros"
-            buttonText="Leer Mas"
             subheadingText={res[0].description}
             image={res2[0].source}
-            buttonLink={"/"}
+
           />
           <Lideres pastors={res5} />
         </div>

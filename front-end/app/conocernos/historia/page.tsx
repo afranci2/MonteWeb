@@ -5,6 +5,10 @@ import Footer from "../../../sections/footer/Footer";
 import Header from "../../../sections/header/Header";
 import Banner from "../../../components/banner/Banner";
 import Banner2 from "../../../components/banner/Banner2";
+import pastor1 from "./pastor1.webp";
+import pastor2 from "./pastor2.webp";
+import historia from "./historia.webp";
+
 const pic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/241045481_6088712877867463_5615439554713167151_n.jpg";
 import BodySectionImageLeft from "../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
@@ -19,6 +23,10 @@ const third =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274641260_7121963861209021_5223219459611293665_n.jpg";
 import Image from "next/image";
 import Link from "next/link";
+const videoheader =
+  "https://monte-assets.s3.amazonaws.com/video/Monte+Sinai+Promo2.mp4";
+import Video from "../../../sections/video/Video";
+import gradient from "./gradient.webp";
 
 function page() {
   return (
@@ -37,10 +45,19 @@ function page() {
             </h1>
           </div>
           <div className="z-20 absolute w-full h-full bg-black/30"></div>
-          <div className="h-full">
-            <img className="object-cover h-full w-screen" src={pic}></img>
+
+          <div className="object-cover">
+            <video
+              className="try max-h-full h-screen max-w-full overflow-hidden w-screen object-cover mx-auto"
+              autoPlay
+              muted
+              loop
+              playsInline
+              src={videoheader}
+            ></video>
           </div>
         </div>
+
         <BodySectionImageLeft
           blog3={
             <div className="py-4 pb-8 w-10/12 border-b-2">
@@ -81,33 +98,69 @@ function page() {
                 debemos realizarlo para el honor, gloria y honra del Supremo
                 Señor de nuestras vidas.”
               </p>
+              <br></br>
+              <p>
+                <p>
+                  Digámoslo de esta manera –Hay hombres y mujeres que nacen
+                  marcados por Dios para una tarea muy especial, y esto es lo
+                  que ocurre con el Rev. Samuel y su esposa, la Pastora Isabel
+                  Francisco. Ambos destinados para llenar una estadística de los
+                  guerreros de Dios. Nacidos de dos bellas islas, Puerto Rico y
+                  la República Dominicana. Nacidos de familias humildes.
+                </p>
+              </p>
             </div>
           }
           blog={
             <div className="pt-8 sm:pt-0">
-              <p>
-                Digámoslo de esta manera –Hay hombres y mujeres que nacen
-                marcados por Dios para una tarea muy especial, y esto es lo que
-                ocurre con el Rev. Samuel y su esposa, la Pastora Isabel
-                Francisco. Ambos destinados para llenar una estadística de los
-                guerreros de Dios. Nacidos de dos bellas islas, Puerto Rico y la
-                República Dominicana. Nacidos de familias humildes.
-              </p>
               <div>
                 <Image
-                  className="w-full pt-8"
-                  src={secondpic}
+                  className="w-full"
+                  src={pastor1}
                   width={500}
                   height={500}
                   alt="pastor-pic"
                 ></Image>
-                <p className="text-xs py-2">Src: Pastor Samuel</p>
               </div>
             </div>
           }
           image={undefined}
           children={<div>dfwe</div>}
         />
+        <Header
+          image={historia}
+          headerText={"Nuestro Historia en Movimiento"}
+          classChangeText={undefined}
+          buttonColor={undefined}
+          buttonLink={undefined}
+          buttonText={undefined}
+          contentPosition={"center"}
+          video={undefined}
+          subheadingText={undefined}
+          containerheight={"h-60"}
+          show={false}
+        >
+          <Image
+            className=" w-full flex place-content-center justify-center absolute m-auto z-40  md:w-full"
+            src={gradient}
+            alt="he"
+          />
+        </Header>
+        <Header
+          image={undefined}
+          headerText={undefined}
+          classChangeText={undefined}
+          buttonColor={undefined}
+          buttonLink={undefined}
+          buttonText={undefined}
+          contentPosition={"center"}
+          video={undefined}
+          subheadingText={undefined}
+          containerheight={"h-screen"}
+          show={false}
+          children={undefined}
+        ></Header>
+
         <Link href={"/conocernos/historia/como-nace-monte-sinai"}>
           <Header
             children={undefined}
@@ -143,7 +196,7 @@ function page() {
         <Link href={"/conocernos/conocernos/conociendo-la-vicepresidenta"}>
           <Header
             children={undefined}
-            image={secondpic}
+            image={pastor2}
             headerText={`"Las Experiencias Vividas Durante la Estadia en Westminster St."
             `}
             classChangeText={undefined}
@@ -186,7 +239,7 @@ function page() {
               <Link href={"/conocernos/historia/conociendo-el-presidente"}>
                 <Header
                   children={undefined}
-                  image={secondpic}
+                  image={pic}
                   headerText={`Un Mensaje de la Vicepresidenta
             `}
                   classChangeText={undefined}

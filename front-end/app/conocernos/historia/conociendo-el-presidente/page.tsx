@@ -362,7 +362,7 @@ function page() {
               <Link href={"/conocernos/historia/conociendo-el-presidente"}>
                 <Header
                   children={undefined}
-                  image={secondpic}
+                  image={pic}
                   headerText={`Un Mensaje de la Vicepresidenta
             `}
                   classChangeText={undefined}

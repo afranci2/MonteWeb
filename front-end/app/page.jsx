@@ -279,7 +279,7 @@ async function page() {
             <h2 className=" font-semibold font-serif text-5xl m-auto flex justify-center items-center">
               Eventos
             </h2>
-            <p className="w-3/4 p-4 m-auto flex text-center justify-center items-center">
+            <p className="w-3/4 text-sm p-4 m-auto flex text-center justify-center items-center">
               Descubre nuestros próximos eventos y únete a nuestra comunidad de
               fe
             </p>
