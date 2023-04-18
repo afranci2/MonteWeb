@@ -29,6 +29,7 @@ const HeroVideo =
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
 const Michael = "https://monte-assets.s3.amazonaws.com/img/section2.jpg";
 import Image from "next/image";
+import { MainButton } from "../components";
 const Markos =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Women/312557903_8245686698836726_2489476650725182482_n.jpg";
 
@@ -266,7 +267,6 @@ async function page() {
               A lo largo de este movimiento, el fuego seguirá ardiendo en cada
               corazón como en el día de Pentecostés.
             </p>
-            <br></br>
           </div>
         }
         show={false}
@@ -326,6 +326,39 @@ async function page() {
           </Link>
         </div>
       </DefaultBody>
+      <BodySectionImageLeft
+        headingText={"La Visión de un Llamado Divino"}
+        subheadingText={`Los mayores avivamientos a lo largo de la historia se identifican con el fuego. Nuestro Dios es un Dios de fuego. Se reveló a Moisés en medio del fuego, y el profeta Elías fue un profeta de fuego. Él es quien hace que sus ángeles sean espíritus, y que su ministerio sea una llama de fuego. Pentecostés comenzó con fuego. El capítulo 2 del libro de los Hechos dice “…y se les aparecieron lenguas repartidas como de fuego, y se posó sobre cada uno de ellos” (versículo tres).
+
+`}
+        blog3={<div>wdfwe</div>}
+        subheadingText2={
+          <div>
+            <p>
+              Cuando Dios estaba estableciendo su pacto con esta nación, en esa
+              montaña descendió la gloria de Dios. El versículo 18 del capítulo
+              19 del Éxodo dice: “Y el monte Sinaí se convirtió en humo, porque
+              el Señor descendió sobre él en fuego
+            </p>
+            <br></br>
+            <p>
+              Esperamos en el Supremo Señor de nuestras vidas, que a lo largo de
+              la historia de este movimiento, el fuego siga ardiendo en cada
+              corazón como en aquel momento en el día de Pentecostés.
+            </p>
+            <br></br>
+            <p className="font-bold">-Reverendo Samuel Francisco</p>
+            <br></br>
+            <div className="md:flex md:justify-center">
+              <MainButton
+                text="Leer Mas"
+                link="/conocernos/mensaje-del-presidente"
+              ></MainButton>
+            </div>
+          </div>
+        }
+        image={Michael}
+      />
       <section className="z-10 h-screen object-cover flex m-auto justify-center items-center">
         <div className="z-40 absolute text-white text-center w-11/12">
           <p className="font-semibold py-4 font-serif text-5xl">
