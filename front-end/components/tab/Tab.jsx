@@ -10,7 +10,7 @@ const Tab = (props) => {
       } my-8 w-full relative drop-shadow-md`}
     >
       <div
-        className={`whole ${props.height} rounded-xl bg-${props.backgroundColor} flex overflow-hidden`}
+        className={`whole ${props.height} rounded-lg bg-${props.backgroundColor} flex overflow-hidden`}
       >
         {props.children}
         {props.imagePosition ? (
@@ -36,7 +36,7 @@ const Tab = (props) => {
           className={
             props.children
               ? "hidden"
-              : `flex p-8 text-center rounded-xl ${props.contentPosition} absolute z-50 content ${props.contentHeight} items-center bg-red-800/95 ${props.contentWidth}`
+              : `flex p-8 text-center rounded-lg ${props.contentPosition} absolute z-50 content ${props.contentHeight} items-center bg-red-800/95 ${props.contentWidth}`
           }
         >
           <div className="flex flex-col m-auto w-full">

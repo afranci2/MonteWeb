@@ -23,7 +23,7 @@ const EventCard = ({ event, dates }) => {
           className=" left-[-10px] w-screen absolute z-50 flex justify-center items-center  bg-opacity-50"
           onClick={() => setClick(false)}
         >
-          <div className="w-full h-full max-w-screen-lg mx-auto p-16 bg-white rounded-lg shadow-lg">
+          <div className="w-full h-full max-w-screen-lg mx-auto p-16 bg-white rounded-md shadow-lg">
             <div className="text-left">
               <p>qwfl wj fwwefk wkjf wkqjf kwqe fkwqe fkjw</p>
               <p>qwfl wj fw</p>
@@ -37,9 +37,9 @@ const EventCard = ({ event, dates }) => {
           </div>
         </div>
       )}
-      <a target={"_blank"} href={event.link}>
+      <a target={"_blank"} href={"event.link"}>
         <div onClick={clickHandler} className="p-4">
-          <div className=" overflow-hidden relative rounded-lg">
+          <div className=" overflow-hidden relative rounded-md">
             <div className="absolute gradient w-full h-full"></div>
             <Image
               className="object-cover h-full w-full overflow-hidden"

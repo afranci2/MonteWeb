@@ -124,7 +124,7 @@ function page() {
             show={undefined}
           />{" "}
         </Link>
-        <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+        <Link href={"/conocernos/conocernos/conociendo-el-presidente"}>
           <Header
             children={undefined}
             image={secondpic}
@@ -140,7 +140,7 @@ function page() {
             show={undefined}
           />{" "}
         </Link>
-        <Link href={"/conocernos/historia/conociendo-la-vicepresidenta"}>
+        <Link href={"/conocernos/conocernos/conociendo-la-vicepresidenta"}>
           <Header
             children={undefined}
             image={secondpic}

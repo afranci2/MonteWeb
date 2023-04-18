@@ -274,13 +274,16 @@ async function page() {
         buttonLink={"/conocernos#top"}
       ></Header>
       <DefaultBody>
-        <div className="w-2/3 border-b-2 m-auto pt-24 pb-12">
-          <h2 className=" font-semibold font-serif text-5xl m-auto flex justify-center items-center">
-            Eventos
-          </h2>
-          <p className=" w-1/2 p-4 m-auto flex text-center justify-center items-center">
-            Descubre nuestros próximos eventos y únete a nuestra comunidad de fe
-          </p>
+        <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-12">
+          <div className="w-full">
+            <h2 className=" font-semibold font-serif text-5xl m-auto flex justify-center items-center">
+              Eventos
+            </h2>
+            <p className="w-3/4 p-4 m-auto flex text-center justify-center items-center">
+              Descubre nuestros próximos eventos y únete a nuestra comunidad de
+              fe
+            </p>
+          </div>
         </div>
 
         <BodySectionImageLeft

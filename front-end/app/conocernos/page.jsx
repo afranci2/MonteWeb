@@ -106,7 +106,7 @@ const page = async () => {
             buttonText={undefined}
             contentPosition={"center"}
             video={undefined}
-            subheadingText={"Conoce quiénes somos y lo que representamos"}
+            subheadingText={"Descubre nuestra historia, propósito, quiénes somos y lo que representamos"}
           />
         </div>
         <Banner2 position={"bg-slate-100"}>
@@ -208,14 +208,14 @@ const page = async () => {
               <li className="bg-gray-300/20 ">
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
-                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
+                    <p className="font-bold text-xs">Conociendo al Rev. Samuel Francisco</p>
                   </div>
                 </Link>
               </li>
               <li className="bg-gray-300/20 ">
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
-                    <p className="font-bold text-xs">Como Nace Monte Sinai?</p>
+                    <p className="font-bold text-xs">La Experiencias de Westminster St.</p>
                   </div>
                 </Link>
               </li>

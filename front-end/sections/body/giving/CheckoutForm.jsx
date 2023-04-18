@@ -155,7 +155,7 @@ function CheckoutForm() {
         <button
           onClick={createSubscription}
           disabled={!stripe}
-          className="font-bold text-sm p-4 px-10 rounded-lg bg-yellow-400"
+          className="font-bold text-sm p-4 px-10 rounded-md bg-yellow-400"
         >
           {loading
             ? "    ...   "

@@ -3,17 +3,21 @@ import Header from "../../sections/header/Header";
 import Navbar from "../../sections/navbar/Navbar";
 import Events from "../../sections/events/Events";
 const Baptism =
-  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";import Michael2 from './red2.jpg'
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";
+import Michael2 from "./red2.jpg";
 
 async function fetchEvents() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-events`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
 
     const data = await res.json();
 
@@ -22,7 +26,6 @@ async function fetchEvents() {
     console.log(error);
   }
 }
-
 
 async function page() {
   const res = await fetchEvents();
@@ -38,9 +41,9 @@ async function page() {
         buttonColor={undefined}
         buttonLink={undefined}
         buttonText={undefined}
-        contentPosition={undefined}
+        contentPosition={"center"}
         video={undefined}
-        subheadingText={"Excepteur sint occaeuiecat cupidatat."}
+        subheadingText={"Descubre qué eventos están programados próximamente."}
         containerheight={undefined}
       />
       <div className="md:w-3/4">

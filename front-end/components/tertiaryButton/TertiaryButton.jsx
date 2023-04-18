@@ -6,7 +6,7 @@ const TertiaryButton = (props) => {
     <div
       className={` ${props.position === "center" && "m-auto w-full"} ${
         props.margin
-      } flex justify-center max-h-fit w-full  rounded-lg  ${props.buttonColor} drop-shadow-sm`}
+      } flex justify-center max-h-fit w-full  rounded-md  ${props.buttonColor} drop-shadow-sm`}
     >
       {props.buttonLink ? (
         <Link href={props.buttonLink ? props.buttonLink : null}>
