@@ -8,7 +8,7 @@ const ChurchZip = () => {
   }
 
   return (
-      <div className="bg-gray-100 text-black hidden px-20 p-14 justify-between md:flex">
+      <div className="bg-gray-100 text-black hidden p-12 justify-between md:flex">
         <div>
           <p className=" font-semibold font-serif text-4xl  ">
             Un Mision Global

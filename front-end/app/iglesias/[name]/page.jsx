@@ -11,13 +11,16 @@ import ChurchHeader from "../../../sections/header/ChurchHeader";
 
 async function fetchChurches(id) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church/${id}`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-church/${id}`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
 
     const data = await res.json();
 
@@ -29,13 +32,16 @@ async function fetchChurches(id) {
 
 async function fetchChurchesImages(id) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-images/${id}`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-images/${id}`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
     const data = await res.json();
     return data; // parses
   } catch (error) {
@@ -45,13 +51,16 @@ async function fetchChurchesImages(id) {
 
 async function fetchChurchesServices(id) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-services/${id}`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-services/${id}`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
     const data = await res.json();
     return data; // parses
   } catch (error) {
@@ -61,13 +70,16 @@ async function fetchChurchesServices(id) {
 
 async function fetchChurchesSocials(id) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-socials/${id}`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-socials/${id}`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
     const data = await res.json();
     return data; // parses
   } catch (error) {
@@ -77,13 +89,16 @@ async function fetchChurchesSocials(id) {
 
 async function fetchChurchesPastors(id) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-pastors/${id}`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-church-pastors/${id}`,
+      {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
     const data = await res.json();
     return data; // parses
   } catch (error) {
@@ -99,23 +114,25 @@ export default async function page({ params }) {
   const res5 = await fetchChurchesPastors(parseInt(params.name));
 
   const mainImage = res2?.find((image) => image.is_main === 1).source;
-  
+
   return (
     <div>
       <Navbar2 />
       <div className="w-full h-16"></div>
 
-      <div className="contain">
-        <Banner2 position={"absolute"}>
-          <div className="content align-center items-center h-16 justify-center flex gap-2 text-xs">
-            <div className=" h-full  my-auto flex pt-6">
-              <FaMapMarkerAlt size={12} />
+      <div className="">
+        <div>
+          <Banner2 color="bg-white" position={"absolute"}>
+            <div className="content align-center items-center h-16 justify-center flex gap-2 text-xs">
+              <div className=" h-full  my-auto flex pt-6">
+                <FaMapMarkerAlt size={12} />
+              </div>
+              <div>
+                <p className="">{res ? res[0].location : "Loading"}</p>
+              </div>
             </div>
-            <div>
-              <p className="">{res ? res[0].location : "Loading"}</p>
-            </div>
-          </div>
-        </Banner2>
+          </Banner2>
+        </div>
         {res ? (
           <ChurchHeader
             image={mainImage}

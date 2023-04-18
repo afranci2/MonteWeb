@@ -349,7 +349,7 @@ async function page() {
             <br></br>
             <p className="font-bold">-Reverendo Samuel Francisco</p>
             <br></br>
-            <div className="md:flex md:justify-center">
+            <div className="flex justify-center md:justify-start">
               <MainButton
                 text="Leer Mas"
                 link="/conocernos/mensaje-del-presidente"

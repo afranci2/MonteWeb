@@ -80,11 +80,11 @@ function Header({
         </div>
         <Link href={mapLink}>
           <ChurchBanner position={" bottom-0 absolute"}>
-            <div className="content align-center items-center h-16 justify-center flex  text-sm">
+            <div className="px-8 content align-center items-center h-16 justify-center flex gap-4 text-sm">
               <div>
                 <p className="text-black p-16 font-semibold">{direction}</p>
               </div>
-              <IoIosArrowForward size={15} color="000" />
+              <IoIosArrowForward className="flex items-center m-auto" size={15} color="000" />
             </div>
           </ChurchBanner>{" "}
         </Link>
