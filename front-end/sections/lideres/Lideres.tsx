@@ -4,15 +4,17 @@ import { IoIosArrowForward } from "react-icons/io";
 
 async function Lideres({ pastors }) {
   return (
-    <div className="py-20 bg-white">
-      <div className="w-10/12 mx-auto py-12 ">
+    <div className="py-20 m-auto bg-white w-10/12 justify-center flex flex-col">
+      <div className="py-12 w-3/4">
         <p className="font-serif font-semibold text-4xl">Nuestros Lideres</p>
-        <p className="">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p className="w-1/2">
+          Conozca a las personas que lideran el camino en Movimiento: un equipo
+          apasionado y comprometido en ser la empresa que nuestros clientes
+          desean que seamos. Juntos, trabajamos para lograr nuestra visión y
+          cumplir con nuestra misión.
         </p>
       </div>
-      <div className="pb-8 flex flex-col justify-center mx-auto md:flex md:flex-row gap-6  w-10/12">
+      <div className="pb-8 flex flex-col  mx-auto md:flex md:flex-row gap-6  ">
         {pastors.map((lider) => {
           return (
             <div className="flex flex-col w-10/12 mx-auto" key={lider.id}>
