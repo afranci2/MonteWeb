@@ -4,12 +4,11 @@ import Header from "../../sections/header/Header";
 import BodySectionImageLeft from "../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
 import BodySectionImageRight from "../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import IglesiasChurchSection from "../../sections/body/iglesiaschurchsection/IglesiasChurchSection";
-import { AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import Footer from "../../sections/footer/Footer";
 import Banner2 from "../../components/banner/Banner2";
 import { IoIosArrowForward } from "react-icons/io";
-
+import ChurchZip from "../../components/churchzip/ChurchZip";
 const ConocernosVideo = "https://monte-assets.s3.amazonaws.com/video/promo.mp4";
 const CreenciasImage = "https://monte-assets.s3.amazonaws.com/img/bible.jpg";
 const ConocernosHero = "https://monte-assets.s3.amazonaws.com/img/pastora.jpg";
@@ -51,10 +50,6 @@ async function fetchChurches() {
 }
 
 const page = async () => {
-  function zipSubmit() {
-    console.log("hey");
-  }
-
   const res = await fetchChurches();
   const lidereslist = [
     {
@@ -106,7 +101,9 @@ const page = async () => {
             buttonText={undefined}
             contentPosition={"center"}
             video={undefined}
-            subheadingText={"Descubre nuestra historia, propósito, quiénes somos y lo que representamos"}
+            subheadingText={
+              "Descubre nuestra historia, propósito, quiénes somos y lo que representamos"
+            }
           />
         </div>
         <Banner2 position={"bg-slate-100"}>
@@ -187,17 +184,46 @@ const page = async () => {
         </div>
 
         <div id="historia-h">
+          <div id="mensaje-m">
+            <Link href="/conocernos/historia">
+              <Header
+                video={ConocernosVideo}
+                contentPosition="center"
+                headerText="50 Años de Historia
+
+              "
+                subheadingText={
+                  <div>
+                    <p className="">
+                      "...Su propósito es presentarte a un Dios que todo lo
+                      puede, aunque hayan cosas imposibles para los hombres,
+                      para Dios todo es posible."
+                    </p>
+                  </div>
+                }
+                children={undefined}
+                image={undefined}
+                classChangeText={undefined}
+                containerheight={"h-screen"}
+              ></Header>
+            </Link>
+          </div>
           <BodySectionImageRight
             image={anniversary}
-            headingText="50 Años de Historia"
+            headingText="Historia"
             subheadingText={
               " Descubre cómo comenzamos y cómo hemos crecido como comunidad.​"
             }
             buttonColor="bg-red-800"
-            buttonText={"Historia"}
-            buttonLink="/conocernos/historia"
           >
             <ul className="grid grid-cols-2 gap-2 w-10/12 ">
+              <li className="bg-gray-300/20 ">
+                <Link href="/conocernos/historia/como-nace-monte-sinai">
+                  <div className=" p-4">
+                    <p className="font-bold text-xs">Historia</p>
+                  </div>
+                </Link>
+              </li>
               <li className="bg-gray-300/20 ">
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
@@ -208,14 +234,18 @@ const page = async () => {
               <li className="bg-gray-300/20 ">
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
-                    <p className="font-bold text-xs">Conociendo al Rev. Samuel Francisco</p>
+                    <p className="font-bold text-xs">
+                      Conociendo al Rev. Samuel Francisco
+                    </p>
                   </div>
                 </Link>
               </li>
               <li className="bg-gray-300/20 ">
                 <Link href="/conocernos/historia/como-nace-monte-sinai">
                   <div className=" p-4">
-                    <p className="font-bold text-xs">La Experiencias de Westminster St.</p>
+                    <p className="font-bold text-xs">
+                      La Experiencias de Westminster St.
+                    </p>
                   </div>
                 </Link>
               </li>
@@ -225,75 +255,41 @@ const page = async () => {
         <div id="lideres">
           <Lideres pastors={lidereslist} />
         </div>
-        <div id="mensaje-m">
-          <Link href="/conocernos/mensaje">
-            <Header
-              video={ConocernosVideo}
-              contentPosition="center"
-              headerText="Un Mensaje de la  Vicepresidente"
-              subheadingText={
-                <div>
-                  <p className="">
-                    "Su propósito es presentarte a un Dios que todo lo puede,
-                    aunque hayan cosas imposibles para los hombres, para Dios
-                    todo es posible."
-                  </p>
-                </div>
-              }
-              children={undefined}
-              image={undefined}
-              classChangeText={undefined}
-              containerheight={"h-screen"}
-            ></Header>
-          </Link>
+      </div>
+      <div className="overflow-hidden relative gap-8  grid md:grid-cols-2 w-full py-12 p-8 md:gap-0">
+        <div className="text-white m-auto w-11/12">
+          <div className="overflow-hidden bg-black h-full rounded-lg">
+            {" "}
+            <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+              <Header
+                video={ConocernosVideo}
+                contentPosition="center"
+                headerText="Un Mensaje del Presidente"
+                children={undefined}
+                image={undefined}
+                classChangeText={undefined}
+                containerheight={"h-screen"}
+              ></Header>
+            </Link>
+          </div>
+        </div>
+        <div className="text-white m-auto w-11/12">
+          <div className="overflow-hidden bg-black h-full w-full rounded-lg">
+            {" "}
+            <Link href="/conocernos/mensaje-de-la-vicepresidenta">
+              <Header
+                video={ConocernosVideo}
+                contentPosition="center"
+                headerText="Un Mensaje de la Vicepresidenta"
+                children={undefined}
+                image={undefined}
+                classChangeText={undefined}
+                containerheight={"h-screen"}
+              ></Header>
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="overflow-hidden relative  grid grid-cols-2 w-full py-12 p-8">
-          <div className="text-white m-auto w-11/12">
-            <div className="overflow-hidden bg-black w-full rounded-lg">
-              {" "}
-              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
-                <Header
-                  children={undefined}
-                  image={Pastor}
-                  headerText={`Un Mensaje del Presidente
-            `}
-                  classChangeText={undefined}
-                  buttonColor={undefined}
-                  buttonLink={undefined}
-                  buttonText={undefined}
-                  contentPosition={"center"}
-                  video={undefined}
-                  subheadingText={"(Relatado por: Rev. Samuel Francisco)"}
-                  containerheight={undefined}
-                  show={undefined}
-                />{" "}
-              </Link>
-            </div>
-          </div>
-          <div className="text-white m-auto w-11/12">
-            <div className="overflow-hidden bg-black h-full w-full rounded-lg">
-              {" "}
-              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
-                <Header
-                  children={undefined}
-                  image={Pastor}
-                  headerText={`Un Mensaje de la Vicepresidenta
-            `}
-                  classChangeText={undefined}
-                  buttonColor={undefined}
-                  buttonLink={undefined}
-                  buttonText={undefined}
-                  contentPosition={"center"}
-                  video={undefined}
-                  subheadingText={"(Relatado por: Pastora Isabel Francisco)"}
-                  containerheight={"h-full"}
-                  show={undefined}
-                />{" "}
-              </Link>
-            </div>
-          </div>
-        </div>
       <section className="relative pt-4">
         <div className="md:hidden">
           <Header
@@ -304,7 +300,7 @@ const page = async () => {
             buttonColor={undefined}
             buttonLink={undefined}
             buttonText={undefined}
-            contentPosition={undefined}
+            contentPosition={"center"}
             video={undefined}
             subheadingText={
               "Descubre cómo puedes formar parte de nuestra familia de fe"
@@ -312,27 +308,8 @@ const page = async () => {
             containerheight={"h-60"}
           />
         </div>
-        <div className="bg-gray-100 text-black hidden px-20 p-14 justify-between md:flex">
-          <div>
-            <p className=" font-semibold font-serif text-4xl  ">
-              Un Mision Global
-            </p>
-            <p>Conectate con Nosotros</p>
-          </div>
-          <form className="h-8 text-sm my-auto flex gap-2">
-            <input
-              placeholder="02939"
-              className="rounded-lg px-2 bg-gray-200"
-              id="zip"
-            ></input>
-            <AiOutlineSearch
-              color={"fffff"}
-              onClick={zipSubmit()}
-              className="pl-2 m-auto cursor-pointer"
-              size={30}
-            />
-          </form>
-        </div>
+        <ChurchZip />
+
         <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
       </section>
 

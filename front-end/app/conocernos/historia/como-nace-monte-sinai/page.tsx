@@ -396,7 +396,7 @@ function page() {
             </div>
           }
           blog={
-            <div className="pt-8">
+            <div className="md:pt-8">
               <div>
                 <Image
                   className="w-full pt-8"
