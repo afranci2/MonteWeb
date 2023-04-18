@@ -15,7 +15,7 @@ const BodyImageText = (props) => {
     >
       <div
         className={`${
-          props.card && "bg-white md:p-10 overflow-hidden rounded-lg shadow-lg"
+          props.card && "bg-white md:p-10 overflow-hidden rounded-md shadow-lg"
         } h-full content md:flex flex-col w-10/12 m-auto gap-4 md:flex-row`}
       >
         {props.imagePosition === "right" ? (

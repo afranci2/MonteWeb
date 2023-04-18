@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../sections/header/Header";
-import Navbar from "../../sections/navbar/Navbar";
+import Navbar2 from "../../sections/navbar/Navbar2";
 import Events from "../../sections/events/Events";
 const Baptism =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Baptium/119045738_4418187221586712_7673039802355621537_n.jpg";
@@ -32,7 +32,7 @@ async function page() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar2 />
       <Header
         children={undefined}
         image={Baptism}
@@ -44,8 +44,7 @@ async function page() {
         contentPosition={"center"}
         video={undefined}
         subheadingText={"Descubre qué eventos están programados próximamente."}
-        containerheight={undefined}
-      />
+        containerheight={undefined} show={undefined}      />
       <div className="md:w-3/4">
         <Events res={res} />
       </div>

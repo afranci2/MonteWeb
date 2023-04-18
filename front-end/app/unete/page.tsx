@@ -1,6 +1,6 @@
 import React from "react";
 import "../../public/globals.css";
-import Navbar from "../../sections/navbar/Navbar";
+import Navbar2 from "../../sections/navbar/Navbar2";
 import Footer from "../../sections/footer/Footer";
 import Header from "../../sections/header/Header";
 import DefaultBody from "../../sections/body/defaultBody/DefaultBody";
@@ -25,19 +25,16 @@ const Michael = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Imag
 const page = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar2 />
       <Header
         image={Michael}
         headerText={"Unete"}
         classChangeText={undefined}
         contentPosition={"center"}
-        subheadingText={
-          "Descubre cómo puedes formar parte de nuestra familia de fe"
-        }
+        subheadingText={"Descubre cómo puedes formar parte de nuestra familia de fe"}
         containerheight={undefined}
         children={undefined}
-        video={undefined}
-      ></Header>
+        video={undefined} buttonColor={undefined} buttonLink={undefined} buttonText={undefined} show={undefined}      ></Header>
       <div className="tabs-section bg-slate-100">
         <div className="MOBILE flex w-11/12 m-auto md:hidden ">
           <DefaultBody>

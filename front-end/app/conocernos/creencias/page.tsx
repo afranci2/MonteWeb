@@ -81,7 +81,7 @@ function page() {
             <img className="object-cover w-screen" src={pic}></img>
           </div>
         </div>
-        <div className="z-40 relative">
+        <div className="z-40 relative w-10/12 m-auto">
           {beliefs_title.map((belief, index) => {
             return (
               <div className="py-8 p-4">

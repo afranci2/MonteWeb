@@ -227,7 +227,7 @@ async function page() {
                 </div>
               </SideTab>
               <SideTab
-                buttonColor="bg-gray-200 text-black"
+                buttonColor="bg-red-800 text-white"
                 headerText="Listo para servir?
               "
                 subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
@@ -244,7 +244,7 @@ async function page() {
                 buttonLink="./"
               />
               <SideTab
-                buttonColor="bg-gray-200 text-black"
+                buttonColor="bg-red-800 text-white"
                 headerText="COVID-19
               "
                 subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos
@@ -274,7 +274,7 @@ async function page() {
         buttonLink={"/conocernos#top"}
       ></Header>
       <DefaultBody>
-        <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-12">
+        <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-6">
           <div className="w-full">
             <h2 className=" font-semibold font-serif text-5xl m-auto flex justify-center items-center">
               Eventos

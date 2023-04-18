@@ -165,39 +165,39 @@ const page = async () => {
           />{" "}
         </Link>
         <div className="overflow-hidden relative gap-8  grid md:grid-cols-2 w-full py-12 p-8 md:gap-0">
-        <div className="text-white m-auto w-11/12">
-          <div className="overflow-hidden bg-black h-full rounded-lg">
-            {" "}
-            <Link href={"/conocernos/historia/conociendo-el-presidente"}>
-              <Header
-                video={ConocernosVideo}
-                contentPosition="center"
-                headerText="Un Mensaje del Presidente"
-                children={undefined}
-                image={undefined}
-                classChangeText={undefined}
-                containerheight={"h-screen"}
-              ></Header>
-            </Link>
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black h-full rounded-lg">
+              {" "}
+              <Link href={"/conocernos/historia/conociendo-el-presidente"}>
+                <Header
+                  video={ConocernosVideo}
+                  contentPosition="center"
+                  headerText="Un Mensaje del Presidente"
+                  children={undefined}
+                  image={undefined}
+                  classChangeText={undefined}
+                  containerheight={"h-screen"}
+                ></Header>
+              </Link>
+            </div>
+          </div>
+          <div className="text-white m-auto w-11/12">
+            <div className="overflow-hidden bg-black h-full w-full rounded-lg">
+              {" "}
+              <Link href="/conocernos/mensaje-de-la-vicepresidenta">
+                <Header
+                  video={ConocernosVideo}
+                  contentPosition="center"
+                  headerText="Un Mensaje de la Vicepresidenta"
+                  children={undefined}
+                  image={undefined}
+                  classChangeText={undefined}
+                  containerheight={"h-screen"}
+                ></Header>
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="text-white m-auto w-11/12">
-          <div className="overflow-hidden bg-black h-full w-full rounded-lg">
-            {" "}
-            <Link href="/conocernos/mensaje-de-la-vicepresidenta">
-              <Header
-                video={ConocernosVideo}
-                contentPosition="center"
-                headerText="Un Mensaje de la Vicepresidenta"
-                children={undefined}
-                image={undefined}
-                classChangeText={undefined}
-                containerheight={"h-screen"}
-              ></Header>
-            </Link>
-          </div>
-        </div>
-      </div>
         <div className="div" id="creencias">
           <Header
             children={undefined}
@@ -218,7 +218,6 @@ const page = async () => {
         </div>
 
         <div id="historia-h">
-
           <BodySectionImageRight
             image={anniversary}
             headingText="Historia"
@@ -261,6 +260,19 @@ const page = async () => {
                 </Link>
               </li>
             </ul>
+            <div className="py-8">
+              <Link href="/conocernos/historia">
+                <div className="flex  gap-4">
+                  <button className="text-black text-sm  font-bold  rounded-lg text-center ">
+                    Historia{" "}
+                  </button>{" "}
+                  <IoIosArrowForward
+                    className=" flex items-center my-auto"
+                    size={12}
+                  />{" "}
+                </div>
+              </Link>
+            </div>
           </BodySectionImageRight>
         </div>
         <div id="lideres">
@@ -285,7 +297,7 @@ const page = async () => {
             containerheight={"h-60"}
           />
         </div>
-        
+
         <ChurchZip />
 
         <IglesiasChurchSection churches={res} conocernos={"Wrg"} />
