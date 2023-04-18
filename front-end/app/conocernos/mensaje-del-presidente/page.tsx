@@ -31,10 +31,10 @@ function page() {
         <div className=" relative overflow-hidden  m-auto items-center w-full  flex justify-center h-96">
           <div className="z-40  m-auto absolute text-white  w-10/12 ">
             <h1 className="font-semibold font-serif text-5xl">
-              Un Mensaje De La Vicepresidenta
+              Un Mensaje del Presidente
             </h1>
             <h1 className="py-2 text-sm font-light">
-              Nos relata la Pastora Isabel Francisco
+              Nos relata el Rev. Samuel Francisco
             </h1>
           </div>
           <div className="z-20 absolute w-full h-full bg-black/30"></div>
@@ -42,87 +42,107 @@ function page() {
             <img className="object-cover h-full w-screen" src={pic}></img>
           </div>
         </div>
-
         <BodySectionImageLeft
-          headingText={"Bienvenida Pastoral"}
+          headingText={"¿Por qué nació el Movimiento Pentecostal Monte Sinaí?"}
           subheadingText={
-            "Reciban un cordial saludo y muchas bendiciones de los Pastores: el Rev. Samuel e Isabel Francisco. Deseamos hacerle conocer nuestro llamado, misión, visión y formación del Movimiento Pentecostal Monte Sinaí y a la misma vez, invitarle a usted y a toda su familia para que unidos, podamos cumplir el propósito de Dios."
+            "Esta es una pregunta muy importante. Todas las organizaciones tienen una razón de ser. Algunas nacen y desaparecen, y otras nacen y son permanentes. ¿Cuál es la diferencia entre ambas? "
           }
-          subheadingText2={
-            "  Por lo tanto, deseamos por este medio, presentarte el propósito principal de esta revista: "
-          }
+          subheadingText2={`Una tuvo su origen en la buena voluntad humana; la otra nació del genuino llamado de Dios. Este Movimiento nació con dolor de parto del corazón de Dios, y lo que viene de Dios es permanente.
+`}
           image={firstpic}
         />
         <Header
           children={undefined}
           image={secondpic}
-          headerText={`"Enterate"`}
+          subheadingText={`Alcanzar al mundo entero para el Rey de reyes y Señor de señores`}
           classChangeText={undefined}
           buttonColor={undefined}
           buttonLink={undefined}
           buttonText={undefined}
-          contentPosition={undefined}
+          contentPosition={"center"}
           video={undefined}
-          subheadingText={undefined}
+          headerText={`"La Visión de un Llamado Divino"`}
           containerheight={undefined}
           show={undefined}
         />{" "}
         <BodySectionImageRight
-          headingText={"Un Proposito"}
-          subheadingText={
-            "Su propósito es presentarte a un Dios que todo lo puede, aunque hayan cosas imposibles para los hombres, para Dios todo es posible. "
-          }
-          subheadingText2={
-            "También deseamos hacerte enterar, de cómo ese Dios, que es Todopoderoso, ha sido el promotor y consumador de todo cuanto el Movimiento Pentecostal Monte Sinaí, ha estado llevando a cabo y que ha salido de su corazón, que hagamos para su Gloria manifestándose a través de nosotros como Iglesia, dándo a conocer al mundo, la Misión y la Visión que nos ha sido encomendada en S. Marcos 16:15, a nosotros como pueblo suyo que somos, mediante los acontecimientos ocurridos en nuestra trayectoria."
-          }
+          subheadingText={`Al escribir este preámbulo, sólo somos unas pocas semillas que Dios tiene en sus manos para esparcir por la tierra. Sólo Dios sabe lo que seremos mañana si su regreso se retrasa. Pero aunque el regreso de Cristo se retrase o aparezca justo en el momento en que estoy escribiendo, nuestra visión seguirá siendo la misma: alcanzar el mundo entero para el Rey de reyes y Señor de señores.
+
+`}
+          subheadingText2={`Dios está buscando hombres vigilantes que anuncien a viva voz la buena nueva de la salvación, que prediquen la palabra de Dios a tiempo y fuera de tiempo, hombres que se dediquen exclusivamente al Señor; hombres incansables que conozcan el uso de la Espada del Espíritu Santo y que se cubran con la armadura de Dios para enfrentar a una sociedad con ataduras y yugos que sólo Dios sabe romper; una sociedad desorientada que pretende saber hacia dónde va mientras se pierde en el ancho mar de la vida, navegando sin destino.
+
+`}
           image={firstpic}
         ></BodySectionImageRight>
         <BodySectionImageRight
-          subheadingText="Somos un Movimiento Pentecostés, el cual está compuesto por varios Ministerios puesto por Dios. Un Cuerpo Ministerial que procura la Unidad del Espíritu en los vínculos de la paz, en el que se congrega un grupo de personas redimidas por la Sangre de Cristo, para adorar al Señor, para confraternizar, para aconsejar mutuamente, para recibir instrucciones de la Santa Bíblia, con el objeto de propagar el Evangelio, de fomentar la Obra del Ministerio y el ejercicio de los Dones Espirituales, tal como lo enseña el NT. Con el mismo propósito que lo hacía la Iglesia Primitiva (S. Marcos 16:15). "
-          subheadingText2="Levantándo y creándo un cuerpo representativo de la gente redimida. Creyentes llenos del Espíritu Santo, comisionando en ellos: Evangelístas, Pastores, Maestros y Misioneros, para el trabajo local y la evangelización del mundo. Nuestro propósito y objetivo es promover actividades y cultos conforme al orden Bíblico. Nuestro Movimiento siempre se ha caracterizado en todo su apogeo desde antes de su comienzo, con el Ministerio de las Misiones, tanto locales como Internacionales.
+          subheadingText={`Hoy, hay dos grandes fuerzas que destruyen nuestra sociedad de la angustia. Una de ellas es la fuerza exterior de Satanás, haciendo sus grandes ofertas engañosas para embaucar a los hombres faltos de conocimiento de Dios, ganándolos con la riqueza falsa que pasa rápidamente, con los deseos carnales que llegan a una gran variedad de trucos diabólicos como: la pornografía con veneno que mata, las drogas, el aborto criminal, el adulterio fatal, y la terrible fornicación que se acepta como algo normal.
 
-          "
+          `}
+          subheadingText2={`Otra fuerza tan peligrosa como la mencionada anteriormente, es la religión organizada de hoy, con todos sus trucos y falsedades. La religión ata al hombre a Dios, pero ha creado muchos dioses de su propia imaginación y ha prestado servicio y el resultado final es el mismo: un mundo con muchas religiones, pero desvinculado de la dirección verdadera hacia Cristo.
+
+          `}
           image={third}
         />
         <BodySectionImageLeft
+          subheadingText={`El hombre de hoy está atado; podríamos decir que el hombre de hoy es esclavo de la filosofía moderna y necesita un encuentro personal y vital con el único que puede darle la vida eterna: Jesucristo, mi salvador; y el salvador de los que se rindan a sus pies.
+
+            `}
+          image={third}
+        />
+        <BodySectionImageLeft
+          blog3={
+            <div className="py-4 border-b-2 w-3/4">
+              <p className=" font-bold text-xl">
+                Monte Sinaí, un Nuevo Pilar en la Defensa de la Sana Doctrina
+              </p>
+            </div>
+          }
           blog2={
-            <div className="text-sm">
+            <div className="text-sm pt-8">
               <p>
-                Como organización, tenemos la responsabilidad de predicar las
-                Buenas Nuevas, la cual nace en nuestros corazones con el
-                propósito de ser un instrumento del Todopoderoso. Que se
-                esfuerza en cumplir la gran comisión dada en S. Marcos 16:15:
-                “Id y predicad el evangelio a toda criatura…
+                Monte Sinaí viene a formar parte y continuar la labor de
+                aquellos pilares que a lo largo de la historia de la iglesia,
+                han defendido la sana doctrina de la palabra de Dios comenzando
+                por los doce Apóstoles.
               </p>
               <br></br>
               <p>
-                De esa manera, podamos alcanzar a hombres y mujeres que se hayan
-                en ese estado lamentable del pecado y sean libres por medio de
-                su poderosa Palabra, para que así, puedan lograr un mejor
-                destino para sus vidas. También deseamos hacerte concientizar
-                que el Dios de hoy, es el mismo de ayer y seguirá siéndolo por
-                todos los siglos de los siglos.
+                El apóstol Pablo; a quien se le apareció Jesús como un nacido
+                fuera de tiempo según 1 Corintios 15:8-9 “Y al fin se me vio
+                también a mí, como a uno nacido fuera de tiempo. Porque yo soy
+                el más pequeño de los apóstoles, que no soy digno de ser llamado
+                apóstol, porque perseguí a la iglesia de Dios”. Y terminando con
+                todos aquellos que han engrosado la línea de hombres ilustres,
+                dedicados y valientes incluyendo a uno de los más altos
+                apóstoles del siglo XX, mi padre espiritual el Rev. Luis M.
+                Ortiz, quien sigue siendo para mí, la identificación de lo que
+                es el Movimiento Misionero Mundial, organización en la que
+                trabajé durante veintiún años, y donde me formé, para ser lo
+                que, por la misericordia de Dios, soy hoy.
               </p>
               <br></br>
               <p>
-                Ese es el mismo Dios que llama, y te está llamando a que le
-                sirvas con todo tu corazón. Y si Él, te ha llamado para un
-                Ministerios en específico, Él respalda, y cuando Él respalda, Él
-                bendice y cumple sus propósitos, porque Él es fiel para con
-                todos los que le buscan de verdad, y especialmente para con
-                aquellos que obedecen y llevan a cabo sus propósitos. Esto es
-                para los que se atreven a entrar en las profundas aguas de este
-                evangelio, que es el lugar donde podrás conocer al verdadero
-                Dios al que le sirves.
+                Nuestra visión es seguir presentando a Cristo crucificado por
+                nuestros pecados y resucitado del sepulcro para nuestra
+                justificación; proclamar el Evangelio de acuerdo con el
+                postulado bíblico mencionado en Marcos 16:15 de predicar el
+                Evangelio a toda criatura. El que crea y se bautice se salvará;
+                pero el que no crea se condenará.
               </p>
             </div>
           }
           blog={
-            <div className="">
-              <p className="font-bold text-sm">
-                “Y sabemos que a los que aman a Dios, todas las cosas les ayudan
-                a bien, esto es, a los que conforme a su propósito son
-                llamados.” (Romanos 8:28).{" "}
+            <div className="pt-8">
+              <p className="text-sm">
+                Estamos viviendo en tiempos muy peligrosos y perversos. Estamos
+                siendo testigos del comportamiento de la falta de identidad con
+                la santa doctrina. Hoy en día casi todas las iglesias están
+                adoptando la misma filosofía de tolerancia a cosas que
+                consideran sin importancia para poder tener uniformidad en la
+                iglesia. Esto ha traído como consecuencia una separación de la
+                consagración hacia Dios y una notable indiferencia en la Iglesia
+                de Dios. Se manifiesta en frialdad para la obra de Dios cuyos
+                síntomas son: apatía, tibieza y rechazo a la palabra de Dios.
               </p>
               <div className="object-cover w-full h-full  p-8">
                 <Image
@@ -132,83 +152,88 @@ function page() {
                   height={1000}
                   alt="pic2"
                 ></Image>
+                <p className="pt-4">Source:wef</p>
               </div>
             </div>
           }
           image={undefined}
         ></BodySectionImageLeft>
         <BodySectionImageLeft
+          blog3={
+            <div className="py-4 border-b-2 w-3/4">
+              <p className=" font-bold text-xl">
+                El Monte Sinaí: La Experiencia de la Nación Elegida por Dios en
+                el Desierto
+              </p>
+            </div>
+          }
           blog2={
-            <div className="text-sm">
+            <div className="text-sm pt-8">
               <p>
-                Sus promesas se dejan ver notorias a nuestro paso. Porque
-                nuestras pisadas no van solas, sino como nos muestra una
-                reflexión muy popular de “Las pisadas sobre la arena”, que Él es
-                quien nos lleva cargando en sus brazos, la cual es nuestra
-                Visión, predicar el evangelio de nuestro Señor Jesucristo a toda
-                criatura.
-              </p>
-              <br></br>
-              <p>
-                A partir de esa premisa, poder alcanzar territorios que todavía
-                no han sido liberados del poder de satanás. Los cuales le
-                llamamos territorios Blancos. Declarando con una Palabra
-                poderosa, la Palabra de Dios y sellándolos por medio del
-                Espíritu Santo, en el nombre de nuestro Salvador Jesucristo, de
-                que serán libertados.
-              </p>
-              <p className=" text-sm">
-                Y esto se logra, cuando usted y yo, decidimos marchar hacia
-                adelante en fe. Creyéndole a aquél, quien es el que nos da la
-                victoria. Con esto te digo, que si piensas emprender este
-                Ministerio Pastoral o cualquier otro Ministerio, espera ser
-                llamado y ordenado por Dios, ya que lo que Él te promete, lo
-                cumplirá y así mismo lo verás cumplido en ti mismo(a), en todo
-                lo que emprendas. ¡No desmayes! ¡Sigue hacia adelante!
+                Monte Sinaí nace en medio de un gran desierto, que es nuestro
+                mundo de hoy, desorientado y engañado por la hipocresía y la
+                falsedad que reina en nuestro mundo, por falta del pan
+                espiritual que es la palabra de Dios. El capítulo 19 del libro
+                del Éxodo, versículos 1 a 25, narra la experiencia de la nación
+                elegida por Dios. Después de haber sido rescatados por la
+                poderosa mano de Dios, cuando estaban esclavizados en Egipto y
+                tres meses después de esta liberación, fueron llevados al
+                desierto del Sinaí. Este nombre es también sinónimo del monte
+                Horeb, identificado como el monte de Dios. Dios llamó a Moisés
+                para comisionarlo como jefe de la nueva nación en el Monte Sinaí
+                en medio de una zarza ardiente que no se consumía. (Éxodo,
+                capítulo 3, versículo 2). Después, cuando la vida de Moisés se
+                preparó como pastor del rebaño de su suegro Jetro y recibió la
+                visión de la zarza ardiente, terminó las credenciales de su
+                poder a través de este hombre llamado Moisés y después de
+                terminar de liberar a su pueblo de Egipto; tres meses después
+                llegaron al desierto del Sinaí.
               </p>
             </div>
           }
           blog={
-            <div className="">
-              <p className="text-sm">
-                Él te dará las fuerzas que necesitarás y te dará las
-                herramientas necesarias para que esa Misión sea victoriosa.
-                Siempre procurando tener una visión clara hacia donde el
-                Todopoderoso te dirige. Recordando siempre que tu mirada debe
-                estar puesta sobre la blanca soberanía y vocación, a Jesucristo
-                mismo. “No mirando nosotros las cosas que se ven, sino las que
-                no se ven; pues las cosas que se ven son temporales, pero las
-                que no se ven son eternas.” (2 Corintios 4:18). De la misma
-                manera que la Biblia registra los acontecimientos ocurridos a
-                José (Gén. 37-48-penúltimo hijo de Jacob [llamado después,
-                Israel]), así mismo Dios ha de cumplir lo que Él prometió a tu
-                vida si depositas en Él, la misma confianza que Él ha depositado
-                en tí, y que espera de tí, cuando decides caminar en Fe,
-                creyéndole a Él.
-              </p>
+            <div className="pt-8">
+              <div className="object-cover w-full h-full  p-8">
+                <Image
+                  className="w-full"
+                  src={pic}
+                  width={1000}
+                  height={1000}
+                  alt="pic2"
+                ></Image>
+                <p className="pt-4">Source:wef</p>
+              </div>
             </div>
           }
           image={undefined}
         ></BodySectionImageLeft>
-        <Header
-          children={undefined}
-          image={secondpic}
-          headerText={"Conclusion"}
-          classChangeText={undefined}
-          buttonColor={undefined}
-          buttonLink={undefined}
-          buttonText={undefined}
-          contentPosition={"center"}
-          video={undefined}
-          subheadingText={`De la misma
-          manera que la Biblia registra los acontecimientos ocurridos a
-          José, así mismo Dios ha de cumplir lo que Él prometió a tu
-          vida si depositas en Él, la misma confianza que Él ha depositado
-          en tí, y que espera de tí, cuando decides caminar en Fe,
-          creyéndole a Él.`}
-          containerheight={undefined}
-          show={false}
-        />{" "}
+        <BodySectionImageLeft
+          headingText={"Conclusion"}
+          subheadingText={`Los mayores avivamientos a lo largo de la historia se identifican con el fuego. Nuestro Dios es un Dios de fuego. Se reveló a Moisés en medio del fuego, y el profeta Elías fue un profeta de fuego. Él es quien hace que sus ángeles sean espíritus, y que su ministerio sea una llama de fuego. Pentecostés comenzó con fuego. El capítulo 2 del libro de los Hechos dice “…y se les aparecieron lenguas repartidas como de fuego, y se posó sobre cada uno de ellos” (versículo tres).
+
+`}
+          blog3={<div>wdfwe</div>}
+          subheadingText2={
+            <div>
+              <p>
+                `Cuando Dios estaba estableciendo su pacto con esta nación, en
+                esa montaña descendió la gloria de Dios. El versículo 18 del
+                capítulo 19 del Éxodo dice: “Y el monte Sinaí se convirtió en
+                humo, porque el Señor descendió sobre él en fuego`
+              </p>
+              <br></br>
+              <p>
+                Esperamos en el Supremo Señor de nuestras vidas, que a lo largo
+                de la historia de este movimiento, el fuego siga ardiendo en
+                cada corazón como en aquel momento en el día de Pentecostés.
+              </p>
+              <br></br>
+              <p >-Reverendo Samuel Francisco</p>
+            </div>
+          }
+          image={firstpic}
+        />
+        
       </section>
 
       <Footer />
