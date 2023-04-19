@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import AdminDashboard from "../../components/admindashboard/AdminDashboard";
 import NotAdmin from "../../components/admindashboard/NotAdmin";
-import Navbar3 from '../../sections/navbar/NavbarAdmin'
+import Navbar3 from "../../sections/navbar/NavbarAdmin";
 
 // retrieve the token from the cookie
 const fetchProtectedData = async (token) => {
@@ -35,16 +35,16 @@ const page = () => {
   }, []);
 
   if (getToken) {
-    const res =  fetchProtectedData(getToken);
-    console.log(res)
-
+    const res = fetchProtectedData(getToken);
+    console.log(res);
   }
 
   return (
     <div>
+      <Navbar3 />
+
       {getToken ? (
         <div>
-          <Navbar3/>
           <AdminDashboard />
         </div>
       ) : (

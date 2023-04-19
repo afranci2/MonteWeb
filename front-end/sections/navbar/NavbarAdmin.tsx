@@ -26,7 +26,7 @@ function Navbar() {
           <div className="">
             <Link href={"/"}>
               <div className="desktop-logo w-52 align-center top-2.5 absolute flex">
-                {/*<img src={showDiv ? logo2 : otherlogo} alt="logo" />   */}
+                <img src={showDiv ? logo2 : otherlogo} alt="logo" />
               </div>
             </Link>
           </div>
