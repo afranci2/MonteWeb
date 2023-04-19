@@ -1,23 +1,16 @@
-"use client";
 import React from "react";
-import { useState, useEffect } from "react";
-import { RiMenu2Line, RiCloseLine, RiSearchLine } from "react-icons/ri";
+
 const logo2 = "https://monte-assets.s3.amazonaws.com/logo/new-logo.png";
 const otherlogo = "https://monte-assets.s3.amazonaws.com/logo/image2.png";
-const mobile__logo__fileAWS =
-  "https://monte-assets.s3.amazonaws.com/logo/mobile_logo.webp";
+
 import Link from "next/link";
-const mobileLogo2 =
-  "https://monte-assets.s3.amazonaws.com/logo/image2+copy.png";
+
 import "./navbar.css";
 import Logout from "./Logout";
 
 function Navbar() {
-  const [toggleMenu, setToggleMenu] = useState(false);
 
   const showDiv = false;
-
-  const icon = "000";
 
   return (
     <nav>

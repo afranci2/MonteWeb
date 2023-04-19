@@ -41,10 +41,10 @@ const page = () => {
 
   return (
     <div>
-      <Navbar3 />
-
       {getToken ? (
         <div>
+          <Navbar3 />
+
           <AdminDashboard />
         </div>
       ) : (
