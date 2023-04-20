@@ -55,7 +55,7 @@ const Events = () => {
                 <tr className="" key={event.id}>
                   <td
                     onClick={clickHandler}
-                    className="cursor-pointer hover:bg-gray-200"
+                    className="cursor-pointerhover:bg-gray-200"
                   >
                     Yes/No
                   </td>
