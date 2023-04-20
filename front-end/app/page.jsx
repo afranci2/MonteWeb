@@ -227,7 +227,7 @@ async function page() {
                 </div>
               </SideTab>
               <SideTab
-                buttonColor="bg-red-800 text-white"
+                buttonColor="bg-gray-200 text-black"
                 headerText="Listo para servir?
               "
                 subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
