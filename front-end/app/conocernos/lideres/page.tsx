@@ -1,23 +1,17 @@
 import React from "react";
-import { IoIosArrowForward } from "react-icons/io";
 import Navbar2 from "../../../sections/navbar/Navbar2";
 import Footer from "../../../sections/footer/Footer";
-import Header from "../../../sections/header/Header";
-import Banner from "../../../components/banner/Banner";
-import Banner2 from "../../../components/banner/Banner2";
-const pic =
-  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/241045481_6088712877867463_5615439554713167151_n.jpg";
+
 import BodySectionImageLeft from "../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 import BodySectionImageRight from "../../../sections/body/bodyImageText/imageLeftTextRight/BodySectionImageLeft";
-const pic2 =
-  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/127053599_4787008098037954_87363432099015818_n.jpg";
+
 const firstpic =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++035.jpg";
 const secondpic =
-  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274687118_7121994934539247_7298005248163609642_n.jpg";
+"https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274641260_7121963861209021_5223219459611293665_n.jpg"
 const third =
-  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Samuel/274641260_7121963861209021_5223219459611293665_n.jpg";
-import Image from "next/image";
+"https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/Isabel/245199343_6305001846238564_6030649010072531409_n.jpg"
+
 const pic3="https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Pastors+Images/WIRECAST_SlidShow++048.jpg"
 
 function page() {
@@ -61,7 +55,7 @@ function page() {
           subheadingText2={
             "  Por lo tanto, deseamos por este medio, presentarte el propósito principal de esta revista: "
           }
-          image={firstpic}
+          image={secondpic}
         />
         <BodySectionImageLeft
           headingText={
@@ -76,7 +70,7 @@ function page() {
           subheadingText2={
             "  Por lo tanto, deseamos por este medio, presentarte el propósito principal de esta revista: "
           }
-          image={firstpic}
+          image={third}
         />
         <BodySectionImageRight
           headingText={

@@ -269,9 +269,9 @@ const page = async () => {
                 </Link>
               </li>
             </ul>
-            <div className="py-8">
+            <div className="py-8 ">
               <Link href="/conocernos/historia">
-                <div className="flex  gap-4">
+                <div className=" flex justify-center gap-4 md:justify-start md:ml-">
                   <button className="text-black text-sm  font-bold  rounded-lg text-center ">
                     Historia{" "}
                   </button>{" "}
@@ -285,7 +285,7 @@ const page = async () => {
           </BodySectionImageRight>
         </div>
         <div id="lideres">
-          <Lideres pastors={lidereslist} />
+          <Lideres show_link={true} pastors={lidereslist} />
         </div>
       </div>
       <section className="relative pt-4">
