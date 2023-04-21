@@ -273,7 +273,7 @@ async function page() {
         buttonText="Conocernos"
         buttonLink={"/conocernos#top"}
       ></Header>
-      {res.length > 2 && (
+      {res.length > 1 && (
         <DefaultBody>
           <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-6">
             <div className="w-full">
