@@ -22,7 +22,7 @@ function Header({
   direction,
 }) {
   return (
-    <div className="h-[500px] overflow-hidden wrapper relative flex justify-center items-center z-20 text-white">
+    <div className="h-screen w-screen overflow-hidden wrapper relative flex justify-center items-center z-20 text-white">
       <div className="hidden md:flex">
         <div
           className={`${
@@ -49,12 +49,12 @@ function Header({
         className={`${
           classChangeText
             ? `${classChangeText}`
-            : "w-11/12 z-20 absolute md:hidden gap-4 flex flex-col"
+            : "w-11/12 z-40 absolute md:hidden gap-4 flex flex-col"
         } ${!headerText && "hidden"} `}
       >
         <div className=" m-auto z-40 flex flex-col gap-2">
-          <div className={"text-lg text-left"}>Monte Sinai</div>
-          <p className="font-semibold text-6xl">{headerText}</p>
+          <div className={"text-2xl font-serif "}>Monte Sinai</div>
+          <p className="font-semibold text-5xl">{headerText}</p>
         </div>
         <div className={buttonText ? "z-20 button flex py-6" : "hidden"}>
           <Button
@@ -66,7 +66,7 @@ function Header({
         </div>
       </div>
       {children}
-      <div className="bg-gradient-to-b from-slate-600/20 to-black/50 h-full w-full absolute z-0"></div>
+      <div className="bg-black/30 h-screen w-screen absolute z-20"></div>
       <div className={image ? "w-full" : "hidden"}>
         <div className="contain">
           {image ? (
