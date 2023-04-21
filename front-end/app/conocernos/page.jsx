@@ -263,7 +263,7 @@ const page = async () => {
                 <Link href="/conocernos/historia/experiencias-de-westminster">
                   <div className=" p-4">
                     <p className="font-bold text-xs">
-                      Las Experiencias de Westminster St.
+                      Las Experiencias de Westminste St.
                     </p>
                   </div>
                 </Link>
