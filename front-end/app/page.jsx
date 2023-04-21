@@ -109,7 +109,7 @@ async function page() {
         <Banner
           color="bg-red-800/90"
           headerText=""
-          subheadingText=""
+          subheadingText=" "
           position="bottom-0"
         >
           <div className="content">
