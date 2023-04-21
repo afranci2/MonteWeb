@@ -154,7 +154,7 @@ async function page() {
               subheadingText="¿Listo para conocer una iglesia? Encuentre una congregación cerca de ti
 "
               buttonLink="/iglesias"
-              buttonText="ACOMPANANOS"
+              buttonText="ACOMPAÑANOS"
               image={IglesiasCardImage}
               imagePosition="object-left "
             />
@@ -196,7 +196,7 @@ async function page() {
                 subheadingText="¿Listo para conocer una iglesia? Encuentre una congregación cerca de ti
                   "
                 buttonLink="/iglesias"
-                buttonText="ACOMPANANOS"
+                buttonText="ACOMPAÑANOS"
                 image={IglesiasCardImage}
               />
 
@@ -232,7 +232,7 @@ async function page() {
               "
                 subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
               "
-                buttonText="COMENZAR AHORA"
+                buttonText="Comenzar Ahora"
                 buttonLink="./"
               />
               <SideTab
@@ -240,16 +240,16 @@ async function page() {
                 headerText="Diezmar"
                 subheaderText="Dar una ofrenda o programa diezmos recurrentes.
               "
-                buttonText="DAR AHORA"
+                buttonText="Dar Ahora"
                 buttonLink="./"
               />
               <SideTab
-                buttonColor="bg-red-800 text-white"
+                buttonColor="bg-gray-100 text-black"
                 headerText="COVID-19
               "
                 subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos
               "
-                buttonText="LEER MAS"
+                buttonText="Leer Mas"
                 buttonLink="./"
               />
             </div>
@@ -270,7 +270,7 @@ async function page() {
           </div>
         }
         show={false}
-        buttonText="CONOCERNOS"
+        buttonText="Conocernos"
         buttonLink={"/conocernos#top"}
       ></Header>
       <DefaultBody>
