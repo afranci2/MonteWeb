@@ -328,7 +328,7 @@ async function page() {
       </DefaultBody>
       <BodySectionImageLeft
         headingText={"La Visión de un Llamado Divino"}
-        subheadingText={`Los mayores avivamientos a lo largo de la historia se identifican con el fuego. Nuestro Dios es un Dios de fuego. Se reveló a Moisés en medio del fuego, y el profeta Elías fue un profeta de fuego. Él es quien hace que sus ángeles sean espíritus, y que su ministerio sea una llama de fuego. Pentecostés comenzó con fuego. El capítulo 2 del libro de los Hechos dice “…y se les aparecieron lenguas repartidas como de fuego, y se posó sobre cada uno de ellos” (versículo tres).
+        subheadingText={`"Los mayores avivamientos a lo largo de la historia se identifican con el fuego. Nuestro Dios es un Dios de fuego. Se reveló a Moisés en medio del fuego, y el profeta Elías fue un profeta de fuego. Él es quien hace que sus ángeles sean espíritus, y que su ministerio sea una llama de fuego. Pentecostés comenzó con fuego. El capítulo 2 del libro de los Hechos dice “…y se les aparecieron lenguas repartidas como de fuego, y se posó sobre cada uno de ellos” (versículo tres).
 
 `}
         blog3={<div>wdfwe</div>}
@@ -344,7 +344,7 @@ async function page() {
             <p>
               Esperamos en el Supremo Señor de nuestras vidas, que a lo largo de
               la historia de este movimiento, el fuego siga ardiendo en cada
-              corazón como en aquel momento en el día de Pentecostés.
+              corazón como en aquel momento en el día de Pentecostés."
             </p>
             <br></br>
             <p className="font-bold">-Reverendo Samuel Francisco</p>

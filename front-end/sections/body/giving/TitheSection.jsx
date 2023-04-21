@@ -9,7 +9,8 @@ const Mailbox = "https://monte-assets.s3.amazonaws.com/icon/icon-mailbox.png";
 const Logo =
   "https://assets-global.website-files.com/5f6a31379c9e2712518b8d6c/61fbe41d8e639d18d7c516b7_Logomark.svg";
 import logo3 from "./tithe.png";
-
+import { GrPersonalComputer } from "react-icons/gr";
+import { BsFillPersonFill } from "react-icons/bs";
 import logo2 from "./tithe2.jpg";
 import "./tithesection.css";
 
@@ -54,7 +55,11 @@ const TitheSection = () => {
                       option == "Online" ? "bg-gray-100 font-bold" : ""
                     } p-8 border-b-2 cursor-pointer hover:font-bold hover:bg-gray-100`}
                   >
-                    <p className=" m-auto ">En Linea</p>
+                    <div className="flex gap-4">
+                      <GrPersonalComputer size={20} />
+
+                      <p className="my-auto">En Linea</p>
+                    </div>
                   </a>
                   <a
                     value="Person"
@@ -63,7 +68,11 @@ const TitheSection = () => {
                       option == "Person" ? "bg-gray-100 font-bold" : ""
                     } p-8 border-b-2 cursor-pointer hover:font-bold hover:bg-gray-100`}
                   >
-                    <p className="m-auto ">En Persona</p>
+                    <div className="flex gap-4">
+                      <BsFillPersonFill size={20} />
+
+                      <p className="my-auto">En Persona / Envios</p>
+                    </div>{" "}
                   </a>
                   <a
                     value="Envios"
@@ -72,7 +81,7 @@ const TitheSection = () => {
                       option == "Envios" ? "bg-gray-100 font-bold" : ""
                     } p-8 border-b-2 cursor-pointer hover:font-bold hover:bg-gray-100`}
                   >
-                    <p className="m-auto  ">Envios</p>
+                    <p className="m-auto  ">Otro</p>
                   </a>
                 </div>
               </div>
@@ -208,10 +217,9 @@ const TitheSection = () => {
               <TithelyGiving />
             </div>
             <div className="bg-gray-100 ">
-
-            <div className="w-10/12  m-auto py-16" id="online">
-              <StripeGiving />
-            </div>
+              <div className="w-10/12  m-auto py-16" id="online">
+                <StripeGiving />
+              </div>
             </div>
 
             <div
