@@ -84,7 +84,7 @@ function getDateAndTimeForChurchId(events, id) {
 async function page() {
   const res = await fetchEvents();
   const res2 = await fetchEvents2();
-
+  console.log(res2);
   return (
     <div>
       <Navbar />
@@ -273,59 +273,61 @@ async function page() {
         buttonText="Conocernos"
         buttonLink={"/conocernos#top"}
       ></Header>
-      <DefaultBody>
-        <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-6">
-          <div className="w-full">
-            <h2 className=" font-semibold font-serif text-5xl m-auto flex justify-center items-center">
-              Eventos
-            </h2>
-            <p className="w-3/4 text-sm p-4 m-auto flex text-center justify-center items-center">
-              Descubre nuestros próximos eventos y únete a nuestra comunidad de
-              fe
-            </p>
-          </div>
-        </div>
-
-        <BodySectionImageLeft
-          card={"qwgrwr"}
-          buttonText={"Ver Mas"}
-          headingText={res[res.length - 1].name}
-          subheadingText={res[res.length - 1].description}
-          subheadingText2={getDateAndTimeForChurchId(
-            res2,
-            res[res.length - 1].id
-          )}
-          buttonLink={"/"}
-          image={Michael}
-          buttonColor="bg-yellow-400 text-black"
-        />
-        <BodySectionImageRight
-          card={"qwgrwr"}
-          buttonText={"Ver Mas"}
-          headingText={res[res.length - 2].name}
-          subheadingText={res[res.length - 2].description}
-          subheadingText2={getDateAndTimeForChurchId(
-            res2,
-            res[res.length - 2].id
-          )}
-          buttonLink={"/"}
-          image={Michael}
-          buttonColor="bg-yellow-400 text-black"
-        />
-        <div className="pb-24 bg-gray-300/50 m-auto">
-          <Link href={"/eventos"}>
-            <div className="flex justify-center gap-4">
-              <button className="text-black text-sm font-bold rounded-lg text-center ">
+      {res.length > 2 && (
+        <DefaultBody>
+          <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-6">
+            <div className="w-full">
+              <h2 className=" font-semibold font-serif text-5xl m-auto flex justify-center items-center">
                 Eventos
-              </button>
-              <IoIosArrowForward
-                className=" flex items-center my-auto"
-                size={12}
-              />
+              </h2>
+              <p className="w-3/4 text-sm p-4 m-auto flex text-center justify-center items-center">
+                Descubre nuestros próximos eventos y únete a nuestra comunidad
+                de fe
+              </p>
             </div>
-          </Link>
-        </div>
-      </DefaultBody>
+          </div>
+
+          <BodySectionImageLeft
+            card={"qwgrwr"}
+            buttonText={"Ver Mas"}
+            headingText={res[res.length - 1].name}
+            subheadingText={res[res.length - 1].description}
+            subheadingText2={getDateAndTimeForChurchId(
+              res2,
+              res[res.length - 1].id
+            )}
+            buttonLink={"/"}
+            image={Michael}
+            buttonColor="bg-yellow-400 text-black"
+          />
+          <BodySectionImageRight
+            card={"qwgrwr"}
+            buttonText={"Ver Mas"}
+            headingText={res[res.length - 2].name}
+            subheadingText={res[res.length - 2].description}
+            subheadingText2={getDateAndTimeForChurchId(
+              res2,
+              res[res.length - 2].id
+            )}
+            buttonLink={"/"}
+            image={Michael}
+            buttonColor="bg-yellow-400 text-black"
+          />
+          <div className="pb-24 bg-gray-300/50 m-auto">
+            <Link href={"/eventos"}>
+              <div className="flex justify-center gap-4">
+                <button className="text-black text-sm font-bold rounded-lg text-center ">
+                  Eventos
+                </button>
+                <IoIosArrowForward
+                  className=" flex items-center my-auto"
+                  size={12}
+                />
+              </div>
+            </Link>
+          </div>
+        </DefaultBody>
+      )}
       <BodySectionImageLeft
         headingText={"La Visión de un Llamado Divino"}
         subheadingText={`"Los mayores avivamientos a lo largo de la historia se identifican con el fuego. Nuestro Dios es un Dios de fuego. Se reveló a Moisés en medio del fuego, y el profeta Elías fue un profeta de fuego. Él es quien hace que sus ángeles sean espíritus, y que su ministerio sea una llama de fuego. Pentecostés comenzó con fuego. El capítulo 2 del libro de los Hechos dice “…y se les aparecieron lenguas repartidas como de fuego, y se posó sobre cada uno de ellos” (versículo tres).

@@ -10,7 +10,7 @@ const ServiceTimesTab = (props) => {
           return (
             <div className="py-4 ">
               <p className="text-sm text-white/50">{service.name}</p>
-              <p>{service.day}</p>
+              <p className="text-sm">{service.day}</p>
               <p className="font-semibold text-lg">{service.start_time}</p>
             </div>
           );
