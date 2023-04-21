@@ -37,13 +37,12 @@ const EventCard = ({ event, dates }) => {
           </div>
         </div>
       )}
-      <a target={"_blank"} href={"event.link"}>
+      <a target={"_blank"} href={event.link}>
         <div onClick={clickHandler} className="p-4">
           <div className=" overflow-hidden relative rounded-md">
-            <div className="absolute gradient w-full h-full"></div>
             <Image
               className="object-cover h-full w-full overflow-hidden"
-              src={something}
+              src={event.image}
               alt="image"
               width={1000}
               height={1000}

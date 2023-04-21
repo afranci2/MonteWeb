@@ -5,6 +5,8 @@ import ChurchInfoWindow from '../../../../components/churchInfoWindow/ChurchWind
 
 function IglesiasMapRight(props) {
 
+
+
   function clickHandler() {
     console.log("ewfr");
     setChurches(true);
@@ -38,6 +40,8 @@ function IglesiasMapRight(props) {
         >
           {props.churches &&
             props.churches.map((church) => {
+              console.log(church)
+
               return (
                 <Marker
                   onClick={() => {
@@ -61,7 +65,7 @@ function IglesiasMapRight(props) {
                 >
                   {selectedMarker === church.id && (
                     <InfoWindow>
-                        <ChurchInfoWindow church={church}/>
+                        <ChurchInfoWindow images={props.images} church={church}/>
                     </InfoWindow>
                   )}
                 </Marker>

@@ -84,7 +84,9 @@ function getDateAndTimeForChurchId(events, id) {
 async function page() {
   const res = await fetchEvents();
   const res2 = await fetchEvents2();
-  console.log(res2);
+  console.log(res)
+  console.log(res2)
+
   return (
     <div>
       <Navbar />
@@ -273,7 +275,7 @@ async function page() {
         buttonText="Conocernos"
         buttonLink={"/conocernos#top"}
       ></Header>
-      {res.length > 1 && (
+      {res.length > 1 && res2.length >1 && (
         <DefaultBody>
           <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-6">
             <div className="w-full">
@@ -291,26 +293,26 @@ async function page() {
             card={"qwgrwr"}
             buttonText={"Ver Mas"}
             headingText={res[res.length - 1].name}
-            subheadingText={res[res.length - 1].description}
-            subheadingText2={getDateAndTimeForChurchId(
+            subheadingText2={res[res.length - 1].description}
+            subheadingText={getDateAndTimeForChurchId(
               res2,
               res[res.length - 1].id
             )}
             buttonLink={"/"}
-            image={Michael}
+            image={res[res.length - 1].image}
             buttonColor="bg-yellow-400 text-black"
           />
           <BodySectionImageRight
             card={"qwgrwr"}
             buttonText={"Ver Mas"}
             headingText={res[res.length - 2].name}
-            subheadingText={res[res.length - 2].description}
-            subheadingText2={getDateAndTimeForChurchId(
+            subheadingText2={res[res.length - 2].description}
+            subheadingText={getDateAndTimeForChurchId(
               res2,
               res[res.length - 2].id
             )}
             buttonLink={"/"}
-            image={Michael}
+            image={res[res.length - 2].image}
             buttonColor="bg-yellow-400 text-black"
           />
           <div className="pb-24 bg-gray-300/50 m-auto">
