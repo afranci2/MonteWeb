@@ -122,7 +122,7 @@ async function page() {
         >
           <div className="content">
             <div className="pb-8 border-b-2 border-black">
-              <p className="text-red-700 font-semibold text-md">
+              <p className="text-red-700 font-bold text-md">
                 HORARIOS DE SERVICIO GENERAL
               </p>
               <p className="text-xs">
@@ -130,8 +130,8 @@ async function page() {
               </p>
             </div>
             <br></br>
-            <div className="pt-2 times flex justify-between font-medium text-sm">
-              <p className="f text-sm">
+            <div className="font-semibold times flex justify-between text-sm">
+              <p className=" text-sm">
                 Domingo <br></br>3:00 PM EST
               </p>
               <p className=" text-sm">
