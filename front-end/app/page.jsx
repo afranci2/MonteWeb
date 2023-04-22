@@ -115,7 +115,7 @@ async function page() {
         show={false}
       >
         <Banner
-          color="bg-gray-200/90 text-black"
+          color="bg-gray-100/90 text-black"
           headerText=""
           subheadingText=" "
           position="bottom-0"
@@ -130,7 +130,7 @@ async function page() {
               </p>
             </div>
             <br></br>
-            <div className="font-semibold times flex justify-between text-sm">
+            <div className=" times flex justify-between text-sm">
               <p className=" text-sm">
                 Domingo <br></br>3:00 PM EST
               </p>
