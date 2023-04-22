@@ -111,26 +111,24 @@ async function page() {
         subheadingText="Le invitamos a nuestro servicio de adoración en persona o en linea"
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
-        buttonColor={"bg-red-800"}
+        buttonColor={"bg-red-700"}
         show={false}
       >
         <Banner
-          color="bg-gray-100/90 text-black"
+          color="bg-red-700/90 text-black"
           headerText=""
           subheadingText=" "
           position="bottom-0"
         >
           <div className="content">
-            <div className="pb-8 border-b-2 border-black">
-              <p className="text-red-700 font-bold text-md">
-                HORARIOS DE SERVICIO GENERAL
-              </p>
+            <div className="pb-8 border-b-2 border-white text-white">
+              <p className=" font-bold text-md">HORARIOS DE SERVICIO GENERAL</p>
               <p className="text-xs">
                 Tiempos de servicio pueden variar según la ubicación
               </p>
             </div>
             <br></br>
-            <div className=" times flex justify-between text-sm">
+            <div className=" times flex justify-between text-white text-sm">
               <p className=" text-sm">
                 Domingo <br></br>3:00 PM EST
               </p>
@@ -265,7 +263,7 @@ async function page() {
         </div>
       </div>
       <Header
-        buttonColor={"bg-red-800"}
+        buttonColor={"bg-red-700"}
         video={ConocernosVideo}
         contentPosition="center"
         headerText="Un Genuino Llamado de Dios"
