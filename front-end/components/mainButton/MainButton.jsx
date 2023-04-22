@@ -5,7 +5,7 @@ const MainButton = (props) => {
   return (
     <div className={`${props.buttonPosition==="center" ? "m-auto" : ""} container w-fit min-w-[100px]`}>
       <Link href={`${props.link}`}> 
-        <div className= {`${props.buttonColor ? props.buttonColor : "bg-red-700 text-white "} p-4 w-fit px-8 rounded-md min-w-[100px] ` }>
+        <div className= {`${props.buttonColor ? props.buttonColor : "bg-red-800 text-white "} p-4 w-fit px-8 rounded-md min-w-[100px] ` }>
           <p className="flex justify-center text-xs font-bold min-w-[100px]"> {props.text}</p>
         </div>
       </Link>

@@ -111,11 +111,11 @@ async function page() {
         subheadingText="Le invitamos a nuestro servicio de adoración en persona o en linea"
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
-        buttonColor={"bg-red-700"}
+        buttonColor={"bg-red-800"}
         show={false}
       >
         <Banner
-          color="bg-red-700/90 text-black"
+          color="bg-red-800/90 text-black"
           headerText=""
           subheadingText=" "
           position="bottom-0"
@@ -263,7 +263,7 @@ async function page() {
         </div>
       </div>
       <Header
-        buttonColor={"bg-red-700"}
+        buttonColor={"bg-red-800"}
         video={ConocernosVideo}
         contentPosition="center"
         headerText="Un Genuino Llamado de Dios"
