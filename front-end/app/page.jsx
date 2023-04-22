@@ -1,6 +1,8 @@
 import React from "react";
 import "../public/globals.css";
 import { IoIosArrowForward } from "react-icons/io";
+import ServiceTimesTab from "../components/tab/sideTab/ServiceTimesTab";
+
 import Navbar from "../sections/navbar/Navbar";
 import Footer from "../sections/footer/Footer";
 import Header from "../sections/header/Header";
@@ -32,6 +34,12 @@ import Image from "next/image";
 import { MainButton } from "../components";
 const Markos =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Women/312557903_8245686698836726_2489476650725182482_n.jpg";
+
+const services = [
+  { name: "Servicio Evangelistico", day: "Domingo", start_time: "3:00PM" },
+  { name: "Servicio Biblico", day: "Martes", start_time: "7:00 PM" },
+  { name: "Servicio Especial", day: "Jueves", start_time: "7:30 PM" },
+];
 
 async function fetchEvents() {
   try {
@@ -84,8 +92,6 @@ function getDateAndTimeForChurchId(events, id) {
 async function page() {
   const res = await fetchEvents();
   const res2 = await fetchEvents2();
-  console.log(res)
-  console.log(res2)
 
   return (
     <div>
@@ -109,14 +115,14 @@ async function page() {
         show={false}
       >
         <Banner
-          color="bg-red-800/90"
+          color="bg-gray-200/90 text-black"
           headerText=""
           subheadingText=" "
           position="bottom-0"
         >
           <div className="content">
-            <div className="pb-8 border-b-2">
-              <p className="text-yellow-400 font-semibold text-md">
+            <div className="pb-8 border-b-2 border-black">
+              <p className="text-red-700 font-semibold text-md">
                 HORARIOS DE SERVICIO GENERAL
               </p>
               <p className="text-xs">
@@ -275,7 +281,7 @@ async function page() {
         buttonText="Conocernos"
         buttonLink={"/conocernos#top"}
       ></Header>
-      {res.length > 1 && res2.length >1 && (
+      {res.length > 1 && res2.length > 1 && (
         <DefaultBody>
           <div className="w-full md:w-2/3 border-b-2 m-auto pt-24 pb-6">
             <div className="w-full">
