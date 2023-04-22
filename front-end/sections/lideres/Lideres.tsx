@@ -4,8 +4,8 @@ import { IoIosArrowForward } from "react-icons/io";
 
 async function Lideres({ pastors, show_link }) {
   return (
-    <div className="py-20 m-auto bg-white w-10/12 justify-center flex flex-col">
-      <div className="py-12 w-3/4">
+    <div className="py-20  bg-white w-10/12 justify-center flex flex-col text-center m-auto md:text-left ">
+      <div className="py-12 w-3/4 m-auto md:m-0">
         <p className="font-serif font-semibold text-4xl">Nuestros Lideres</p>
         <p className="w-1/2 text-sm pt-4">
           Conozca a las personas que lideran el camino en Movimiento: un equipo

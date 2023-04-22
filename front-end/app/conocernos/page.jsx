@@ -174,9 +174,8 @@ const page = async () => {
           />{" "}
         </Link>
         <div className="overflow-hidden relative gap-8  grid md:grid-cols-2 w-full py-12 p-8 md:gap-0">
-          <div className="text-white m-auto w-11/12">
+          <div className="text-white m-auto md:w-11/12">
             <div id="presidencia" className="overflow-hidden bg-black h-full rounded-lg">
-              {" "}
               <Link href={"/conocernos/historia/conociendo-el-presidente"}>
                 <Header
                   video={undefined}
@@ -190,7 +189,7 @@ const page = async () => {
               </Link>
             </div>
           </div>
-          <div className="text-white m-auto w-11/12">
+          <div className="text-white m-auto md:w-11/12">
             <div className="overflow-hidden bg-black h-full w-full rounded-lg">
               {" "}
               <Link href="/conocernos/mensaje-de-la-vicepresidenta">
@@ -235,7 +234,7 @@ const page = async () => {
             }
             buttonColor="bg-red-800"
           >
-            <ul className="grid grid-cols-2 gap-2 w-10/12 py-4 sm:m-auto">
+            <ul className=" grid grid-cols-2 gap-2 w-10/12 py-4 m-auto md:m-0">
               <li className="bg-gray-300/20 rounded-sm hover:bg-white">
                 <Link href="/conocernos/historia/">
                   <div className=" p-4">
@@ -303,7 +302,7 @@ const page = async () => {
             subheadingText={
               "Descubre cómo puedes formar parte de nuestra familia de fe"
             }
-            containerheight={"h-60"}
+            containerheight={"h-96"}
           />
         </div>
 
