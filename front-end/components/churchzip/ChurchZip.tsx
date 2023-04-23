@@ -9,7 +9,7 @@ const ChurchZip = () => {
 
   return (
     <div className="w-full py-16 p-16 m-auto bg-gray-100">
-      <div className="w-10/12 m-auto text-black gap-8 flex flex-col text-center justify-center md:justify-between md:text-left md:flex-row">
+      <div className="w-10/12 m-auto text-black gap-8 flex flex-col text-center justify-centermd:justify-between md:text-left md:flex-row">
         <div>
           <p className=" font-semibold font-serif text-4xl  ">
             Un Mision Global
