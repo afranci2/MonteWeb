@@ -35,7 +35,7 @@ const page = () => {
         containerheight={undefined}
         children={undefined}
         video={undefined} buttonColor={undefined} buttonLink={undefined} buttonText={undefined} show={undefined}      ></Header>
-      <div className="tabs-section bg-slate-100">
+      <div className="tabs-section bg-slate-10">
         <div className="MOBILE flex w-11/12 m-auto md:hidden ">
           <DefaultBody>
             <MobileCard
