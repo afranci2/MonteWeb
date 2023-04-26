@@ -55,7 +55,7 @@ function Header({
         </div>
       </div>
       {children}
-      <div className=" h-full w-full absolute z-0 bg-gradient-to-b from-red-800/10 to-black/40"></div>
+      <div className=" h-full w-full absolute z-30 bg-gradient-to-b from-black/10 to-black/40"></div>
       <div className={image ? "object-cover h-full" : "hidden"}>
         <div className="contain h-full">
           {image ? (
