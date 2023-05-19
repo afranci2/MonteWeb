@@ -55,6 +55,8 @@ async function fetchEvents() {
     );
 
     const data = await res.json();
+    console.log(data)
+
     return data; // parses
   } catch (error) {
     console.log(error);
@@ -75,6 +77,7 @@ async function fetchEvents2() {
     );
 
     const data = await res.json();
+    console.log(data)
     return data; // parses
   } catch (error) {
     console.log(error);
@@ -92,6 +95,7 @@ function getDateAndTimeForChurchId(events, id) {
 async function page() {
   const res = await fetchEvents();
   const res2 = await fetchEvents2();
+  
 
   return (
     <div>
@@ -343,14 +347,7 @@ async function page() {
         subheadingText2={
           <div>
             <p>
-              Cuando Dios estaba estableciendo su pacto con esta nación, en esa
-              montaña descendió la gloria de Dios. El versículo 18 del capítulo
-              19 del Éxodo dice: “Y el monte Sinaí se convirtió en humo, porque
-              el Señor descendió sobre él en fuego
-            </p>
-            <br></br>
-            <p>
-              Esperamos en el Supremo Señor de nuestras vidas, que a lo largo de
+              ...Esperamos en el Supremo Señor de nuestras vidas, que a lo largo de
               la historia de este movimiento, el fuego siga ardiendo en cada
               corazón como en aquel momento en el día de Pentecostés."
             </p>
