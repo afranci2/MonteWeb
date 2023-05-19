@@ -62,7 +62,7 @@ function Header({
             <Image
               className="min-h-screen object-cover"
               src={image}
-              alt="some
+              alt="some"
               width={10000}
               height={10000}
             />
