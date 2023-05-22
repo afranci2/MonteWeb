@@ -9,7 +9,7 @@ const TertiaryButton = (props) => {
       } flex justify-center max-h-fit w-full  rounded-md  ${props.buttonColor} drop-shadow-sm`}
     >
       {props.buttonLink ? (
-        <Link href={"props.buttonLink ? props.buttonLink : "/""}>
+        <Link href={"props.buttonLink ? props.buttonLink : '/'"}>
           <div
             className={`m-auto h-full min-w-[50px] justify-center p-4  w-full  `}
           >

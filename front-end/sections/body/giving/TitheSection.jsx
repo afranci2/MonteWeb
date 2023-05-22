@@ -145,7 +145,7 @@ const TitheSection = () => {
                     <MainButton
                       buttonColor={"bg-orange-500 text-white"}
                       buttonPosition={"center"}
-                      buttonLink={"/"}
+                      buttonLink="/unete/contacto"
                       text={"Contacto"}
                     />
                   </div>

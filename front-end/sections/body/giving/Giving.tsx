@@ -12,7 +12,6 @@ const Giving = () => {
     <div className=" w-full py-12 mt-8 flex flex-col ">
       <div className="flex flex-col mx-auto justify-center align-center">
         <p className=" text-center font-regular">Dar Usando</p>
-
         <Image
           className="mx-auto"
           width={200}
@@ -27,7 +26,7 @@ const Giving = () => {
           <TertiaryButton
             text={"Dar Ahora"}
             buttonColor={"bg-yellow-400"}
-            buttonLink={"https://www.efewf.com"}
+            buttonLink="/donar"
           />
         </div>
         <div className="flex gap-4 p-12">
