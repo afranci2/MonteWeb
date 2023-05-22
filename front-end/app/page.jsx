@@ -113,7 +113,7 @@ async function page() {
         subheadingText="Le invitamos a nuestro servicio de adoración en persona o en linea"
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
-        buttonColor={"bg-red-800"}
+        buttonColor={"bg-gray-100 text-black"}
         show={false}
       >
         <Banner
@@ -265,7 +265,7 @@ async function page() {
         </div>
       </div>
       <Header
-        buttonColor={"bg-red-800"}
+        buttonColor={"bg-gray-100 text-black"}
         video={ConocernosVideo}
         contentPosition="center"
         headerText="Un Genuino Llamado de Dios"
@@ -306,7 +306,7 @@ async function page() {
             )}
             buttonLink={"/"}
             image={res[res.length - 1].image}
-            buttonColor="bg-yellow-400 text-black"
+            buttonColor="bg-red-800 "
           />
           <BodySectionImageRight
             card={"qwgrwr"}
@@ -319,7 +319,7 @@ async function page() {
             )}
             buttonLink={"/"}
             image={res[res.length - 2].image}
-            buttonColor="bg-yellow-400 text-black"
+            buttonColor="bg-red-800"
           />
           <div className="pb-24 bg-gray-300/50 m-auto">
             <Link href={"/eventos"}>
