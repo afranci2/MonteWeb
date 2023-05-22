@@ -2,7 +2,7 @@ import React from "react";
 import "../public/globals.css";
 import { IoIosArrowForward } from "react-icons/io";
 import ServiceTimesTab from "../components/tab/sideTab/ServiceTimesTab";
-
+const newphoto1 = "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/274687118_7121994934539247_7298005248163609642_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=peiSkuqDu9MAX-UfM67&_nc_ht=scontent-bos5-1.xx&oh=00_AfAMSjGF6kTHEOq6vVjfqNXmE9HNZ0ZElYnehqDx7-AggQ&oe=6470B922"
 import Navbar from "../sections/navbar/Navbar";
 import Footer from "../sections/footer/Footer";
 import Header from "../sections/header/Header";
@@ -55,7 +55,6 @@ async function fetchEvents() {
     );
 
     const data = await res.json();
-    console.log(data)
     return data; // parses
   } catch (error) {
     console.log(error);
@@ -76,8 +75,6 @@ async function fetchEvents2() {
     );
 
     const data = await res.json();
-    console.log(data)
-
     return data; // parses
   } catch (error) {
     console.log(error);
@@ -115,11 +112,11 @@ async function page() {
         subheadingText="Le invitamos a nuestro servicio de adoración en persona o en linea"
         buttonText="EN VIVO"
         buttonLink="/en-vivo"
-        buttonColor={"bg-gray-100 text-black"}
+        buttonColor={"bg-red-800 text-white"}
         show={false}
       >
         <Banner
-          color="bg-red-800/90 text-black"
+          color="bg-red-800/90"
           headerText=""
           subheadingText=" "
           position="bottom-0"
@@ -231,37 +228,7 @@ async function page() {
               />
             </div>
             <div className="LEFT-SMALL-TABS max-w-[300px] w-1/3 flex flex-col">
-              <SideTab headerText="Siguenos">
-                <div className="content">
-                  <SocialMedia />
-                </div>
-              </SideTab>
-              <SideTab
-                buttonColor="bg-gray-200 text-black"
-                headerText="Listo para servir?
-              "
-                subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
-              "
-                buttonText="Comenzar Ahora"
-                buttonLink="./"
-              />
-              <SideTab
-                buttonColor="bg-yellow-400 text-black"
-                headerText="Diezmar"
-                subheaderText="Dar una ofrenda o programa diezmos recurrentes.
-              "
-                buttonText="Dar Ahora"
-                buttonLink="./"
-              />
-              <SideTab
-                buttonColor="bg-gray-100 text-black"
-                headerText="COVID-19
-              "
-                subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos
-              "
-                buttonText="Leer Mas"
-                buttonLink="./"
-              />
+
             </div>
           </div>
         </div>
@@ -362,7 +329,7 @@ async function page() {
             </div>
           </div>
         }
-        image={Michael}
+        image={newphoto1}
       />
       <section className="z-10 h-screen object-cover flex m-auto justify-center items-center">
         <div className="z-40 absolute text-white text-center w-11/12">

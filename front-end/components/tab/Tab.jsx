@@ -45,7 +45,7 @@ const Tab = (props) => {
               <p className="text-sm">{props.subheadingText}</p>
             </div>
             <div className="button mt-8 w-full">
-              <SecondaryButton text={props.buttonText} buttonLink="/iglesias" />
+              <SecondaryButton text={props.buttonText} buttonLink={props.buttonLink} />
             </div>
           </div>
         </div>

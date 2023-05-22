@@ -36,12 +36,7 @@ function Header({
             <p className="font-semibold text-6xl">{headerText}</p>
           </div>
           <div className={buttonText ? "z-40 button flex py-6" : "hidden"}>
-            <Button
-              buttonColor={buttonColor ? `${buttonColor}` : "bg-red-800"}
-              link={buttonLink}
-              text={buttonText}
-              buttonPosition={contentPosition}
-            ></Button>
+
           </div>
         </div>
       </div>
@@ -57,12 +52,7 @@ function Header({
           <p className="font-semibold text-5xl">{headerText}</p>
         </div>
         <div className={buttonText ? "z-20 button flex py-6" : "hidden"}>
-          <Button
-            buttonColor={buttonColor ? `${buttonColor}` : "bg-red-800"}
-            link={buttonLink}
-            text={buttonText}
-            buttonPosition={contentPosition}
-          ></Button>
+          
         </div>
       </div>
       {children}

@@ -11,16 +11,18 @@ const ConocernosCardImage =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Poetry/274688543_7121958261209581_1265145167667835553_n.jpg";
 const IglesiasCardImage =
   "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Media/315306956_8339967716075290_9033138615889496268_n.jpg";
-const UneteCardImage = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/240894583_6088691674536250_7517035433702364537_n.jpg";
-const EventosCardImage = 'https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Ushers/279019125_7399278380144233_724713185633846961_n.jpg'
+const UneteCardImage =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Congragation/240894583_6088691674536250_7517035433702364537_n.jpg";
+const EventosCardImage =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Ushers/279019125_7399278380144233_724713185633846961_n.jpg";
 
 const AnniversaryPicture =
   "https://monte-assets.s3.amazonaws.com/img/50Anni.F4.png";
 const HeroVideo =
   "https://monte-assets.s3.amazonaws.com/video/church+intro+video.mp4";
 const Logo = "https://monte-assets.s3.amazonaws.com/logo/logo.png";
-const Michael = "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Women/312581454_8245687048836691_2558137973907464007_n.jpg";
-
+const Michael =
+  "https://monte-assets.s3.amazonaws.com/new-image/MS+WEBPAGE/Images/Ministries/Women/312581454_8245687048836691_2558137973907464007_n.jpg";
 
 const page = () => {
   return (
@@ -31,10 +33,17 @@ const page = () => {
         headerText={"Unete"}
         classChangeText={undefined}
         contentPosition={"center"}
-        subheadingText={"Descubre cómo puedes formar parte de nuestra familia de fe"}
+        subheadingText={
+          "Descubre cómo puedes formar parte de nuestra familia de fe"
+        }
         containerheight={undefined}
         children={undefined}
-        video={undefined} buttonColor={undefined} buttonLink={undefined} buttonText={undefined} show={undefined}      ></Header>
+        video={undefined}
+        buttonColor={undefined}
+        buttonLink={undefined}
+        buttonText={undefined}
+        show={undefined}
+      ></Header>
       <div className="tabs-section bg-slate-100">
         <div className="MOBILE flex w-11/12 m-auto md:hidden ">
           <DefaultBody>
@@ -42,7 +51,7 @@ const page = () => {
               headerText="Servir"
               subheadingText="Utiliza tus dones y talentos para marcar la diferencia. Únete a cualquiera de nuestros equipos y sirve.
               "
-              buttonLink="/conocernos"
+              buttonLink="/servir"
               buttonText="UNIRSE A UN EQUIPO"
               image={ConocernosCardImage}
               imagePosition="object-left "
@@ -92,7 +101,7 @@ const page = () => {
                 headerText="Servir"
                 subheadingText="Utiliza tus dones y talentos para marcar la diferencia. Únete a cualquiera de nuestros equipos y sirve. 
 "
-                buttonLink="/servir"
+                buttonLink="/unete/servir"
                 buttonText="APLICAR"
                 image={ConocernosCardImage}
               />
