@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function IglesiasMapListLeft(props) {
   return (
-    <div className="relative md:z-30 md:absolute  overflow-auto ">
+    <div className="relative md:z-30 md:absolute w-1/3 overflow-auto ">
       <div className={props.conocernos ? "hidden" : ""}>
         <div className="md:bg-white shadow-lg p-8 m-auto text-md z-0 font-semibold h-16 w-full flex border-b-2 justify-center items-center text-black">
           <p>Busca Local</p>

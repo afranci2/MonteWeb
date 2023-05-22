@@ -55,7 +55,7 @@ async function fetchEvents() {
     );
 
     const data = await res.json();
-
+    console.log(data)
     return data; // parses
   } catch (error) {
     console.log(error);
@@ -76,6 +76,8 @@ async function fetchEvents2() {
     );
 
     const data = await res.json();
+    console.log(data)
+
     return data; // parses
   } catch (error) {
     console.log(error);

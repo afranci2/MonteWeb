@@ -83,7 +83,7 @@ function Navbar() {
                   className="text-center z-50 mobile-links top-0 left-0 w-3/4 h-screen p-10 shadow-lg bg-white
                flex-col fixed text-black 
              
-              font-semibold text-2xl py-20"
+              font-medium text-2xl py-20"
                 >
                   <div className="text-left mobile-menu-pop">
                     <ul>
