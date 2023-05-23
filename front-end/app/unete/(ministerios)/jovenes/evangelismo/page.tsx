@@ -5,10 +5,12 @@ import Footer from "../../../../../sections/footer/Footer";
 import Header from "../../../../../sections/header/Header";
 import Banner from "../../../../../components/banner/Banner";
 import BodySectionImageLeft from "../../../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
-const heroimage =
-  "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/308582926_8109322895806441_1503573631717639969_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=0debeb&_nc_ohc=LKPn4_W_2MAAX_bx8tW&_nc_ht=scontent-bos5-1.xx&oh=00_AfDM3Z8e0PlzbQWbgEeGS5rVKPCUWf0rAULGQfCjxi-I1A&oe=646FFDC4";
 const image2 =
-  "https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/65057510_2861504527254997_3639034715119288320_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=suEJc1V8S_wAX8JqXda&_nc_ht=scontent-atl3-2.xx&oh=00_AfBAHEzK_jSzJnFU8pDt16CJ5fqUfXla7A7SLYeS0uKGdw&oe=6493A94E"
+"https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/308797479_8109325175806213_3397974551028685495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0debeb&_nc_ohc=QKpU077hoZwAX9U5QXQ&_nc_ht=scontent-atl3-2.xx&oh=00_AfCTNj8X6HlMdzzIrNUQG8t_4YoDqBzd2yuDyzG3iie9YA&oe=6471CCFE"
+
+
+const heroimage =
+  "https://scontent-bos5-1.xx.fbcdn.net/v/t1.6435-9/105024806_4062236777181760_4080296992700234302_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=pv_ql8AtAosAX-WtbU7&_nc_ht=scontent-bos5-1.xx&oh=00_AfBKjwONDoqXPrjlgrhN1mgMY6qVuLxrHooFCrFkPhuj7w&oe=649368F4";
 const page = () => {
   const [option, setOption] = useState(false);
 
