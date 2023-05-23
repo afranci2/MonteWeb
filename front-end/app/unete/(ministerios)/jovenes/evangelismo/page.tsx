@@ -68,10 +68,7 @@ const page = () => {
               >
                 Loading…
               </iframe>
-              <div className="flex flex-col">
-                <p className="font-bold text-lg">Sign Up Now!</p>
-                <p className="text-sm">It's Time to Make a Difference</p>
-              </div>
+              
             </div>{" "}
           </div>
         ) : (
