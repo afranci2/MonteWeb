@@ -6,8 +6,7 @@ import Header from "../../../../../sections/header/Header";
 import Banner from "../../../../../components/banner/Banner";
 import BodySectionImageLeft from "../../../../../sections/body/bodyImageText/imageRightTextLeft/BodySectionImageRight";
 const image2 =
-"https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/308797479_8109325175806213_3397974551028685495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0debeb&_nc_ohc=QKpU077hoZwAX9U5QXQ&_nc_ht=scontent-atl3-2.xx&oh=00_AfCTNj8X6HlMdzzIrNUQG8t_4YoDqBzd2yuDyzG3iie9YA&oe=6471CCFE"
-
+  "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/308797479_8109325175806213_3397974551028685495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0debeb&_nc_ohc=QKpU077hoZwAX9U5QXQ&_nc_ht=scontent-atl3-2.xx&oh=00_AfCTNj8X6HlMdzzIrNUQG8t_4YoDqBzd2yuDyzG3iie9YA&oe=6471CCFE";
 
 const heroimage =
   "https://scontent-bos5-1.xx.fbcdn.net/v/t1.6435-9/105024806_4062236777181760_4080296992700234302_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=pv_ql8AtAosAX-WtbU7&_nc_ht=scontent-bos5-1.xx&oh=00_AfBKjwONDoqXPrjlgrhN1mgMY6qVuLxrHooFCrFkPhuj7w&oe=649368F4";
@@ -61,14 +60,18 @@ const page = () => {
                 "El Movimiento Pentecostal Monte Sinaí existe para este propósito; continuar extendiendo el reino de Dios en la tierra. Es por este sentido de responsabilidad que Dios ha puesto una visión en nosotros global, de alcanzar las naciones para Cristo.​"
               }
             ></BodySectionImageLeft>
-            <div className="flex m-auto">
+            <div className="flex justify-center m-auto">
               <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSeKMbGztf4ij00t-sEZgG9Phm8x9c8vk2v5dRG8nRLKPmuDCg/viewform?embedded=true"
-                width="1500"
+                width="750"
                 height="1000"
               >
                 Loading…
               </iframe>
+              <div className="flex flex-col">
+                <p className="font-bold text-lg">Sign Up Now!</p>
+                <p className="text-sm">It's Time to Make a Difference</p>
+              </div>
             </div>{" "}
           </div>
         ) : (

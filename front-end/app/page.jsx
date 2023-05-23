@@ -2,7 +2,8 @@ import React from "react";
 import "../public/globals.css";
 import { IoIosArrowForward } from "react-icons/io";
 import ServiceTimesTab from "../components/tab/sideTab/ServiceTimesTab";
-const newphoto1 = "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/274687118_7121994934539247_7298005248163609642_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=peiSkuqDu9MAX-UfM67&_nc_ht=scontent-bos5-1.xx&oh=00_AfAMSjGF6kTHEOq6vVjfqNXmE9HNZ0ZElYnehqDx7-AggQ&oe=6470B922"
+const newphoto1 =
+  "https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/274687118_7121994934539247_7298005248163609642_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0debeb&_nc_ohc=peiSkuqDu9MAX-UfM67&_nc_ht=scontent-bos5-1.xx&oh=00_AfAMSjGF6kTHEOq6vVjfqNXmE9HNZ0ZElYnehqDx7-AggQ&oe=6470B922";
 import Navbar from "../sections/navbar/Navbar";
 import Footer from "../sections/footer/Footer";
 import Header from "../sections/header/Header";
@@ -92,7 +93,6 @@ function getDateAndTimeForChurchId(events, id) {
 async function page() {
   const res = await fetchEvents();
   const res2 = await fetchEvents2();
-  
 
   return (
     <div>
@@ -228,7 +228,37 @@ async function page() {
               />
             </div>
             <div className="LEFT-SMALL-TABS max-w-[300px] w-1/3 flex flex-col">
-
+              <SideTab headerText="Siguenos">
+                <div className="content">
+                  <SocialMedia />
+                </div>
+              </SideTab>
+              <SideTab
+                buttonColor="bg-gray-200 text-black"
+                headerText="Listo para servir?
+              "
+                subheaderText="Inscríbase ahora como voluntario y vea lo que Dios puede hacer a través de usted.
+              "
+                buttonText="Comenzar Ahora"
+                buttonLink="/unete"
+              />
+              <SideTab
+                buttonColor="bg-yellow-400 text-black"
+                headerText="Diezmar"
+                subheaderText="Dar una ofrenda o programa diezmos recurrentes.
+              "
+                buttonText="Dar Ahora"
+                buttonLink="/donar"
+              />
+              <SideTab
+                buttonColor="bg-gray-100 text-black"
+                headerText="COVID-19
+              "
+                subheaderText="Consulte nuestra política de COVID-19 y los nuevos desarrollos
+              "
+                buttonText="Leer Mas"
+                buttonLink="/"
+              />
             </div>
           </div>
         </div>
@@ -314,8 +344,8 @@ async function page() {
         subheadingText2={
           <div>
             <p>
-              ...Esperamos en el Supremo Señor de nuestras vidas, que a lo largo de
-              la historia de este movimiento, el fuego siga ardiendo en cada
+              ...Esperamos en el Supremo Señor de nuestras vidas, que a lo largo
+              de la historia de este movimiento, el fuego siga ardiendo en cada
               corazón como en aquel momento en el día de Pentecostés."
             </p>
             <br></br>
