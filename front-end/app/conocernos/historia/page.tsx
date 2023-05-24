@@ -137,11 +137,11 @@ function page() {
           contentPosition={"center"}
           video={undefined}
           subheadingText={undefined}
-          containerheight={"h-60"}
+          containerheight={"h-96"}
           show={false}
         >
           <Image
-            className=" w-full flex place-content-center justify-center absolute m-auto z-40  md:w-full"
+            className=" w-full flex place-content-center justify-center h-full absolute m-auto z-40  md:w-full"
             src={gradient}
             alt="he"
           />
