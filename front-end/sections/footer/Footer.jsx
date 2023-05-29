@@ -95,7 +95,7 @@ const Footer = () => {
       </div>
       <div className="p-8 rights-reserved gap-2 flex flex-col justify-center m-auto bg-slate-100 w-screen md:flex-row md:justify-between">
         <p className=" flex m-auto text-black text-xs md:mx-0">
-          © 2021 Movimiento Pentecostal Monte Sinai. All Rights Reserved
+          © 2021 Movimiento Pentecostal MonteSinai. All Rights Reserved
         </p>
         <div className=" flex justify-center gap-10 pt-6 md:pt-0">
           <Link href="./rights-reserved">
